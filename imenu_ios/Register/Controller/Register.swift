@@ -10,16 +10,16 @@ import UIKit
 
 class Register: UIViewController {
 
-    @IBOutlet weak var innerView: UIView!
+    
+    @IBOutlet weak var roundedView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    //innerView.layer.cornerRadius = 10
-
-        
+    roundedView.layer.cornerRadius = 10
     }
     
-
+    
     
 
 }
