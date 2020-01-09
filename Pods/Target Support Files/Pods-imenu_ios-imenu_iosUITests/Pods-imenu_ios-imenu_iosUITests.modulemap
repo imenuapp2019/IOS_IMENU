@@ -1,0 +1,6 @@
+framework module Pods_imenu_ios_imenu_iosUITests {
+  umbrella header "Pods-imenu_ios-imenu_iosUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
