@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		9B6F522023C7730600943C71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6F521E23C7730600943C71 /* LaunchScreen.storyboard */; };
 		9B6F522B23C7730700943C71 /* imenu_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F522A23C7730700943C71 /* imenu_iosTests.swift */; };
 		9B6F523623C7730700943C71 /* imenu_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F523523C7730700943C71 /* imenu_iosUITests.swift */; };
+		A0C9CEE823C7933F00E77B86 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C9CEE723C7933F00E77B86 /* Register.storyboard */; };
+		A0C9CEEA23C7939200E77B86 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CEE923C7939200E77B86 /* Register.swift */; };
 		F10447FC1BF1D25636C2B8FD /* Pods_imenu_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A94295DE0CEC502372C074 /* Pods_imenu_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		9B6F523123C7730700943C71 /* imenu_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imenu_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6F523523C7730700943C71 /* imenu_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imenu_iosUITests.swift; sourceTree = "<group>"; };
 		9B6F523723C7730700943C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0C9CEE723C7933F00E77B86 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		A0C9CEE923C7939200E77B86 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		A7F59B88508993883BBEAC16 /* Pods-imenu_ios-imenu_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imenu_ios-imenu_iosUITests.release.xcconfig"; path = "Target Support Files/Pods-imenu_ios-imenu_iosUITests/Pods-imenu_ios-imenu_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EC0930CB59322BE8640C5767 /* Pods_imenu_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imenu_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,6 +130,7 @@
 		9B6F521223C772FF00943C71 /* imenu_ios */ = {
 			isa = PBXGroup;
 			children = (
+				A0C9CEE423C792E600E77B86 /* Register */,
 				9B6F521323C7730000943C71 /* AppDelegate.swift */,
 				9B6F521523C7730000943C71 /* SceneDelegate.swift */,
 				9B6F521723C7730000943C71 /* ViewController.swift */,
@@ -155,6 +160,31 @@
 			path = imenu_iosUITests;
 			sourceTree = "<group>";
 		};
+		A0C9CEE423C792E600E77B86 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				A0C9CEE623C7932A00E77B86 /* Controller */,
+				A0C9CEE523C7932500E77B86 /* View */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A0C9CEE523C7932500E77B86 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0C9CEE723C7933F00E77B86 /* Register.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0C9CEE623C7932A00E77B86 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0C9CEE923C7939200E77B86 /* Register.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		BDCB6343048AEC3BC2A8221B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +195,6 @@
 				8DE89641C52ED08720F4FB8D /* Pods-imenu_iosTests.debug.xcconfig */,
 				082D9F10D3123919B8CF00F5 /* Pods-imenu_iosTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -278,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B6F522023C7730600943C71 /* LaunchScreen.storyboard in Resources */,
+				A0C9CEE823C7933F00E77B86 /* Register.storyboard in Resources */,
 				9B6F521D23C7730600943C71 /* Assets.xcassets in Resources */,
 				9B6F521B23C7730000943C71 /* Main.storyboard in Resources */,
 			);
@@ -392,6 +422,7 @@
 			files = (
 				9B6F521823C7730000943C71 /* ViewController.swift in Sources */,
 				9B6F521423C7730000943C71 /* AppDelegate.swift in Sources */,
+				A0C9CEEA23C7939200E77B86 /* Register.swift in Sources */,
 				9B6F521623C7730000943C71 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
