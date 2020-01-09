@@ -1,20 +1,73 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
+  - MaterialComponents/AnimationTiming (100.0.1)
+  - MaterialComponents/Buttons (100.0.1):
+    - MaterialComponents/Elevation
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/Ripple
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Elevation (100.0.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Ink (100.0.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/Palettes (100.0.1)
+  - MaterialComponents/private/Application (100.0.1)
+  - MaterialComponents/private/Color (100.0.1)
+  - MaterialComponents/private/Math (100.0.1)
+  - MaterialComponents/Ripple (100.0.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+  - MaterialComponents/ShadowElevations (100.0.1)
+  - MaterialComponents/ShadowLayer (100.0.1):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (100.0.1):
+    - MaterialComponents/private/Color
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/TextFields (100.0.1):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/Elevation
+    - MaterialComponents/Palettes
+    - MaterialComponents/private/Math
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/Typography (100.0.1):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
+  - MDFTextAccessibility (2.0.0)
   - SwiftLint (0.38.2)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
+  - MaterialComponents/TextFields
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  MaterialComponents: a7727eed5194fc4a65ba61ed7ec6fa9e6b0290f7
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
 
-PODFILE CHECKSUM: 82ff668fdc7523fa2c8f1f2141225890b4760dc8
+PODFILE CHECKSUM: bc4600a099ebed0270548a9f3f63b066f945d560
 
 COCOAPODS: 1.8.4

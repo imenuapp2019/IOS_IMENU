@@ -12,6 +12,7 @@ target 'imenu_ios' do
     # Pods for testing
     pod 'Alamofire', '~> 5.0.0-rc.3'
     pod 'SwiftLint'
+    pod 'MaterialComponents/TextFields'
   end
 
   target 'imenu_iosUITests' do
