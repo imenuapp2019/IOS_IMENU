@@ -11,12 +11,13 @@ import UIKit
 class Register: UIViewController {
 
     
-    @IBOutlet weak var roundedView: UIView!
+ 
+    @IBOutlet weak var roundedFrameView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    roundedView.layer.cornerRadius = 10
+    roundedFrameView.layer.cornerRadius = 15
     }
     
     
