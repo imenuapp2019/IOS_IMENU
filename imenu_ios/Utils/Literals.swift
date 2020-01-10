@@ -9,5 +9,5 @@
 import Foundation
 
 open class Literals {
-    static var idBtnUser = "Nombre de usuario"
+    static var btnUserPlaceHolder = "Nombre de usuario"
 }

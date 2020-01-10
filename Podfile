@@ -6,13 +6,14 @@ target 'imenu_ios' do
   use_frameworks!
 
   # Pods for imenu_ios
+    pod 'Alamofire', '~> 5.0.0-rc.3'
+    pod 'SwiftLint'
+    pod 'SkyFloatingLabelTextField', '~> 3.0'
 
   target 'imenu_iosTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'Alamofire', '~> 5.0.0-rc.3'
-    pod 'SwiftLint'
-    pod 'MaterialComponents/TextFields'
+
   end
 
   target 'imenu_iosUITests' do
