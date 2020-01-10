@@ -7,16 +7,16 @@
 //
 
 import UIKit
-
-
+import SkyFloatingLabelTextField
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var imageLogo: UIImageView!
     
-    @IBOutlet weak var labelUserName: UITextField!
-    @IBOutlet weak var labelUserPassword: UITextField!
-    
+   
+    @IBOutlet weak var labelUserName: SkyFloatingLabelTextFieldWithIcon!
+
+    @IBOutlet weak var labelUserPassword: SkyFloatingLabelTextFieldWithIcon!
     
     @IBAction func btninvited(_ sender: Any) {
     
@@ -34,8 +34,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        labelUserName.text = ""
+        
     }
 
+
+    func setupLabelText(){
+        labelUserName.placeholder = Literals.btnUserPlaceHolder
+        labelUserName.title = Literals.btnUserPlaceHolder
+    }
 
 }
