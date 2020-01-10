@@ -10,4 +10,10 @@ import Foundation
 
 open class Literals {
     static var btnUserPlaceHolder = "Nombre de usuario"
+    static var placedeHolderRegisterName = "Nombre"
+    static var placedeHolderRegisterLastName = "Apellido"
+    static var placedeHolderRegisterEmail = "Email"
+    static var placedeHolderRegisterPassword = "Contraseña"
+    static var placedeHolderRegisterVrfPassword = "Repetir contraseña"
+    static var ConfirmRegisterBtn = "Confirmar"
 }

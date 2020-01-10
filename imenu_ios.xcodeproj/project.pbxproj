@@ -22,7 +22,8 @@
 		9BB4D84623C8380C00CE6F38 /* Pods_imenu_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; };
 		9BB4D84723C8380C00CE6F38 /* Pods_imenu_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0C9CEE823C7933F00E77B86 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C9CEE723C7933F00E77B86 /* Register.storyboard */; };
-		A0C9CEEA23C7939200E77B86 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CEE923C7939200E77B86 /* Register.swift */; };
+		A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */; };
+		A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CF2923C8EE9600E77B86 /* Color.swift */; };
 		F10447FC1BF1D25636C2B8FD /* Pods_imenu_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A94295DE0CEC502372C074 /* Pods_imenu_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +86,8 @@
 		9BB4D84923C8384600CE6F38 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SkyFloatingLabelTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB4D84C23C8388D00CE6F38 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C9CEE723C7933F00E77B86 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
-		A0C9CEE923C7939200E77B86 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A0C9CF2923C8EE9600E77B86 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A7F59B88508993883BBEAC16 /* Pods-imenu_ios-imenu_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imenu_ios-imenu_iosUITests.release.xcconfig"; path = "Target Support Files/Pods-imenu_ios-imenu_iosUITests/Pods-imenu_ios-imenu_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EC0930CB59322BE8640C5767 /* Pods_imenu_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imenu_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				9B214E5923C7B11300969784 /* Literals.swift */,
+				A0C9CF2923C8EE9600E77B86 /* Color.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -241,7 +244,7 @@
 		A0C9CEE623C7932A00E77B86 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A0C9CEE923C7939200E77B86 /* Register.swift */,
+				A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -504,8 +507,9 @@
 				9B214E4D23C795F500969784 /* LoginViewController.swift in Sources */,
 				9B214E5A23C7B11300969784 /* Literals.swift in Sources */,
 				9B6F521423C7730000943C71 /* AppDelegate.swift in Sources */,
-				A0C9CEEA23C7939200E77B86 /* Register.swift in Sources */,
+				A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */,
 				9B6F521623C7730000943C71 /* SceneDelegate.swift in Sources */,
+				A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
