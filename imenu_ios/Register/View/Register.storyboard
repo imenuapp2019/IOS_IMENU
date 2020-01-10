@@ -10,7 +10,7 @@
         <!--Register View Controller-->
         <scene sceneID="LlW-5u-Xck">
             <objects>
-                <viewController storyboardIdentifier="Register" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3CD-Bi-vlD" customClass="RegisterViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Register" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3CD-Bi-vlD" customClass="RegisterViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rEx-Wy-UCb" userLabel="MainView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

@@ -62,8 +62,6 @@ class LoginViewController: UIViewController {
         btnContinue.setTitle(Literals.btnContinueTitle, for: .normal)
         btnRecovery.setTitle(Literals.btnRecoveryTitle, for: .normal)
         btnRegistry.setTitle(Literals.btnRegistryTitle, for: .normal)
-        
-        
     }
     
 }
