@@ -15,8 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZXS-qg-a1O">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gmU-L2-JjT">
+                                <rect key="frame" x="-282.5" y="-306" width="940" height="614"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="614" id="NoG-nT-2tL"/>
+                                    <constraint firstAttribute="width" constant="940" id="z5y-YI-IZu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZXS-qg-a1O">
                                 <rect key="frame" x="67" y="89" width="241" height="117.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117.5" id="NjU-t1-dTA"/>
+                                    <constraint firstAttribute="width" constant="241" id="kqD-Iq-uO9"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giP-um-q6E">
                                 <rect key="frame" x="50" y="461" width="275" height="30"/>
@@ -40,11 +51,11 @@
                                     <segue destination="IjB-ax-bhg" kind="show" id="uf7-N1-XR2"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="AX9-If-rlV">
-                                <rect key="frame" x="70" y="344.5" width="235" height="108.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="AX9-If-rlV">
+                                <rect key="frame" x="70" y="344.5" width="235" height="113.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ase-nh-8z2" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="39.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -61,7 +72,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afe-3J-RSJ" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="69.5" width="235" height="39"/>
+                                        <rect key="frame" x="0.0" y="74" width="235" height="39.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -77,9 +88,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QHH-lI-eRd" firstAttribute="leading" secondItem="WFN-SG-Fh8" secondAttribute="leading" constant="20" id="3aJ-uU-Zhi"/>
-                            <constraint firstItem="AX9-If-rlV" firstAttribute="leading" secondItem="WFN-SG-Fh8" secondAttribute="leading" constant="70" id="535-ZR-L5l"/>
+                            <constraint firstItem="gmU-L2-JjT" firstAttribute="centerX" secondItem="ZXS-qg-a1O" secondAttribute="centerX" id="5pu-fy-ljx"/>
+                            <constraint firstItem="AX9-If-rlV" firstAttribute="leading" secondItem="WFN-SG-Fh8" secondAttribute="leading" constant="70" id="6FF-LM-rqc"/>
                             <constraint firstItem="uF0-05-LGe" firstAttribute="leading" secondItem="WFN-SG-Fh8" secondAttribute="leading" constant="70" id="7wv-ZB-eIX"/>
                             <constraint firstItem="WFN-SG-Fh8" firstAttribute="trailing" secondItem="uF0-05-LGe" secondAttribute="trailing" constant="70" id="8or-CH-1OK"/>
+                            <constraint firstItem="WFN-SG-Fh8" firstAttribute="bottom" secondItem="gmU-L2-JjT" secondAttribute="bottom" constant="359" id="9JY-eR-B5m"/>
                             <constraint firstItem="WFN-SG-Fh8" firstAttribute="trailing" secondItem="giP-um-q6E" secondAttribute="trailing" constant="50" id="BHh-cS-xkj"/>
                             <constraint firstItem="1kC-MR-Qwo" firstAttribute="top" secondItem="uF0-05-LGe" secondAttribute="bottom" constant="52" id="Fzt-95-axj"/>
                             <constraint firstItem="uF0-05-LGe" firstAttribute="top" secondItem="giP-um-q6E" secondAttribute="bottom" constant="44" id="I8w-WH-kz2"/>
@@ -87,13 +100,12 @@
                             <constraint firstItem="WFN-SG-Fh8" firstAttribute="trailing" secondItem="ZXS-qg-a1O" secondAttribute="trailing" constant="67" id="Ouw-aZ-e9q"/>
                             <constraint firstItem="WFN-SG-Fh8" firstAttribute="bottom" secondItem="1kC-MR-Qwo" secondAttribute="bottom" constant="20" id="Pw0-d9-jcc"/>
                             <constraint firstItem="ZXS-qg-a1O" firstAttribute="leading" secondItem="WFN-SG-Fh8" secondAttribute="leading" constant="67" id="SCY-Dj-pwE"/>
-                            <constraint firstItem="AX9-If-rlV" firstAttribute="centerX" secondItem="TPk-FA-tKI" secondAttribute="centerX" id="WA4-yY-uLR"/>
+                            <constraint firstItem="WFN-SG-Fh8" firstAttribute="trailing" secondItem="AX9-If-rlV" secondAttribute="trailing" constant="70" id="U3z-hS-WjI"/>
+                            <constraint firstItem="giP-um-q6E" firstAttribute="top" secondItem="AX9-If-rlV" secondAttribute="bottom" constant="3" id="UXP-Xg-U5s"/>
                             <constraint firstItem="QHH-lI-eRd" firstAttribute="top" secondItem="WFN-SG-Fh8" secondAttribute="top" constant="20" id="a9P-zP-tLg"/>
                             <constraint firstItem="giP-um-q6E" firstAttribute="leading" secondItem="WFN-SG-Fh8" secondAttribute="leading" constant="50" id="c34-Ln-uhl"/>
-                            <constraint firstItem="AX9-If-rlV" firstAttribute="top" secondItem="ZXS-qg-a1O" secondAttribute="bottom" constant="138" id="fOx-dj-FTw"/>
                             <constraint firstItem="WFN-SG-Fh8" firstAttribute="trailing" secondItem="1kC-MR-Qwo" secondAttribute="trailing" constant="20" id="hFC-RL-xO4"/>
-                            <constraint firstItem="giP-um-q6E" firstAttribute="top" secondItem="AX9-If-rlV" secondAttribute="bottom" constant="8" id="lPy-6L-gcO"/>
-                            <constraint firstItem="WFN-SG-Fh8" firstAttribute="trailing" secondItem="AX9-If-rlV" secondAttribute="trailing" constant="70" id="sYu-rk-emY"/>
+                            <constraint firstItem="AX9-If-rlV" firstAttribute="top" secondItem="gmU-L2-JjT" secondAttribute="bottom" constant="36.5" id="lml-Wr-ekz"/>
                             <constraint firstItem="ZXS-qg-a1O" firstAttribute="top" secondItem="QHH-lI-eRd" secondAttribute="bottom" constant="39" id="v7Q-Jx-XvR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WFN-SG-Fh8"/>
@@ -103,6 +115,7 @@
                         <outlet property="btnRecovery" destination="giP-um-q6E" id="6Wy-AY-B9Q"/>
                         <outlet property="btnRegistry" destination="1kC-MR-Qwo" id="YIF-U6-JJC"/>
                         <outlet property="btninvited" destination="QHH-lI-eRd" id="HUt-Bu-OHL"/>
+                        <outlet property="imageBackground" destination="gmU-L2-JjT" id="WsO-bL-rd9"/>
                         <outlet property="imageLogo" destination="ZXS-qg-a1O" id="TTb-7t-gAk"/>
                         <outlet property="labelUserName" destination="Ase-nh-8z2" id="45v-dl-biL"/>
                         <outlet property="labelUserPassword" destination="Afe-3J-RSJ" id="MvX-EP-dR7"/>
@@ -110,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AkJ-1s-eEQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-639" y="-48"/>
+            <point key="canvasLocation" x="-639.20000000000005" y="-48.125937031484263"/>
         </scene>
         <!--Register-->
         <scene sceneID="jmh-Vw-4VQ">

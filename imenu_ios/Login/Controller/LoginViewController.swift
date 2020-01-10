@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     
 
     @IBOutlet weak var imageLogo: UIImageView!
+    @IBOutlet weak var imageBackground: UIImageView!
     
     @IBOutlet weak var labelUserName: SkyFloatingLabelTextFieldWithIcon!
 
@@ -42,11 +43,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let tap = hideKeyboard()
         view.addGestureRecognizer(tap)
         moveScreenWhenUseKeyboard()
         setupBtn()
+        setupImage()
         setupLabel()
     }
     
@@ -62,6 +63,14 @@ class LoginViewController: UIViewController {
         btnContinue.setTitle(Literals.btnContinueTitle, for: .normal)
         btnRecovery.setTitle(Literals.btnRecoveryTitle, for: .normal)
         btnRegistry.setTitle(Literals.btnRegistryTitle, for: .normal)
+        
+        btninvited.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    }
+    
+    func setupImage(){
+        imageLogo.image = #imageLiteral(resourceName: "logo")
+        imageBackground.image = #imageLiteral(resourceName: "Background")
+        view.sendSubviewToBack(imageBackground)
     }
     
 }
