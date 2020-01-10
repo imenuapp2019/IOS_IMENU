@@ -9,13 +9,13 @@
 import Foundation
 
 open class Literals {
-    static var labelUserPlaceholder = "Nombre de usuario"
-    static var labelUserTitle = "Usuario"
+    static var labelUserPlaceholder = "Escriba su correo"
+    static var labelUserTitle = "Correo"
     static var labelPasswordPlaceholder = "Colocar contraseña"
     static var labelPasswordTitle = "Contraseña"
     static var btnInvitedTitle = "Registrarse mas tarde"
     static var btnRegistryTitle = "Registro"
-    static var btnRecoveryTitle = "Olvide contraseña"
+    static var btnRecoveryTitle = "Olvide mi contraseña"
     static var btnContinueTitle = "Confirmar"
     static var btnUserPlaceHolder = "Nombre de usuario"
     static var placedeHolderRegisterName = "Nombre"
@@ -24,4 +24,5 @@ open class Literals {
     static var placedeHolderRegisterPassword = "Contraseña"
     static var placedeHolderRegisterVrfPassword = "Repetir contraseña"
     static var ConfirmRegisterBtn = "Confirmar"
+    static var msjErrorEmail = "Email no valido"
 }
