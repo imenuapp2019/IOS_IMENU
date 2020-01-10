@@ -17,11 +17,4 @@ open class Literals {
     static var btnRegistryTitle = "Registro"
     static var btnRecoveryTitle = "Olvide contraseña"
     static var btnContinueTitle = "Confirmar"
-    static var btnUserPlaceHolder = "Nombre de usuario"
-    static var placedeHolderRegisterName = "Nombre"
-    static var placedeHolderRegisterLastName = "Apellido"
-    static var placedeHolderRegisterEmail = "Email"
-    static var placedeHolderRegisterPassword = "Contraseña"
-    static var placedeHolderRegisterVrfPassword = "Repetir contraseña"
-    static var ConfirmRegisterBtn = "Confirmar"
 }
