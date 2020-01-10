@@ -61,8 +61,11 @@ class RegisterViewController: UIViewController {
         nameTextField.selectedLineColor = Color.greenBtnColor
         nameTextField.lineHeight = 2.0
         nameTextField.selectedLineHeight = 3.0
+        nameTextField.errorColor = Color.redColor
         
         
+       
+
         lastNameTextField.placeholder = Literals.placedeHolderRegisterLastName
         lastNameTextField.title = Literals.placedeHolderRegisterLastName
         lastNameTextField.tintColor = Color.greenBtnColor
@@ -79,7 +82,9 @@ class RegisterViewController: UIViewController {
         emailTextField.selectedLineColor = Color.greenBtnColor
         emailTextField.lineHeight = 2.0
         emailTextField.selectedLineHeight = 3.0
-        
+        emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+       
+
         
         passwordTextField.placeholder = Literals.placedeHolderRegisterPassword
         passwordTextField.title = Literals.placedeHolderRegisterPassword
@@ -108,8 +113,25 @@ class RegisterViewController: UIViewController {
        
         
     }
+    
+    
+    
+    @objc func textFieldDidChange(_ emailTextField: UITextField) {
+            if let text = emailTextField.text {
+                if let floatingLabelTextField = emailTextField as? SkyFloatingLabelTextField {
+                    if(text.count < 3 || !text.contains("@")) {
+                        floatingLabelTextField.errorMessage = "Invalid email"
+                    }
+                    else {
+                        // The error message will only disappear when we reset it to nil or empty string
+                        floatingLabelTextField.errorMessage = ""
+                    }
+                }
+            }
+        }
+    }
 
-}
+
 
 extension RegisterViewController {
    
