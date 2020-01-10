@@ -10,6 +10,9 @@ import UIKit
 import SkyFloatingLabelTextField
 
 class RegisterViewController: UIViewController {
+    
+    let greenColor:UIColor = UIColor(red: 38/255, green: 128/255, blue: 38/255, alpha: 1)
+     let whiteColor:UIColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
 
     @IBOutlet weak var registerAvatarImageView: UIImageView!
     
@@ -26,6 +29,7 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var vrfPasswordTextField: SkyFloatingLabelTextField!
     
+    @IBOutlet weak var confirmBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,11 +53,21 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         
-        nameTextField.placeholder = "Name"
-        lastNameTextField.placeholder = "Last name"
-        emailTextField.placeholder = "Email"
-        passwordTextField.placeholder = "Password"
-        vrfPasswordTextField.placeholder = "Repetir contraseña"
+        nameTextField.placeholder = Literals.placedeHolderRegisterName
+        nameTextField.title = Literals.placedeHolderRegisterName
+        lastNameTextField.placeholder = Literals.placedeHolderRegisterLastName
+        lastNameTextField.title = Literals.placedeHolderRegisterLastName
+        emailTextField.placeholder = Literals.placedeHolderRegisterEmail
+        emailTextField.title = Literals.placedeHolderRegisterEmail
+        passwordTextField.placeholder = Literals.placedeHolderRegisterPassword
+        passwordTextField.title = Literals.placedeHolderRegisterPassword
+        vrfPasswordTextField.placeholder = Literals.placedeHolderRegisterVrfPassword
+        vrfPasswordTextField.title = Literals.placedeHolderRegisterVrfPassword
+        
+        confirmBtn.setTitle(Literals.ConfirmRegisterBtn, for: .normal)
+        confirmBtn.tintColor = whiteColor
+        confirmBtn.backgroundColor = greenColor
+        
         
     }
 
