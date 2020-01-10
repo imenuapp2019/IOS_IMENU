@@ -22,7 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
          
         window?.rootViewController = registerStoryboard
         
-       
+        let initialViewController = UIStoryboard(name: "Login",bundle: nil).instantiateViewController(withIdentifier: "Login")
+        
+        window?.rootViewController = initialViewController
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
