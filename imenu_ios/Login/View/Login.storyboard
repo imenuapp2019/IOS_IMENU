@@ -54,12 +54,26 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="User"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="USERNAME"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="person.crop.circle" catalog="system"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iconTypeValue">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="templateImage" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afe-3J-RSJ" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
                                         <rect key="frame" x="0.0" y="69.5" width="235" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="lock" catalog="system"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iconTypeValue">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -90,6 +104,8 @@
                     </view>
                     <connections>
                         <outlet property="imageLogo" destination="ZXS-qg-a1O" id="TTb-7t-gAk"/>
+                        <outlet property="labelUserName" destination="Ase-nh-8z2" id="45v-dl-biL"/>
+                        <outlet property="labelUserPassword" destination="Afe-3J-RSJ" id="MvX-EP-dR7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AkJ-1s-eEQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -107,4 +123,8 @@
             <point key="canvasLocation" x="-84" y="26"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lock" catalog="system" width="64" height="64"/>
+        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

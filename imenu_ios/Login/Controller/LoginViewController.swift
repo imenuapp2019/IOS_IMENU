@@ -10,10 +10,10 @@ import UIKit
 import SkyFloatingLabelTextField
 
 class LoginViewController: UIViewController {
+    
 
     @IBOutlet weak var imageLogo: UIImageView!
     
-   
     @IBOutlet weak var labelUserName: SkyFloatingLabelTextFieldWithIcon!
 
     @IBOutlet weak var labelUserPassword: SkyFloatingLabelTextFieldWithIcon!
@@ -33,14 +33,51 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+
+        let tap = hideKeyboard()
+        view.addGestureRecognizer(tap)
+        moveScreenWhenUseKeyboard()
         
+        setupTextField()
     }
-
-
-    func setupLabelText(){
-        labelUserName.placeholder = Literals.btnUserPlaceHolder
-        labelUserName.title = Literals.btnUserPlaceHolder
+    
+    func setupTextField() {
+        labelUserName.placeholder = Literals.labelUserPlaceholder
+        labelUserName.title = Literals.labelUserTitle
+        labelUserPassword.placeholder = Literals.labelPasswordPlaceholder
+        labelUserPassword.title = Literals.labelPasswordTitle
     }
-
 }
+
+extension LoginViewController {
+    
+    func moveScreenWhenUseKeyboard(){
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func hideKeyboard()->UITapGestureRecognizer{
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+       return tap
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+}
+
+

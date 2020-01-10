@@ -6,94 +6,34 @@
 	<dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
 		<key>Pods-imenu_ios-imenu_iosUITests.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>2</integer>
 		</dict>
-<<<<<<< Updated upstream
 		<key>Pods-imenu_ios.xcscheme</key>
-=======
-		<key>MDFTextAccessibility.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
-		</dict>
-		<key>MaterialComponents.xcscheme</key>
->>>>>>> Stashed changes
-		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-<<<<<<< Updated upstream
 		<key>Pods-imenu_iosTests.xcscheme</key>
-=======
-		<key>Pods-imenu_ios-imenu_iosUITests.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
-		<key>Pods-imenu_ios.xcscheme</key>
->>>>>>> Stashed changes
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 			<integer>3</integer>
-=======
-			<integer>2</integer>
->>>>>>> Stashed changes
-=======
-			<integer>2</integer>
->>>>>>> Stashed changes
 		</dict>
 		<key>SkyFloatingLabelTextField.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 			<integer>4</integer>
-=======
-			<integer>6</integer>
->>>>>>> Stashed changes
-=======
-			<integer>6</integer>
->>>>>>> Stashed changes
 		</dict>
 		<key>SwiftLint.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 			<integer>5</integer>
-=======
-			<integer>7</integer>
->>>>>>> Stashed changes
-=======
-			<integer>7</integer>
->>>>>>> Stashed changes
 		</dict>
 	</dict>
-	<key>SuppressBuildableAutocreation</key>
-	<dict/>
 </dict>
 </plist>
