@@ -13,4 +13,8 @@ open class Literals {
     static var labelUserTitle = "Usuario"
     static var labelPasswordPlaceholder = "Colocar contraseña"
     static var labelPasswordTitle = "Contraseña"
+    static var btnInvitedTitle = "Registrarse mas tarde"
+    static var btnRegistryTitle = "Registro"
+    static var btnRecoveryTitle = "Olvide contraseña"
+    static var btnContinueTitle = "Confirmar"
 }

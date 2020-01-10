@@ -18,35 +18,54 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var labelUserPassword: SkyFloatingLabelTextFieldWithIcon!
     
-    @IBAction func btninvited(_ sender: Any) {
+    @IBOutlet weak var btninvited:UIButton!
+    @IBOutlet weak var btnRegistry:UIButton!
+    @IBOutlet weak var btnRecovery:UIButton!
+    @IBOutlet weak var btnContinue:UIButton!
     
+    
+    @IBAction func btnContinueClicked(_ sender: Any) {
     }
     
-    @IBAction func btnRegistry(_ sender: Any) {
+    @IBAction func btninvitedClicked(_ sender: Any) {
+        
+    }
     
+    @IBAction func btnRegistryClicked(_ sender: Any) {
+        
     }
     
     
-    @IBAction func btnRecovery(_ sender: Any) {
+    @IBAction func btnRecoveryClicked(_ sender: Any) {
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let tap = hideKeyboard()
         view.addGestureRecognizer(tap)
         moveScreenWhenUseKeyboard()
-        
-        setupTextField()
+        setupBtn()
+        setupLabel()
     }
     
-    func setupTextField() {
+    func setupLabel() {
         labelUserName.placeholder = Literals.labelUserPlaceholder
         labelUserName.title = Literals.labelUserTitle
         labelUserPassword.placeholder = Literals.labelPasswordPlaceholder
         labelUserPassword.title = Literals.labelPasswordTitle
     }
+    
+    func setupBtn(){
+        btninvited.setTitle(Literals.btnInvitedTitle, for: .normal)
+        btnContinue.setTitle(Literals.btnContinueTitle, for: .normal)
+        btnRecovery.setTitle(Literals.btnRecoveryTitle, for: .normal)
+        btnRegistry.setTitle(Literals.btnRegistryTitle, for: .normal)
+        
+        
+    }
+    
 }
 
 extension LoginViewController {
