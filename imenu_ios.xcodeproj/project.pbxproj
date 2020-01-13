@@ -467,7 +467,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-imenu_ios/Pods-imenu_ios-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-imenu_ios/Pods-imenu_ios-frameworks.sh\"\n\n\n";
 			showEnvVarsInLog = 0;
 		};
 		5653601E0B68381182CB0D1C /* [CP] Check Pods Manifest.lock */ = {
