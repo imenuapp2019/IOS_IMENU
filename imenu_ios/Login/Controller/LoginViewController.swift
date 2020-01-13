@@ -27,10 +27,26 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func btnContinueClicked(_ sender: Any) {
-        
+        if labelUserName.text == Literals.empty && labelUserPassword.text == Literals.empty {
+            labelUserName.errorMessage = Literals.emptyEmailLabel
+            labelUserPassword.errorMessage = Literals.emptyPassLabel
+        }else {
+        if labelUserName.text == Literals.empty {
+            labelUserName.errorMessage = Literals.emptyEmailLabel
+            labelUserPassword.errorMessage = Literals.empty
+        }
+        else if labelUserPassword.text == Literals.empty {
+            labelUserPassword.errorMessage = Literals.emptyPassLabel
+            labelUserName.errorMessage = Literals.empty
+        }else {
+            labelUserName.errorMessage = Literals.empty
+            labelUserPassword.errorMessage = Literals.empty
+            print("Envio de datos")
+            }
+        }
     }
     
-    @IBAction func btninvitedClicked(_ sender: Any) {
+        func btninvitedClicked(_ sender: Any) {
         
     }
     
@@ -71,7 +87,7 @@ class LoginViewController: UIViewController {
         labelUserPassword.isSecureTextEntry = true
         labelUserPassword.addTarget(self, action: #selector(eyeSecutrityHidde(_:)), for: .editingChanged)
         labelUserName.errorColor = Color.redColor
-        labelUserName.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        labelUserName.addTarget(self, action: #selector(textFieldDidChangeEmail(_:)), for: .editingChanged)
     }
     
     func setupBtn(){
@@ -114,21 +130,22 @@ extension LoginViewController:UITextFieldDelegate{
     }
     
     
-    @objc func textFieldDidChange(_ textfield: UITextField) {
+    @objc func textFieldDidChangeEmail(_ textfield: UITextField) {
         let email = "@"
         let point = "."
         if let text = labelUserName.text {
             if let floatingLabelTextField = labelUserName {
                 if(text.count < 3 || !text.contains(email) || !text.contains(point) ) {
                     floatingLabelTextField.errorMessage = Literals.msjErrorEmail
+                }else {
+                    floatingLabelTextField.errorMessage = Literals.empty
                 }
-                else {
-                    
+                if ( text == Literals.empty){
+                    floatingLabelTextField.errorMessage = Literals.empty
                 }
             }
         }
     }
-    
 }
 
 extension LoginViewController {
