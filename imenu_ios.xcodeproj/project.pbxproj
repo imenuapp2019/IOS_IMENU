@@ -13,7 +13,6 @@
 		9B214E5423C7A2A400969784 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B214E5323C7A2A400969784 /* Login.storyboard */; };
 		9B214E5723C7AA2C00969784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B214E5523C7AA2C00969784 /* Main.storyboard */; };
 		9B214E5A23C7B11300969784 /* Literals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B214E5923C7B11300969784 /* Literals.swift */; };
-		9B4FD55A23CCDF3200158709 /* Recover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B4FD55923CCDF3200158709 /* Recover.storyboard */; };
 		9B4FD55E23CCDF7900158709 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4FD55D23CCDF7900158709 /* RecoverViewController.swift */; };
 		9B6F521423C7730000943C71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F521323C7730000943C71 /* AppDelegate.swift */; };
 		9B6F521623C7730000943C71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F521523C7730000943C71 /* SceneDelegate.swift */; };
@@ -24,6 +23,7 @@
 		9BB3928523C9219200AA7AAC /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3928423C9219200AA7AAC /* RoundButton.swift */; };
 		9BB4D84623C8380C00CE6F38 /* Pods_imenu_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; };
 		9BB4D84723C8380C00CE6F38 /* Pods_imenu_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9BE79A3223CD11CA00669BCC /* Recover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE79A3123CD11CA00669BCC /* Recover.storyboard */; };
 		A0C9CEE823C7933F00E77B86 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C9CEE723C7933F00E77B86 /* Register.storyboard */; };
 		A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */; };
 		A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CF2923C8EE9600E77B86 /* Color.swift */; };
@@ -73,7 +73,6 @@
 		9B214E5323C7A2A400969784 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9B214E5623C7AA2C00969784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B214E5923C7B11300969784 /* Literals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literals.swift; sourceTree = "<group>"; };
-		9B4FD55923CCDF3200158709 /* Recover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recover.storyboard; sourceTree = "<group>"; };
 		9B4FD55D23CCDF7900158709 /* RecoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverViewController.swift; sourceTree = "<group>"; };
 		9B6F521023C772FF00943C71 /* imenu_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imenu_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6F521323C7730000943C71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +90,7 @@
 		9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_imenu_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB4D84923C8384600CE6F38 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SkyFloatingLabelTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB4D84C23C8388D00CE6F38 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BE79A3123CD11CA00669BCC /* Recover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recover.storyboard; sourceTree = "<group>"; };
 		A0C9CEE723C7933F00E77B86 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A0C9CF2923C8EE9600E77B86 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 		9B4FD55723CCDEFE00158709 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9B4FD55923CCDF3200158709 /* Recover.storyboard */,
+				9BE79A3123CD11CA00669BCC /* Recover.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,7 +410,7 @@
 				A0C9CEE823C7933F00E77B86 /* Register.storyboard in Resources */,
 				9B6F521D23C7730600943C71 /* Assets.xcassets in Resources */,
 				9B214E5723C7AA2C00969784 /* Main.storyboard in Resources */,
-				9B4FD55A23CCDF3200158709 /* Recover.storyboard in Resources */,
+				9BE79A3223CD11CA00669BCC /* Recover.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
