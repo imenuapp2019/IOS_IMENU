@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-        func btninvitedClicked(_ sender: Any) {
+     @IBAction func btninvitedClicked(_ sender: Any) {
         
     }
     

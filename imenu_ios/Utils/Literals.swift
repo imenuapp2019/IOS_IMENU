@@ -11,7 +11,7 @@ import Foundation
 open class Literals {
     static var labelUserPlaceholder = "Escriba su correo"
     static var labelUserTitle = "Email"
-    static var labelPasswordPlaceholder = "Colocar contraseña"
+    static var labelPasswordPlaceholder = "Escriba su contraseña"
     static var labelPasswordTitle = "Contraseña"
     static var btnInvitedTitle = "Registrarse mas tarde"
     static var btnRegistryTitle = "Registro"
