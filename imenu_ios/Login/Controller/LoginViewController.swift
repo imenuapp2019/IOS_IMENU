@@ -77,7 +77,6 @@ class LoginViewController: UIViewController {
     func setupBtn(){
         let btnAttributes: [NSAttributedString.Key: Any] = [
             .underlineStyle: NSUnderlineStyle.single.rawValue]
-        //.double.rawValue, .thick.rawValue
         let attributeString = NSMutableAttributedString(string: Literals.btnRecoveryTitle,
             attributes: btnAttributes)
         
