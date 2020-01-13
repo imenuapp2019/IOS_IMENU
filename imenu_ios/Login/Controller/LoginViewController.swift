@@ -11,21 +11,23 @@ import SkyFloatingLabelTextField
 
 class LoginViewController: UIViewController {
     
-
+    
     @IBOutlet weak var imageLogo: UIImageView!
     @IBOutlet weak var imageBackground: UIImageView!
     
     @IBOutlet weak var labelUserName: SkyFloatingLabelTextFieldWithIcon!
-
+    
     @IBOutlet weak var labelUserPassword: SkyFloatingLabelTextFieldWithIcon!
     
     @IBOutlet weak var btninvited:UIButton!
     @IBOutlet weak var btnRegistry:UIButton!
     @IBOutlet weak var btnRecovery:UIButton!
     @IBOutlet weak var btnContinue:UIButton!
+    @IBOutlet weak var eyeSecurity: UIButton!
     
     
     @IBAction func btnContinueClicked(_ sender: Any) {
+        
     }
     
     @IBAction func btninvitedClicked(_ sender: Any) {
@@ -41,10 +43,20 @@ class LoginViewController: UIViewController {
         
     }
     
+    @IBAction func eyeSecurityClicked (_ sender: Any) {
+        if labelUserPassword.isSecureTextEntry {
+            labelUserPassword.isSecureTextEntry = false
+        }else{
+            labelUserPassword.isSecureTextEntry = true
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap = hideKeyboard()
         view.addGestureRecognizer(tap)
+        labelUserPassword.delegate = self
         moveScreenWhenUseKeyboard()
         setupBtn()
         setupImage()
@@ -56,21 +68,65 @@ class LoginViewController: UIViewController {
         labelUserName.title = Literals.labelUserTitle
         labelUserPassword.placeholder = Literals.labelPasswordPlaceholder
         labelUserPassword.title = Literals.labelPasswordTitle
+        labelUserPassword.isSecureTextEntry = true
+        labelUserPassword.addTarget(self, action: #selector(eyeSecutrityHidde(_:)), for: .editingChanged)
+        labelUserName.errorColor = Color.redColor
+        labelUserName.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     func setupBtn(){
+        let btnAttributes: [NSAttributedString.Key: Any] = [
+            .underlineStyle: NSUnderlineStyle.single.rawValue]
+        let attributeString = NSMutableAttributedString(string: Literals.btnRecoveryTitle,
+            attributes: btnAttributes)
+        
+        eyeSecurity.isHidden = true
+        eyeSecurity.backgroundColor = .clear
         btninvited.setTitle(Literals.btnInvitedTitle, for: .normal)
         btnContinue.setTitle(Literals.btnContinueTitle, for: .normal)
-        btnRecovery.setTitle(Literals.btnRecoveryTitle, for: .normal)
         btnRegistry.setTitle(Literals.btnRegistryTitle, for: .normal)
         
         btninvited.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        btnContinue.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        btnContinue.backgroundColor = Color.greenBtnColor
+        btnRecovery.tintColor = Color.grayBtnColor
+        btnRegistry.tintColor = Color.grayBtnColor
+        
+        btnRecovery.setAttributedTitle(attributeString, for: .normal)
     }
     
     func setupImage(){
         imageLogo.image = #imageLiteral(resourceName: "logo")
         imageBackground.image = #imageLiteral(resourceName: "Background")
         view.sendSubviewToBack(imageBackground)
+    }
+    
+}
+
+extension LoginViewController:UITextFieldDelegate{
+    
+    @objc func eyeSecutrityHidde(_ textField: UITextField) {
+        if labelUserPassword.text != "" {
+            eyeSecurity.isHidden = false
+        }else{
+            eyeSecurity.isHidden = true
+        }
+    }
+    
+    
+    @objc func textFieldDidChange(_ textfield: UITextField) {
+        let email = "@"
+        let point = "."
+        if let text = labelUserName.text {
+            if let floatingLabelTextField = labelUserName {
+                if(text.count < 3 || !text.contains(email) || !text.contains(point) ) {
+                    floatingLabelTextField.errorMessage = Literals.msjErrorEmail
+                }
+                else {
+                    
+                }
+            }
+        }
     }
     
 }
@@ -84,7 +140,7 @@ extension LoginViewController {
     
     func hideKeyboard()->UITapGestureRecognizer{
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-       return tap
+        return tap
     }
     
     @objc func dismissKeyboard() {
@@ -98,7 +154,7 @@ extension LoginViewController {
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
