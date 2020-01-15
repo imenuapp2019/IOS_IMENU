@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H8E-gV-RBb">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -7,20 +7,95 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Recover View Controller-->
         <scene sceneID="NvH-O5-kZm">
             <objects>
-                <viewController id="H8E-gV-RBb" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="H8E-gV-RBb" customClass="RecoverViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ifX-mI-a4Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ymX-Ea-8gO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzQ-gc-fTc">
+                                <rect key="frame" x="45" y="142" width="285" height="383"/>
+                            </containerView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Hm-WT-Lg8">
+                                <rect key="frame" x="90" y="30" width="195" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="K1e-1L-9hS"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30d-xj-Eme" customClass="RoundButton" customModule="imenu_ios" customModuleProvider="target">
+                                <rect key="frame" x="70" y="560" width="235" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="elg-lZ-jIl" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="60" y="316" width="235" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="info.circle" catalog="system"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="iconTypeValue">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38b-Y8-ydc">
+                                <rect key="frame" x="60" y="241" width="192" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="pNT-s4-WMr"/>
+                                    <constraint firstAttribute="width" constant="192" id="vnI-oQ-HKq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3Hm-WT-Lg8" firstAttribute="leading" secondItem="7oW-el-fcb" secondAttribute="leading" constant="90" id="5EX-c8-zPQ"/>
+                            <constraint firstItem="kzQ-gc-fTc" firstAttribute="centerX" secondItem="ifX-mI-a4Q" secondAttribute="centerX" id="74L-cI-YmN"/>
+                            <constraint firstItem="ymX-Ea-8gO" firstAttribute="leading" secondItem="7oW-el-fcb" secondAttribute="leading" id="92U-Rm-gNE"/>
+                            <constraint firstItem="7oW-el-fcb" firstAttribute="trailing" secondItem="elg-lZ-jIl" secondAttribute="trailing" constant="80" id="B5L-Bu-znG"/>
+                            <constraint firstItem="7oW-el-fcb" firstAttribute="trailing" secondItem="30d-xj-Eme" secondAttribute="trailing" constant="70" id="EJm-Vd-kTg"/>
+                            <constraint firstItem="ymX-Ea-8gO" firstAttribute="top" secondItem="3Hm-WT-Lg8" secondAttribute="bottom" constant="-134" id="IpI-1h-rMr"/>
+                            <constraint firstItem="kzQ-gc-fTc" firstAttribute="leading" secondItem="7oW-el-fcb" secondAttribute="leading" constant="45" id="MCl-3s-BDc"/>
+                            <constraint firstItem="30d-xj-Eme" firstAttribute="leading" secondItem="7oW-el-fcb" secondAttribute="leading" constant="70" id="QgM-bS-1ZB"/>
+                            <constraint firstItem="7oW-el-fcb" firstAttribute="trailing" secondItem="3Hm-WT-Lg8" secondAttribute="trailing" constant="90" id="VBS-hu-FJI"/>
+                            <constraint firstItem="3Hm-WT-Lg8" firstAttribute="width" secondItem="ymX-Ea-8gO" secondAttribute="width" multiplier="0.52" id="WFX-um-rvJ"/>
+                            <constraint firstItem="7oW-el-fcb" firstAttribute="trailing" secondItem="38b-Y8-ydc" secondAttribute="trailing" constant="123" id="WlM-4v-6HH"/>
+                            <constraint firstItem="elg-lZ-jIl" firstAttribute="leading" secondItem="7oW-el-fcb" secondAttribute="leading" constant="60" id="a2b-Rj-nEf"/>
+                            <constraint firstItem="kzQ-gc-fTc" firstAttribute="centerY" secondItem="ifX-mI-a4Q" secondAttribute="centerY" id="crh-go-JkG"/>
+                            <constraint firstItem="38b-Y8-ydc" firstAttribute="leading" secondItem="7oW-el-fcb" secondAttribute="leading" constant="60" id="e8E-r9-6oX"/>
+                            <constraint firstItem="38b-Y8-ydc" firstAttribute="top" secondItem="3Hm-WT-Lg8" secondAttribute="bottom" constant="107" id="i6S-di-DTI"/>
+                            <constraint firstItem="30d-xj-Eme" firstAttribute="top" secondItem="kzQ-gc-fTc" secondAttribute="bottom" constant="35" id="iYG-5n-7L0"/>
+                            <constraint firstItem="7oW-el-fcb" firstAttribute="bottom" secondItem="ymX-Ea-8gO" secondAttribute="bottom" id="kzS-rA-oqX"/>
+                            <constraint firstItem="7oW-el-fcb" firstAttribute="trailing" secondItem="kzQ-gc-fTc" secondAttribute="trailing" constant="45" id="mFD-0Q-BHv"/>
+                            <constraint firstItem="kzQ-gc-fTc" firstAttribute="top" secondItem="3Hm-WT-Lg8" secondAttribute="bottom" constant="8" id="ta4-b8-Lk7"/>
+                            <constraint firstItem="ymX-Ea-8gO" firstAttribute="top" secondItem="7oW-el-fcb" secondAttribute="top" id="tug-Ij-S6o"/>
+                            <constraint firstItem="elg-lZ-jIl" firstAttribute="top" secondItem="38b-Y8-ydc" secondAttribute="bottom" constant="8" id="twK-gW-iFF"/>
+                            <constraint firstItem="30d-xj-Eme" firstAttribute="top" secondItem="ymX-Ea-8gO" secondAttribute="bottom" constant="-107" id="vLw-mR-cho"/>
+                            <constraint firstItem="7oW-el-fcb" firstAttribute="trailing" secondItem="ymX-Ea-8gO" secondAttribute="trailing" id="yeK-PH-Trm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7oW-el-fcb"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="ymX-Ea-8gO" id="b3p-eg-wXX"/>
+                        <outlet property="btnRecover" destination="30d-xj-Eme" id="XMM-UH-bWL"/>
+                        <outlet property="cardView" destination="kzQ-gc-fTc" id="Bne-jr-e31"/>
+                        <outlet property="inputlabelEmail" destination="elg-lZ-jIl" id="WaC-ut-7h6"/>
+                        <outlet property="labelTextRecoverEmail" destination="38b-Y8-ydc" id="3Z5-it-YoB"/>
+                        <outlet property="logoImage" destination="3Hm-WT-Lg8" id="hVs-BW-kD6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wl1-dc-X7b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="76"/>
+            <point key="canvasLocation" x="141.59999999999999" y="75.112443778110944"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info.circle" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

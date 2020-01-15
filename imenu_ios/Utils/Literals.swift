@@ -27,6 +27,6 @@ open class Literals {
     static var msjErrorEmail = "Email"
     static var msjErrorPassLabel = "Contraseña no valida"
     static var empty = ""
-    static var emptyEmailLabel = "Campo correo vacio"
+    static var emptyEmailLabel = "Campo Email vacio"
     static var emptyPassLabel = "Campo contraseña vacio"
 }
