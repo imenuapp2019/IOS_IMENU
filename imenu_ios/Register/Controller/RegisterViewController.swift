@@ -119,10 +119,9 @@ class RegisterViewController: UIViewController {
     @objc func textFieldDidChange(_ emailTextField: UITextField) {
             if let text = emailTextField.text {
                 if let floatingLabelTextField = emailTextField as? SkyFloatingLabelTextField {
-                    if(text.count < 3 || !text.contains("@")) {
+                    if(text.count < 3 || !text.contains("@")){
                         floatingLabelTextField.errorMessage = "Invalid email"
-                    }
-                    else {
+                    }else{
                         // The error message will only disappear when we reset it to nil or empty string
                         floatingLabelTextField.errorMessage = ""
                     }

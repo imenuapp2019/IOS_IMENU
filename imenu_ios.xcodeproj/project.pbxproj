@@ -18,8 +18,8 @@
 		9B6F521623C7730000943C71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F521523C7730000943C71 /* SceneDelegate.swift */; };
 		9B6F521D23C7730600943C71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B6F521C23C7730600943C71 /* Assets.xcassets */; };
 		9B6F522023C7730600943C71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6F521E23C7730600943C71 /* LaunchScreen.storyboard */; };
-		9B6F522B23C7730700943C71 /* imenu_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F522A23C7730700943C71 /* imenu_iosTests.swift */; };
-		9B6F523623C7730700943C71 /* imenu_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F523523C7730700943C71 /* imenu_iosUITests.swift */; };
+		9B6F522B23C7730700943C71 /* ImenuIosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F522A23C7730700943C71 /* ImenuIosTests.swift */; };
+		9B6F523623C7730700943C71 /* ImenuIosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F523523C7730700943C71 /* ImenuIosUITests.swift */; };
 		9BB3928523C9219200AA7AAC /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3928423C9219200AA7AAC /* RoundButton.swift */; };
 		9BB4D84623C8380C00CE6F38 /* Pods_imenu_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; };
 		9BB4D84723C8380C00CE6F38 /* Pods_imenu_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -81,10 +81,10 @@
 		9B6F521F23C7730600943C71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B6F522123C7730600943C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6F522623C7730600943C71 /* imenu_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imenu_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B6F522A23C7730700943C71 /* imenu_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imenu_iosTests.swift; sourceTree = "<group>"; };
+		9B6F522A23C7730700943C71 /* ImenuIosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImenuIosTests.swift; sourceTree = "<group>"; };
 		9B6F522C23C7730700943C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B6F523123C7730700943C71 /* imenu_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imenu_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B6F523523C7730700943C71 /* imenu_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imenu_iosUITests.swift; sourceTree = "<group>"; };
+		9B6F523523C7730700943C71 /* ImenuIosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImenuIosUITests.swift; sourceTree = "<group>"; };
 		9B6F523723C7730700943C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BB3928423C9219200AA7AAC /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_imenu_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,7 +242,7 @@
 		9B6F522923C7730600943C71 /* imenu_iosTests */ = {
 			isa = PBXGroup;
 			children = (
-				9B6F522A23C7730700943C71 /* imenu_iosTests.swift */,
+				9B6F522A23C7730700943C71 /* ImenuIosTests.swift */,
 				9B6F522C23C7730700943C71 /* Info.plist */,
 			);
 			path = imenu_iosTests;
@@ -251,7 +251,7 @@
 		9B6F523423C7730700943C71 /* imenu_iosUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9B6F523523C7730700943C71 /* imenu_iosUITests.swift */,
+				9B6F523523C7730700943C71 /* ImenuIosUITests.swift */,
 				9B6F523723C7730700943C71 /* Info.plist */,
 			);
 			path = imenu_iosUITests;
@@ -467,8 +467,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-imenu_ios/Pods-imenu_ios-frameworks.sh\"\n\n\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-imenu_ios/Pods-imenu_ios-frameworks.sh\"\n\n";
 		};
 		5653601E0B68381182CB0D1C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -553,7 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B6F522B23C7730700943C71 /* imenu_iosTests.swift in Sources */,
+				9B6F522B23C7730700943C71 /* ImenuIosTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B6F523623C7730700943C71 /* imenu_iosUITests.swift in Sources */,
+				9B6F523623C7730700943C71 /* ImenuIosUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
