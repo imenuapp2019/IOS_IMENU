@@ -12,6 +12,7 @@ import SkyFloatingLabelTextField
 class RecoverViewController: UIViewController {
     
     
+    @IBOutlet weak var iconSendMail: UIImageView!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var cardView: UIView!
@@ -19,17 +20,23 @@ class RecoverViewController: UIViewController {
     @IBOutlet weak var inputlabelEmail: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet weak var btnRecover: RoundButton!
     
+    
+    @IBAction func iconBackClicked(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tap = hideKeyboard()
         view.addGestureRecognizer(tap)
         moveScreenWhenUseKeyboard()
+        setupBtn()
         setupImage()
         setupLabelAndInput()
     }
     
     func setupBtn(){
-        btnRecover.setTitle(Literals.btnRegistryTitle, for: .normal)
+        btnRecover.setTitle(Literals.btnRecover, for: .normal)
         btnRecover.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         btnRecover.backgroundColor = Color.greenBtnColor
     }
