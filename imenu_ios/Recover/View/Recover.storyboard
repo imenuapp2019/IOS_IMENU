@@ -41,7 +41,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="elg-lZ-jIl" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="60" y="360" width="250" height="39"/>
+                                <rect key="frame" x="60" y="360" width="250" height="39.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -79,7 +79,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0o-Pu-rC4">
-                                <rect key="frame" x="10" y="49" width="32" height="32"/>
+                                <rect key="frame" x="10" y="49" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="9Em-3q-0sW"/>
+                                    <constraint firstAttribute="height" constant="25" id="ihS-FZ-TsT"/>
+                                </constraints>
                                 <state key="normal" image="iconBackArrow"/>
                                 <connections>
                                     <action selector="iconBackClicked:" destination="H8E-gV-RBb" eventType="touchUpInside" id="zEn-Gj-yH8"/>
@@ -88,6 +92,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="D0o-Pu-rC4" firstAttribute="leading" secondItem="7oW-el-fcb" secondAttribute="leading" constant="10" id="1wP-nf-vlr"/>
                             <constraint firstItem="7oW-el-fcb" firstAttribute="trailing" secondItem="38b-Y8-ydc" secondAttribute="trailing" constant="123" id="37d-g7-fga"/>
                             <constraint firstItem="3Hm-WT-Lg8" firstAttribute="leading" secondItem="7oW-el-fcb" secondAttribute="leading" constant="90" id="4Zf-dS-TRY"/>
                             <constraint firstAttribute="bottom" secondItem="ymX-Ea-8gO" secondAttribute="bottom" id="51K-vv-V8r"/>
@@ -98,7 +103,7 @@
                             <constraint firstItem="38b-Y8-ydc" firstAttribute="leading" secondItem="elg-lZ-jIl" secondAttribute="leading" id="C8d-cl-tUN"/>
                             <constraint firstItem="elg-lZ-jIl" firstAttribute="top" secondItem="38b-Y8-ydc" secondAttribute="bottom" constant="8" id="H9E-OA-6ak"/>
                             <constraint firstItem="ymX-Ea-8gO" firstAttribute="trailing" secondItem="7oW-el-fcb" secondAttribute="trailing" id="Rvc-Em-Mzm"/>
-                            <constraint firstItem="D0o-Pu-rC4" firstAttribute="leading" secondItem="7oW-el-fcb" secondAttribute="leading" constant="10" id="Tqu-9A-ft2"/>
+                            <constraint firstItem="D0o-Pu-rC4" firstAttribute="top" secondItem="7oW-el-fcb" secondAttribute="top" constant="5" id="UOz-f4-DK0"/>
                             <constraint firstItem="30d-xj-Eme" firstAttribute="leading" secondItem="3Hm-WT-Lg8" secondAttribute="leading" id="Ym8-DU-rGF"/>
                             <constraint firstItem="ymX-Ea-8gO" firstAttribute="top" secondItem="ifX-mI-a4Q" secondAttribute="top" id="aTe-20-Mac"/>
                             <constraint firstItem="30d-xj-Eme" firstAttribute="centerX" secondItem="kzQ-gc-fTc" secondAttribute="centerX" id="c9q-Ws-saG"/>
@@ -106,7 +111,6 @@
                             <constraint firstItem="38b-Y8-ydc" firstAttribute="top" secondItem="ifX-mI-a4Q" secondAttribute="top" constant="285" id="iZV-HZ-QSe"/>
                             <constraint firstItem="38b-Y8-ydc" firstAttribute="leading" secondItem="7oW-el-fcb" secondAttribute="leading" constant="60" id="iyV-Ho-cMu"/>
                             <constraint firstItem="30d-xj-Eme" firstAttribute="top" secondItem="kzQ-gc-fTc" secondAttribute="bottom" constant="26" id="pWd-hr-CbG"/>
-                            <constraint firstItem="D0o-Pu-rC4" firstAttribute="top" secondItem="7oW-el-fcb" secondAttribute="top" constant="5" id="yaU-z7-2Nq"/>
                             <constraint firstItem="3Hm-WT-Lg8" firstAttribute="centerX" secondItem="kzQ-gc-fTc" secondAttribute="centerX" id="zM9-YH-vyZ"/>
                             <constraint firstItem="7oW-el-fcb" firstAttribute="bottom" secondItem="30d-xj-Eme" secondAttribute="bottom" constant="68" id="zeJ-wh-8xm"/>
                         </constraints>
