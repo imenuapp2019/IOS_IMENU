@@ -72,8 +72,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         let tap = hideKeyboard()
         view.addGestureRecognizer(tap)
-        labelUserPassword.delegate = self
         moveScreenWhenUseKeyboard()
+        labelUserPassword.delegate = self
         setupBtn()
         setupImage()
         setupLabel()
@@ -112,7 +112,7 @@ class LoginViewController: UIViewController {
     }
     
     func setupImage(){
-        imageLogo.image = #imageLiteral(resourceName: "logo")
+        imageLogo.image = #imageLiteral(resourceName: "LogoImenu")
         imageBackground.image = #imageLiteral(resourceName: "Background")
         view.sendSubviewToBack(imageBackground)
     }

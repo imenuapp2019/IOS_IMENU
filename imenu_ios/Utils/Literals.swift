@@ -29,4 +29,8 @@ open class Literals {
     static var empty = ""
     static var emptyEmailLabel = "Campo Email vacio"
     static var emptyPassLabel = "Campo contraseña vacio"
+    static var labelRecoverText = "Escribe tu email para recuperar contraseña:"
+    static var labelRecoverTittle = "Email"
+    static var labelRecoverPlaceHolder = "Email de recuperacion"
+    static var btnRecover = "Enviar"
 }
