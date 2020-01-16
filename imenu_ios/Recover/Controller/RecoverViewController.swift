@@ -12,7 +12,7 @@ import SkyFloatingLabelTextField
 class RecoverViewController: UIViewController {
     
     
-    @IBOutlet weak var iconSendMail: UIImageView!
+    @IBOutlet weak var emailImage: UIImageView!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var cardView: UIView!
@@ -55,6 +55,7 @@ class RecoverViewController: UIViewController {
         backgroundImage.contentMode = .scaleAspectFill
         cardView.layer.cornerRadius = 15
         cardView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        emailImage.image = #imageLiteral(resourceName: "iconRecover")
     }
 }
 
