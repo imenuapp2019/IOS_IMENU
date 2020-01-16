@@ -10,6 +10,8 @@
 		31E56898EE0ADFC90CA230C6 /* Pods_imenu_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0930CB59322BE8640C5767 /* Pods_imenu_iosTests.framework */; };
 		6787A17E6DD436B7361BF7C1 /* Pods_imenu_ios_imenu_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60315DF23628922134D9BC4D /* Pods_imenu_ios_imenu_iosUITests.framework */; };
 		9B0B193423D0B19A002C9CCC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0B193323D0B19A002C9CCC /* APIManager.swift */; };
+		9B0B193B23D0CE0E002C9CCC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0B193A23D0CE0E002C9CCC /* User.swift */; };
+		9B0B193D23D0CEA4002C9CCC /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0B193C23D0CEA3002C9CCC /* Register.storyboard */; };
 		9B214E4D23C795F500969784 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B214E4C23C795F500969784 /* LoginViewController.swift */; };
 		9B214E5423C7A2A400969784 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B214E5323C7A2A400969784 /* Login.storyboard */; };
 		9B214E5723C7AA2C00969784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B214E5523C7AA2C00969784 /* Main.storyboard */; };
@@ -25,7 +27,6 @@
 		9BB4D84623C8380C00CE6F38 /* Pods_imenu_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; };
 		9BB4D84723C8380C00CE6F38 /* Pods_imenu_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9BE79A3223CD11CA00669BCC /* Recover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE79A3123CD11CA00669BCC /* Recover.storyboard */; };
-		A0C9CEE823C7933F00E77B86 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C9CEE723C7933F00E77B86 /* Register.storyboard */; };
 		A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */; };
 		A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CF2923C8EE9600E77B86 /* Color.swift */; };
 		F10447FC1BF1D25636C2B8FD /* Pods_imenu_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A94295DE0CEC502372C074 /* Pods_imenu_ios.framework */; };
@@ -71,6 +72,8 @@
 		80A94295DE0CEC502372C074 /* Pods_imenu_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imenu_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE89641C52ED08720F4FB8D /* Pods-imenu_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imenu_iosTests.debug.xcconfig"; path = "Target Support Files/Pods-imenu_iosTests/Pods-imenu_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B0B193323D0B19A002C9CCC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		9B0B193A23D0CE0E002C9CCC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9B0B193C23D0CEA3002C9CCC /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		9B214E4C23C795F500969784 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9B214E5323C7A2A400969784 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9B214E5623C7AA2C00969784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,7 +96,6 @@
 		9BB4D84923C8384600CE6F38 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SkyFloatingLabelTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB4D84C23C8388D00CE6F38 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE79A3123CD11CA00669BCC /* Recover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recover.storyboard; sourceTree = "<group>"; };
-		A0C9CEE723C7933F00E77B86 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A0C9CF2923C8EE9600E77B86 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A7F59B88508993883BBEAC16 /* Pods-imenu_ios-imenu_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imenu_ios-imenu_iosUITests.release.xcconfig"; path = "Target Support Files/Pods-imenu_ios-imenu_iosUITests/Pods-imenu_ios-imenu_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 				9B0B193323D0B19A002C9CCC /* APIManager.swift */,
 			);
 			path = APIManager;
+			sourceTree = "<group>";
+		};
+		9B0B193923D0CDDB002C9CCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B0B193A23D0CE0E002C9CCC /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9B214E4423C783B300969784 /* Login */ = {
@@ -235,6 +245,7 @@
 		9B6F521223C772FF00943C71 /* imenu_ios */ = {
 			isa = PBXGroup;
 			children = (
+				9B0B193923D0CDDB002C9CCC /* Model */,
 				9B0B193223D0AFD6002C9CCC /* APIManager */,
 				9B214E5823C7B0D600969784 /* Utils */,
 				A0C9CEE423C792E600E77B86 /* Register */,
@@ -280,7 +291,7 @@
 		A0C9CEE523C7932500E77B86 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A0C9CEE723C7933F00E77B86 /* Register.storyboard */,
+				9B0B193C23D0CEA3002C9CCC /* Register.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -418,7 +429,7 @@
 			files = (
 				9B214E5423C7A2A400969784 /* Login.storyboard in Resources */,
 				9B6F522023C7730600943C71 /* LaunchScreen.storyboard in Resources */,
-				A0C9CEE823C7933F00E77B86 /* Register.storyboard in Resources */,
+				9B0B193D23D0CEA4002C9CCC /* Register.storyboard in Resources */,
 				9B6F521D23C7730600943C71 /* Assets.xcassets in Resources */,
 				9B214E5723C7AA2C00969784 /* Main.storyboard in Resources */,
 				9BE79A3223CD11CA00669BCC /* Recover.storyboard in Resources */,
@@ -556,6 +567,7 @@
 				9B6F521423C7730000943C71 /* AppDelegate.swift in Sources */,
 				A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */,
 				9B6F521623C7730000943C71 /* SceneDelegate.swift in Sources */,
+				9B0B193B23D0CE0E002C9CCC /* User.swift in Sources */,
 				A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
