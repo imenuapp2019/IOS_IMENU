@@ -152,32 +152,51 @@ class RegisterViewController: UIViewController {
                 }
                 else {
                     validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: 0)
-                           
-                                   passwordTextField.errorMessage = ""
+                       passwordTextField.errorMessage = ""
+                     postAlamofire()
                     }
                 }
 
             else {
                 
                 passwordTextField.errorMessage = "Mínimo ocho caracteres"
-               // postAlamofire()
+               
                     }
         }
     }
      
-//    private func postAlamofire ()  {
-//        let json:Any?
-//        let encoder = JSONEncoder ()
-//
-//        do {
-//            let jsonData = try encoder.encode(validNewUser)
-//            json = String(data: jsonData, encoding: String.Encoding.utf8)
-//            print (json!)
-//        } catch {
-//
-//            print ("Formato incorrecto")
-//        }
-//    }
+   private func postAlamofire ()  {
+        let json:Any?
+        let encoder = JSONEncoder ()
+
+        do {
+            let jsonData = try encoder.encode(validNewUser)
+            json = String(data: jsonData, encoding: String.Encoding.utf8)
+            print (json!)
+        } catch {
+
+            print ("Formato incorrecto")
+            
+        }
+    
+    AF.request(urlToPost,
+               method: .post,
+               parameters: validNewUser,
+               encoder: JSONParameterEncoder.default).response { response in
+        debugPrint(response)
+    }
+    
+   
+///   AF.request(urlToPost, method: .post, parameters: json, encoding: String.Encoding.utf8, headers: nil).responseJSON {
+////
+////               (response) in
+////                   print(response)
+////           }
+////
+    
+    
+    
+   }
     
 
     
