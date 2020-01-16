@@ -41,7 +41,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="elg-lZ-jIl" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="60" y="360" width="250" height="39.333333333333329"/>
+                                <rect key="frame" x="60" y="360" width="250" height="39.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -89,6 +89,9 @@
                                     <action selector="iconBackClicked:" destination="H8E-gV-RBb" eventType="touchUpInside" id="zEn-Gj-yH8"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S8T-vI-bgB">
+                                <rect key="frame" x="157" y="195" width="100" height="100"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -102,6 +105,10 @@
                             <constraint firstItem="3Hm-WT-Lg8" firstAttribute="centerX" secondItem="ifX-mI-a4Q" secondAttribute="centerX" id="C6C-WJ-8aP"/>
                             <constraint firstItem="38b-Y8-ydc" firstAttribute="leading" secondItem="elg-lZ-jIl" secondAttribute="leading" id="C8d-cl-tUN"/>
                             <constraint firstItem="elg-lZ-jIl" firstAttribute="top" secondItem="38b-Y8-ydc" secondAttribute="bottom" constant="8" id="H9E-OA-6ak"/>
+                            <constraint firstItem="S8T-vI-bgB" firstAttribute="leading" secondItem="7oW-el-fcb" secondAttribute="leading" constant="157" id="HKF-ZX-cEu"/>
+                            <constraint firstItem="S8T-vI-bgB" firstAttribute="centerX" secondItem="3Hm-WT-Lg8" secondAttribute="centerX" id="KSH-Rr-YD1"/>
+                            <constraint firstItem="elg-lZ-jIl" firstAttribute="top" secondItem="S8T-vI-bgB" secondAttribute="bottom" constant="65" id="LD9-Kj-qY0"/>
+                            <constraint firstItem="S8T-vI-bgB" firstAttribute="top" secondItem="3Hm-WT-Lg8" secondAttribute="bottom" constant="17" id="LgB-Gs-9Dy"/>
                             <constraint firstItem="ymX-Ea-8gO" firstAttribute="trailing" secondItem="7oW-el-fcb" secondAttribute="trailing" id="Rvc-Em-Mzm"/>
                             <constraint firstItem="D0o-Pu-rC4" firstAttribute="top" secondItem="7oW-el-fcb" secondAttribute="top" constant="5" id="UOz-f4-DK0"/>
                             <constraint firstItem="30d-xj-Eme" firstAttribute="leading" secondItem="3Hm-WT-Lg8" secondAttribute="leading" id="Ym8-DU-rGF"/>
@@ -120,6 +127,7 @@
                         <outlet property="backgroundImage" destination="ymX-Ea-8gO" id="b3p-eg-wXX"/>
                         <outlet property="btnRecover" destination="30d-xj-Eme" id="XMM-UH-bWL"/>
                         <outlet property="cardView" destination="kzQ-gc-fTc" id="Bne-jr-e31"/>
+                        <outlet property="emailImage" destination="S8T-vI-bgB" id="r5j-hH-dNP"/>
                         <outlet property="inputlabelEmail" destination="elg-lZ-jIl" id="WaC-ut-7h6"/>
                         <outlet property="labelTextRecoverEmail" destination="38b-Y8-ydc" id="3Z5-it-YoB"/>
                         <outlet property="logoImage" destination="3Hm-WT-Lg8" id="hVs-BW-kD6"/>

@@ -30,7 +30,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giP-um-q6E">
-                                <rect key="frame" x="50" y="461" width="275" height="30"/>
+                                <rect key="frame" x="110" y="461" width="155" height="30"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,7 +162,7 @@
                             <constraint firstItem="uF0-05-LGe" firstAttribute="leading" secondItem="WFN-SG-Fh8" secondAttribute="leading" constant="70" id="7wv-ZB-eIX"/>
                             <constraint firstItem="WFN-SG-Fh8" firstAttribute="trailing" secondItem="uF0-05-LGe" secondAttribute="trailing" constant="70" id="8or-CH-1OK"/>
                             <constraint firstItem="WFN-SG-Fh8" firstAttribute="bottom" secondItem="gmU-L2-JjT" secondAttribute="bottom" constant="359" id="9JY-eR-B5m"/>
-                            <constraint firstItem="WFN-SG-Fh8" firstAttribute="trailing" secondItem="giP-um-q6E" secondAttribute="trailing" constant="50" id="BHh-cS-xkj"/>
+                            <constraint firstItem="WFN-SG-Fh8" firstAttribute="trailing" secondItem="giP-um-q6E" secondAttribute="trailing" constant="110" id="BHh-cS-xkj"/>
                             <constraint firstItem="1kC-MR-Qwo" firstAttribute="top" secondItem="uF0-05-LGe" secondAttribute="bottom" constant="34" id="Fzt-95-axj"/>
                             <constraint firstItem="uF0-05-LGe" firstAttribute="top" secondItem="giP-um-q6E" secondAttribute="bottom" constant="44" id="I8w-WH-kz2"/>
                             <constraint firstItem="ZXS-qg-a1O" firstAttribute="centerX" secondItem="TPk-FA-tKI" secondAttribute="centerX" id="MDN-Sp-aU9"/>
@@ -170,7 +170,7 @@
                             <constraint firstItem="WFN-SG-Fh8" firstAttribute="trailing" secondItem="AX9-If-rlV" secondAttribute="trailing" constant="70" id="U3z-hS-WjI"/>
                             <constraint firstItem="giP-um-q6E" firstAttribute="top" secondItem="AX9-If-rlV" secondAttribute="bottom" constant="3" id="UXP-Xg-U5s"/>
                             <constraint firstItem="QHH-lI-eRd" firstAttribute="top" secondItem="WFN-SG-Fh8" secondAttribute="top" constant="20" id="a9P-zP-tLg"/>
-                            <constraint firstItem="giP-um-q6E" firstAttribute="leading" secondItem="WFN-SG-Fh8" secondAttribute="leading" constant="50" id="c34-Ln-uhl"/>
+                            <constraint firstItem="giP-um-q6E" firstAttribute="leading" secondItem="WFN-SG-Fh8" secondAttribute="leading" constant="110" id="c34-Ln-uhl"/>
                             <constraint firstItem="AX9-If-rlV" firstAttribute="leading" secondItem="ZXS-qg-a1O" secondAttribute="trailing" constant="-289" id="cPA-w3-oyv"/>
                             <constraint firstItem="WFN-SG-Fh8" firstAttribute="trailing" secondItem="1kC-MR-Qwo" secondAttribute="trailing" constant="20" id="hFC-RL-xO4"/>
                             <constraint firstItem="WFN-SG-Fh8" firstAttribute="trailing" secondItem="BrF-uI-jsn" secondAttribute="trailing" constant="48" id="iHf-Oi-aNt"/>
