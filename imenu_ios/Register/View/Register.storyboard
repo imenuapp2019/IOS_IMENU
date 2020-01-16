@@ -233,7 +233,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="209" height="264.5"/>
+        <image name="Background" width="528" height="528"/>
         <image name="iconBackArrow" width="32" height="32"/>
     </resources>
 </document>
