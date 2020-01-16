@@ -14,14 +14,14 @@ class User : Codable {
     private var lastname:String?
     private var email:String?
     public var password:String?
-    private var avatar:Int?
+    private var avatar_id:Int?
     
     init(name:String?, lastname:String?, email:String?, password:String?, avatar:Int?) {
         self.name = name
         self.lastname = lastname
         self.email = email
         self.password = password
-        self.avatar = avatar
+        self.avatar_id = avatar
     }
 
     
