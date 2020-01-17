@@ -12,9 +12,22 @@ import Alamofire
 class APIManager {
     let registerPostUrl = URL(string:"http://localhost:8888/back_imenu-develop/public/api/register")
     
-    func postLogin(Email email:String, Password password:String){
+    func postLogin(user:User){
+        // parameters that are needed to be posted in the backend
+       let parameters = [
+        "email": user.email,
+        "password": user.password
+        ]
         
-        
+        let url = "http://localhost:8888/back_imenu/public/api/login"
+        AF.request(url, method:.post, parameters:parameters as Parameters ,encoding: JSONEncoding.default).responseJSON { response in
+                    switch response.result {
+                    case .success:
+                       print(response)
+                    case .failure(let error):
+                        print(error )
+                    }
+                }
     }
     
     
