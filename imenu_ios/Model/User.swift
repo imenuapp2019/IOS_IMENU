@@ -12,7 +12,7 @@ class User : Codable {
     
     private var name:String?
     private var lastname:String?
-    private var email:String?
+    public var email:String?
     public var password:String?
     private var avatar_id:Int?
     
@@ -23,6 +23,9 @@ class User : Codable {
         self.password = password
         self.avatar_id = avatar
     }
-
     
+    init(email:String?, password:String?) {
+        self.email = email
+        self.password = password
+    }
 }
