@@ -11,20 +11,21 @@ import Alamofire
 
 class APIManager {
     
-    func postLogin(Email email:String, Password password:String){
-        
+    func postLogin(user:User){
         // parameters that are needed to be posted in the backend
-        let params = [
-            "email": email,
-            "password": password
-        ] as [String : Any]
+       let parameters = [
+        "email": user.email,
+        "password": user.password
+        ]
         
-        Alamofire.request("", method: .post, parameters: params, headers: headers).responseString  { response in
-            print(response.request) // original url request
-            print(response.response) // http url reponse
-            if let json = response.result.value {
-               print("JSON: \(json)") // serialized json response after post
-            }       
-        }
+        let url = "http://localhost:8888/back_imenu/public/api/login"
+        AF.request(url, method:.post, parameters:parameters as Parameters ,encoding: JSONEncoding.default).responseJSON { response in
+                    switch response.result {
+                    case .success:
+                       print(response)
+                    case .failure(let error):
+                        print(error )
+                    }
+                }
     }
 }
