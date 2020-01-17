@@ -32,13 +32,13 @@ class APIManager {
     
     
     public func postAlamofire (user: User)  {
-        
+        let numeber:Int = 2
         let parameters:[String : Any] = [
             "name":user.name!,
             "lastName":user.lastName!,
             "email" :user.email!,
             "password":user.password!,
-            "avatar_id":user.avatar_id!
+            "avatar_id":numeber
         ]
     
        
