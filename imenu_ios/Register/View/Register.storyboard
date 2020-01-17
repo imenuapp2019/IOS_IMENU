@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3CD-Bi-vlD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3CD-Bi-vlD">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,7 +38,6 @@
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfz-bO-TLZ">
                                                         <rect key="frame" x="65" y="8" width="155" height="148"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <state key="normal" title="Button"/>
                                                         <connections>
                                                             <action selector="selectAvatarBtn:" destination="3CD-Bi-vlD" eventType="touchUpInside" id="tGH-ea-HZ0"/>
                                                         </connections>
@@ -113,9 +112,9 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fn-ae-uFH" userLabel="passwordTextField" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fn-ae-uFH" userLabel="passwordTextField" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                                 <rect key="frame" x="0.0" y="181" width="205" height="60"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -196,9 +195,8 @@
                                     <action selector="backToLoginBtn:" destination="3CD-Bi-vlD" eventType="touchUpInside" id="Y94-fJ-thP"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mNE-3q-Ucz" userLabel="avatarView" customClass="AvatarViewController" customModule="imenu_ios" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNE-3q-Ucz" userLabel="avatarView" customClass="AvatarViewController" customModule="imenu_ios" customModuleProvider="target">
+                                <rect key="frame" x="20" y="35" width="335" height="132"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -206,12 +204,16 @@
                         <constraints>
                             <constraint firstItem="Bih-Fn-ua7" firstAttribute="top" secondItem="5XL-5d-xmt" secondAttribute="bottom" constant="8" id="9R3-O0-9ur"/>
                             <constraint firstItem="YFY-SW-ZGH" firstAttribute="trailing" secondItem="Bih-Fn-ua7" secondAttribute="trailing" constant="72.5" id="VTc-HF-vd2"/>
+                            <constraint firstItem="YFY-SW-ZGH" firstAttribute="trailing" secondItem="mNE-3q-Ucz" secondAttribute="trailing" constant="20" id="YgD-HJ-bU3"/>
                             <constraint firstItem="5XL-5d-xmt" firstAttribute="leading" secondItem="YFY-SW-ZGH" secondAttribute="leading" constant="40" id="YuM-gW-FPB"/>
                             <constraint firstItem="YFY-SW-ZGH" firstAttribute="bottom" secondItem="Bih-Fn-ua7" secondAttribute="bottom" constant="16" id="bhD-Pr-UfQ"/>
+                            <constraint firstItem="YFY-SW-ZGH" firstAttribute="bottom" secondItem="mNE-3q-Ucz" secondAttribute="bottom" constant="500" id="c3t-QU-R70"/>
                             <constraint firstItem="Bih-Fn-ua7" firstAttribute="leading" secondItem="YFY-SW-ZGH" secondAttribute="leading" constant="72.5" id="chU-G3-FNT"/>
+                            <constraint firstItem="mNE-3q-Ucz" firstAttribute="top" secondItem="YFY-SW-ZGH" secondAttribute="top" constant="35" id="cvh-oG-CnD"/>
                             <constraint firstItem="5XL-5d-xmt" firstAttribute="top" secondItem="YFY-SW-ZGH" secondAttribute="top" constant="40" id="rqU-mx-rPo"/>
                             <constraint firstItem="YFY-SW-ZGH" firstAttribute="trailing" secondItem="5XL-5d-xmt" secondAttribute="trailing" constant="40" id="v6T-fq-WLg"/>
                             <constraint firstItem="YFY-SW-ZGH" firstAttribute="bottom" secondItem="5XL-5d-xmt" secondAttribute="bottom" constant="72" id="yWb-7V-u2T"/>
+                            <constraint firstItem="mNE-3q-Ucz" firstAttribute="leading" secondItem="YFY-SW-ZGH" secondAttribute="leading" constant="20" id="zM6-Qb-pUE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YFY-SW-ZGH"/>
                     </view>
@@ -229,11 +231,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wsg-e0-zBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-50" y="-36"/>
+            <point key="canvasLocation" x="-50.399999999999999" y="-36.431784107946029"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="209" height="264.5"/>
+        <image name="Background" width="528" height="528"/>
         <image name="iconBackArrow" width="32" height="32"/>
     </resources>
 </document>

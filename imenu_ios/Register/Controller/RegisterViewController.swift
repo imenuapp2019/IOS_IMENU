@@ -15,7 +15,6 @@ class RegisterViewController: UIViewController {
 
                     //IB outlets
     var validNewUser:User?
-    //let urlToPost:String = "http://localhost:8888/back_imenu-develop/public/api/register"
     let urlToPost = URL(string:"http://localhost:8888/back_imenu-develop/public/api/register")
     var emailValidation:Bool = false
     
@@ -49,8 +48,6 @@ class RegisterViewController: UIViewController {
         {
          avatarSelectionView.isHidden = true
         }
-        
-        
     }
     
 
@@ -58,7 +55,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        avatarSelectionView.isHidden = true
         textFieldConfig() //Confifure all the textfields.
         imageViewConfig() //Make the imageview circular
         
@@ -68,9 +65,6 @@ class RegisterViewController: UIViewController {
         
         //Make the roundedFrameView's border circular
         roundedFrameView.layer.cornerRadius = 15
-        
-       
-
     }
     
     private func imageViewConfig () {
@@ -154,8 +148,9 @@ class RegisterViewController: UIViewController {
                 else {
                     validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: 1)
                        passwordTextField.errorMessage = ""
-                     
-                    postAlamofire(user: validNewUser!)
+                     let apiManger = APIManager ()
+                    apiManger.postAlamofire(user: validNewUser!)
+                    //postAlamofire(user: validNewUser!)
                     }
                 }
 
@@ -166,41 +161,7 @@ class RegisterViewController: UIViewController {
                     }
         }
     }
-     
-    private func postAlamofire (user:User)  {
-    
         
-        let parameters:[String : Any] = [
-            "name":user.name!,
-            "lastName":user.lastName!,
-            "email" :user.email!,
-            "password":user.password!,
-            "avatar_id":user.avatar_id!
-        ]
-        
-        
-    let url = URL(string:"http://localhost:8888/back_imenu-develop/public/api/register")!
-       
-       AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-        .responseJSON { response in
-            print(response)
-        }
-        
-         
-    }
-                    
-                    
-              
-
-   
-
-    
-    
-  
-
-    
-
-    
     private func textFieldConfig () {
 
          nameTextField.placeholder = Literals.placedeHolderRegisterName
@@ -236,6 +197,7 @@ class RegisterViewController: UIViewController {
          passwordTextField.selectedLineColor = Color.greenBtnColor
          passwordTextField.lineHeight = 2.0
          passwordTextField.selectedLineHeight = 3.0
+        passwordTextField.isSecureTextEntry = true
          
          vrfPasswordTextField.placeholder = Literals.placedeHolderRegisterVrfPassword
          vrfPasswordTextField.title = Literals.placedeHolderRegisterVrfPassword
@@ -244,6 +206,7 @@ class RegisterViewController: UIViewController {
          vrfPasswordTextField.selectedLineColor = Color.greenBtnColor
          vrfPasswordTextField.lineHeight = 2.0
          vrfPasswordTextField.selectedLineHeight = 3.0
+        vrfPasswordTextField.isSecureTextEntry = true
          
          confirmBtn.setTitle(Literals.ConfirmRegisterBtn, for: .normal)
          confirmBtn.tintColor = Color.whiteColor
@@ -261,10 +224,7 @@ class RegisterViewController: UIViewController {
         return NSPredicate(format: "SELF MATCHES %@", REGEX).evaluate(with: YourEMailAddress)
     }
     
-    
-    
-    
-    
+
     //email texfield's validation (editing listener).
     @objc func textFieldDidChange(_ emailTextField: UITextField) {
            
@@ -278,19 +238,12 @@ class RegisterViewController: UIViewController {
                         // The error message will only disappear when we reset it to nil or empty string
                         
                              floatingLabelTextField.errorMessage = "Invalid email"
-                        
-                        
-    
                        
                     }
                 }
             }
         }
     
-
-
-
-
 
                                 //Extensions
 
