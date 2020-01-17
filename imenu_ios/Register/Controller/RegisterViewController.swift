@@ -15,7 +15,8 @@ class RegisterViewController: UIViewController {
 
                     //IB outlets
     var validNewUser:User?
-    let urlToPost:String = "google.es"
+    //let urlToPost:String = "http://localhost:8888/back_imenu-develop/public/api/register"
+    let urlToPost = URL(string:"http://localhost:8888/back_imenu-develop/public/api/register")
     var emailValidation:Bool = false
     
     @IBOutlet weak var registerAvatarImageView: UIImageView!
@@ -151,9 +152,10 @@ class RegisterViewController: UIViewController {
                     passwordTextField.errorMessage = "Contraseñas no coincidente"
                 }
                 else {
-                    validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: 0)
+                    validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: 1)
                        passwordTextField.errorMessage = ""
-                     postAlamofire()
+                     
+                    postAlamofire(user: validNewUser!)
                     }
                 }
 
@@ -165,38 +167,37 @@ class RegisterViewController: UIViewController {
         }
     }
      
-   private func postAlamofire ()  {
-        let json:Any?
-        let encoder = JSONEncoder ()
-
-        do {
-            let jsonData = try encoder.encode(validNewUser)
-            json = String(data: jsonData, encoding: String.Encoding.utf8)
-            print (json!)
-        } catch {
-
-            print ("Formato incorrecto")
-            
+    private func postAlamofire (user:User)  {
+    
+        
+        let parameters:[String : Any] = [
+            "name":user.name!,
+            "lastName":user.lastName!,
+            "email" :user.email!,
+            "password":user.password!,
+            "avatar_id":user.avatar_id!
+        ]
+        
+        
+    let url = URL(string:"http://localhost:8888/back_imenu-develop/public/api/register")!
+       
+       AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        .responseJSON { response in
+            print(response)
         }
-    
-    AF.request(urlToPost,
-               method: .post,
-               parameters: validNewUser,
-               encoder: JSONParameterEncoder.default).response { response in
-        debugPrint(response)
+        
+         
     }
-    
+                    
+                    
+              
+
    
-///   AF.request(urlToPost, method: .post, parameters: json, encoding: String.Encoding.utf8, headers: nil).responseJSON {
-////
-////               (response) in
-////                   print(response)
-////           }
-////
+
     
     
-    
-   }
+  
+
     
 
     
@@ -322,3 +323,4 @@ extension RegisterViewController {
     }
   }
 }
+
