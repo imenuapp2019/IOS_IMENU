@@ -147,7 +147,7 @@ class RegisterViewController: UIViewController {
                     passwordTextField.errorMessage = "Contraseñas no coincidente"
                 }
                 else {
-                    validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: 1)
+                    validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: 3)
                     passwordTextField.errorMessage = ""
                     let apiManger = APIManager ()
                     apiManger.postAlamofire(user: validNewUser!)
