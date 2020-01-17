@@ -10,15 +10,17 @@ import UIKit
 
 class User : Codable {
     
-    private var name:String?
-    private var lastname:String?
+    public var name:String?
+    public var lastName:String?
     public var email:String?
     public var password:String?
-    private var avatar_id:Int?
+    public var avatar_id:Int?
+   
+    
     
     init(name:String?, lastname:String?, email:String?, password:String?, avatar:Int?) {
         self.name = name
-        self.lastname = lastname
+        self.lastName = lastname
         self.email = email
         self.password = password
         self.avatar_id = avatar
