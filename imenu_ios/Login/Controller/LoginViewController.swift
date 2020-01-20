@@ -11,7 +11,6 @@ import SkyFloatingLabelTextField
 
 class LoginViewController: UIViewController {
     
-    
     @IBOutlet weak var imageLogo: UIImageView!
     @IBOutlet weak var imageBackground: UIImageView!
     
@@ -27,26 +26,29 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func btnContinueClicked(_ sender: Any) {
+        let apiManager = APIManager()
         if labelUserName.text == Literals.empty && labelUserPassword.text == Literals.empty {
             labelUserName.errorMessage = Literals.emptyEmailLabel
             labelUserPassword.errorMessage = Literals.emptyPassLabel
-        }else {
-        if labelUserName.text == Literals.empty {
-            labelUserName.errorMessage = Literals.emptyEmailLabel
-            labelUserPassword.errorMessage = Literals.empty
-        }
-        else if labelUserPassword.text == Literals.empty {
-            labelUserPassword.errorMessage = Literals.emptyPassLabel
-            labelUserName.errorMessage = Literals.empty
-        }else {
-            labelUserName.errorMessage = Literals.empty
-            labelUserPassword.errorMessage = Literals.empty
-            print("Envio de datos")
+        }else{
+            if labelUserName.text == Literals.empty {
+                labelUserName.errorMessage = Literals.emptyEmailLabel
+                labelUserPassword.errorMessage = Literals.empty
+            }
+            else if labelUserPassword.text == Literals.empty {
+                labelUserPassword.errorMessage = Literals.emptyPassLabel
+                labelUserName.errorMessage = Literals.empty
+            }else {
+                labelUserName.errorMessage = Literals.empty
+                labelUserPassword.errorMessage = Literals.empty
+                let user = User(email: labelUserName.text, password: labelUserPassword.text);
+                apiManager.postLogin(user: user)
+                print("Envio de datos")
             }
         }
     }
     
-     @IBAction func btninvitedClicked(_ sender: Any) {
+    @IBAction func btninvitedClicked(_ sender: Any) {
         
     }
     
@@ -94,7 +96,7 @@ class LoginViewController: UIViewController {
         let btnAttributes: [NSAttributedString.Key: Any] = [
             .underlineStyle: NSUnderlineStyle.single.rawValue]
         let attributeString = NSMutableAttributedString(string: Literals.btnRecoveryTitle,
-            attributes: btnAttributes)
+                                                        attributes: btnAttributes)
         
         eyeSecurity.isHidden = true
         eyeSecurity.backgroundColor = .clear

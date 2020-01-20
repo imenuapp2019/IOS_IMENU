@@ -25,6 +25,9 @@ class User : Codable {
         self.password = password
         self.avatar_id = avatar
     }
-
     
+    init(email:String?, password:String?) {
+        self.email = email
+        self.password = password
+    }
 }
