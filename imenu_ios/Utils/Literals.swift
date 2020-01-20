@@ -11,7 +11,7 @@ import Foundation
 open class Literals {
     static var labelUserPlaceholder = "Escriba su correo"
     static var labelUserTitle = "Email"
-    static var labelPasswordPlaceholder = "Colocar contraseña"
+    static var labelPasswordPlaceholder = "Escriba su contraseña"
     static var labelPasswordTitle = "Contraseña"
     static var btnInvitedTitle = "Registrarse mas tarde"
     static var btnRegistryTitle = "Registro"
@@ -27,6 +27,10 @@ open class Literals {
     static var msjErrorEmail = "Email"
     static var msjErrorPassLabel = "Contraseña no valida"
     static var empty = ""
-    static var emptyEmailLabel = "Campo correo vacio"
+    static var emptyEmailLabel = "Campo Email vacio"
     static var emptyPassLabel = "Campo contraseña vacio"
+    static var labelRecoverText = "Escribe tu email para recuperar contraseña:"
+    static var labelRecoverTittle = "Email"
+    static var labelRecoverPlaceHolder = "Email de recuperacion"
+    static var btnRecover = "Enviar"
 }
