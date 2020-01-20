@@ -44,7 +44,7 @@ class APIManager {
        
        AF.request(registerPostUrl!, method: .post, parameters: parameters, encoding: JSONEncoding.default)
         .responseJSON { response in
-            print(response)
+            print(response) 
         }
     }
 }
