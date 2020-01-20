@@ -43,7 +43,6 @@ class LoginViewController: UIViewController {
                 labelUserPassword.errorMessage = Literals.empty
                 let user = User(email: labelUserName.text, password: labelUserPassword.text);
                 apiManager.postLogin(user: user)
-                print("Envio de datos")
             }
         }
     }
