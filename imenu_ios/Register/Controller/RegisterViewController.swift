@@ -40,23 +40,14 @@ class RegisterViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func selectAvatarBtn(_ sender: Any) {
-        if avatarSelectionView.isHidden
-        {
-            avatarSelectionView.isHidden = false
-        }
-        else
-        {
-            avatarSelectionView.isHidden = true
-        }
-    }
+  
+    
     
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        avatarSelectionView.isHidden = true
         textFieldConfig() //Confifure all the textfields.
         imageViewConfig() //Make the imageview circular
         
@@ -66,6 +57,10 @@ class RegisterViewController: UIViewController {
         
         //Make the roundedFrameView's border circular
         roundedFrameView.layer.cornerRadius = 15
+        
+        
+      
+        
     }
     
     private func imageViewConfig () {
