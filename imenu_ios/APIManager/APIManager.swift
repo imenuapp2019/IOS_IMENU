@@ -19,7 +19,7 @@ class APIManager {
         "password": user.password
         ]
         
-        let url = "http://localhost:8888/back_imenu/public/api/login"
+        let url = "http://localhost:8888/back_imenu-develop/public/api/login"
         AF.request(url, method:.post, parameters:parameters as Parameters ,encoding: JSONEncoding.default).responseJSON { response in
                     switch response.result {
                     case .success:
