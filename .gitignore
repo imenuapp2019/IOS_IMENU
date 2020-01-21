@@ -1,2 +1,3 @@
-imenu_ios.xcodeproj
-imenu_ios.xcworkspace
+*.xcworkspace
+Pods/
+imenu_ios/
