@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3CD-Bi-vlD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3CD-Bi-vlD">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,7 +29,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvV-rL-uSt" userLabel="upperView">
                                                 <rect key="frame" x="0.0" y="0.0" width="285" height="163.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RH4-5C-y4E">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlatoSeis" translatesAutoresizingMaskIntoConstraints="NO" id="RH4-5C-y4E">
                                                         <rect key="frame" x="65" y="4.5" width="155" height="155"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="155" id="B4b-Jb-Vlj"/>
@@ -39,7 +40,7 @@
                                                         <rect key="frame" x="65" y="8" width="155" height="148"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <connections>
-                                                            <action selector="selectAvatarBtn:" destination="3CD-Bi-vlD" eventType="touchUpInside" id="tGH-ea-HZ0"/>
+                                                            <segue destination="ejh-NS-m2W" kind="presentation" id="cxC-S1-NcE"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -53,10 +54,16 @@
                                                 <rect key="frame" x="0.0" y="163.5" width="285" height="381.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="n6g-Sm-BlS">
-                                                        <rect key="frame" x="40" y="40" width="205" height="301.5"/>
+                                                        <rect key="frame" x="40" y="0.0" width="205" height="341.5"/>
                                                         <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Come con nosotros!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybY-BK-xSn">
+                                                                <rect key="frame" x="0.0" y="0.0" width="205" height="57"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                                <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdG-5o-PYw" userLabel="nameTextField" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="0.0" width="205" height="60.5"/>
+                                                                <rect key="frame" x="0.0" y="57" width="205" height="57"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -75,7 +82,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tGJ-zM-SyM" userLabel="lastNameTextField" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="60.5" width="205" height="60"/>
+                                                                <rect key="frame" x="0.0" y="114" width="205" height="57"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -94,7 +101,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-pR-kDJ" userLabel="emailTextField" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="120.5" width="205" height="60.5"/>
+                                                                <rect key="frame" x="0.0" y="171" width="205" height="56.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -113,8 +120,8 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fn-ae-uFH" userLabel="passwordTextField" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="181" width="205" height="60"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <rect key="frame" x="0.0" y="227.5" width="205" height="57"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -132,7 +139,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="doL-CI-d7B" userLabel="vrfPasswordTextField" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                                <rect key="frame" x="0.0" y="241" width="205" height="60.5"/>
+                                                                <rect key="frame" x="0.0" y="284.5" width="205" height="57"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -156,7 +163,7 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="n6g-Sm-BlS" secondAttribute="bottom" constant="40" id="2ZE-JL-bxG"/>
-                                                    <constraint firstItem="n6g-Sm-BlS" firstAttribute="top" secondItem="CPT-AU-ovv" secondAttribute="top" constant="40" id="U3A-dX-3un"/>
+                                                    <constraint firstItem="n6g-Sm-BlS" firstAttribute="top" secondItem="CPT-AU-ovv" secondAttribute="top" id="U3A-dX-3un"/>
                                                     <constraint firstItem="n6g-Sm-BlS" firstAttribute="leading" secondItem="CPT-AU-ovv" secondAttribute="leading" constant="40" id="YZr-3E-nwi"/>
                                                     <constraint firstAttribute="trailing" secondItem="n6g-Sm-BlS" secondAttribute="trailing" constant="40" id="z9E-od-2Gh"/>
                                                 </constraints>
@@ -195,33 +202,24 @@
                                     <action selector="backToLoginBtn:" destination="3CD-Bi-vlD" eventType="touchUpInside" id="Y94-fJ-thP"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mNE-3q-Ucz" userLabel="avatarView" customClass="AvatarViewController" customModule="imenu_ios" customModuleProvider="target">
-                                <rect key="frame" x="20" y="35" width="335" height="132"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Bih-Fn-ua7" firstAttribute="top" secondItem="5XL-5d-xmt" secondAttribute="bottom" constant="8" id="9R3-O0-9ur"/>
                             <constraint firstItem="YFY-SW-ZGH" firstAttribute="trailing" secondItem="Bih-Fn-ua7" secondAttribute="trailing" constant="72.5" id="VTc-HF-vd2"/>
-                            <constraint firstItem="YFY-SW-ZGH" firstAttribute="trailing" secondItem="mNE-3q-Ucz" secondAttribute="trailing" constant="20" id="YgD-HJ-bU3"/>
                             <constraint firstItem="5XL-5d-xmt" firstAttribute="leading" secondItem="YFY-SW-ZGH" secondAttribute="leading" constant="40" id="YuM-gW-FPB"/>
                             <constraint firstItem="YFY-SW-ZGH" firstAttribute="bottom" secondItem="Bih-Fn-ua7" secondAttribute="bottom" constant="16" id="bhD-Pr-UfQ"/>
-                            <constraint firstItem="YFY-SW-ZGH" firstAttribute="bottom" secondItem="mNE-3q-Ucz" secondAttribute="bottom" constant="500" id="c3t-QU-R70"/>
                             <constraint firstItem="Bih-Fn-ua7" firstAttribute="leading" secondItem="YFY-SW-ZGH" secondAttribute="leading" constant="72.5" id="chU-G3-FNT"/>
-                            <constraint firstItem="mNE-3q-Ucz" firstAttribute="top" secondItem="YFY-SW-ZGH" secondAttribute="top" constant="35" id="cvh-oG-CnD"/>
                             <constraint firstItem="5XL-5d-xmt" firstAttribute="top" secondItem="YFY-SW-ZGH" secondAttribute="top" constant="40" id="rqU-mx-rPo"/>
                             <constraint firstItem="YFY-SW-ZGH" firstAttribute="trailing" secondItem="5XL-5d-xmt" secondAttribute="trailing" constant="40" id="v6T-fq-WLg"/>
                             <constraint firstItem="YFY-SW-ZGH" firstAttribute="bottom" secondItem="5XL-5d-xmt" secondAttribute="bottom" constant="72" id="yWb-7V-u2T"/>
-                            <constraint firstItem="mNE-3q-Ucz" firstAttribute="leading" secondItem="YFY-SW-ZGH" secondAttribute="leading" constant="20" id="zM6-Qb-pUE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YFY-SW-ZGH"/>
                     </view>
                     <connections>
-                        <outlet property="avatarSelectionView" destination="mNE-3q-Ucz" id="0ni-nm-Dfq"/>
-                        <outlet property="background" destination="DaP-7Z-srE" id="9gj-1b-dOZ"/>
                         <outlet property="confirmBtn" destination="Bih-Fn-ua7" id="Pcu-qF-SXN"/>
                         <outlet property="emailTextField" destination="Jsd-pR-kDJ" id="Jug-0k-e9n"/>
+                        <outlet property="imageViewTableBackground" destination="DaP-7Z-srE" id="9gj-1b-dOZ"/>
                         <outlet property="lastNameTextField" destination="tGJ-zM-SyM" id="6PP-Tz-u8I"/>
                         <outlet property="nameTextField" destination="zdG-5o-PYw" id="i1d-vb-Atj"/>
                         <outlet property="passwordTextField" destination="1fn-ae-uFH" id="YJE-bm-YQ9"/>
@@ -232,10 +230,124 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wsg-e0-zBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-50.399999999999999" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="-314" y="-40"/>
+        </scene>
+        <!--Avatar View Controller-->
+        <scene sceneID="qzN-Pu-21T">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="ejh-NS-m2W" customClass="AvatarViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xca-gU-T4k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9w-Uv-vos">
+                                <rect key="frame" x="45" y="44" width="285" height="293"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cE3-NS-aaK">
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="293"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K6p-a8-MoS">
+                                                <rect key="frame" x="0.0" y="0.0" width="285" height="58.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡Elige avatar!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh3-rt-cJb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="285" height="58.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="gh3-rt-cJb" firstAttribute="leading" secondItem="K6p-a8-MoS" secondAttribute="leading" id="1bA-LZ-wdY"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gh3-rt-cJb" secondAttribute="bottom" id="6G9-mm-qre"/>
+                                                    <constraint firstItem="gh3-rt-cJb" firstAttribute="top" secondItem="K6p-a8-MoS" secondAttribute="top" id="8wL-Dq-i7f"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gh3-rt-cJb" secondAttribute="trailing" id="MIU-hf-p7O"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktf-BV-PCu">
+                                                <rect key="frame" x="0.0" y="58.5" width="285" height="234.5"/>
+                                                <subviews>
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hsc-ds-zJt">
+                                                        <rect key="frame" x="23" y="23" width="239" height="188.5"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="5" minimumInteritemSpacing="5" id="jiz-wO-Zfi">
+                                                            <size key="itemSize" width="75" height="69"/>
+                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        </collectionViewFlowLayout>
+                                                        <cells>
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="ZE7-6I-c76" customClass="AvatarCollectionViewCell" customModule="imenu_ios" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vZ3-65-GZY" customClass="AvatarCollectionViewCell" customModule="imenu_ios" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qEK-ze-fJZ">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="qEK-ze-fJZ" firstAttribute="top" secondItem="vZ3-65-GZY" secondAttribute="top" id="8n0-ko-noh"/>
+                                                                        <constraint firstItem="qEK-ze-fJZ" firstAttribute="leading" secondItem="vZ3-65-GZY" secondAttribute="leading" id="CW5-iS-zqc"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="qEK-ze-fJZ" secondAttribute="trailing" id="JQ3-1L-DyU"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="qEK-ze-fJZ" secondAttribute="bottom" id="eNu-3U-cNa"/>
+                                                                    </constraints>
+                                                                </collectionViewCellContentView>
+                                                                <size key="customSize" width="75" height="75"/>
+                                                                <connections>
+                                                                    <outlet property="avatarImageView" destination="qEK-ze-fJZ" id="uyS-tp-gNF"/>
+                                                                </connections>
+                                                            </collectionViewCell>
+                                                        </cells>
+                                                    </collectionView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Hsc-ds-zJt" secondAttribute="bottom" constant="23" id="Dis-jY-VIy"/>
+                                                    <constraint firstItem="Hsc-ds-zJt" firstAttribute="top" secondItem="ktf-BV-PCu" secondAttribute="top" constant="23" id="MZ5-ny-Son"/>
+                                                    <constraint firstItem="Hsc-ds-zJt" firstAttribute="leading" secondItem="ktf-BV-PCu" secondAttribute="leading" constant="23" id="g5Q-wq-6ie"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Hsc-ds-zJt" secondAttribute="trailing" constant="23" id="pBc-Bh-rOX"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="K6p-a8-MoS" firstAttribute="height" secondItem="cE3-NS-aaK" secondAttribute="height" multiplier="0.2" id="8jT-mq-aVS"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cE3-NS-aaK" secondAttribute="trailing" id="7YZ-1h-r6Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="cE3-NS-aaK" secondAttribute="bottom" id="Ede-jk-rmN"/>
+                                    <constraint firstItem="cE3-NS-aaK" firstAttribute="leading" secondItem="q9w-Uv-vos" secondAttribute="leading" id="ToS-Cy-mco"/>
+                                    <constraint firstItem="cE3-NS-aaK" firstAttribute="top" secondItem="q9w-Uv-vos" secondAttribute="top" id="tpm-lD-v54"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pwL-aa-q4Y" firstAttribute="bottom" secondItem="q9w-Uv-vos" secondAttribute="bottom" constant="330" id="MJq-Iz-5aj"/>
+                            <constraint firstItem="q9w-Uv-vos" firstAttribute="top" secondItem="pwL-aa-q4Y" secondAttribute="top" constant="44" id="f5V-f4-Cge"/>
+                            <constraint firstItem="q9w-Uv-vos" firstAttribute="leading" secondItem="pwL-aa-q4Y" secondAttribute="leading" constant="45" id="j9W-Bj-jLV"/>
+                            <constraint firstItem="pwL-aa-q4Y" firstAttribute="trailing" secondItem="q9w-Uv-vos" secondAttribute="trailing" constant="45" id="zEN-lV-fE7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pwL-aa-q4Y"/>
+                    </view>
+                    <connections>
+                        <outlet property="avatarViewLabel" destination="gh3-rt-cJb" id="Tuv-Qu-SRq"/>
+                        <outlet property="collectionView" destination="Hsc-ds-zJt" id="Nf6-Sq-qBF"/>
+                        <outlet property="popUpView" destination="q9w-Uv-vos" id="ZNy-5o-41g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B3I-XM-IiH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="520.79999999999995" y="-25.637181409295355"/>
         </scene>
     </scenes>
     <resources>
+        <image name="PlatoSeis" width="173" height="172"/>
         <image name="iconBackArrow" width="32" height="32"/>
     </resources>
 </document>
