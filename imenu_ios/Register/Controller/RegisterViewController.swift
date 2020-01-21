@@ -19,7 +19,7 @@ class RegisterViewController: UIViewController {
     var emailValidation:Bool = false
     var avatarChosen:Int = 1
     
-    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var imageViewTableBackground: UIImageView!
     @IBOutlet weak var registerAvatarImageView: UIImageView!
     @IBOutlet weak var roundedFrameView: UIView!
     @IBOutlet weak var nameTextField: SkyFloatingLabelTextField!
@@ -52,6 +52,7 @@ class RegisterViewController: UIViewController {
         textFieldsConfig() //Confifure all the textfields.
         imageViewConfig() //Make the imageview circular
         confirmButtonConfig()
+        imageViewTableBackground.image = #imageLiteral(resourceName: "Background")
         
         let tap = hideKeyboard()
         view.addGestureRecognizer(tap)
@@ -60,20 +61,13 @@ class RegisterViewController: UIViewController {
         //Make the roundedFrameView's border circular
         roundedFrameView.layer.cornerRadius = 15
         
-        print ("hola2")
       
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-      //  print ("hola")
-    }
-    override func viewDidLayoutSubviews() {
-        //print ("hola2")
-    }
-    
+  
     private func imageViewConfig () {
-        background.image = #imageLiteral(resourceName: "Background")
+       
         registerAvatarImageView.layer.borderWidth = 1
         registerAvatarImageView.layer.masksToBounds = false
         registerAvatarImageView.layer.borderColor = UIColor.black.cgColor
@@ -153,7 +147,7 @@ class RegisterViewController: UIViewController {
                         }
                    
                     else    {
-                                validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: 3)
+                                validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: avatarChosen)
                                 passwordTextField.errorMessage = ""
                                 let apiManger = APIManager ()
                                 apiManger.postAlamofire(user: validNewUser!)
@@ -167,9 +161,9 @@ class RegisterViewController: UIViewController {
             }
         
         else
-        {
-            passwordTextField.errorMessage = "Mínimo ocho caracteres"
-        }
+            {
+                passwordTextField.errorMessage = "Mínimo ocho caracteres"
+            }
         }
     }
     
@@ -204,19 +198,15 @@ class RegisterViewController: UIViewController {
         
         vrfPasswordTextField = textFieldBasicConfiguration(textfield: vrfPasswordTextField, name: Literals.placedeHolderRegisterVrfPassword)
         vrfPasswordTextField.isSecureTextEntry = true
-        
-       
-   
-        
-        
     }
     
     private func confirmButtonConfig (){
+        
             confirmBtn.setTitle(Literals.ConfirmRegisterBtn, for: .normal)
             confirmBtn.tintColor = Color.whiteColor
             confirmBtn.backgroundColor = Color.greenBtnColor
             confirmBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-              }
+      }
     
     
     

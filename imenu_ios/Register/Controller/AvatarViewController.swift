@@ -13,6 +13,7 @@ class AvatarViewController: UIViewController,UICollectionViewDelegate, UICollect
      var images:[UIImage] = [#imageLiteral(resourceName: "PlatoTres"),#imageLiteral(resourceName: "PlatoCuatro"),#imageLiteral(resourceName: "PlatoDos"),#imageLiteral(resourceName: "PlatoSeis"),#imageLiteral(resourceName: "PlatoUno"),#imageLiteral(resourceName: "PlatoCinco")]
     var avatarClicked:Int = 1
     
+    @IBOutlet weak var avatarViewLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var popUpView: UIView!
      
@@ -25,6 +26,8 @@ class AvatarViewController: UIViewController,UICollectionViewDelegate, UICollect
             
             collectionView.delegate = self
             collectionView.dataSource = self
+        
+        avatarViewLabel.backgroundColor = Color.greenBtnColor
       }
       
   
@@ -62,6 +65,7 @@ class AvatarViewController: UIViewController,UICollectionViewDelegate, UICollect
     func changeAvatarImageView() {
        if let presenter = presentingViewController as? RegisterViewController {
             presenter.registerAvatarImageView.image = images [avatarClicked]
+            presenter.avatarChosen = avatarClicked + 1
                   
            }
                dismiss(animated: true, completion: nil)

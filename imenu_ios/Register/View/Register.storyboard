@@ -217,9 +217,9 @@
                         <viewLayoutGuide key="safeArea" id="YFY-SW-ZGH"/>
                     </view>
                     <connections>
-                        <outlet property="background" destination="DaP-7Z-srE" id="9gj-1b-dOZ"/>
                         <outlet property="confirmBtn" destination="Bih-Fn-ua7" id="Pcu-qF-SXN"/>
                         <outlet property="emailTextField" destination="Jsd-pR-kDJ" id="Jug-0k-e9n"/>
+                        <outlet property="imageViewTableBackground" destination="DaP-7Z-srE" id="9gj-1b-dOZ"/>
                         <outlet property="lastNameTextField" destination="tGJ-zM-SyM" id="6PP-Tz-u8I"/>
                         <outlet property="nameTextField" destination="zdG-5o-PYw" id="i1d-vb-Atj"/>
                         <outlet property="passwordTextField" destination="1fn-ae-uFH" id="YJE-bm-YQ9"/>
@@ -336,6 +336,7 @@
                         <viewLayoutGuide key="safeArea" id="pwL-aa-q4Y"/>
                     </view>
                     <connections>
+                        <outlet property="avatarViewLabel" destination="gh3-rt-cJb" id="Tuv-Qu-SRq"/>
                         <outlet property="collectionView" destination="Hsc-ds-zJt" id="Nf6-Sq-qBF"/>
                         <outlet property="popUpView" destination="q9w-Uv-vos" id="ZNy-5o-41g"/>
                     </connections>
