@@ -27,6 +27,9 @@
 		9BB4D84623C8380C00CE6F38 /* Pods_imenu_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; };
 		9BB4D84723C8380C00CE6F38 /* Pods_imenu_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9BE79A3223CD11CA00669BCC /* Recover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE79A3123CD11CA00669BCC /* Recover.storyboard */; };
+		A04434BF23D76DB100E189A5 /* DishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04434BE23D76DB100E189A5 /* DishViewController.swift */; };
+		A04434C323D76DEA00E189A5 /* Dish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04434C223D76DEA00E189A5 /* Dish.storyboard */; };
+		A088402D23D7695400DCAB70 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = A088402C23D7695400DCAB70 /* Dish.swift */; };
 		A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */; };
 		A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CF2923C8EE9600E77B86 /* Color.swift */; };
 		A0CC912323D65B6600877543 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC912223D65B6600877543 /* AvatarViewController.swift */; };
@@ -98,6 +101,9 @@
 		9BB4D84923C8384600CE6F38 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SkyFloatingLabelTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB4D84C23C8388D00CE6F38 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE79A3123CD11CA00669BCC /* Recover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recover.storyboard; sourceTree = "<group>"; };
+		A04434BE23D76DB100E189A5 /* DishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DishViewController.swift; path = ../DishViewController.swift; sourceTree = "<group>"; };
+		A04434C223D76DEA00E189A5 /* Dish.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dish.storyboard; sourceTree = "<group>"; };
+		A088402C23D7695400DCAB70 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A0C9CF2923C8EE9600E77B86 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A0CC912223D65B6600877543 /* AvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				9B0B193A23D0CE0E002C9CCC /* User.swift */,
+				A088402C23D7695400DCAB70 /* Dish.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +256,7 @@
 		9B6F521223C772FF00943C71 /* imenu_ios */ = {
 			isa = PBXGroup;
 			children = (
+				A04434BD23D76D8100E189A5 /* Dish */,
 				9B0B193923D0CDDB002C9CCC /* Model */,
 				9B0B193223D0AFD6002C9CCC /* APIManager */,
 				9B214E5823C7B0D600969784 /* Utils */,
@@ -281,6 +289,31 @@
 				9B6F523723C7730700943C71 /* Info.plist */,
 			);
 			path = imenu_iosUITests;
+			sourceTree = "<group>";
+		};
+		A04434BD23D76D8100E189A5 /* Dish */ = {
+			isa = PBXGroup;
+			children = (
+				A04434C123D76DCE00E189A5 /* View */,
+				A04434C023D76DC300E189A5 /* Controller */,
+			);
+			path = Dish;
+			sourceTree = "<group>";
+		};
+		A04434C023D76DC300E189A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A04434BE23D76DB100E189A5 /* DishViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A04434C123D76DCE00E189A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A04434C223D76DEA00E189A5 /* Dish.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A0C9CEE423C792E600E77B86 /* Register */ = {
@@ -434,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B214E5423C7A2A400969784 /* Login.storyboard in Resources */,
+				A04434C323D76DEA00E189A5 /* Dish.storyboard in Resources */,
 				9B6F522023C7730600943C71 /* LaunchScreen.storyboard in Resources */,
 				9B0B193D23D0CEA4002C9CCC /* Register.storyboard in Resources */,
 				9B6F521D23C7730600943C71 /* Assets.xcassets in Resources */,
@@ -571,11 +605,13 @@
 				9BB3928523C9219200AA7AAC /* RoundButton.swift in Sources */,
 				9B0B193423D0B19A002C9CCC /* APIManager.swift in Sources */,
 				9B4FD55E23CCDF7900158709 /* RecoverViewController.swift in Sources */,
+				A04434BF23D76DB100E189A5 /* DishViewController.swift in Sources */,
 				9B6F521423C7730000943C71 /* AppDelegate.swift in Sources */,
 				A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */,
 				9B6F521623C7730000943C71 /* SceneDelegate.swift in Sources */,
 				9B0B193B23D0CE0E002C9CCC /* User.swift in Sources */,
 				A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */,
+				A088402D23D7695400DCAB70 /* Dish.swift in Sources */,
 				A0CC912523D663A600877543 /* AvatarCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,3 +7,8 @@
 //
 
 import Foundation
+class Dish {
+    var name:String?
+    var description:String?
+    var menuBelonged:Int?
+}
