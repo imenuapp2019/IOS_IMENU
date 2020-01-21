@@ -11,6 +11,7 @@ import UIKit
 class AvatarViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
     
      var images:[UIImage] = [#imageLiteral(resourceName: "PlatoTres"),#imageLiteral(resourceName: "PlatoCuatro"),#imageLiteral(resourceName: "PlatoDos"),#imageLiteral(resourceName: "PlatoSeis"),#imageLiteral(resourceName: "PlatoUno"),#imageLiteral(resourceName: "PlatoCinco")]
+    var avatarClicked:Int = 1
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var popUpView: UIView!
@@ -19,13 +20,11 @@ class AvatarViewController: UIViewController,UICollectionViewDelegate, UICollect
           super.viewDidLoad()
             popUpView.layer.cornerRadius = 10
             popUpView.layer.masksToBounds = true
-       
             popUpView.layer.borderColor = UIColor.black.cgColor
             popUpView.layer.borderWidth = 1
-        
+            
             collectionView.delegate = self
             collectionView.dataSource = self
-             
       }
       
   
@@ -45,24 +44,26 @@ class AvatarViewController: UIViewController,UICollectionViewDelegate, UICollect
         cell.avatarImageView.image = images[indexPath.row]
         
         
-        
-         
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DoWhenACellIsClicked(_:))))
+    
         return cell
-        
     }
     
-    
-    
-    
-    
-    
-  
-    
-   
-    
+    @objc func DoWhenACellIsClicked(_ sender: UITapGestureRecognizer) {
 
-  
-  
+        let location = sender.location(in: self.collectionView)
+        let indexPath = self.collectionView.indexPathForItem(at: location)
+        
+            avatarClicked = indexPath!.row
+            changeAvatarImageView()
+      }
     
     
+    func changeAvatarImageView() {
+       if let presenter = presentingViewController as? RegisterViewController {
+            presenter.registerAvatarImageView.image = images [avatarClicked]
+                  
+           }
+               dismiss(animated: true, completion: nil)
+           }
 }

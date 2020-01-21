@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController {
     var validNewUser:User?
     let urlToPost = URL(string:"http://localhost:8888/back_imenu-develop/public/api/register")
     var emailValidation:Bool = false
+    var avatarChosen:Int = 1
     
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var registerAvatarImageView: UIImageView!
@@ -48,8 +49,9 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldConfig() //Confifure all the textfields.
+        textFieldsConfig() //Confifure all the textfields.
         imageViewConfig() //Make the imageview circular
+        confirmButtonConfig()
         
         let tap = hideKeyboard()
         view.addGestureRecognizer(tap)
@@ -58,9 +60,16 @@ class RegisterViewController: UIViewController {
         //Make the roundedFrameView's border circular
         roundedFrameView.layer.cornerRadius = 15
         
-        
+        print ("hola2")
       
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+      //  print ("hola")
+    }
+    override func viewDidLayoutSubviews() {
+        //print ("hola2")
     }
     
     private func imageViewConfig () {
@@ -134,82 +143,80 @@ class RegisterViewController: UIViewController {
         
         
         if nameIsNotEmpty && lastNameIsNotEmpty && emailIsNotEmpty && passwordIsNotEmpty && vrfPasswordIsNotEmpty  {
-            print (password.count)
-            if password.count >= 8 {
-                
-                if password != vrfPassword
-                {
-                    passwordTextField.errorMessage = "Contraseñas no coincidente"
-                }
-                else {
-                    validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: 3)
-                    passwordTextField.errorMessage = ""
-                    let apiManger = APIManager ()
-                    apiManger.postAlamofire(user: validNewUser!)
-                    //postAlamofire(user: validNewUser!)
-                }
+            
+            if (password.count >= 8)   {
+                if (vrfPassword.count >= 8){
+                    if password != vrfPassword
+                        {
+                            passwordTextField.errorMessage = "Contraseñas no coincidente"
+                            vrfPasswordTextField.errorMessage = "Contraseñas no coincidente"
+                        }
+                   
+                    else    {
+                                validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: 3)
+                                passwordTextField.errorMessage = ""
+                                let apiManger = APIManager ()
+                                apiManger.postAlamofire(user: validNewUser!)
+                            }
+                        }
+                    
+                else
+                    {
+                         vrfPasswordTextField.errorMessage = "Mínimo ocho caracteres"
+                    }
             }
-                
-            else {
-                
-                passwordTextField.errorMessage = "Mínimo ocho caracteres"
-                
-            }
+        
+        else
+        {
+            passwordTextField.errorMessage = "Mínimo ocho caracteres"
+        }
         }
     }
     
-    private func textFieldConfig () {
+    
+    private func textFieldBasicConfiguration (textfield:SkyFloatingLabelTextField?, name:String)->SkyFloatingLabelTextField?{
         
-        nameTextField.placeholder = Literals.placedeHolderRegisterName
-        nameTextField.title = Literals.placedeHolderRegisterName
-        nameTextField.tintColor = Color.greenBtnColor
-        nameTextField.lineColor = Color.greenBtnColor
-        nameTextField.selectedLineColor = Color.greenBtnColor
-        nameTextField.lineHeight = 2.0
-        nameTextField.selectedLineHeight = 3.0
-        nameTextField.errorColor = Color.redColor
+            let textfield:SkyFloatingLabelTextField? = textfield
+            textfield!.tintColor = Color.greenBtnColor
+            textfield!.lineColor = Color.greenBtnColor
+            textfield!.selectedLineColor = Color.greenBtnColor
+            textfield!.lineHeight = 2.0
+            textfield!.selectedLineHeight = 3.0
+            textfield!.placeholder = name
+            textfield!.title = name
         
-        lastNameTextField.placeholder = Literals.placedeHolderRegisterLastName
-        lastNameTextField.title = Literals.placedeHolderRegisterLastName
-        lastNameTextField.tintColor = Color.greenBtnColor
-        lastNameTextField.lineColor = Color.greenBtnColor
-        lastNameTextField.selectedLineColor = Color.greenBtnColor
-        lastNameTextField.lineHeight = 2.0
-        lastNameTextField.selectedLineHeight = 3.0
+        return textfield
+    }
         
-        emailTextField.placeholder = Literals.placedeHolderRegisterEmail
-        emailTextField.title = Literals.placedeHolderRegisterEmail
-        emailTextField.tintColor = Color.greenBtnColor
-        emailTextField.lineColor = Color.greenBtnColor
-        emailTextField.selectedLineColor = Color.greenBtnColor
-        emailTextField.lineHeight = 2.0
-        emailTextField.selectedLineHeight = 3.0
+    private func textFieldsConfig () {
+        
+        nameTextField = textFieldBasicConfiguration(textfield: nameTextField, name: Literals.placedeHolderRegisterName)
+       
+        lastNameTextField = textFieldBasicConfiguration(textfield: lastNameTextField, name: Literals.placedeHolderRegisterLastName)
+        
+        emailTextField = textFieldBasicConfiguration(textfield: emailTextField, name: Literals.placedeHolderRegisterEmail)
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
-        passwordTextField.placeholder = Literals.placedeHolderRegisterPassword
-        passwordTextField.title = Literals.placedeHolderRegisterPassword
-        passwordTextField.tintColor = Color.greenBtnColor
-        passwordTextField.lineColor = Color.greenBtnColor
-        passwordTextField.selectedLineColor = Color.greenBtnColor
-        passwordTextField.lineHeight = 2.0
-        passwordTextField.selectedLineHeight = 3.0
+        
+        passwordTextField = textFieldBasicConfiguration(textfield: passwordTextField, name: Literals.placedeHolderRegisterPassword)
         passwordTextField.isSecureTextEntry = true
         
-        vrfPasswordTextField.placeholder = Literals.placedeHolderRegisterVrfPassword
-        vrfPasswordTextField.title = Literals.placedeHolderRegisterVrfPassword
-        vrfPasswordTextField.tintColor = Color.greenBtnColor
-        vrfPasswordTextField.lineColor = Color.greenBtnColor
-        vrfPasswordTextField.selectedLineColor = Color.greenBtnColor
-        vrfPasswordTextField.lineHeight = 2.0
-        vrfPasswordTextField.selectedLineHeight = 3.0
+        
+        vrfPasswordTextField = textFieldBasicConfiguration(textfield: vrfPasswordTextField, name: Literals.placedeHolderRegisterVrfPassword)
         vrfPasswordTextField.isSecureTextEntry = true
         
-        confirmBtn.setTitle(Literals.ConfirmRegisterBtn, for: .normal)
-        confirmBtn.tintColor = Color.whiteColor
-        confirmBtn.backgroundColor = Color.greenBtnColor
-        confirmBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+       
+   
+        
+        
     }
     
+    private func confirmButtonConfig (){
+            confirmBtn.setTitle(Literals.ConfirmRegisterBtn, for: .normal)
+            confirmBtn.tintColor = Color.whiteColor
+            confirmBtn.backgroundColor = Color.greenBtnColor
+            confirmBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+              }
     
     
     
