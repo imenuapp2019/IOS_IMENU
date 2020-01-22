@@ -9,8 +9,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        filterButton.setBackgroundImage(UIImage(named: "iconFilter"), for: .normal)
+        searchButton.setBackgroundImage(UIImage(named: "iconoLupa"), for: .normal)
+        filterButton.setTitle("", for: .normal)
+        searchButton.setTitle("", for: .normal)
 
         // Do any additional setup after loading the view.
     }
