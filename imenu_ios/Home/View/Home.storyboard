@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6fI-L8-10Y">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="8cB-cY-5cb">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="6fI-L8-10Y" customClass="HomeViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NIf-wm-fID">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykl-8D-8Em">
+                                <rect key="frame" x="331" y="632" width="39" height="30"/>
+                                <state key="normal" title="Menu"/>
+                                <connections>
+                                    <segue destination="mQX-2R-3a6" kind="show" id="prx-yU-IsO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dUM-rG-aIn" firstAttribute="trailing" secondItem="Ykl-8D-8Em" secondAttribute="trailing" constant="5" id="3e4-FJ-lQs"/>
+                            <constraint firstItem="dUM-rG-aIn" firstAttribute="bottom" secondItem="Ykl-8D-8Em" secondAttribute="bottom" constant="5" id="nN7-Md-AlR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dUM-rG-aIn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dwg-xz-3IQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="133"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="a4P-3f-vAH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" id="mQX-2R-3a6" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1du-67-ZDg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fc9-Lj-koV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="695" y="132"/>
+        </scene>
+    </scenes>
+</document>

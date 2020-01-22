@@ -54,6 +54,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="btnContinueClicked:" destination="ZUe-dw-3od" eventType="touchUpInside" id="YgN-kR-yKx"/>
+                                    <segue destination="v7q-io-hQM" kind="show" id="6Z9-gZ-hJr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHH-lI-eRd">
@@ -74,10 +75,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="AX9-If-rlV">
-                                <rect key="frame" x="70" y="344.5" width="235" height="113.5"/>
+                                <rect key="frame" x="70" y="355" width="235" height="103"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ase-nh-8z2" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="39.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -109,7 +110,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afe-3J-RSJ" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="74.5" width="235" height="39"/>
+                                        <rect key="frame" x="0.0" y="69" width="235" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -214,6 +215,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Djh-NV-lpg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-190" y="342"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="lgR-4f-tOc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="v7q-io-hQM" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="pQL-Ne-po3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tGq-f6-IbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-70" y="125"/>
         </scene>
     </scenes>
     <resources>
