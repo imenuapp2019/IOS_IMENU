@@ -10,29 +10,35 @@ import Foundation
 import Alamofire
 
 class APIManager {
-    let registerPostUrl = URL(string:"http://localhost:8888/back_imenu-develop/public/api/register")
+    let registerPostUrl = URL(string:"http://localhost:8888/back_imenu/public/api/register")
+    let LoginPostUrl = URL(string:"http://localhost:8888/back_imenu/public/api/login")
+    
     
     func postLogin(user:User){
         // parameters that are needed to be posted in the backend
-       let parameters = [
-        "email": user.email,
-        "password": user.password
+        let parameters = [
+            "email": user.email,
+            "password": user.password
         ]
         
-        let url = "http://localhost:8888/back_imenu-develop/public/api/login"
-        AF.request(url, method:.post, parameters:parameters as Parameters ,encoding: JSONEncoding.default).responseJSON { response in
-                    switch response.result {
-                    case .success:
-                       print(response)
-                    case .failure(let error):
-                        print(error )
-                    }
-                }
+        print("Entro en este post")
+        
+        AF.request(LoginPostUrl ?? "Login Vacio", method:.post, parameters:parameters as Parameters ,encoding: JSONEncoding.default).responseJSON { response in
+            switch response.result {
+            case .success:
+                print(response)
+                break
+            case .failure(let error):
+                print(error)
+                break
+            }
+            
+        }
     }
     
     
-    public func postAlamofire (user: User)  {
-       
+    public func postRegister (user: User,completion: @escaping (Bool?) -> Void){
+        
         let parameters:[String : Any] = [
             "name":user.name!,
             "lastName":user.lastName!,
@@ -40,11 +46,18 @@ class APIManager {
             "password":user.password!,
             "avatar_id":user.avatar_id!
         ]
-    
-       
-       AF.request(registerPostUrl!, method: .post, parameters: parameters, encoding: JSONEncoding.default)
-        .responseJSON { response in
-            print(response) 
+        
+        
+        AF.request(registerPostUrl ?? "Registro Vacio" , method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    completion(true)
+                    break
+                case .failure(_):
+                    completion(false)
+                    break
+                }
         }
     }
 }

@@ -226,11 +226,22 @@
                         <outlet property="registerAvatarImageView" destination="RH4-5C-y4E" id="904-hi-TPv"/>
                         <outlet property="roundedFrameView" destination="5XL-5d-xmt" id="DRk-Bz-ruE"/>
                         <outlet property="vrfPasswordTextField" destination="doL-CI-d7B" id="cjQ-Zu-725"/>
+                        <segue destination="0ac-cV-gjI" kind="show" identifier="segueHomeScreen" id="9St-8y-oZz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wsg-e0-zBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-314" y="-40"/>
+            <point key="canvasLocation" x="-258" y="-18"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="I1p-MA-RdR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="0ac-cV-gjI" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Md5-E5-Yfh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oKW-ea-l27" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="214" y="423"/>
         </scene>
         <!--Avatar View Controller-->
         <scene sceneID="qzN-Pu-21T">

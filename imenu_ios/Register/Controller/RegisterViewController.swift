@@ -41,12 +41,6 @@ class RegisterViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-  
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         textFieldsConfig() //Confifure all the textfields.
@@ -61,13 +55,13 @@ class RegisterViewController: UIViewController {
         //Make the roundedFrameView's border circular
         roundedFrameView.layer.cornerRadius = 15
         
-      
+        
         
     }
     
-  
+    
     private func imageViewConfig () {
-       
+        
         registerAvatarImageView.layer.borderWidth = 1
         registerAvatarImageView.layer.masksToBounds = false
         registerAvatarImageView.layer.borderColor = UIColor.black.cgColor
@@ -97,7 +91,6 @@ class RegisterViewController: UIViewController {
         }
         
         if lastname.isEmpty {
-            
             lastNameTextField.errorMessage = "Campo obligatorio"
         }
         else {
@@ -141,26 +134,30 @@ class RegisterViewController: UIViewController {
             if (password.count >= 8)   {
                 if (vrfPassword.count >= 8){
                     if password != vrfPassword
-                        {
-                            passwordTextField.errorMessage = "Contraseñas no coincidente"
-                            vrfPasswordTextField.errorMessage = "Contraseñas no coincidente"
-                        }
-                   
+                    {
+                        passwordTextField.errorMessage = "Contraseñas no coincidente"
+                        vrfPasswordTextField.errorMessage = "Contraseñas no coincidente"
+                    }
+                        
                     else    {
-                                validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: avatarChosen)
-                                passwordTextField.errorMessage = ""
-                                let apiManger = APIManager ()
-                                apiManger.postAlamofire(user: validNewUser!)
-                            }
-                        }
+                        validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: avatarChosen)
+                        passwordTextField.errorMessage = ""
+                        let apiManger = APIManager ()
+                        apiManger.postRegister(user: validNewUser!, completion: {result in
+                            guard let validRegister = result, validRegister == true else {
+                                return}
+                            self.performSegue(withIdentifier: "segueHomeScreen", sender: nil)
+                        })
+                    }
+                }
                     
                 else
-                    {
-                         vrfPasswordTextField.errorMessage = "Mínimo ocho caracteres"
-                    }
+                {
+                    vrfPasswordTextField.errorMessage = "Mínimo ocho caracteres"
+                }
             }
-        
-        else
+                
+            else
             {
                 passwordTextField.errorMessage = "Mínimo ocho caracteres"
             }
@@ -170,22 +167,22 @@ class RegisterViewController: UIViewController {
     
     private func textFieldBasicConfiguration (textfield:SkyFloatingLabelTextField?, name:String)->SkyFloatingLabelTextField?{
         
-            let textfield:SkyFloatingLabelTextField? = textfield
-            textfield!.tintColor = Color.greenBtnColor
-            textfield!.lineColor = Color.greenBtnColor
-            textfield!.selectedLineColor = Color.greenBtnColor
-            textfield!.lineHeight = 2.0
-            textfield!.selectedLineHeight = 3.0
-            textfield!.placeholder = name
-            textfield!.title = name
+        let textfield:SkyFloatingLabelTextField? = textfield
+        textfield!.tintColor = Color.greenBtnColor
+        textfield!.lineColor = Color.greenBtnColor
+        textfield!.selectedLineColor = Color.greenBtnColor
+        textfield!.lineHeight = 2.0
+        textfield!.selectedLineHeight = 3.0
+        textfield!.placeholder = name
+        textfield!.title = name
         
         return textfield
     }
-        
+    
     private func textFieldsConfig () {
         
         nameTextField = textFieldBasicConfiguration(textfield: nameTextField, name: Literals.placedeHolderRegisterName)
-       
+        
         lastNameTextField = textFieldBasicConfiguration(textfield: lastNameTextField, name: Literals.placedeHolderRegisterLastName)
         
         emailTextField = textFieldBasicConfiguration(textfield: emailTextField, name: Literals.placedeHolderRegisterEmail)
@@ -202,11 +199,11 @@ class RegisterViewController: UIViewController {
     
     private func confirmButtonConfig (){
         
-            confirmBtn.setTitle(Literals.ConfirmRegisterBtn, for: .normal)
-            confirmBtn.tintColor = Color.whiteColor
-            confirmBtn.backgroundColor = Color.greenBtnColor
-            confirmBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-      }
+        confirmBtn.setTitle(Literals.ConfirmRegisterBtn, for: .normal)
+        confirmBtn.tintColor = Color.whiteColor
+        confirmBtn.backgroundColor = Color.greenBtnColor
+        confirmBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+    }
     
     
     
@@ -269,4 +266,6 @@ extension RegisterViewController {
         }
     }
 }
+
+
 
