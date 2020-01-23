@@ -140,7 +140,7 @@ class RegisterViewController: UIViewController {
                     }
                         
                     else    {
-                        validNewUser = User (name: name, lastname: lastname, email: email, password: password, avatar: avatarChosen)
+                        validNewUser = User (name: name, lastName: lastname, email: email, password: password, avatarID: avatarChosen)
                         passwordTextField.errorMessage = ""
                         let apiManger = APIManager ()
                         apiManger.postRegister(user: validNewUser!, completion: {result in

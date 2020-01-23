@@ -26,7 +26,6 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func btnContinueClicked(_ sender: Any) {
-        let apiManager = APIManager()
         if labelUserName.text == Literals.empty && labelUserPassword.text == Literals.empty {
             labelUserName.errorMessage = Literals.emptyEmailLabel
             labelUserPassword.errorMessage = Literals.emptyPassLabel
@@ -41,9 +40,8 @@ class LoginViewController: UIViewController {
             }else {
                 labelUserName.errorMessage = Literals.empty
                 labelUserPassword.errorMessage = Literals.empty
-                let user = User(email: labelUserName.text, password: labelUserPassword.text);
-                apiManager.postLogin(user: user)
-                print("Entro aqui")
+//                let user = User(email: labelUserName.text, password: labelUserPassword.text);
+                //AQUI PETICION
             }
         }
     }

@@ -1,33 +1,37 @@
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
 //
-//  User.swift
-//  imenu_ios
-//
-//  Created by Eduardo Antonio Terrero Cabrera on 13/01/2020.
-//  Copyright © 2020 Miguel Jaimes. All rights reserved.
-//
+//   let user = try? newJSONDecoder().decode(User.self, from: jsonData)
 
-import UIKit
+import Foundation
 
-class User : Codable {
+
+// MARK: - User
+class User: Codable{
     
-    public var name:String?
-    public var lastName:String?
-    public var email:String?
-    public var password:String?
-    public var avatar_id:Int?
-   
+    let serverRequest: Int?
+    let name, lastName: String?
+    let email, password: String?
+    let apiToken: String?
+    let avatarID: Int?
     
-    
-    init(name:String?, lastname:String?, email:String?, password:String?, avatar:Int?) {
-        self.name = name
-        self.lastName = lastname
-        self.email = email
-        self.password = password
-        self.avatar_id = avatar
+    enum CodingKeys: String, CodingKey {
+        case serverRequest,name, lastName, email, password
+        case apiToken = "api_token"
+        case avatarID = "avatar_id"
     }
     
-    init(email:String?, password:String?) {
+    init(name: String?, lastName: String?,email: String?, password: String?, avatarID: Int?) {
+        self.serverRequest = nil
+        self.apiToken = nil
+        self.name = name
+        self.lastName = lastName
         self.email = email
         self.password = password
+        self.avatarID = avatarID
+    }
+    
+    convenience init(email: String?, password: String?) {
+        self.init(email:email,password:password)
     }
 }

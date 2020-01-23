@@ -6,7 +6,7 @@
 //  Copyright © 2020 Miguel Jaimes. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Alamofire
 
 class APIManager {
@@ -24,15 +24,17 @@ class APIManager {
         print("Entro en este post")
         
         AF.request(LoginPostUrl ?? "Login Vacio", method:.post, parameters:parameters as Parameters ,encoding: JSONEncoding.default).responseJSON { response in
-            switch response.result {
+            switch (response.result) {
             case .success:
-                print(response)
-                break
+                do{
+                    
+                }catch{
+                    
+                }
             case .failure(let error):
                 print(error)
-                break
+                
             }
-            
         }
     }
     
@@ -44,9 +46,8 @@ class APIManager {
             "lastName":user.lastName!,
             "email" :user.email!,
             "password":user.password!,
-            "avatar_id":user.avatar_id!
+            "avatar_id":user.avatarID!
         ]
-        
         
         AF.request(registerPostUrl ?? "Registro Vacio" , method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in
