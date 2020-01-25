@@ -31,7 +31,13 @@ class User: Codable{
         self.avatarID = avatarID
     }
     
-    convenience init(email: String?, password: String?) {
-        self.init(email:email,password:password)
+    init(email: String?, password: String?) {
+        self.email = email
+        self.password = password
+        self.avatarID = nil
+        self.serverRequest = nil
+        self.apiToken = nil
+        self.name = nil
+        self.lastName = nil
     }
 }

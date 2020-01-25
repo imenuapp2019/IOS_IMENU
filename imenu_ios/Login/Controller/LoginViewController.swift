@@ -40,8 +40,9 @@ class LoginViewController: UIViewController {
             }else {
                 labelUserName.errorMessage = Literals.empty
                 labelUserPassword.errorMessage = Literals.empty
-//                let user = User(email: labelUserName.text, password: labelUserPassword.text);
+                let user = User(email: labelUserName.text, password: labelUserPassword.text);
                 //AQUI PETICION
+                self.apiRequest(User:user)
             }
         }
     }
@@ -115,6 +116,22 @@ class LoginViewController: UIViewController {
         imageLogo.image = #imageLiteral(resourceName: "LogoImenu")
         imageBackground.image = #imageLiteral(resourceName: "Background")
         view.sendSubviewToBack(imageBackground)
+    }
+    
+    func apiRequest(User user:User){
+        let apiManager = APIManager()
+        apiManager.postLogin(user: user, completion: { result
+            in
+            if let code = result, code == 200 {
+                self.performSegue(withIdentifier: "segueHome", sender: nil)
+            }else{
+                let popUp = PopUp()
+                let alert = popUp.initializade(Title: "Upss...", Message: "No has podido entrar 🥺")
+                let btnOkAction = popUp.okAction(TitleButton: "Ok")
+                alert.addAction(btnOkAction)
+                self.present(alert, animated: true)
+            }
+        })
     }
     
 }

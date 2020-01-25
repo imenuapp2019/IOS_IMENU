@@ -14,30 +14,28 @@ class APIManager {
     let LoginPostUrl = URL(string:"http://localhost:8888/back_imenu/public/api/login")
     
     
-    func postLogin(user:User){
-        // parameters that are needed to be posted in the backend
+    func postLogin(user:User,completion: @escaping (Int?) -> Void){
+
         let parameters = [
             "email": user.email,
             "password": user.password
         ]
         
-        print("Entro en este post")
-        
         AF.request(LoginPostUrl ?? "Login Vacio", method:.post, parameters:parameters as Parameters ,encoding: JSONEncoding.default).responseJSON { response in
             switch (response.result) {
             case .success:
                 do{
-                    
+                    let decoder = JSONDecoder()
+                    let user = try! decoder.decode(User.self, from: response.data!)
+                    completion(user.serverRequest)
                 }catch{
-                    
+                    print(error.localizedDescription)
                 }
             case .failure(let error):
                 print(error)
-                
             }
         }
     }
-    
     
     public func postRegister (user: User,completion: @escaping (Bool?) -> Void){
         
