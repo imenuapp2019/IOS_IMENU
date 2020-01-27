@@ -126,8 +126,8 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "segueHome", sender: nil)
             }else{
                 let popUp = PopUp()
-                let alert = popUp.initializade(Title: "Upss...", Message: "No has podido entrar 🥺")
-                let btnOkAction = popUp.okAction(TitleButton: "Ok")
+                let alert = popUp.initializade(Title: Literals.titlePopUpLoginRequestWrong, Message: Literals.msjPopUpLoginRequestWrong)
+                let btnOkAction = popUp.okAction(TitleButton: Literals.titleBotonPopUps)
                 alert.addAction(btnOkAction)
                 self.present(alert, animated: true)
             }

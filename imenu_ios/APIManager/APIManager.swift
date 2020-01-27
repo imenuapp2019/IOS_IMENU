@@ -31,8 +31,9 @@ class APIManager {
                 }catch{
                     print(error.localizedDescription)
                 }
-            case .failure(let error):
-                print(error)
+            case .failure(_):
+                let code = 600
+                completion(code)
             }
         }
     }
