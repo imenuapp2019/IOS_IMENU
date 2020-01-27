@@ -9,22 +9,146 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        enum CardState {
+        case collapsed
+        case expanded
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    var nextState:CardState {
+        return cardVisible ? .collapsed : .expanded
     }
-    */
+    
+    var menuCardViewController:MenuCardViewController!
+    
+    var visualEffectView:UIVisualEffectView!
+    
+    var endCardHeight:CGFloat = 0
+    var startCardHeight:CGFloat = 0
+    
+    var cardVisible = false
 
+    var runningAnimations = [UIViewPropertyAnimator]()
+    var animationProgressWhenInterrupted:CGFloat = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupCard()
+        
+    }
+    
+   func setupCard() {
+    
+        endCardHeight = self.view.frame.height * 0.8
+        startCardHeight = self.view.frame.height * 0.7
+        
+        visualEffectView = UIVisualEffectView()
+        visualEffectView.frame = self.view.frame
+        self.view.addSubview(visualEffectView)
+
+        menuCardViewController = MenuCardViewController(nibName:"MenuCardViewController", bundle:nil)
+        self.view.addSubview(menuCardViewController.view)
+        menuCardViewController.view.frame = CGRect(x: 0, y: self.view.frame.height - startCardHeight, width: self.view.bounds.width, height: endCardHeight)
+        menuCardViewController.view.clipsToBounds = true
+        
+    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MenuViewController.handleCardTap(recognzier:)))
+    let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(MenuViewController.handleCardPan(recognizer:)))
+    
+    menuCardViewController.handleArea.addGestureRecognizer(tapGestureRecognizer)
+    menuCardViewController.handleArea.addGestureRecognizer(panGestureRecognizer)
+    }
+    
+    @objc
+    func handleCardTap(recognzier:UITapGestureRecognizer) {
+        switch recognzier.state {
+            // Animate card when tap finishes
+        case .ended:
+            animateTransitionIfNeeded(state: nextState, duration: 0.9)
+        default:
+            break
+        }
+    }
+    
+    @objc
+    func handleCardPan (recognizer:UIPanGestureRecognizer) {
+        switch recognizer.state {
+        case .began:
+            startInteractiveTransition(state: nextState, duration: 0.9)
+            
+        case .changed:
+            let translation = recognizer.translation(in: self.menuCardViewController.handleArea)
+            var fractionComplete = translation.y / endCardHeight
+            fractionComplete = cardVisible ? fractionComplete : -fractionComplete
+            updateInteractiveTransition(fractionCompleted: fractionComplete)
+        case .ended:
+            continueInteractiveTransition()
+        default:
+            break
+        }
+    }
+    
+     func animateTransitionIfNeeded (state:CardState, duration:TimeInterval) {
+         if runningAnimations.isEmpty {
+             let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
+                 switch state {
+                 case .expanded:
+                     self.menuCardViewController.view.frame.origin.y = self.view.frame.height - self.endCardHeight
+                     self.visualEffectView.effect = UIBlurEffect(style: .dark)
+    
+                 case .collapsed:
+                     self.menuCardViewController.view.frame.origin.y = self.view.frame.height - self.startCardHeight
+                     
+                     self.visualEffectView.effect = nil
+                 }
+             }
+             
+             frameAnimator.addCompletion { _ in
+                 self.cardVisible = !self.cardVisible
+                 self.runningAnimations.removeAll()
+             }
+             
+             frameAnimator.startAnimation()
+             
+             runningAnimations.append(frameAnimator)
+             
+             let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
+                 switch state {
+                 case .expanded:
+                     self.menuCardViewController.view.layer.cornerRadius = 30
+                     
+                 case .collapsed:
+                    self.menuCardViewController.view.layer.cornerRadius = 0
+                 }
+             }
+             
+             cornerRadiusAnimator.startAnimation()
+             
+             runningAnimations.append(cornerRadiusAnimator)
+             
+         }
+     }
+     
+     func startInteractiveTransition(state:CardState, duration:TimeInterval) {
+         
+         if runningAnimations.isEmpty {
+             animateTransitionIfNeeded(state: state, duration: duration)
+         }
+         
+         for animator in runningAnimations {
+             animator.pauseAnimation()
+             animationProgressWhenInterrupted = animator.fractionComplete
+         }
+     }
+     
+     func updateInteractiveTransition(fractionCompleted:CGFloat) {
+         for animator in runningAnimations {
+             animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
+         }
+     }
+     
+     func continueInteractiveTransition (){
+         for animator in runningAnimations {
+             animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+         }
+     }
+    
 }
