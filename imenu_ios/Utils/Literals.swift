@@ -33,4 +33,7 @@ open class Literals {
     static var labelRecoverTittle = "Email"
     static var labelRecoverPlaceHolder = "Email de recuperacion"
     static var btnRecover = "Enviar"
+    static var msjPopUpLoginRequestWrong = "No has podido entrar 🥺"
+    static var titlePopUpLoginRequestWrong = "Upss..."
+    static var titleBotonPopUps = "Ok"
 }

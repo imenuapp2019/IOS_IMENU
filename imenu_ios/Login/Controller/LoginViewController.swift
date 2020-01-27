@@ -26,7 +26,6 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func btnContinueClicked(_ sender: Any) {
-        let apiManager = APIManager()
         if labelUserName.text == Literals.empty && labelUserPassword.text == Literals.empty {
             labelUserName.errorMessage = Literals.emptyEmailLabel
             labelUserPassword.errorMessage = Literals.emptyPassLabel
@@ -42,7 +41,8 @@ class LoginViewController: UIViewController {
                 labelUserName.errorMessage = Literals.empty
                 labelUserPassword.errorMessage = Literals.empty
                 let user = User(email: labelUserName.text, password: labelUserPassword.text);
-                apiManager.postLogin(user: user)
+                //AQUI PETICION
+                self.apiRequest(User:user)
             }
         }
     }
@@ -116,6 +116,22 @@ class LoginViewController: UIViewController {
         imageLogo.image = #imageLiteral(resourceName: "LogoImenu")
         imageBackground.image = #imageLiteral(resourceName: "Background")
         view.sendSubviewToBack(imageBackground)
+    }
+    
+    func apiRequest(User user:User){
+        let apiManager = APIManager()
+        apiManager.postLogin(user: user, completion: { result
+            in
+            if let code = result, code == 200 {
+                self.performSegue(withIdentifier: "segueHome", sender: nil)
+            }else{
+                let popUp = PopUp()
+                let alert = popUp.initializade(Title: Literals.titlePopUpLoginRequestWrong, Message: Literals.msjPopUpLoginRequestWrong)
+                let btnOkAction = popUp.okAction(TitleButton: Literals.titleBotonPopUps)
+                alert.addAction(btnOkAction)
+                self.present(alert, animated: true)
+            }
+        })
     }
     
 }
