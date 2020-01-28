@@ -44,7 +44,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     
     
     var listRestaurants : [Restaurant] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
