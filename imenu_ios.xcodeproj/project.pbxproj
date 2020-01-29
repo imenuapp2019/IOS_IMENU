@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		31E56898EE0ADFC90CA230C6 /* Pods_imenu_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0930CB59322BE8640C5767 /* Pods_imenu_iosTests.framework */; };
+		5C02DC7723E088C50006A9EF /* FilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02DC7623E088C50006A9EF /* FilViewController.swift */; };
+		5C4AFB7923E1FCAC00D2EADF /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AFB7823E1FCAC00D2EADF /* PopUp.swift */; };
+		5C4AFB7B23E1FCF900D2EADF /* RestaurantCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AFB7A23E1FCF900D2EADF /* RestaurantCollectionView.swift */; };
+		5CED261F23D9F642009B8E09 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CED261E23D9F642009B8E09 /* Restaurant.swift */; };
 		6787A17E6DD436B7361BF7C1 /* Pods_imenu_ios_imenu_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60315DF23628922134D9BC4D /* Pods_imenu_ios_imenu_iosUITests.framework */; };
-		9B085DA223D8B515005EB5BF /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B085DA123D8B515005EB5BF /* PopUp.swift */; };
 		9B0B193423D0B19A002C9CCC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0B193323D0B19A002C9CCC /* APIManager.swift */; };
 		9B0B193D23D0CEA4002C9CCC /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0B193C23D0CEA3002C9CCC /* Register.storyboard */; };
 		9B214E4D23C795F500969784 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B214E4C23C795F500969784 /* LoginViewController.swift */; };
@@ -80,12 +83,15 @@
 /* Begin PBXFileReference section */
 		082D9F10D3123919B8CF00F5 /* Pods-imenu_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imenu_iosTests.release.xcconfig"; path = "Target Support Files/Pods-imenu_iosTests/Pods-imenu_iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		3FF8D8B755A3EBA7853E90AD /* Pods-imenu_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imenu_ios.debug.xcconfig"; path = "Target Support Files/Pods-imenu_ios/Pods-imenu_ios.debug.xcconfig"; sourceTree = "<group>"; };
+		5C02DC7623E088C50006A9EF /* FilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilViewController.swift; sourceTree = "<group>"; };
+		5C4AFB7823E1FCAC00D2EADF /* PopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
+		5C4AFB7A23E1FCF900D2EADF /* RestaurantCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestaurantCollectionView.swift; path = /Users/loren/Desktop/ios_imenu/imenu_ios/Home/Controller/RestaurantCollectionView.swift; sourceTree = "<absolute>"; };
+		5CED261E23D9F642009B8E09 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		60315DF23628922134D9BC4D /* Pods_imenu_ios_imenu_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imenu_ios_imenu_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62946C86303780BF40867219 /* Pods-imenu_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imenu_ios.release.xcconfig"; path = "Target Support Files/Pods-imenu_ios/Pods-imenu_ios.release.xcconfig"; sourceTree = "<group>"; };
 		780816B4C2DFEF1D2FB49D53 /* Pods-imenu_ios-imenu_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imenu_ios-imenu_iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-imenu_ios-imenu_iosUITests/Pods-imenu_ios-imenu_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		80A94295DE0CEC502372C074 /* Pods_imenu_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imenu_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE89641C52ED08720F4FB8D /* Pods-imenu_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imenu_iosTests.debug.xcconfig"; path = "Target Support Files/Pods-imenu_iosTests/Pods-imenu_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9B085DA123D8B515005EB5BF /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		9B0B193323D0B19A002C9CCC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		9B0B193C23D0CEA3002C9CCC /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		9B214E4C23C795F500969784 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 		9B0B193923D0CDDB002C9CCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5CED261E23D9F642009B8E09 /* Restaurant.swift */,
 				A088402C23D7695400DCAB70 /* Dish.swift */,
 				9B617BEE23DA11BB0017F9A3 /* User.swift */,
 			);
@@ -217,10 +224,10 @@
 		9B214E5823C7B0D600969784 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5C4AFB7823E1FCAC00D2EADF /* PopUp.swift */,
 				9B214E5923C7B11300969784 /* Literals.swift */,
 				A0C9CF2923C8EE9600E77B86 /* Color.swift */,
 				9BB3928423C9219200AA7AAC /* RoundButton.swift */,
-				9B085DA123D8B515005EB5BF /* PopUp.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -361,6 +368,8 @@
 			isa = PBXGroup;
 			children = (
 				9BAD3DA023D8A499004908DA /* HomeViewController.swift */,
+				5C02DC7623E088C50006A9EF /* FilViewController.swift */,
+				5C4AFB7A23E1FCF900D2EADF /* RestaurantCollectionView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -708,18 +717,21 @@
 				9B214E5A23C7B11300969784 /* Literals.swift in Sources */,
 				9BB3928523C9219200AA7AAC /* RoundButton.swift in Sources */,
 				9B0B193423D0B19A002C9CCC /* APIManager.swift in Sources */,
+				5C4AFB7923E1FCAC00D2EADF /* PopUp.swift in Sources */,
 				9BAD3DA123D8A499004908DA /* HomeViewController.swift in Sources */,
 				9B4FD55E23CCDF7900158709 /* RecoverViewController.swift in Sources */,
+				5C4AFB7B23E1FCF900D2EADF /* RestaurantCollectionView.swift in Sources */,
+				5CED261F23D9F642009B8E09 /* Restaurant.swift in Sources */,
 				9BAD3DA623D8A4D7004908DA /* MenuViewController.swift in Sources */,
 				A04434BF23D76DB100E189A5 /* DishViewController.swift in Sources */,
 				9B6F521423C7730000943C71 /* AppDelegate.swift in Sources */,
 				A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */,
 				9B6F521623C7730000943C71 /* SceneDelegate.swift in Sources */,
+				5C02DC7723E088C50006A9EF /* FilViewController.swift in Sources */,
 				A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */,
 				9B85C03C23DF58C10093DDAC /* MenuCardViewController.swift in Sources */,
 				9B617BEF23DA11BB0017F9A3 /* User.swift in Sources */,
 				A088402D23D7695400DCAB70 /* Dish.swift in Sources */,
-				9B085DA223D8B515005EB5BF /* PopUp.swift in Sources */,
 				A0CC912523D663A600877543 /* AvatarCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
