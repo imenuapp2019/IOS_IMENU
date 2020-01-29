@@ -27,6 +27,13 @@
 		9B6F522B23C7730700943C71 /* ImenuIosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F522A23C7730700943C71 /* ImenuIosTests.swift */; };
 		9B6F523623C7730700943C71 /* ImenuIosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F523523C7730700943C71 /* ImenuIosUITests.swift */; };
 		9B9A82EB23E2162C00A50749 /* RestaurantCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82EA23E2162C00A50749 /* RestaurantCollectionView.swift */; };
+		9B85C03C23DF58C10093DDAC /* MenuCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85C03A23DF58C10093DDAC /* MenuCardViewController.swift */; };
+		9B85C03D23DF58C10093DDAC /* MenuCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B85C03B23DF58C10093DDAC /* MenuCardViewController.xib */; };
+		9B9A82D723E209C000A50749 /* RestaurantCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82D623E209C000A50749 /* RestaurantCollectionView.swift */; };
+		9B9A82E423E20CF000A50749 /* DishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82E223E20CF000A50749 /* DishViewController.swift */; };
+		9B9A82E523E20CF000A50749 /* DishCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82E323E20CF000A50749 /* DishCollectionViewCell.swift */; };
+		9B9A82E723E20CF900A50749 /* Dish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9A82E623E20CF900A50749 /* Dish.storyboard */; };
+		9B9A82E923E20D0D00A50749 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82E823E20D0D00A50749 /* FetchData.swift */; };
 		9BAD3D9F23D8A484004908DA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BAD3D9E23D8A484004908DA /* Home.storyboard */; };
 		9BAD3DA123D8A499004908DA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD3DA023D8A499004908DA /* HomeViewController.swift */; };
 		9BAD3DA423D8A4C4004908DA /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BAD3DA323D8A4C4004908DA /* Menu.storyboard */; };
@@ -37,8 +44,6 @@
 		9BB4D84623C8380C00CE6F38 /* Pods_imenu_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; };
 		9BB4D84723C8380C00CE6F38 /* Pods_imenu_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9BE79A3223CD11CA00669BCC /* Recover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE79A3123CD11CA00669BCC /* Recover.storyboard */; };
-		A04434BF23D76DB100E189A5 /* DishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04434BE23D76DB100E189A5 /* DishViewController.swift */; };
-		A04434C323D76DEA00E189A5 /* Dish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04434C223D76DEA00E189A5 /* Dish.storyboard */; };
 		A088402D23D7695400DCAB70 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = A088402C23D7695400DCAB70 /* Dish.swift */; };
 		A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */; };
 		A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CF2923C8EE9600E77B86 /* Color.swift */; };
@@ -110,6 +115,13 @@
 		9B6F523523C7730700943C71 /* ImenuIosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImenuIosUITests.swift; sourceTree = "<group>"; };
 		9B6F523723C7730700943C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B9A82EA23E2162C00A50749 /* RestaurantCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCollectionView.swift; sourceTree = "<group>"; };
+		9B85C03A23DF58C10093DDAC /* MenuCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardViewController.swift; sourceTree = "<group>"; };
+		9B85C03B23DF58C10093DDAC /* MenuCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCardViewController.xib; sourceTree = "<group>"; };
+		9B9A82D623E209C000A50749 /* RestaurantCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestaurantCollectionView.swift; path = /Users/migueljaimes/Desktop/ios_imenu/imenu_ios/Home/Controller/RestaurantCollectionView.swift; sourceTree = "<absolute>"; };
+		9B9A82E223E20CF000A50749 /* DishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishViewController.swift; sourceTree = "<group>"; };
+		9B9A82E323E20CF000A50749 /* DishCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B9A82E623E20CF900A50749 /* Dish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dish.storyboard; sourceTree = "<group>"; };
+		9B9A82E823E20D0D00A50749 /* FetchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		9BAD3D9E23D8A484004908DA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9BAD3DA023D8A499004908DA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9BAD3DA323D8A4C4004908DA /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
@@ -121,8 +133,6 @@
 		9BB4D84923C8384600CE6F38 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SkyFloatingLabelTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB4D84C23C8388D00CE6F38 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE79A3123CD11CA00669BCC /* Recover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recover.storyboard; sourceTree = "<group>"; };
-		A04434BE23D76DB100E189A5 /* DishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DishViewController.swift; path = ../DishViewController.swift; sourceTree = "<group>"; };
-		A04434C223D76DEA00E189A5 /* Dish.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dish.storyboard; sourceTree = "<group>"; };
 		A088402C23D7695400DCAB70 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A0C9CF2923C8EE9600E77B86 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -185,6 +195,7 @@
 		9B0B193923D0CDDB002C9CCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B9A82E823E20D0D00A50749 /* FetchData.swift */,
 				5CED261E23D9F642009B8E09 /* Restaurant.swift */,
 				A088402C23D7695400DCAB70 /* Dish.swift */,
 				9B617BEE23DA11BB0017F9A3 /* User.swift */,
@@ -278,13 +289,13 @@
 		9B6F521223C772FF00943C71 /* imenu_ios */ = {
 			isa = PBXGroup;
 			children = (
+				9B9A82DF23E20C9400A50749 /* Dish */,
 				9B0B193223D0AFD6002C9CCC /* APIManager */,
 				9B214E4423C783B300969784 /* Login */,
 				9B4FD55623CCDECD00158709 /* Recover */,
 				A0C9CEE423C792E600E77B86 /* Register */,
 				9BAD3D9923D8A43B004908DA /* Home */,
 				9BAD3D9823D8A430004908DA /* Menu */,
-				A04434BD23D76D8100E189A5 /* Dish */,
 				9BAD3DA723D8A5D7004908DA /* DetailDish */,
 				9B0B193923D0CDDB002C9CCC /* Model */,
 				9B214E5823C7B0D600969784 /* Utils */,
@@ -316,6 +327,32 @@
 			path = imenu_iosUITests;
 			sourceTree = "<group>";
 		};
+		9B9A82DF23E20C9400A50749 /* Dish */ = {
+			isa = PBXGroup;
+			children = (
+				9B9A82E123E20CA600A50749 /* Controller */,
+				9B9A82E023E20C9E00A50749 /* View */,
+			);
+			path = Dish;
+			sourceTree = "<group>";
+		};
+		9B9A82E023E20C9E00A50749 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9B9A82E623E20CF900A50749 /* Dish.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9B9A82E123E20CA600A50749 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9B9A82E323E20CF000A50749 /* DishCollectionViewCell.swift */,
+				9B9A82E223E20CF000A50749 /* DishViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		9BAD3D9823D8A430004908DA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +374,7 @@
 		9BAD3D9A23D8A44A004908DA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9B85C03B23DF58C10093DDAC /* MenuCardViewController.xib */,
 				9BAD3DA323D8A4C4004908DA /* Menu.storyboard */,
 			);
 			path = View;
@@ -346,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				9BAD3DA523D8A4D7004908DA /* MenuViewController.swift */,
+				9B85C03A23DF58C10093DDAC /* MenuCardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -362,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				9B9A82EA23E2162C00A50749 /* RestaurantCollectionView.swift */,
+				9B9A82D623E209C000A50749 /* RestaurantCollectionView.swift */,
 				9BAD3DA023D8A499004908DA /* HomeViewController.swift */,
 				5C02DC7623E088C50006A9EF /* FilViewController.swift */,
 			);
@@ -391,31 +431,6 @@
 				9BAD3DAC23D8A614004908DA /* DetailDishViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		A04434BD23D76D8100E189A5 /* Dish */ = {
-			isa = PBXGroup;
-			children = (
-				A04434C123D76DCE00E189A5 /* View */,
-				A04434C023D76DC300E189A5 /* Controller */,
-			);
-			path = Dish;
-			sourceTree = "<group>";
-		};
-		A04434C023D76DC300E189A5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				A04434BE23D76DB100E189A5 /* DishViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		A04434C123D76DCE00E189A5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A04434C223D76DEA00E189A5 /* Dish.storyboard */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		A0C9CEE423C792E600E77B86 /* Register */ = {
@@ -569,13 +584,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B214E5423C7A2A400969784 /* Login.storyboard in Resources */,
-				A04434C323D76DEA00E189A5 /* Dish.storyboard in Resources */,
+				9B85C03D23DF58C10093DDAC /* MenuCardViewController.xib in Resources */,
 				9B6F522023C7730600943C71 /* LaunchScreen.storyboard in Resources */,
 				9BAD3DA423D8A4C4004908DA /* Menu.storyboard in Resources */,
 				9B0B193D23D0CEA4002C9CCC /* Register.storyboard in Resources */,
 				9B6F521D23C7730600943C71 /* Assets.xcassets in Resources */,
 				9B214E5723C7AA2C00969784 /* Main.storyboard in Resources */,
 				9BAD3DAB23D8A600004908DA /* DetailDish.storyboard in Resources */,
+				9B9A82E723E20CF900A50749 /* Dish.storyboard in Resources */,
 				9BE79A3223CD11CA00669BCC /* Recover.storyboard in Resources */,
 				9BAD3D9F23D8A484004908DA /* Home.storyboard in Resources */,
 			);
@@ -711,19 +727,23 @@
 				9BB3928523C9219200AA7AAC /* RoundButton.swift in Sources */,
 				9B0B193423D0B19A002C9CCC /* APIManager.swift in Sources */,
 				5C4AFB7923E1FCAC00D2EADF /* PopUp.swift in Sources */,
+				9B9A82E523E20CF000A50749 /* DishCollectionViewCell.swift in Sources */,
 				9BAD3DA123D8A499004908DA /* HomeViewController.swift in Sources */,
 				9B4FD55E23CCDF7900158709 /* RecoverViewController.swift in Sources */,
 				9B9A82EB23E2162C00A50749 /* RestaurantCollectionView.swift in Sources */,
 				5CED261F23D9F642009B8E09 /* Restaurant.swift in Sources */,
 				9BAD3DA623D8A4D7004908DA /* MenuViewController.swift in Sources */,
-				A04434BF23D76DB100E189A5 /* DishViewController.swift in Sources */,
 				9B6F521423C7730000943C71 /* AppDelegate.swift in Sources */,
 				A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */,
 				9B6F521623C7730000943C71 /* SceneDelegate.swift in Sources */,
 				5C02DC7723E088C50006A9EF /* FilViewController.swift in Sources */,
 				A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */,
+				9B9A82D723E209C000A50749 /* RestaurantCollectionView.swift in Sources */,
+				9B85C03C23DF58C10093DDAC /* MenuCardViewController.swift in Sources */,
+				9B9A82E423E20CF000A50749 /* DishViewController.swift in Sources */,
 				9B617BEF23DA11BB0017F9A3 /* User.swift in Sources */,
 				A088402D23D7695400DCAB70 /* Dish.swift in Sources */,
+				9B9A82E923E20D0D00A50749 /* FetchData.swift in Sources */,
 				A0CC912523D663A600877543 /* AvatarCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
