@@ -9,6 +9,7 @@ target 'imenu_ios' do
     pod 'Alamofire', '~> 5.0.0-rc.3'
     pod 'SwiftLint'
     pod 'SkyFloatingLabelTextField', '~> 3.0'
+    pod 'McPicker', '~> 2.0.0'
 
   target 'imenu_iosTests' do
     inherit! :search_paths

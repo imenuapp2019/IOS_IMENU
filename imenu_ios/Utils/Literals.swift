@@ -36,4 +36,9 @@ open class Literals {
     static var msjPopUpLoginRequestWrong = "No has podido entrar 🥺"
     static var titlePopUpLoginRequestWrong = "Upss..."
     static var titleBotonPopUps = "Ok"
+    static var labelFilterTP = "Tipo de Comida"
+    static var labelFilterPrice = "Precio"
+    static var labelFilterDistance = "Distancia"
+    static var btnFilter = "Buscar"
+    static var labelAlertView = "Restaurantes Cerca de Ti"
 }

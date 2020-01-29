@@ -10,8 +10,8 @@ import UIKit
 import Alamofire
 
 class APIManager {
-    let registerPostUrl = URL(string:"http://localhost:8888/back_imenu/public/api/register")
-    let LoginPostUrl = URL(string:"http://localhost:8888/back_imenu/public/api/login")
+    let registerPostUrl = URL(string:"http://localhost:8888/back_imenu-develop/public/api/register")
+    let LoginPostUrl = URL(string: "http://localhost:888/")
     
     
     func postLogin(user:User,completion: @escaping (Int?) -> Void){

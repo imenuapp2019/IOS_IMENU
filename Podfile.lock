@@ -1,24 +1,28 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
+  - McPicker (2.0.1)
   - SkyFloatingLabelTextField (3.8.0)
   - SwiftLint (0.38.2)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
+  - McPicker (~> 2.0.0)
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - McPicker
     - SkyFloatingLabelTextField
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  McPicker: a0a6b8ece8f1642e05401a29867463aba501188b
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
 
-PODFILE CHECKSUM: 94f34f482e0e5007cca2efd6c046da3fb76c0dd6
+PODFILE CHECKSUM: 9074e5c958d3341cdf886c2d363ff8d5296b0f47
 
 COCOAPODS: 1.8.4
