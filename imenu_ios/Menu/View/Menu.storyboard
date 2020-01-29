@@ -21,7 +21,7 @@
                                 <state key="normal" title="Plato"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUd-Tg-8oI">
-                                <rect key="frame" x="339" y="632" width="31" height="30"/>
+                                <rect key="frame" x="293" y="402" width="31" height="30"/>
                                 <state key="normal" title="Dish"/>
                                 <connections>
                                     <segue destination="RUQ-BM-VMU" kind="show" id="0z4-oF-NlP"/>
@@ -30,8 +30,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hUx-qA-Nc2" firstAttribute="trailing" secondItem="MUd-Tg-8oI" secondAttribute="trailing" constant="5" id="FRz-xT-AW4"/>
-                            <constraint firstItem="hUx-qA-Nc2" firstAttribute="bottom" secondItem="MUd-Tg-8oI" secondAttribute="bottom" constant="5" id="rYC-ty-I0j"/>
+                            <constraint firstItem="hUx-qA-Nc2" firstAttribute="trailing" secondItem="MUd-Tg-8oI" secondAttribute="trailing" constant="51" id="FRz-xT-AW4"/>
+                            <constraint firstItem="hUx-qA-Nc2" firstAttribute="bottom" secondItem="MUd-Tg-8oI" secondAttribute="bottom" constant="235" id="rYC-ty-I0j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hUx-qA-Nc2"/>
                     </view>
@@ -43,10 +43,10 @@
         <!--Dish-->
         <scene sceneID="ZgO-tR-Xhn">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aox-ON-7nP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Dish" id="RUQ-BM-VMU" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="zel-Wg-Ljx"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aox-ON-7nP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="590" y="557"/>
         </scene>

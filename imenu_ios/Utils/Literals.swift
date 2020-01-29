@@ -41,4 +41,5 @@ open class Literals {
     static var labelFilterDistance = "Distancia"
     static var btnFilter = "Buscar"
     static var labelAlertView = "Restaurantes Cerca de Ti"
+    static var backBtn = "Reiniciar"
 }
