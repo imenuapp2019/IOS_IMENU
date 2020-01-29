@@ -38,8 +38,8 @@ class MenuViewController: UIViewController {
     
    func setupCard() {
     
-        endCardHeight = self.view.frame.height * 0.8
-        startCardHeight = self.view.frame.height * 0.7
+        endCardHeight = self.view.frame.height *
+    startCardHeight = self.view.frame.height * 0.2
         
         visualEffectView = UIVisualEffectView()
         visualEffectView.frame = self.view.frame

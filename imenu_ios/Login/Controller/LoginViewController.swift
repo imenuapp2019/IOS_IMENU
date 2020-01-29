@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
         if labelUserName.text == Literals.empty && labelUserPassword.text == Literals.empty {
             labelUserName.errorMessage = Literals.emptyEmailLabel
             labelUserPassword.errorMessage = Literals.emptyPassLabel
+            self.performSegue(withIdentifier: "segueHome", sender: nil)
         }else{
             if labelUserName.text == Literals.empty {
                 labelUserName.errorMessage = Literals.emptyEmailLabel
