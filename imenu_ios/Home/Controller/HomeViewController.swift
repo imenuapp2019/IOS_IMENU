@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
          */
         LabelAlertView.text = Literals.labelAlertView
         AlertView.layer.cornerRadius = 20
-        AlertView.isHidden = true
+        AlertView.alpha = 0.0
         
         /**
          Collection View Restuarnts and Properties
@@ -120,7 +120,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         }
         if lastVelocityYSign < 0 {
             setView(view: AlertView, hidden: false)
-          print("SCROLLING DOWN")
         } else if lastVelocityYSign > 0 {
             setView(view: AlertView, hidden: true)
           print("SCOLLING UP")
@@ -128,9 +127,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     }
     
     func setView(view: UIView, hidden: Bool) {
-        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
-            view.isHidden = hidden
-        })
+        if(hidden == false){
+            UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                view.alpha = 1.0
+            })
+        }else{
+            UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                view.alpha = 0.0
+                
+            })
+        }
+        
     }
     
     func setHeader() {
