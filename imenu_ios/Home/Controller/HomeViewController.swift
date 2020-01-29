@@ -8,42 +8,28 @@
 import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
+    /**
+     
+     */
     @IBOutlet weak var searchButton: UIButton!
        @IBOutlet weak var filterButton: UIButton!
+    
+    @IBOutlet weak var AlertView: UIView!
+    @IBOutlet weak var LabelAlertView: UILabel!
+    
+    
        /**
         Collection View Cell side, properties and declarations.
     **/
        @IBOutlet weak var gridRestaurant: UICollectionView!
    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listRestaurants.count
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let restaurant = listRestaurants[indexPath.row]
-        print("imagen",restaurant.image!);
-        let identifier = "Restaurant"
-        let cell = self.gridRestaurant.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)as! RestaurantCollectionView
-        cell.imageRestaurant.image = UIImage(imageLiteralResourceName: restaurant.image!)
-        cell.nameRestaurant.text = restaurant.name
-        cell.typeRestaurant.text = restaurant.type
-        
-        return cell
-        
-    }
     
 
-
-    
-
-    
     
     var listRestaurants : [Restaurant] = []
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,18 +42,23 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         child.widthAnchor.constraint(equalToConstant: 128).isActive = true
     
         child.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        /**
+                    Alert View Properties
+         */
+        LabelAlertView.text = Literals.labelAlertView
+        AlertView.layer.cornerRadius = 20
+        AlertView.isHidden = true
         
+        /**
+         Collection View Restuarnts and Properties
+         */
         self.listRestaurants = dataHardcoded()
         
         self.gridRestaurant.dataSource = self
         self.gridRestaurant.delegate = self
         
-        print("Restaurantes:",listRestaurants.count)
-        //panelRestaurant.image = UIImage(named: "cuadriculaRestauranteUno")
-        filterButton.setBackgroundImage(UIImage(named: "iconFilter"), for: .normal)
-        searchButton.setBackgroundImage(UIImage(named: "iconoLupa"), for: .normal)
-        filterButton.setTitle("", for: .normal)
-        searchButton.setTitle("", for: .normal)
+        
+        setHeader()
                 
         print("Restaurantes:",listRestaurants.count)
         print("Restaurante;",listRestaurants[0].image!)
@@ -92,14 +83,60 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         return listRestaurants
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+/**Collection view functions*/
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return listRestaurants.count
     }
-    */
-
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let restaurant = listRestaurants[indexPath.row]
+       // print("imagen",restaurant.image!);
+        let identifier = "Restaurant"
+        let cell = self.gridRestaurant.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)as! RestaurantCollectionView
+        cell.imageRestaurant.image = UIImage(imageLiteralResourceName: restaurant.image!)
+        cell.nameRestaurant.text = restaurant.name
+        cell.typeRestaurant.text = restaurant.type
+        
+        return cell
+        
+    }
+    /**
+     Event direction of scrolling
+     */
+    var lastVelocityYSign = 0
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       
+        let currentVelocityY =  scrollView.panGestureRecognizer.velocity(in: scrollView.superview).y
+        let currentVelocityYSign = Int(currentVelocityY).signum()
+        if currentVelocityYSign != lastVelocityYSign &&
+           currentVelocityYSign != 0 {
+               lastVelocityYSign = currentVelocityYSign
+        }
+        if lastVelocityYSign < 0 {
+            setView(view: AlertView, hidden: false)
+          print("SCROLLING DOWN")
+        } else if lastVelocityYSign > 0 {
+            setView(view: AlertView, hidden: true)
+          print("SCOLLING UP")
+        }
+    }
+    
+    func setView(view: UIView, hidden: Bool) {
+        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            view.isHidden = hidden
+        })
+    }
+    
+    func setHeader() {
+        filterButton.setBackgroundImage(UIImage(named: "iconFilter"), for: .normal)
+        searchButton.setBackgroundImage(UIImage(named: "iconoLupa"), for: .normal)
+        filterButton.setTitle("", for: .normal)
+        searchButton.setTitle("", for: .normal)
+    }
 }

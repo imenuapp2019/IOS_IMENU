@@ -10,17 +10,27 @@ import UIKit
 import McPicker
 class FilViewController: UIViewController {
     
+    @IBOutlet weak var LabelTypeFood: UILabel!
+    
+    @IBOutlet weak var LabelPrice: UILabel!
+    
+    @IBOutlet weak var LabelDistance: UILabel!
+    
     @IBOutlet weak var TypeFoodView: UIView!
     @IBOutlet weak var SelectFilter: UIButton!
     
-    @IBOutlet weak var SelectViewFilter: UIView!
+    @IBOutlet weak var ButtonClose: RoundButton!
     /**
      Selector del tipo de comida.
      */
      let data = [["Mexicano","Hindu","Tailandesa","Española"]]
     override func viewDidLoad() {
         super.viewDidLoad()
-       // SelectViewFilter.layer.cornerRadius = 10;
+        LabelPrice.text = Literals.labelFilterPrice
+        LabelTypeFood.text = Literals.labelFilterTP
+        LabelDistance.text = Literals.labelFilterDistance
+        SelectFilter.layer.cornerRadius = 10;
+        ButtonClose.setTitle(Literals.btnFilter, for: .normal)
     }
     @IBAction func SelectAction(_ sender: Any) {
         
@@ -31,5 +41,8 @@ class FilViewController: UIViewController {
            
             
         }
+    }
+    @IBAction func closePopUp(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
