@@ -20,6 +20,9 @@ class Restaurant : Codable{
             self.coordinates.append(longitude)
         }
     }
+    init(jsonList: NSDictionary){
+        
+    }
     
     
     
