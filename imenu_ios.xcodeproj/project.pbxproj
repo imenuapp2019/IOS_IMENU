@@ -44,6 +44,8 @@
 		9BB4D84723C8380C00CE6F38 /* Pods_imenu_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9BE79A3223CD11CA00669BCC /* Recover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE79A3123CD11CA00669BCC /* Recover.storyboard */; };
 		A088402D23D7695400DCAB70 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = A088402C23D7695400DCAB70 /* Dish.swift */; };
+		A0C25FE223E345DA0099F1E5 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C25FE123E345DA0099F1E5 /* CollectionViewCell.xib */; };
+		A0C25FE423E348320099F1E5 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C25FE323E348320099F1E5 /* MenuCollectionViewCell.swift */; };
 		A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */; };
 		A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CF2923C8EE9600E77B86 /* Color.swift */; };
 		A0CC912323D65B6600877543 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC912223D65B6600877543 /* AvatarViewController.swift */; };
@@ -132,6 +134,8 @@
 		9BB4D84C23C8388D00CE6F38 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE79A3123CD11CA00669BCC /* Recover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recover.storyboard; sourceTree = "<group>"; };
 		A088402C23D7695400DCAB70 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
+		A0C25FE123E345DA0099F1E5 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		A0C25FE323E348320099F1E5 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A0C9CF2923C8EE9600E77B86 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A0CC912223D65B6600877543 /* AvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
@@ -374,6 +378,7 @@
 			children = (
 				9B85C03B23DF58C10093DDAC /* MenuCardViewController.xib */,
 				9BAD3DA323D8A4C4004908DA /* Menu.storyboard */,
+				A0C25FE123E345DA0099F1E5 /* CollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -383,6 +388,7 @@
 			children = (
 				9BAD3DA523D8A4D7004908DA /* MenuViewController.swift */,
 				9B85C03A23DF58C10093DDAC /* MenuCardViewController.swift */,
+				A0C25FE323E348320099F1E5 /* MenuCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -582,6 +588,7 @@
 			files = (
 				9B214E5423C7A2A400969784 /* Login.storyboard in Resources */,
 				9B85C03D23DF58C10093DDAC /* MenuCardViewController.xib in Resources */,
+				A0C25FE223E345DA0099F1E5 /* CollectionViewCell.xib in Resources */,
 				9B6F522023C7730600943C71 /* LaunchScreen.storyboard in Resources */,
 				9BAD3DA423D8A4C4004908DA /* Menu.storyboard in Resources */,
 				9B0B193D23D0CEA4002C9CCC /* Register.storyboard in Resources */,
@@ -741,6 +748,7 @@
 				A088402D23D7695400DCAB70 /* Dish.swift in Sources */,
 				9B9A82E923E20D0D00A50749 /* FetchData.swift in Sources */,
 				A0CC912523D663A600877543 /* AvatarCollectionViewCell.swift in Sources */,
+				A0C25FE423E348320099F1E5 /* MenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

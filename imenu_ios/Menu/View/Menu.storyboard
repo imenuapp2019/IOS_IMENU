@@ -14,41 +14,13 @@
                     <view key="view" contentMode="scaleToFill" id="pxS-HW-8yg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAK-Xe-uc4">
-                                <rect key="frame" x="348" y="771" width="35" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Plato"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUd-Tg-8oI">
-                                <rect key="frame" x="293" y="402" width="31" height="30"/>
-                                <state key="normal" title="Dish"/>
-                                <connections>
-                                    <segue destination="RUQ-BM-VMU" kind="show" id="0z4-oF-NlP"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="hUx-qA-Nc2" firstAttribute="trailing" secondItem="MUd-Tg-8oI" secondAttribute="trailing" constant="51" id="FRz-xT-AW4"/>
-                            <constraint firstItem="hUx-qA-Nc2" firstAttribute="bottom" secondItem="MUd-Tg-8oI" secondAttribute="bottom" constant="235" id="rYC-ty-I0j"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hUx-qA-Nc2"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eI-9Q-ojM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="133"/>
-        </scene>
-        <!--Dish-->
-        <scene sceneID="ZgO-tR-Xhn">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aox-ON-7nP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewControllerPlaceholder storyboardName="Dish" id="RUQ-BM-VMU" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="zel-Wg-Ljx"/>
-                </viewControllerPlaceholder>
-            </objects>
-            <point key="canvasLocation" x="590" y="557"/>
+            <point key="canvasLocation" x="133.59999999999999" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>

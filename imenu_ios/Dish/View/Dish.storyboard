@@ -56,9 +56,9 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Z4-Dv-dC4" userLabel="Sección del menú">
                                                                 <rect key="frame" x="0.0" y="104" width="375" height="96"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primer plato" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfn-ga-QTC">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sección menú" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfn-ga-QTC">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                                                         <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -97,18 +97,18 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bok-o3-YGL">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="400.5"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O18-Hv-DaB">
-                                                    <size key="itemSize" width="300" height="380"/>
-                                                    <size key="estimatedItemSize" width="300" height="380"/>
+                                                    <size key="itemSize" width="280" height="340"/>
+                                                    <size key="estimatedItemSize" width="280" height="340"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="pYf-cK-LNp" customClass="DishCollectionViewCell" customModule="imenu_ios" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="10.5" width="300" height="380"/>
+                                                        <rect key="frame" x="0.0" y="25.5" width="280" height="350"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d8k-OC-Q3c">
-                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="380"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="280" height="350"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="lj4-xY-6br">
@@ -119,13 +119,13 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="300" height="380"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HDpollo" translatesAutoresizingMaskIntoConstraints="NO" id="pW6-4x-fLZ">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="380"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="360"/>
                                                                                 </imageView>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zSp-nw-O68">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="380"/>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pollo al horno" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3QK-fW-JgA">
-                                                                                    <rect key="frame" x="0.0" y="327" width="300" height="45"/>
+                                                                                    <rect key="frame" x="0.0" y="305" width="300" height="36"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                                                     <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -134,14 +134,14 @@
                                                                             </subviews>
                                                                             <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
+                                                                                <constraint firstAttribute="bottom" secondItem="pW6-4x-fLZ" secondAttribute="bottom" constant="20" symbolic="YES" id="4Dq-cX-IK9"/>
                                                                                 <constraint firstItem="zSp-nw-O68" firstAttribute="leading" secondItem="p6C-v4-5D9" secondAttribute="leading" id="5Mi-R6-wVq"/>
-                                                                                <constraint firstAttribute="trailing" secondItem="pW6-4x-fLZ" secondAttribute="trailing" id="9iQ-r4-Ks1"/>
-                                                                                <constraint firstAttribute="bottom" secondItem="pW6-4x-fLZ" secondAttribute="bottom" id="Ald-s3-bT5"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="zSp-nw-O68" secondAttribute="trailing" id="F68-0W-2ST"/>
-                                                                                <constraint firstItem="pW6-4x-fLZ" firstAttribute="top" secondItem="p6C-v4-5D9" secondAttribute="top" id="V5e-iV-YHG"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="zSp-nw-O68" secondAttribute="bottom" id="dz0-Li-Ofb"/>
                                                                                 <constraint firstItem="zSp-nw-O68" firstAttribute="top" secondItem="p6C-v4-5D9" secondAttribute="top" id="e4d-mA-NMq"/>
-                                                                                <constraint firstItem="pW6-4x-fLZ" firstAttribute="leading" secondItem="p6C-v4-5D9" secondAttribute="leading" id="xzs-cf-zQg"/>
+                                                                                <constraint firstItem="pW6-4x-fLZ" firstAttribute="top" secondItem="p6C-v4-5D9" secondAttribute="top" id="oZA-vR-9hb"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="pW6-4x-fLZ" secondAttribute="trailing" id="uxC-yh-6tO"/>
+                                                                                <constraint firstItem="pW6-4x-fLZ" firstAttribute="leading" secondItem="p6C-v4-5D9" secondAttribute="leading" id="xKP-rh-axn"/>
                                                                             </constraints>
                                                                         </view>
                                                                     </subviews>
@@ -154,6 +154,7 @@
                                                                 </stackView>
                                                             </subviews>
                                                         </collectionViewCellContentView>
+                                                        <size key="customSize" width="280" height="350"/>
                                                         <connections>
                                                             <outlet property="DishImageView" destination="pW6-4x-fLZ" id="CfV-EE-F4T"/>
                                                             <outlet property="dishNameLabel" destination="3QK-fW-JgA" id="9ae-3h-bX6"/>
