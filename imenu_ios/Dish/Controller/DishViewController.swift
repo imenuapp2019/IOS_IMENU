@@ -131,7 +131,7 @@ extension DishViewController: UIScrollViewDelegate {
         let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludingSpacing
         let roundedIndex = round(index)
         
-        offset = CGPoint (x: roundedIndex * (cellWidthIncludingSpacing) - ((scrollView.contentInset.left) - (-35)), y: -scrollView.contentInset.top
+        offset = CGPoint (x: roundedIndex * (cellWidthIncludingSpacing) - ((scrollView.contentInset.left) - (-43)), y: -scrollView.contentInset.top
         )
         targetContentOffset.pointee = offset
     }
