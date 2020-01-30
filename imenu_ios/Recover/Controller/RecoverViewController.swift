@@ -20,6 +20,29 @@ class RecoverViewController: UIViewController {
     @IBOutlet weak var inputlabelEmail: SkyFloatingLabelTextFieldWithIcon!
     @IBOutlet weak var btnRecover: RoundButton!
     
+    let popUp = PopUp()
+    
+    
+    @IBAction func btnRecoverClick(_ sender: Any) {
+        let apiManger = APIManager ()
+        if let textInputEmail = inputlabelEmail.text, textInputEmail != ""{
+            apiManger.postRecover(email: textInputEmail, completion: {
+                result in
+                let alert = self.popUp.initializade(Title: Literals.messageRecover, Message: textInputEmail)
+                let btnOkAction = UIAlertAction(title: Literals.titleBotonPopUps, style: UIAlertAction.Style.default, handler: {
+                    action in self.dismiss(animated: true, completion: nil )
+                })
+                alert.addAction(btnOkAction)
+                self.present(alert, animated: true)
+            })
+        }else{
+            let alert = self.popUp.initializade(Title: Literals.titlePopUpLoginRequestWrong, Message: Literals.recoverTextEmpty)
+            let btnOkAction = popUp.okAction(TitleButton: Literals.titleBotonPopUps)
+            alert.addAction(btnOkAction)
+            self.present(alert, animated: true)
+        }
+        
+    }
     
     @IBAction func iconBackClicked(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -60,7 +83,7 @@ class RecoverViewController: UIViewController {
 }
 
 extension RecoverViewController:UITextFieldDelegate{
-
+    
     @objc func textFieldDidChangeEmail(_ textfield: UITextField) {
         let email = "@"
         let point = "."
