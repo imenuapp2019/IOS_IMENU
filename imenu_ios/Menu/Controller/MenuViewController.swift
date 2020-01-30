@@ -32,13 +32,13 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupCard()
+        setupCard()
         
     }
     
    func setupCard() {
     
-    endCardHeight = self.view.frame.height * 0.3
+    endCardHeight = self.view.frame.height * 0.9
     startCardHeight = self.view.frame.height * 0.2
         
         visualEffectView = UIVisualEffectView()
