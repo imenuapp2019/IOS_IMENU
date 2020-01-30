@@ -24,12 +24,12 @@ class DishCollectionViewCell: UICollectionViewCell {
     super.layoutSubviews()
     self.layer.cornerRadius = 20
     self.clipsToBounds = true
-    gradient()
+    applyGradient()
     
     }
     
     
-    private func gradient () {
+    private func applyGradient () {
         
         let view = UIView(frame:DishImageView.frame)
 
