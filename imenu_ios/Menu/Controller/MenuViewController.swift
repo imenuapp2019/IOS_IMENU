@@ -18,6 +18,7 @@ class MenuViewController: UIViewController {
         return cardVisible ? .collapsed : .expanded
     }
     
+    @IBOutlet weak var btnDish: UIButton!
     var menuCardViewController:MenuCardViewController!
     
     var visualEffectView:UIVisualEffectView!
@@ -30,11 +31,15 @@ class MenuViewController: UIViewController {
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
     
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCard()
         // Gira el arrowImageView al cargar la vista
+        
         self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+          self.title = "Restaurantes"
+        
         
     }
     

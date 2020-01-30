@@ -64,7 +64,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         print("Restaurante;",listRestaurants[0].image!)
 
         // Do any additional setup after loading the view.
-        self.title = "some title"
+        self.title = "Home"
     }
     
     override func viewDidAppear(_ animated: Bool) {
