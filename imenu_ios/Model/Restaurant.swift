@@ -1,30 +1,36 @@
-//
-//  Restaurant.swift
-//  imenu_ios
-//
-//  Created by Loren on 23/01/2020.
-//  Copyright © 2020 Miguel Jaimes. All rights reserved.
-//
+import Foundation
 
-import UIKit
+// MARK: - RestaurantElement
+class RestaurantElement: Codable {
+      let name, type: String?
+      let imageURL: String?
+      let latitude, longitude: Double?
+      var coordinates: [Double]=[]
+    
+      enum CodingKeys: String, CodingKey {
+          case name, type
+          case imageURL = "image_URL"
+          case latitude, longitude
+      }
 
-class Restaurant : Codable{
-    var name :String?, type:String?,image: String?
-    var coordinates: [Double]=[]
+      init(name: String?, type: String?, imageURL: String?, latitude: Double?, longitude: Double?) {
+          self.name = name
+          self.type = type
+          self.imageURL = imageURL
+          self.latitude = latitude
+          self.longitude = longitude
+      }
     init(name:String,type:String,urlImage:String,latitude:Double,longitude:Double){
-        if(!name.isEmpty && !type.isEmpty && !urlImage.isEmpty && !latitude.isNaN && !longitude.isNaN){
+        
+            self.latitude = nil
+            self.longitude = nil
             self.name = name
             self.type = type
-            self.image = urlImage
+            self.imageURL = urlImage
             self.coordinates.append(latitude)
             self.coordinates.append(longitude)
-        }
-    }
-    init(jsonList: NSDictionary){
         
     }
-    
-    
-    
-    
 }
+
+typealias Restaurant = [RestaurantElement]
