@@ -8,7 +8,10 @@
 
 import UIKit
 
-
+enum ActionOkButton{
+    case dismiss
+    case nothing
+}
 
 class PopUp {
     func initializade(Title title:String, Message message:String) -> (UIAlertController) {
@@ -17,7 +20,9 @@ class PopUp {
     }
     
     func okAction(TitleButton title:String) -> (UIAlertAction) {
+        
         let okAction = UIAlertAction(title: title, style: UIAlertAction.Style.default)
+
         return okAction
     }
 }

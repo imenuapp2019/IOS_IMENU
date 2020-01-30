@@ -42,4 +42,6 @@ open class Literals {
     static var btnFilter = "Buscar"
     static var labelAlertView = "Restaurantes Cerca de Ti"
     static var backBtn = "Reiniciar"
+    static var messageRecover = "Listo 🥳 te enviamos un correo a:"
+    static var recoverTextEmpty = "parece que no has escrito tu email"
 }
