@@ -26,14 +26,13 @@
 		9B6F522023C7730600943C71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6F521E23C7730600943C71 /* LaunchScreen.storyboard */; };
 		9B6F522B23C7730700943C71 /* ImenuIosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F522A23C7730700943C71 /* ImenuIosTests.swift */; };
 		9B6F523623C7730700943C71 /* ImenuIosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F523523C7730700943C71 /* ImenuIosUITests.swift */; };
-		9B9A82EB23E2162C00A50749 /* RestaurantCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82EA23E2162C00A50749 /* RestaurantCollectionView.swift */; };
 		9B85C03C23DF58C10093DDAC /* MenuCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85C03A23DF58C10093DDAC /* MenuCardViewController.swift */; };
 		9B85C03D23DF58C10093DDAC /* MenuCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B85C03B23DF58C10093DDAC /* MenuCardViewController.xib */; };
-		9B9A82D723E209C000A50749 /* RestaurantCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82D623E209C000A50749 /* RestaurantCollectionView.swift */; };
 		9B9A82E423E20CF000A50749 /* DishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82E223E20CF000A50749 /* DishViewController.swift */; };
 		9B9A82E523E20CF000A50749 /* DishCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82E323E20CF000A50749 /* DishCollectionViewCell.swift */; };
 		9B9A82E723E20CF900A50749 /* Dish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9A82E623E20CF900A50749 /* Dish.storyboard */; };
 		9B9A82E923E20D0D00A50749 /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82E823E20D0D00A50749 /* FetchData.swift */; };
+		9B9A82EB23E2162C00A50749 /* RestaurantCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82EA23E2162C00A50749 /* RestaurantCollectionView.swift */; };
 		9BAD3D9F23D8A484004908DA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BAD3D9E23D8A484004908DA /* Home.storyboard */; };
 		9BAD3DA123D8A499004908DA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAD3DA023D8A499004908DA /* HomeViewController.swift */; };
 		9BAD3DA423D8A4C4004908DA /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BAD3DA323D8A4C4004908DA /* Menu.storyboard */; };
@@ -114,14 +113,13 @@
 		9B6F523123C7730700943C71 /* imenu_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imenu_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6F523523C7730700943C71 /* ImenuIosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImenuIosUITests.swift; sourceTree = "<group>"; };
 		9B6F523723C7730700943C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B9A82EA23E2162C00A50749 /* RestaurantCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCollectionView.swift; sourceTree = "<group>"; };
 		9B85C03A23DF58C10093DDAC /* MenuCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardViewController.swift; sourceTree = "<group>"; };
 		9B85C03B23DF58C10093DDAC /* MenuCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCardViewController.xib; sourceTree = "<group>"; };
-		9B9A82D623E209C000A50749 /* RestaurantCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestaurantCollectionView.swift; path = /Users/migueljaimes/Desktop/ios_imenu/imenu_ios/Home/Controller/RestaurantCollectionView.swift; sourceTree = "<absolute>"; };
 		9B9A82E223E20CF000A50749 /* DishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishViewController.swift; sourceTree = "<group>"; };
 		9B9A82E323E20CF000A50749 /* DishCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B9A82E623E20CF900A50749 /* Dish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dish.storyboard; sourceTree = "<group>"; };
 		9B9A82E823E20D0D00A50749 /* FetchData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
+		9B9A82EA23E2162C00A50749 /* RestaurantCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCollectionView.swift; sourceTree = "<group>"; };
 		9BAD3D9E23D8A484004908DA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		9BAD3DA023D8A499004908DA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9BAD3DA323D8A4C4004908DA /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
@@ -401,7 +399,6 @@
 			isa = PBXGroup;
 			children = (
 				9B9A82EA23E2162C00A50749 /* RestaurantCollectionView.swift */,
-				9B9A82D623E209C000A50749 /* RestaurantCollectionView.swift */,
 				9BAD3DA023D8A499004908DA /* HomeViewController.swift */,
 				5C02DC7623E088C50006A9EF /* FilViewController.swift */,
 			);
@@ -738,7 +735,6 @@
 				9B6F521623C7730000943C71 /* SceneDelegate.swift in Sources */,
 				5C02DC7723E088C50006A9EF /* FilViewController.swift in Sources */,
 				A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */,
-				9B9A82D723E209C000A50749 /* RestaurantCollectionView.swift in Sources */,
 				9B85C03C23DF58C10093DDAC /* MenuCardViewController.swift in Sources */,
 				9B9A82E423E20CF000A50749 /* DishViewController.swift in Sources */,
 				9B617BEF23DA11BB0017F9A3 /* User.swift in Sources */,
