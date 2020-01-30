@@ -26,8 +26,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     
 
     
-    var listRestaurants : [Restaurant] = []
-    
+    var listRestaurants : [RestaurantElement] = []
+  
     
     
     override func viewDidLoad() {
@@ -52,7 +52,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         /**
          Collection View Restuarnts and Properties
          */
-        self.listRestaurants = dataHardcoded()
+//        self.listRestaurants = dataHardcoded()
+        
+        self.datafromServer()
         
         self.gridRestaurant.dataSource = self
         self.gridRestaurant.delegate = self
@@ -60,12 +62,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         
         setHeader()
                 
-        print("Restaurantes:",listRestaurants.count)
-        print("Restaurante;",listRestaurants[0].image!)
+//        print("Restaurantes:",listRestaurants_2!.count)
+//        print("Restaurante;", listRestaurants_2![0].imageURL!)
 
         // Do any additional setup after loading the view.
         self.title = "some title"
-    }
+        
+            }
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -73,13 +76,35 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         self.gridRestaurant.reloadData()
 
     }
+    func datafromServer(){
+        let apirest = APIManager()
+        apirest.getAllRestaurants(completion: { result
+            in
+            let resultsRestaurants = result.first
+            self.createListRestaurant(List: resultsRestaurants)
+        })
+    }
     
+    func createListRestaurant(List list:Restaurant?){
+        guard let listRestaurants = list else { return }
+        print("Restaurantes totales\(listRestaurants.count)")
+        let newRestaurant = listRestaurants.filter( {
+            result in
+            if result.imageURL == nil {
+                return false
+            }else{
+                return true
+            }
+        })
+        print("Restaurantes filtrados:\(newRestaurant.count)")
+        self.listRestaurants = newRestaurant
+    }
     
-    func dataHardcoded()->[Restaurant]{
-        var listRestaurants :[Restaurant]=[]
-        listRestaurants.append(Restaurant(name: "Restaurante Zalacaín", type: "Alta Cocina", urlImage: "fotoRestaurante1", latitude: 1.90, longitude: 2.20))
-        listRestaurants.append(Restaurant(name: "Restaurante Vertical", type: "Cocina de Vanguardia", urlImage: "FotoRestauranteDos", latitude: 2.60, longitude: 5.00))
-        listRestaurants.append(Restaurant(name: "Restaurante Horizontal", type: "Cocina Española", urlImage: "FotoRestauranteDos", latitude: 2.800, longitude: 5.00))
+    func dataHardcoded()->[RestaurantElement]{
+        var listRestaurants :[RestaurantElement]=[]
+        listRestaurants.append(RestaurantElement(name: "Restaurante Zalacaín", type: "Alta Cocina", urlImage: "fotoRestaurante1", latitude: 1.90, longitude: 2.20))
+        listRestaurants.append(RestaurantElement(name: "Restaurante Vertical", type: "Cocina de Vanguardia", urlImage: "FotoRestauranteDos", latitude: 2.60, longitude: 5.00))
+        listRestaurants.append(RestaurantElement(name: "Restaurante Horizontal", type: "Cocina Española", urlImage: "FotoRestauranteDos", latitude: 2.800, longitude: 5.00))
         
         return listRestaurants
     }
@@ -100,7 +125,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
        // print("imagen",restaurant.image!);
         let identifier = "Restaurant"
         let cell = self.gridRestaurant.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)as! RestaurantCollectionView
-        cell.imageRestaurant.image = UIImage(imageLiteralResourceName: restaurant.image!)
+        cell.imageRestaurant.image = UIImage(imageLiteralResourceName: restaurant.imageURL!)
         cell.nameRestaurant.text = restaurant.name
         cell.typeRestaurant.text = restaurant.type
         

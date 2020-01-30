@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vmr-8C-ssr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vmr-8C-ssr">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,8 +25,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUb-yG-ixO">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="124.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LogoImenu" translatesAutoresizingMaskIntoConstraints="NO" id="EnN-pD-5b5">
-                                                <rect key="frame" x="3" y="3" width="368" height="127.5"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoImenu" translatesAutoresizingMaskIntoConstraints="NO" id="EnN-pD-5b5">
+                                                <rect key="frame" x="3" y="3" width="369" height="118.5"/>
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                             </imageView>
                                         </subviews>
@@ -318,10 +318,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaZ-5D-CcI" userLabel="MainMenuView">
-                                <rect key="frame" x="50" y="624" width="275" height="36"/>
+                                <rect key="frame" x="50" y="615" width="275" height="42"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BarraInferior" translatesAutoresizingMaskIntoConstraints="NO" id="KlB-pv-lVp">
-                                        <rect key="frame" x="2" y="0.0" width="273" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="36"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxY-TH-VY0">
                                         <rect key="frame" x="0.0" y="0.0" width="275" height="36"/>
@@ -419,14 +419,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="pxY-TH-VY0" secondAttribute="bottom" id="0be-MI-WCN"/>
-                                    <constraint firstAttribute="trailing" secondItem="KlB-pv-lVp" secondAttribute="trailing" id="CCJ-ws-y8U"/>
                                     <constraint firstAttribute="trailing" secondItem="pxY-TH-VY0" secondAttribute="trailing" id="E3V-er-rmU"/>
-                                    <constraint firstItem="KlB-pv-lVp" firstAttribute="leading" relation="lessThanOrEqual" secondItem="UaZ-5D-CcI" secondAttribute="leading" constant="40" id="Uyc-hD-opE"/>
+                                    <constraint firstAttribute="trailing" secondItem="KlB-pv-lVp" secondAttribute="trailing" id="LfE-hr-ZHQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="KlB-pv-lVp" secondAttribute="bottom" constant="6" id="W1A-tJ-m6S"/>
+                                    <constraint firstItem="KlB-pv-lVp" firstAttribute="top" secondItem="UaZ-5D-CcI" secondAttribute="top" id="k3n-mL-xmO"/>
                                     <constraint firstItem="pxY-TH-VY0" firstAttribute="top" secondItem="UaZ-5D-CcI" secondAttribute="top" id="pd5-Uo-haL"/>
-                                    <constraint firstAttribute="bottom" secondItem="KlB-pv-lVp" secondAttribute="bottom" id="rwL-WJ-cBZ"/>
-                                    <constraint firstItem="KlB-pv-lVp" firstAttribute="top" secondItem="UaZ-5D-CcI" secondAttribute="top" id="tYH-YI-fAc"/>
                                     <constraint firstItem="pxY-TH-VY0" firstAttribute="leading" secondItem="UaZ-5D-CcI" secondAttribute="leading" id="xhQ-OZ-zyu"/>
+                                    <constraint firstItem="KlB-pv-lVp" firstAttribute="leading" secondItem="UaZ-5D-CcI" secondAttribute="leading" id="zgE-wa-U2k"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMi-HX-B6e" userLabel="AlertView">
@@ -449,7 +448,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dUM-rG-aIn" firstAttribute="bottom" secondItem="UaZ-5D-CcI" secondAttribute="bottom" constant="7" id="0IK-JL-hbP"/>
+                            <constraint firstItem="dUM-rG-aIn" firstAttribute="bottom" secondItem="UaZ-5D-CcI" secondAttribute="bottom" constant="10" id="0IK-JL-hbP"/>
                             <constraint firstItem="3GG-ZA-CIF" firstAttribute="leading" secondItem="dUM-rG-aIn" secondAttribute="leading" id="0fr-f2-MN6"/>
                             <constraint firstItem="dUM-rG-aIn" firstAttribute="bottom" secondItem="q9d-Sh-Wau" secondAttribute="bottom" id="2ri-Mt-yEx"/>
                             <constraint firstItem="KMi-HX-B6e" firstAttribute="top" secondItem="dUM-rG-aIn" secondAttribute="top" constant="200" id="3Fg-iZ-Nfr"/>
@@ -738,6 +737,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="r7l-Wc-Rx5" firstAttribute="centerX" secondItem="l3A-2V-2RC" secondAttribute="centerX" id="uSS-Cr-m7s"/>
                             <constraint firstItem="r7l-Wc-Rx5" firstAttribute="centerY" secondItem="l3A-2V-2RC" secondAttribute="centerY" id="zmx-Eq-l0Q"/>

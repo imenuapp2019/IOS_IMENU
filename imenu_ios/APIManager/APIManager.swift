@@ -60,25 +60,25 @@ class APIManager {
                 }
         }
     }
-    public func getAllRestaurants(completion: @escaping (Int?) -> Void){
+    
+    public func getAllRestaurants(completion: @escaping ([Restaurant]) -> Void){
         let restaurantURL = URL(string: "http://localhost:8888/back_imenu/public/api/homeRestaurante")
        
-        AF.request(restaurantURL!).responseJSON {
+        AF.request(restaurantURL!,method: .get).responseJSON {
             (response) in
             switch (response.result){
             case .success:
                 do{
                     let decoder = JSONDecoder()
-                   let restaurants = try! decoder.decode([Restaurant].self, from: response.data!)
+                    let restaurants = try! decoder.decode(Restaurant.self, from: response.data!)
+                    completion([restaurants])
                 }catch{
                     print("Error en la conexion")
                 }
-            case .failure(_): break
-                
+            case .failure(_):
+                print("ERROR!!")
+                break
             }
-                
-        
         }
-        
     }
 }
