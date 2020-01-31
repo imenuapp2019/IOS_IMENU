@@ -66,7 +66,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     }
     
    
-    
     override func viewDidAppear(_ animated: Bool) {
         self.gridRestaurant.setNeedsDisplay()
         self.gridRestaurant.reloadData()
@@ -203,6 +202,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
             cell.alpha = 1
         })
     }
+    
+    
 }
 
 
