@@ -159,7 +159,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
             setView(view: AlertView, hidden: false)
         } else if lastVelocityYSign > 0 {
             setView(view: AlertView, hidden: true)
-            print("SCOLLING UP")
         }
     }
     
