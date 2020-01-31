@@ -201,9 +201,11 @@
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <connections>
+                                                            <outlet property="CardBackground" destination="IYL-2D-pXg" id="b7S-ty-4z6"/>
                                                             <outlet property="imageRestaurant" destination="8GW-4s-Gg5" id="Ht0-qx-Z8d"/>
                                                             <outlet property="nameRestaurant" destination="mso-yq-QrH" id="Ptp-7A-7zJ"/>
                                                             <outlet property="typeRestaurant" destination="zQO-tM-nO3" id="W6h-Te-tlK"/>
+                                                            <segue destination="mQX-2R-3a6" kind="show" id="7uG-av-9ZR"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -223,27 +225,6 @@
                                     <constraint firstItem="lkN-YF-H20" firstAttribute="height" secondItem="jhK-hS-eg5" secondAttribute="height" multiplier="0.1" id="FpS-8U-aYr"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9d-Sh-Wau">
-                                <rect key="frame" x="341" y="637" width="39" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykl-8D-8Em">
-                                        <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
-                                        <state key="normal" title="Menu"/>
-                                        <connections>
-                                            <segue destination="mQX-2R-3a6" kind="show" id="prx-yU-IsO"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstItem="Ykl-8D-8Em" firstAttribute="top" secondItem="q9d-Sh-Wau" secondAttribute="top" id="4yu-bg-i7m"/>
-                                    <constraint firstItem="Ykl-8D-8Em" firstAttribute="centerY" secondItem="q9d-Sh-Wau" secondAttribute="centerY" id="KXq-22-dOI"/>
-                                    <constraint firstItem="Ykl-8D-8Em" firstAttribute="leading" secondItem="q9d-Sh-Wau" secondAttribute="leading" id="PYv-o4-HFV"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ykl-8D-8Em" secondAttribute="bottom" id="Zuq-FH-IEB"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ykl-8D-8Em" secondAttribute="trailing" id="ol7-fn-qDI"/>
-                                    <constraint firstItem="Ykl-8D-8Em" firstAttribute="centerX" secondItem="q9d-Sh-Wau" secondAttribute="centerX" id="vdS-vC-eue"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaZ-5D-CcI" userLabel="MainMenuView">
                                 <rect key="frame" x="50" y="615" width="280" height="42"/>
                                 <subviews>
@@ -377,12 +358,10 @@
                         <constraints>
                             <constraint firstItem="dUM-rG-aIn" firstAttribute="bottom" secondItem="UaZ-5D-CcI" secondAttribute="bottom" constant="10" id="0IK-JL-hbP"/>
                             <constraint firstItem="3GG-ZA-CIF" firstAttribute="leading" secondItem="dUM-rG-aIn" secondAttribute="leading" id="0fr-f2-MN6"/>
-                            <constraint firstItem="dUM-rG-aIn" firstAttribute="bottom" secondItem="q9d-Sh-Wau" secondAttribute="bottom" id="2ri-Mt-yEx"/>
                             <constraint firstItem="KMi-HX-B6e" firstAttribute="top" secondItem="dUM-rG-aIn" secondAttribute="top" constant="70" id="3Fg-iZ-Nfr"/>
                             <constraint firstItem="3GG-ZA-CIF" firstAttribute="top" secondItem="NIf-wm-fID" secondAttribute="top" id="5GQ-Xu-hCJ"/>
                             <constraint firstItem="KMi-HX-B6e" firstAttribute="leading" secondItem="dUM-rG-aIn" secondAttribute="leading" constant="80" id="7iH-BP-LC8"/>
                             <constraint firstItem="jhK-hS-eg5" firstAttribute="top" secondItem="dUM-rG-aIn" secondAttribute="top" id="8wJ-xC-ysg"/>
-                            <constraint firstItem="dUM-rG-aIn" firstAttribute="trailing" secondItem="q9d-Sh-Wau" secondAttribute="trailing" id="HrO-E1-yAz"/>
                             <constraint firstItem="dUM-rG-aIn" firstAttribute="bottom" secondItem="jhK-hS-eg5" secondAttribute="bottom" id="R6R-vx-pq8"/>
                             <constraint firstItem="KMi-HX-B6e" firstAttribute="leading" secondItem="dUM-rG-aIn" secondAttribute="leading" constant="65" id="SUB-2I-kyO"/>
                             <constraint firstItem="dUM-rG-aIn" firstAttribute="trailing" secondItem="UaZ-5D-CcI" secondAttribute="trailing" constant="50" id="VfF-kz-BQ8"/>
@@ -699,10 +678,11 @@
         <!--Navigation View Controller-->
         <scene sceneID="cTU-JM-AXr">
             <objects>
-                <navigationController modalPresentationStyle="fullScreen" id="vmr-8C-ssr" customClass="NavigationViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="vmr-8C-ssr" customClass="NavigationViewController" customModule="imenu_ios" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6FL-p4-J0V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="0.72212114726027399" alpha="0.00045483732876712326" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>

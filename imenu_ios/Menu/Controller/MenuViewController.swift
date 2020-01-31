@@ -14,6 +14,16 @@ class MenuViewController: UIViewController{
         case expanded
     }
     
+    
+    @IBOutlet weak var pictureRestaurant: UIImageView!
+    
+    @IBOutlet weak var nameDetailRestaurant: UILabel!
+    
+    @IBOutlet weak var nameTypeRestaurant: UILabel!
+    
+    var restaurant:RestaurantElement? = nil
+    let imageDownloader = ImageDownloader()
+    
     var nextState:CardState {
         return cardVisible ? .collapsed : .expanded
     }
@@ -35,12 +45,22 @@ class MenuViewController: UIViewController{
         super.viewDidLoad()
         setupCard()
         self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-         
+        setUpDetailRestaurant()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func setUpDetailRestaurant(){
+        guard let urlImage = restaurant?.imageURL else {return}
+        nameDetailRestaurant.text = restaurant?.name
+        nameTypeRestaurant.text = restaurant?.type
+        imageDownloader.downloader(URLString: urlImage, completion: { (image:UIImage?) in
+            self.pictureRestaurant.image = image
+        })
     }
     
     

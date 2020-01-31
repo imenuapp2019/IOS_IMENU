@@ -34,14 +34,6 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGr-mj-HJ5" userLabel="Logo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJD-yg-XF3">
-                                                                        <rect key="frame" x="300" y="10" width="74" height="30"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <state key="normal" title="Detail Dish"/>
-                                                                        <connections>
-                                                                            <segue destination="D1i-cL-j8D" kind="show" id="cjZ-EO-mA8"/>
-                                                                        </connections>
-                                                                    </button>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGOIMENUDishView" translatesAutoresizingMaskIntoConstraints="NO" id="2E9-ue-D73">
                                                                         <rect key="frame" x="0.0" y="2" width="375" height="102"/>
                                                                     </imageView>
@@ -241,16 +233,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D50-3i-H0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-370.39999999999998" y="102.99850074962519"/>
-        </scene>
-        <!--DetailDish-->
-        <scene sceneID="sKz-rd-7fS">
-            <objects>
-                <viewControllerPlaceholder storyboardName="DetailDish" id="D1i-cL-j8D" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="9yB-bA-XI6"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jS9-qZ-usR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="196" y="-129"/>
         </scene>
     </scenes>
     <resources>
