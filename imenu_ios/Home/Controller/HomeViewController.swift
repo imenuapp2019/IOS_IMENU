@@ -10,21 +10,26 @@ import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
     /**
-
+     
      */
     @IBOutlet weak var searchButton: UIButton!
-       @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
     
+
     @IBOutlet weak var AlertView: UIView!
     @IBOutlet weak var LabelAlertView: UILabel!
     
-       /**
-        Collection View Cell side, properties and declarations.
-    **/
-       @IBOutlet weak var gridRestaurant: UICollectionView!
+    /**
+     Collection View Cell side, properties and declarations.
+     **/
+    @IBOutlet weak var gridRestaurant: UICollectionView!
     
-    var listRestaurants : [RestaurantElement] = []
-  
+    var listRestaurants : [RestaurantElement] = [] {
+        didSet {
+            self.gridRestaurant.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,10 +41,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         child.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = false
         child.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         child.widthAnchor.constraint(equalToConstant: 128).isActive = true
-    
+        
         child.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         /**
-                    Alert View Properties
+         Alert View Properties
          */
         LabelAlertView.text = Literals.labelAlertView
         AlertView.layer.cornerRadius = 20
@@ -48,7 +53,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         /**
          Collection View Restuarnts and Properties
          */
-//        self.listRestaurants = dataHardcoded()
+        //        self.listRestaurants = dataHardcoded()
         
         self.datafromServer()
         
@@ -56,14 +61,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         self.gridRestaurant.delegate = self
         
         setHeader()
-       self.gridRestaurant.reloadData()
         self.addNavBarImage()
+        
     }
     
-    
+   
     
     override func viewDidAppear(_ animated: Bool) {
-       self.gridRestaurant.setNeedsDisplay()
+        self.gridRestaurant.setNeedsDisplay()
         self.gridRestaurant.reloadData()
     }
     
@@ -112,8 +117,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         
         return listRestaurants
     }
-
-/**Collection view functions*/
+    
+    /**Collection view functions*/
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listRestaurants.count
@@ -127,7 +132,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         let imageDownloader = ImageDownloader()
         let restaurant = listRestaurants[indexPath.row]
         print(restaurant.imageURL!)
-       // print("imagen",restaurant.image!);
+        // print("imagen",restaurant.image!);
         let identifier = "Restaurant"
         let cell = self.gridRestaurant.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)as! RestaurantCollectionView
         imageDownloader.downloader(URLString: restaurant.imageURL!, completion: { (image:UIImage?) in
@@ -144,18 +149,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
      */
     var lastVelocityYSign = 0
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-       
+        
         let currentVelocityY =  scrollView.panGestureRecognizer.velocity(in: scrollView.superview).y
         let currentVelocityYSign = Int(currentVelocityY).signum()
         if currentVelocityYSign != lastVelocityYSign &&
-           currentVelocityYSign != 0 {
-               lastVelocityYSign = currentVelocityYSign
+            currentVelocityYSign != 0 {
+            lastVelocityYSign = currentVelocityYSign
         }
         if lastVelocityYSign < 0 {
             setView(view: AlertView, hidden: false)
         } else if lastVelocityYSign > 0 {
             setView(view: AlertView, hidden: true)
-          print("SCOLLING UP")
+            print("SCOLLING UP")
         }
     }
     
@@ -179,7 +184,26 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         filterButton.setTitle("", for: .normal)
         searchButton.setTitle("", for: .normal)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           guard let item = ( sender as? RestaurantCollectionView) else { return }
+           guard let indexPath = self.gridRestaurant.indexPath(for: item) else { return }
+           let restaurant = listRestaurants[indexPath.row]
+           let detailRestaurant = segue.destination as? MenuViewController
+            detailRestaurant?.restaurant = restaurant
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.8, animations: {
+            cell.alpha = 1
+        })
+    }
 }
 
-    
+
 
