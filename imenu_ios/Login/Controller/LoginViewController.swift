@@ -37,7 +37,12 @@ class LoginViewController: UIViewController {
             else if labelUserPassword.text == Literals.empty {
                 labelUserPassword.errorMessage = Literals.emptyPassLabel
                 labelUserName.errorMessage = Literals.empty
-            }else {
+                
+            }else if labelUserPassword.text!.count <= 7 {
+                labelUserPassword.errorMessage = Literals.labelPassworLogin8caracterer
+                labelUserName.errorMessage = Literals.empty
+            }
+            else {
                 labelUserName.errorMessage = Literals.empty
                 labelUserPassword.errorMessage = Literals.empty
                 let user = User(email: labelUserName.text, password: labelUserPassword.text);

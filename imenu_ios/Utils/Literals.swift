@@ -33,8 +33,8 @@ open class Literals {
     static var labelRecoverTittle = "Email"
     static var labelRecoverPlaceHolder = "Email de recuperacion"
     static var btnRecover = "Enviar"
-    static var msjPopUpLoginRequestWrong = "No has podido entrar 🥺"
-    static var titlePopUpLoginRequestWrong = "Upss..."
+    static var msjPopUpLoginRequestWrong = "Verifique su email y/o contraseña"
+    static var titlePopUpLoginRequestWrong = "Datos Erroneos"
     static var titleBotonPopUps = "Ok"
     static var labelFilterTP = "Tipo de Comida"
     static var labelFilterPrice = "Precio"
@@ -44,4 +44,5 @@ open class Literals {
     static var backBtn = "Reiniciar"
     static var messageRecover = "Listo 🥳 te enviamos un correo a:"
     static var recoverTextEmpty = "parece que no has escrito tu email"
+    static var labelPassworLogin8caracterer = "Debe tener mas de 8 caracteres"
 }
