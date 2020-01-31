@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController{
         enum CardState {
         case collapsed
         case expanded
@@ -18,10 +18,9 @@ class MenuViewController: UIViewController {
         return cardVisible ? .collapsed : .expanded
     }
     
-    @IBOutlet weak var btnDish: UIButton!
     var menuCardViewController:MenuCardViewController!
     
-    var visualEffectView:UIVisualEffectView!
+   
     
     var endCardHeight:CGFloat = 0
     var startCardHeight:CGFloat = 0
@@ -35,41 +34,24 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCard()
-        // Gira el arrowImageView al cargar la vista
-        
         self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-          self.title = "Restaurantes"
-        
-        
+         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
    func setupCard() {
     
     endCardHeight = self.view.frame.height * 0.9
     startCardHeight = self.view.frame.height * 0.2
         
-        visualEffectView = UIVisualEffectView()
-        visualEffectView.frame = self.view.frame
-        self.view.addSubview(visualEffectView)
+        
 
         menuCardViewController = MenuCardViewController(nibName:"MenuCardViewController", bundle:nil)
         self.view.addSubview(menuCardViewController.view)
@@ -118,7 +100,7 @@ class MenuViewController: UIViewController {
                  switch state {
                  case .expanded:
                      self.menuCardViewController.view.frame.origin.y = self.view.frame.height - self.endCardHeight
-                     self.visualEffectView.effect = UIBlurEffect(style: .dark)
+                    
                     // self.menuCardViewController.arrowImageView.isHidden = true
                     
                     
@@ -127,7 +109,7 @@ class MenuViewController: UIViewController {
                  case .collapsed:
                      self.menuCardViewController.view.frame.origin.y = self.view.frame.height - self.startCardHeight
                      
-                     self.visualEffectView.effect = nil
+                    
                      self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
                  }
              }
@@ -183,3 +165,4 @@ class MenuViewController: UIViewController {
      }
     
 }
+

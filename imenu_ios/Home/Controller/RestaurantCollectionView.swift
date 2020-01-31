@@ -16,7 +16,7 @@ class RestaurantCollectionView: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       
+        contentView.layer.cornerRadius = 7
        
     }
     

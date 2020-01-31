@@ -7,9 +7,10 @@
 
 import UIKit
 
+
 class HomeViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
     /**
-     
+
      */
     @IBOutlet weak var searchButton: UIButton!
        @IBOutlet weak var filterButton: UIButton!
@@ -17,23 +18,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     @IBOutlet weak var AlertView: UIView!
     @IBOutlet weak var LabelAlertView: UILabel!
     
-    
        /**
         Collection View Cell side, properties and declarations.
     **/
        @IBOutlet weak var gridRestaurant: UICollectionView!
-   
-    
-
     
     var listRestaurants : [RestaurantElement] = []
   
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let child = UIView()
+        
         child.translatesAutoresizingMaskIntoConstraints = false
         child.backgroundColor = .red
         view.addSubview(child)
@@ -59,22 +55,31 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         self.gridRestaurant.dataSource = self
         self.gridRestaurant.delegate = self
         
-        
         setHeader()
-                
-//        print("Restaurantes:",listRestaurants_2!.count)
-//        print("Restaurante;", listRestaurants_2![0].imageURL!)
-
-        // Do any additional setup after loading the view.
-        self.title = "Home"
+       self.gridRestaurant.reloadData()
+        self.addNavBarImage()
     }
     
+    
+    
     override func viewDidAppear(_ animated: Bool) {
-        
-        self.gridRestaurant.setNeedsDisplay()
+       self.gridRestaurant.setNeedsDisplay()
         self.gridRestaurant.reloadData()
-
     }
+    
+    func addNavBarImage() {
+        let navController = navigationController!
+        let image = UIImage(named: "LOGOIMENUDishView") //Your logo url here
+        let imageView = UIImageView(image: image)
+        let bannerWidth = navController.navigationBar.frame.size.width
+        let bannerHeight = navController.navigationBar.frame.size.height
+        let bannerX = bannerWidth / 2 - (image?.size.width)! / 2
+        let bannerY = bannerHeight / 2 - (image?.size.height)! / 2
+        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+    }
+    
     func datafromServer(){
         let apirest = APIManager()
         apirest.getAllRestaurants(completion: { result
@@ -119,12 +124,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+        let imageDownloader = ImageDownloader()
         let restaurant = listRestaurants[indexPath.row]
+        print(restaurant.imageURL!)
        // print("imagen",restaurant.image!);
         let identifier = "Restaurant"
         let cell = self.gridRestaurant.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)as! RestaurantCollectionView
-        cell.imageRestaurant.image = UIImage(imageLiteralResourceName: restaurant.imageURL!)
+        imageDownloader.downloader(URLString: restaurant.imageURL!, completion: { (image:UIImage?) in
+            cell.imageRestaurant.image = image
+        })
         cell.nameRestaurant.text = restaurant.name
         cell.typeRestaurant.text = restaurant.type
         
@@ -172,3 +180,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         searchButton.setTitle("", for: .normal)
     }
 }
+
+    
+
