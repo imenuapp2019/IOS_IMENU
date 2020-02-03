@@ -14,10 +14,19 @@ class RestaurantCollectionView: UICollectionViewCell {
     @IBOutlet weak var typeRestaurant: UILabel!
     @IBOutlet weak var nameRestaurant: UILabel!
     
+    @IBOutlet weak var CardBackground: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-       
-       
+        contentView.layer.cornerRadius = 7
+        self.shadowView()
     }
     
+    func shadowView(){
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 1
+        self.layer.masksToBounds = false
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+    }
 }

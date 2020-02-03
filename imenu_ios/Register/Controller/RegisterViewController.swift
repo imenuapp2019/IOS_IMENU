@@ -15,7 +15,6 @@ class RegisterViewController: UIViewController {
     
     //IB outlets
     var validNewUser:User?
-    let urlToPost = URL(string:"http://localhost:8888/back_imenu-develop/public/api/register")
     var emailValidation:Bool = false
     var avatarChosen:Int = 1
     
@@ -32,9 +31,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var confirmBtn: UIButton!
     
     @IBAction func confirmBtnAction(_ sender: Any) {
-        
         formValidation()
-        
     }
     
     @IBAction func backToLoginBtn(_ sender: Any) {
@@ -54,9 +51,6 @@ class RegisterViewController: UIViewController {
         
         //Make the roundedFrameView's border circular
         roundedFrameView.layer.cornerRadius = 15
-        
-        
-        
     }
     
     
@@ -102,7 +96,6 @@ class RegisterViewController: UIViewController {
             emailTextField.errorMessage = "Campo obligatorio"
         }
         else {
-            
             emailIsNotEmpty = true
             if emailIsNotEmpty && emailValidation
                 
@@ -139,11 +132,12 @@ class RegisterViewController: UIViewController {
                         vrfPasswordTextField.errorMessage = "Contraseñas no coincidente"
                     }
                         
-                    else    {
+                    else{
                         validNewUser = User (name: name, lastName: lastname, email: email, password: password, avatarID: avatarChosen)
                         passwordTextField.errorMessage = ""
                         let apiManger = APIManager ()
                         apiManger.postRegister(user: validNewUser!, completion: {result in
+                            print(result!)
                             guard let validRegister = result, validRegister == true else {
                                 return}
                             self.performSegue(withIdentifier: "segueHomeScreen", sender: nil)

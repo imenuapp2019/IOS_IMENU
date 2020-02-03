@@ -7,43 +7,44 @@
 
 import UIKit
 
+
 class HomeViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
     /**
      
      */
     @IBOutlet weak var searchButton: UIButton!
-       @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
     
+
     @IBOutlet weak var AlertView: UIView!
     @IBOutlet weak var LabelAlertView: UILabel!
     
+    /**
+     Collection View Cell side, properties and declarations.
+     **/
+    @IBOutlet weak var gridRestaurant: UICollectionView!
     
-       /**
-        Collection View Cell side, properties and declarations.
-    **/
-       @IBOutlet weak var gridRestaurant: UICollectionView!
-   
-    
-
-    
-    var listRestaurants : [RestaurantElement] = []
-  
-    
+    var listRestaurants : [RestaurantElement] = [] {
+        didSet {
+            self.gridRestaurant.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let child = UIView()
+        
         child.translatesAutoresizingMaskIntoConstraints = false
         child.backgroundColor = .red
         view.addSubview(child)
         child.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = false
         child.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         child.widthAnchor.constraint(equalToConstant: 128).isActive = true
-    
+        
         child.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         /**
-                    Alert View Properties
+         Alert View Properties
          */
         LabelAlertView.text = Literals.labelAlertView
         AlertView.layer.cornerRadius = 20
@@ -52,29 +53,37 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         /**
          Collection View Restuarnts and Properties
          */
-//        self.listRestaurants = dataHardcoded()
+        //        self.listRestaurants = dataHardcoded()
         
         self.datafromServer()
         
         self.gridRestaurant.dataSource = self
         self.gridRestaurant.delegate = self
         
-        
         setHeader()
-                
-//        print("Restaurantes:",listRestaurants_2!.count)
-//        print("Restaurante;", listRestaurants_2![0].imageURL!)
-
-        // Do any additional setup after loading the view.
-        self.title = "Home"
+        self.addNavBarImage()
+        
     }
     
+   
     override func viewDidAppear(_ animated: Bool) {
-        
         self.gridRestaurant.setNeedsDisplay()
         self.gridRestaurant.reloadData()
-
     }
+    
+    func addNavBarImage() {
+        let navController = navigationController!
+        let image = UIImage(named: "LOGOIMENUDishView") //Your logo url here
+        let imageView = UIImageView(image: image)
+        let bannerWidth = navController.navigationBar.frame.size.width
+        let bannerHeight = navController.navigationBar.frame.size.height
+        let bannerX = bannerWidth / 2 - (image?.size.width)! / 2
+        let bannerY = bannerHeight / 2 - (image?.size.height)! / 2
+        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+    }
+    
     func datafromServer(){
         let apirest = APIManager()
         apirest.getAllRestaurants(completion: { result
@@ -107,8 +116,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         
         return listRestaurants
     }
-
-/**Collection view functions*/
+    
+    /**Collection view functions*/
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listRestaurants.count
@@ -119,12 +128,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+        let imageDownloader = ImageDownloader()
         let restaurant = listRestaurants[indexPath.row]
-       // print("imagen",restaurant.image!);
+        print(restaurant.imageURL!)
+        // print("imagen",restaurant.image!);
         let identifier = "Restaurant"
         let cell = self.gridRestaurant.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)as! RestaurantCollectionView
-        cell.imageRestaurant.image = UIImage(imageLiteralResourceName: restaurant.imageURL!)
+        imageDownloader.downloader(URLString: restaurant.imageURL!, completion: { (image:UIImage?) in
+            cell.imageRestaurant.image = image
+        })
         cell.nameRestaurant.text = restaurant.name
         cell.typeRestaurant.text = restaurant.type
         
@@ -136,18 +148,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
      */
     var lastVelocityYSign = 0
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-       
+        
         let currentVelocityY =  scrollView.panGestureRecognizer.velocity(in: scrollView.superview).y
         let currentVelocityYSign = Int(currentVelocityY).signum()
         if currentVelocityYSign != lastVelocityYSign &&
-           currentVelocityYSign != 0 {
-               lastVelocityYSign = currentVelocityYSign
+            currentVelocityYSign != 0 {
+            lastVelocityYSign = currentVelocityYSign
         }
         if lastVelocityYSign < 0 {
             setView(view: AlertView, hidden: false)
         } else if lastVelocityYSign > 0 {
             setView(view: AlertView, hidden: true)
-          print("SCOLLING UP")
         }
     }
     
@@ -171,4 +182,28 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         filterButton.setTitle("", for: .normal)
         searchButton.setTitle("", for: .normal)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           guard let item = ( sender as? RestaurantCollectionView) else { return }
+           guard let indexPath = self.gridRestaurant.indexPath(for: item) else { return }
+           let restaurant = listRestaurants[indexPath.row]
+           let detailRestaurant = segue.destination as? MenuViewController
+            detailRestaurant?.restaurant = restaurant
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.8, animations: {
+            cell.alpha = 1
+        })
+    }
+    
+    
 }
+
+
+

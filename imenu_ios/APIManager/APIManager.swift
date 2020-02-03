@@ -10,9 +10,10 @@ import UIKit
 import Alamofire
 
 class APIManager {
-    let registerPostUrl = URL(string:"http://localhost:8888/back_imenu-develop/public/api/register")
-    let LoginPostUrl = URL(string: "http://localhost:888/")
-    
+    let registerPostUrl = URL(string:"http://localhost:8888/back_imenu/public/api/register")
+    let LoginPostUrl = URL(string: "http://localhost:8888/back_imenu/public/api/loginApi")
+    let RecoverPostUrl = URL(string: "http://localhost:8888/back_imenu/public/api/password/email")
+    let restaurantURL = URL(string: "http://localhost:8888/back_imenu/public/api/homeRestaurante")
     
     func postLogin(user:User,completion: @escaping (Int?) -> Void){
 
@@ -21,7 +22,7 @@ class APIManager {
             "password": user.password
         ]
         
-        AF.request(LoginPostUrl ?? "Login Vacio", method:.post, parameters:parameters as Parameters ,encoding: JSONEncoding.default).responseJSON { response in
+        Alamofire.request(LoginPostUrl ?? "Login Vacio", method:.post, parameters:parameters as Parameters ,encoding: JSONEncoding.default).responseJSON { response in
             switch (response.result) {
             case .success:
                 do{
@@ -48,7 +49,7 @@ class APIManager {
             "avatar_id":user.avatarID!
         ]
         
-        AF.request(registerPostUrl ?? "Registro Vacio" , method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        Alamofire.request(registerPostUrl ?? "Registro Vacio" , method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in
                 switch response.result {
                 case .success:
@@ -62,9 +63,9 @@ class APIManager {
     }
     
     public func getAllRestaurants(completion: @escaping ([Restaurant]) -> Void){
-        let restaurantURL = URL(string: "http://localhost:8888/back_imenu/public/api/homeRestaurante")
+        
        
-        AF.request(restaurantURL!,method: .get).responseJSON {
+        Alamofire.request(restaurantURL!,method: .get).responseJSON {
             (response) in
             switch (response.result){
             case .success:
@@ -79,6 +80,26 @@ class APIManager {
                 print("ERROR!!")
                 break
             }
+        }
+    }
+    
+    public func postRecover (email: String,completion: @escaping (Bool?) -> Void){
+        
+        
+        let parameters:[String : Any] = [
+            "email" :email,
+        ]
+        
+        Alamofire.request(RecoverPostUrl ?? "Recover Vacio" , method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    completion(true)
+                    break
+                case .failure(_):
+                    completion(false)
+                    break
+                }
         }
     }
 }

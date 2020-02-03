@@ -11,6 +11,10 @@ import UIKit
 class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
    
 
+    @IBAction func dishClicked(_ sender: Any) {
+        
+    }
+    
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var handleArea: UIView!
     

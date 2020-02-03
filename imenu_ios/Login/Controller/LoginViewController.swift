@@ -29,7 +29,6 @@ class LoginViewController: UIViewController {
         if labelUserName.text == Literals.empty && labelUserPassword.text == Literals.empty {
             labelUserName.errorMessage = Literals.emptyEmailLabel
             labelUserPassword.errorMessage = Literals.emptyPassLabel
-            self.performSegue(withIdentifier: "segueHome", sender: nil)
         }else{
             if labelUserName.text == Literals.empty {
                 labelUserName.errorMessage = Literals.emptyEmailLabel
@@ -38,7 +37,12 @@ class LoginViewController: UIViewController {
             else if labelUserPassword.text == Literals.empty {
                 labelUserPassword.errorMessage = Literals.emptyPassLabel
                 labelUserName.errorMessage = Literals.empty
-            }else {
+                
+            }else if labelUserPassword.text!.count <= 7 {
+                labelUserPassword.errorMessage = Literals.labelPassworLogin8caracterer
+                labelUserName.errorMessage = Literals.empty
+            }
+            else {
                 labelUserName.errorMessage = Literals.empty
                 labelUserPassword.errorMessage = Literals.empty
                 let user = User(email: labelUserName.text, password: labelUserPassword.text);
@@ -49,7 +53,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btninvitedClicked(_ sender: Any) {
-        
+        performSegue(withIdentifier: "segueHome", sender: nil)
     }
     
     @IBAction func btnRegistryClicked(_ sender: Any) {

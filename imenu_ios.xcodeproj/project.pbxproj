@@ -42,6 +42,8 @@
 		9BB3928523C9219200AA7AAC /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3928423C9219200AA7AAC /* RoundButton.swift */; };
 		9BB4D84623C8380C00CE6F38 /* Pods_imenu_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; };
 		9BB4D84723C8380C00CE6F38 /* Pods_imenu_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9BE474AE23E3A291004E1EAF /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE474AD23E3A291004E1EAF /* ImageDownloader.swift */; };
+		9BE474B423E3BD55004E1EAF /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE474B323E3BD55004E1EAF /* NavigationViewController.swift */; };
 		9BE79A3223CD11CA00669BCC /* Recover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE79A3123CD11CA00669BCC /* Recover.storyboard */; };
 		A088402D23D7695400DCAB70 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = A088402C23D7695400DCAB70 /* Dish.swift */; };
 		A0C25FE223E345DA0099F1E5 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C25FE123E345DA0099F1E5 /* CollectionViewCell.xib */; };
@@ -132,6 +134,8 @@
 		9BB4D84523C8380C00CE6F38 /* Pods_imenu_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_imenu_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB4D84923C8384600CE6F38 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SkyFloatingLabelTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB4D84C23C8388D00CE6F38 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BE474AD23E3A291004E1EAF /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		9BE474B323E3BD55004E1EAF /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		9BE79A3123CD11CA00669BCC /* Recover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recover.storyboard; sourceTree = "<group>"; };
 		A088402C23D7695400DCAB70 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		A0C25FE123E345DA0099F1E5 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
@@ -237,6 +241,8 @@
 				9B214E5923C7B11300969784 /* Literals.swift */,
 				A0C9CF2923C8EE9600E77B86 /* Color.swift */,
 				9BB3928423C9219200AA7AAC /* RoundButton.swift */,
+				9BE474AD23E3A291004E1EAF /* ImageDownloader.swift */,
+				9BE474B323E3BD55004E1EAF /* NavigationViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -726,6 +732,7 @@
 			files = (
 				9B214E4D23C795F500969784 /* LoginViewController.swift in Sources */,
 				9BAD3DAD23D8A614004908DA /* DetailDishViewController.swift in Sources */,
+				9BE474AE23E3A291004E1EAF /* ImageDownloader.swift in Sources */,
 				A0CC912323D65B6600877543 /* AvatarViewController.swift in Sources */,
 				9B214E5A23C7B11300969784 /* Literals.swift in Sources */,
 				9BB3928523C9219200AA7AAC /* RoundButton.swift in Sources */,
@@ -735,6 +742,7 @@
 				9BAD3DA123D8A499004908DA /* HomeViewController.swift in Sources */,
 				9B4FD55E23CCDF7900158709 /* RecoverViewController.swift in Sources */,
 				9B9A82EB23E2162C00A50749 /* RestaurantCollectionView.swift in Sources */,
+				9BE474B423E3BD55004E1EAF /* NavigationViewController.swift in Sources */,
 				5CED261F23D9F642009B8E09 /* Restaurant.swift in Sources */,
 				9BAD3DA623D8A4D7004908DA /* MenuViewController.swift in Sources */,
 				9B6F521423C7730000943C71 /* AppDelegate.swift in Sources */,
@@ -928,6 +936,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = D7ERVUZL2M;
 				INFOPLIST_FILE = imenu_ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -948,6 +957,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 254DWXJ94U;
 				INFOPLIST_FILE = imenu_ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
