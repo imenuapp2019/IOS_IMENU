@@ -45,6 +45,8 @@
 		9BE474AE23E3A291004E1EAF /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE474AD23E3A291004E1EAF /* ImageDownloader.swift */; };
 		9BE474B423E3BD55004E1EAF /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE474B323E3BD55004E1EAF /* NavigationViewController.swift */; };
 		9BE79A3223CD11CA00669BCC /* Recover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BE79A3123CD11CA00669BCC /* Recover.storyboard */; };
+		A085C1BC23E9D9B3004AD80F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A085C1BB23E9D9B3004AD80F /* ProfileViewController.swift */; };
+		A085C1BE23E9D9C9004AD80F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A085C1BD23E9D9C9004AD80F /* Profile.storyboard */; };
 		A088402D23D7695400DCAB70 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = A088402C23D7695400DCAB70 /* Dish.swift */; };
 		A0C25FE223E345DA0099F1E5 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C25FE123E345DA0099F1E5 /* CollectionViewCell.xib */; };
 		A0C25FE423E348320099F1E5 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C25FE323E348320099F1E5 /* MenuCollectionViewCell.swift */; };
@@ -137,6 +139,8 @@
 		9BE474AD23E3A291004E1EAF /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		9BE474B323E3BD55004E1EAF /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		9BE79A3123CD11CA00669BCC /* Recover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recover.storyboard; sourceTree = "<group>"; };
+		A085C1BB23E9D9B3004AD80F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A085C1BD23E9D9C9004AD80F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A088402C23D7695400DCAB70 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		A0C25FE123E345DA0099F1E5 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		A0C25FE323E348320099F1E5 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 		9B6F521223C772FF00943C71 /* imenu_ios */ = {
 			isa = PBXGroup;
 			children = (
+				A085C1B723E9D951004AD80F /* Profile */,
 				9B9A82DF23E20C9400A50749 /* Dish */,
 				9B0B193223D0AFD6002C9CCC /* APIManager */,
 				9B214E4423C783B300969784 /* Login */,
@@ -438,6 +443,31 @@
 			isa = PBXGroup;
 			children = (
 				9BAD3DAC23D8A614004908DA /* DetailDishViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A085C1B723E9D951004AD80F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A085C1BA23E9D976004AD80F /* Controller */,
+				A085C1B823E9D95E004AD80F /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A085C1B823E9D95E004AD80F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A085C1BD23E9D9C9004AD80F /* Profile.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A085C1BA23E9D976004AD80F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A085C1BB23E9D9B3004AD80F /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -597,6 +627,7 @@
 				A0C25FE223E345DA0099F1E5 /* CollectionViewCell.xib in Resources */,
 				9B6F522023C7730600943C71 /* LaunchScreen.storyboard in Resources */,
 				9BAD3DA423D8A4C4004908DA /* Menu.storyboard in Resources */,
+				A085C1BE23E9D9C9004AD80F /* Profile.storyboard in Resources */,
 				9B0B193D23D0CEA4002C9CCC /* Register.storyboard in Resources */,
 				9B6F521D23C7730600943C71 /* Assets.xcassets in Resources */,
 				9B214E5723C7AA2C00969784 /* Main.storyboard in Resources */,
@@ -748,6 +779,7 @@
 				9B6F521423C7730000943C71 /* AppDelegate.swift in Sources */,
 				A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */,
 				9B6F521623C7730000943C71 /* SceneDelegate.swift in Sources */,
+				A085C1BC23E9D9B3004AD80F /* ProfileViewController.swift in Sources */,
 				5C02DC7723E088C50006A9EF /* FilViewController.swift in Sources */,
 				A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */,
 				9B85C03C23DF58C10093DDAC /* MenuCardViewController.swift in Sources */,
