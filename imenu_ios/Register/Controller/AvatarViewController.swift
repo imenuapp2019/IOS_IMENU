@@ -72,11 +72,10 @@ class AvatarViewController: UIViewController,UICollectionViewDelegate, UICollect
         print (presenter)
        }
 
-       else   {
-        let presenter:Profile
+       else  if let presenter = presentingViewController as? ProfileViewController {
         
-        presenter!.thisImage.image = images [avatarClicked]
-        presenter!.avatarChosenInProfile = avatarClicked + 1
+            presenter.thisImage.image = images [avatarClicked]
+        presenter.avatarChosenInProfile = avatarClicked + 1
         print ("Hola profile")
              
              }
