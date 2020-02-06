@@ -51,24 +51,15 @@ class ProfileViewController: UIViewController {
                saveBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
     }
     
-    func cardConfig () {
-                            //Constraints
-//        cardViewShadow.translatesAutoresizingMaskIntoConstraints = false
-//        cardViewShadow.centerXAnchor.constraint(equalTo: parentView2.centerXAnchor).isActive = true
-//        cardViewShadow.centerYAnchor.constraint(equalTo: parentView2.centerYAnchor).isActive = true
-//        cardViewShadow.leadingAnchor.constraint(equalTo: cardViewShadow.leadingAnchor).isActive = true
-//        cardViewShadow.trailingAnchor.constraint(equalTo: cardViewShadow.trailingAnchor).isActive = true
-//        cardViewShadow.topAnchor.constraint(equalTo: cardViewShadow.topAnchor).isActive = true
-//        cardViewShadow.bottomAnchor.constraint(equalTo: cardViewShadow.bottomAnchor).isActive = true
-                                
+    func cardConfig (){
                                 //Shape
-        parentView2.bringSubviewToFront(cardViewShadow)
+       // parentView2.bringSubviewToFront(cardViewShadow)
         cardViewRounded.layer.cornerRadius = 15
         cardViewShadow.layer.shadowColor = UIColor.black.cgColor
         cardViewShadow.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         cardViewShadow.layer.shadowRadius = 7.0
         cardViewShadow.layer.shadowOpacity = 0.5
        cardViewRounded.layer.masksToBounds = true
-    
     }
+    
 }
