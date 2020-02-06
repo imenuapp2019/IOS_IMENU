@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController {
 
     func imageViewRounded (){
         
-        likeView.layer.cornerRadius = likeView.frame.height/2
+        
         deleteView.layer.cornerRadius = deleteView.frame.height/2
         thisImage.layer.borderWidth = 1
         thisImage.layer.masksToBounds = false

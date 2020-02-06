@@ -11,6 +11,7 @@ import UIKit
 class DetailDishViewController: UIViewController {
 
     
+    @IBOutlet weak var likebtnView: UIView!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var dishPriceLabel: UILabel!
     @IBOutlet weak var innerCard: UIView!
@@ -26,7 +27,7 @@ class DetailDishViewController: UIViewController {
         dishPriceLabel.layer.masksToBounds = true
         innerCard.layer.cornerRadius = 15
         innerCard.layer.masksToBounds = true
-        
+       likebtnView.layer.cornerRadius = likebtnView.frame.height/2
     }
     
 }
