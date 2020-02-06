@@ -14,6 +14,4 @@ class NavigationViewController: UINavigationController {
         super.viewDidLoad()
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
-
-
 }

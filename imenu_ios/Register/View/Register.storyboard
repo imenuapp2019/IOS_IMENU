@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3CD-Bi-vlD">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -29,15 +30,15 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvV-rL-uSt" userLabel="upperView">
                                                 <rect key="frame" x="0.0" y="0.0" width="285" height="163.5"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlatoSeis" translatesAutoresizingMaskIntoConstraints="NO" id="RH4-5C-y4E">
-                                                        <rect key="frame" x="65" y="4.5" width="155" height="155"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Capa 3" translatesAutoresizingMaskIntoConstraints="NO" id="RH4-5C-y4E">
+                                                        <rect key="frame" x="67.5" y="7" width="150" height="150"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="155" id="B4b-Jb-Vlj"/>
-                                                            <constraint firstAttribute="width" constant="155" id="BkQ-uI-QR3"/>
+                                                            <constraint firstAttribute="width" constant="150" id="0W0-uO-BAn"/>
+                                                            <constraint firstAttribute="height" constant="150" id="b9J-UQ-2v7"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfz-bO-TLZ">
-                                                        <rect key="frame" x="65" y="8" width="155" height="148"/>
+                                                        <rect key="frame" x="65" y="0.0" width="155" height="164"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <connections>
                                                             <segue destination="ejh-NS-m2W" kind="presentation" id="cxC-S1-NcE"/>
@@ -46,8 +47,8 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="RH4-5C-y4E" firstAttribute="centerX" secondItem="fvV-rL-uSt" secondAttribute="centerX" id="6mC-Gm-LF4"/>
-                                                    <constraint firstItem="RH4-5C-y4E" firstAttribute="centerY" secondItem="fvV-rL-uSt" secondAttribute="centerY" id="8Ga-Yd-cDu"/>
+                                                    <constraint firstItem="RH4-5C-y4E" firstAttribute="centerY" secondItem="fvV-rL-uSt" secondAttribute="centerY" id="2yk-mS-Qfj"/>
+                                                    <constraint firstItem="RH4-5C-y4E" firstAttribute="centerX" secondItem="fvV-rL-uSt" secondAttribute="centerX" id="KoG-9i-Wei"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CPT-AU-ovv" userLabel="lowerView">
@@ -194,9 +195,12 @@
                                     <action selector="confirmBtnAction:" destination="3CD-Bi-vlD" eventType="touchUpInside" id="xeW-T5-MJj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="li6-Nx-lNE">
-                                <rect key="frame" x="23" y="19" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="li6-Nx-lNE">
+                                <rect key="frame" x="5" y="5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="UnH-9G-E4K"/>
+                                    <constraint firstAttribute="width" constant="25" id="VUE-fk-Rch"/>
+                                </constraints>
                                 <state key="normal" image="iconBackArrow"/>
                                 <connections>
                                     <action selector="backToLoginBtn:" destination="3CD-Bi-vlD" eventType="touchUpInside" id="Y94-fJ-thP"/>
@@ -207,9 +211,11 @@
                         <constraints>
                             <constraint firstItem="Bih-Fn-ua7" firstAttribute="top" secondItem="5XL-5d-xmt" secondAttribute="bottom" constant="8" id="9R3-O0-9ur"/>
                             <constraint firstItem="YFY-SW-ZGH" firstAttribute="trailing" secondItem="Bih-Fn-ua7" secondAttribute="trailing" constant="72.5" id="VTc-HF-vd2"/>
+                            <constraint firstItem="li6-Nx-lNE" firstAttribute="top" secondItem="YFY-SW-ZGH" secondAttribute="top" constant="5" id="Xxl-JG-KTk"/>
                             <constraint firstItem="5XL-5d-xmt" firstAttribute="leading" secondItem="YFY-SW-ZGH" secondAttribute="leading" constant="40" id="YuM-gW-FPB"/>
                             <constraint firstItem="YFY-SW-ZGH" firstAttribute="bottom" secondItem="Bih-Fn-ua7" secondAttribute="bottom" constant="16" id="bhD-Pr-UfQ"/>
                             <constraint firstItem="Bih-Fn-ua7" firstAttribute="leading" secondItem="YFY-SW-ZGH" secondAttribute="leading" constant="72.5" id="chU-G3-FNT"/>
+                            <constraint firstItem="li6-Nx-lNE" firstAttribute="leading" secondItem="YFY-SW-ZGH" secondAttribute="leading" constant="5" id="eG6-vb-peb"/>
                             <constraint firstItem="5XL-5d-xmt" firstAttribute="top" secondItem="YFY-SW-ZGH" secondAttribute="top" constant="40" id="rqU-mx-rPo"/>
                             <constraint firstItem="YFY-SW-ZGH" firstAttribute="trailing" secondItem="5XL-5d-xmt" secondAttribute="trailing" constant="40" id="v6T-fq-WLg"/>
                             <constraint firstItem="YFY-SW-ZGH" firstAttribute="bottom" secondItem="5XL-5d-xmt" secondAttribute="bottom" constant="72" id="yWb-7V-u2T"/>
@@ -231,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wsg-e0-zBU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-258" y="-18"/>
+            <point key="canvasLocation" x="-258.39999999999998" y="-18.440779610194905"/>
         </scene>
         <!--Home-->
         <scene sceneID="I1p-MA-RdR">
@@ -296,14 +302,18 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qEK-ze-fJZ">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                                            <rect key="frame" x="3" y="3" width="72" height="72"/>
                                                                         </imageView>
                                                                     </subviews>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="qEK-ze-fJZ" secondAttribute="trailing" constant="3" id="3pf-P1-s0C"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="qEK-ze-fJZ" secondAttribute="bottom" constant="3" id="3sz-wf-MFp"/>
                                                                         <constraint firstItem="qEK-ze-fJZ" firstAttribute="top" secondItem="vZ3-65-GZY" secondAttribute="top" id="8n0-ko-noh"/>
                                                                         <constraint firstItem="qEK-ze-fJZ" firstAttribute="leading" secondItem="vZ3-65-GZY" secondAttribute="leading" id="CW5-iS-zqc"/>
                                                                         <constraint firstAttribute="trailing" secondItem="qEK-ze-fJZ" secondAttribute="trailing" id="JQ3-1L-DyU"/>
+                                                                        <constraint firstItem="qEK-ze-fJZ" firstAttribute="leading" secondItem="vZ3-65-GZY" secondAttribute="leading" constant="3" id="Sbd-1j-gV0"/>
                                                                         <constraint firstAttribute="bottom" secondItem="qEK-ze-fJZ" secondAttribute="bottom" id="eNu-3U-cNa"/>
+                                                                        <constraint firstItem="qEK-ze-fJZ" firstAttribute="top" secondItem="vZ3-65-GZY" secondAttribute="top" constant="3" id="hC2-R4-Cdy"/>
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <size key="customSize" width="75" height="75"/>
@@ -358,7 +368,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="PlatoSeis" width="173" height="172"/>
+        <image name="Capa 3" width="121" height="121"/>
         <image name="iconBackArrow" width="32" height="32"/>
     </resources>
 </document>

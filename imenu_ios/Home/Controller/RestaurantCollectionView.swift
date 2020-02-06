@@ -10,11 +10,10 @@ import UIKit
 class RestaurantCollectionView: UICollectionViewCell {
     
     @IBOutlet weak var imageRestaurant: UIImageView!
-    
     @IBOutlet weak var typeRestaurant: UILabel!
     @IBOutlet weak var nameRestaurant: UILabel!
-    
     @IBOutlet weak var CardBackground: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.layer.cornerRadius = 7

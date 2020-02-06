@@ -9,7 +9,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class RecoverViewController: UIViewController {
+class RecoverViewController: BaseViewController {
     
     
     @IBOutlet weak var emailImage: UIImageView!
@@ -22,26 +22,8 @@ class RecoverViewController: UIViewController {
     
     let popUp = PopUp()
     
-    
     @IBAction func btnRecoverClick(_ sender: Any) {
-        let apiManger = APIManager ()
-        if let textInputEmail = inputlabelEmail.text, textInputEmail != ""{
-            apiManger.postRecover(email: textInputEmail, completion: {
-                result in
-                let alert = self.popUp.initializade(Title: Literals.messageRecover, Message: textInputEmail)
-                let btnOkAction = UIAlertAction(title: Literals.titleBotonPopUps, style: UIAlertAction.Style.default, handler: {
-                    action in self.dismiss(animated: true, completion: nil )
-                })
-                alert.addAction(btnOkAction)
-                self.present(alert, animated: true)
-            })
-        }else{
-            let alert = self.popUp.initializade(Title: Literals.titlePopUpLoginRequestWrong, Message: Literals.recoverTextEmpty)
-            let btnOkAction = popUp.okAction(TitleButton: Literals.titleBotonPopUps)
-            alert.addAction(btnOkAction)
-            self.present(alert, animated: true)
-        }
-        
+        apiRequestRecover()
     }
     
     @IBAction func iconBackClicked(_ sender: Any) {
@@ -80,6 +62,46 @@ class RecoverViewController: UIViewController {
         cardView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         emailImage.image = #imageLiteral(resourceName: "iconRecover")
     }
+    
+    func apiRequestRecover(){
+        let apiManger = APIManager ()
+        if  let textInputEmail = inputlabelEmail.text, textInputEmail != ""{
+            apiManger.postRecover(email: textInputEmail, completion: {
+                result in
+                guard let resutCode = result else { return }
+                let alert = self.alertResponse(Result: resutCode, PopUp: self.popUp, TextInputEmail: textInputEmail)
+                let btnOkAction = UIAlertAction(title: Literals.titleBotonPopUps, style: UIAlertAction.Style.default, handler: {
+                    
+                    action in if result == 200 { self.dismiss(animated: true, completion: nil )}
+                })
+                alert.addAction(btnOkAction)
+                self.present(alert, animated: true)
+            })
+        }else{
+            let alert = self.popUp.initializade(Title: Literals.titlePopUpLoginRequestWrong, Message: Literals.recoverTextEmpty)
+            let btnOkAction = popUp.okAction(TitleButton: Literals.titleBotonPopUps)
+            alert.addAction(btnOkAction)
+            self.present(alert, animated: true)
+        }
+    }
+    
+    func alertResponse(Result result:Int,PopUp popUp:PopUp,TextInputEmail textInputEmail:String) -> UIAlertController {
+        var alert:UIAlertController?
+        switch result {
+        case 200:
+            alert = self.popUp.initializade(Title: Literals.messageRecover, Message: textInputEmail)
+            break
+        case 400:
+            alert = self.popUp.initializade(Title: Literals.emailHaventBBDD, Message: textInputEmail)
+            break
+        case 600:
+            alert = self.popUp.initializade(Title: Literals.errorConect, Message: "")
+            break
+        default:
+            break
+        }
+        return alert!
+    }
 }
 
 extension RecoverViewController:UITextFieldDelegate{
@@ -101,38 +123,3 @@ extension RecoverViewController:UITextFieldDelegate{
         }
     }
 }
-
-extension RecoverViewController {
-    
-    func moveScreenWhenUseKeyboard(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    func hideKeyboard()->UITapGestureRecognizer{
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        return tap
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
-    }
-}
-
-
-
-
