@@ -289,6 +289,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRx-eo-bS9" userLabel="QRButton">
                                                         <rect key="frame" x="23" y="6.5" width="23" height="23"/>
                                                         <state key="normal" image="ARBarraInferior"/>
+                                                        <connections>
+                                                            <segue destination="doi-Pc-ALu" kind="show" id="cLs-9U-ciG"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -400,7 +403,6 @@
         <!--Fil View Controller-->
         <scene sceneID="9aV-GH-Tnr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b4a-5O-wGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController modalPresentationStyle="fullScreen" id="bkf-B3-guq" customClass="FilViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l3A-2V-2RC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -668,6 +670,7 @@
                         <outlet property="TypeFoodView" destination="3Vm-jK-ik1" id="M7T-Rp-xtL"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4a-5O-wGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1199.2" y="130.88455772113943"/>
         </scene>
@@ -691,10 +694,19 @@
             </objects>
             <point key="canvasLocation" x="655" y="366"/>
         </scene>
+        <!--DetailDish-->
+        <scene sceneID="Kgn-Jb-Nf0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailDish" id="doi-Pc-ALu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DT5-Pl-Gio"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="owJ-ka-mkz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="643" y="459"/>
+        </scene>
         <!--Navigation View Controller-->
         <scene sceneID="cTU-JM-AXr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SdM-No-nS2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController modalPresentationStyle="fullScreen" id="vmr-8C-ssr" customClass="NavigationViewController" customModule="imenu_ios" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6FL-p4-J0V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -706,6 +718,7 @@
                         <segue destination="6fI-L8-10Y" kind="relationship" relationship="rootViewController" id="hxA-BU-Fg0"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SdM-No-nS2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-878" y="84"/>
         </scene>

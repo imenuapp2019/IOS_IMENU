@@ -62,4 +62,10 @@ class ProfileViewController: UIViewController {
        cardViewRounded.layer.masksToBounds = true
     }
     
+    func deleteAccount () {
+        
+        
+        
+    }
+    
 }
