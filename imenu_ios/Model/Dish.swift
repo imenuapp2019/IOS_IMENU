@@ -13,12 +13,14 @@ class Dish {
     var description:String?
     var menuBelonged:Int?
     var image:UIImage?
+    var price:Int?
     
     
-    init(name:String?, description:String?, menuBelonged:Int?, image:UIImage?) {
+    init(name:String?, description:String?, menuBelonged:Int?, image:UIImage?, price:Int?) {
         self.name = name!
         self.description = description!
         self.menuBelonged = menuBelonged!
         self.image = image
+        self.price = price
     }
 }

@@ -23,7 +23,8 @@ class RegisterViewController: BaseViewController {
     @IBOutlet weak var lastNameTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
-    @IBOutlet weak var avatarSelectionView: UIView!
+   
+    
     @IBOutlet weak var vrfPasswordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var confirmBtn: UIButton!
     

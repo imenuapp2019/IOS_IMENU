@@ -90,4 +90,11 @@ class APIManager {
                 }
         }
     }
+    
+    
+    public func deleteAccount () {
+        
+        
+        
+    }
 }

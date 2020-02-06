@@ -50,15 +50,34 @@ class AvatarViewController: UIViewController,UICollectionViewDelegate, UICollect
         let location = sender.location(in: self.collectionView)
         let indexPath = self.collectionView.indexPathForItem(at: location)
         
-        avatarClicked = indexPath!.row
-        changeAvatarImageView()
-    }
+            avatarClicked = indexPath!.row
+            changeAvatarImageView()
+        
+      }
     
     func changeAvatarImageView() {
-        if let presenter = presentingViewController as? RegisterViewController {
-            presenter.registerAvatarImageView.image = images [avatarClicked]
-            presenter.avatarChosen = avatarClicked + 1
-        }
+        print  ("hey")
+       if let presenter = presentingViewController as? RegisterViewController {
+        presenter.registerAvatarImageView.image = images [avatarClicked]
+                                       presenter.avatarChosen = avatarClicked + 1
+                  print ("Hola register")
+        print (presenter)
+       }
+
+       else  if let presenter = presentingViewController as? ProfileViewController {
+        
+            presenter.thisImage.image = images [avatarClicked]
+        presenter.avatarChosenInProfile = avatarClicked + 1
+        print ("Hola profile")
+             
+             }
+
+
+                  
+          
         dismiss(animated: true, completion: nil)
-    }
+}
+    
+    
+    
 }
