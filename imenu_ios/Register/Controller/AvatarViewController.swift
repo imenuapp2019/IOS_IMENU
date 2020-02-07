@@ -10,64 +10,55 @@ import UIKit
 
 class AvatarViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
     
-     var images:[UIImage] = [#imageLiteral(resourceName: "PlatoTres"),#imageLiteral(resourceName: "PlatoCuatro"),#imageLiteral(resourceName: "PlatoDos"),#imageLiteral(resourceName: "PlatoSeis"),#imageLiteral(resourceName: "PlatoUno"),#imageLiteral(resourceName: "PlatoCinco")]
+    var images:[UIImage] = [#imageLiteral(resourceName: "Capa 6"),#imageLiteral(resourceName: "Capa 5"),#imageLiteral(resourceName: "Capa 4"),#imageLiteral(resourceName: "Capa 3"),#imageLiteral(resourceName: "Capa 2"),#imageLiteral(resourceName: "Capa 7")]
     var avatarClicked:Int = 1
     
     @IBOutlet weak var avatarViewLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var popUpView: UIView!
-     
+    
     override func viewDidLoad() {
-          super.viewDidLoad()
-            popUpView.layer.cornerRadius = 10
-            popUpView.layer.masksToBounds = true
-            popUpView.layer.borderColor = UIColor.black.cgColor
-            popUpView.layer.borderWidth = 1
-            
-            collectionView.delegate = self
-            collectionView.dataSource = self
+        super.viewDidLoad()
+        
+        popUpView.layer.cornerRadius = 10
+        popUpView.layer.masksToBounds = true
+        popUpView.layer.borderColor = UIColor.black.cgColor
+        popUpView.layer.borderWidth = 1
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         avatarViewLabel.backgroundColor = Color.greenBtnColor
-      }
-      
-  
- 
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       
-    
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AvatarCollectionViewCell
         
-        cell.layer.borderColor = UIColor.black.cgColor
-           cell.layer.borderWidth = 1
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AvatarCollectionViewCell
+        
         cell.avatarImageView.image = images[indexPath.row]
-        
-        
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DoWhenACellIsClicked(_:))))
-    
+        
         return cell
     }
     
     @objc func DoWhenACellIsClicked(_ sender: UITapGestureRecognizer) {
-
+        
         let location = sender.location(in: self.collectionView)
         let indexPath = self.collectionView.indexPathForItem(at: location)
         
-            avatarClicked = indexPath!.row
-            changeAvatarImageView()
-      }
-    
+        avatarClicked = indexPath!.row
+        changeAvatarImageView()
+    }
     
     func changeAvatarImageView() {
-       if let presenter = presentingViewController as? RegisterViewController {
+        if let presenter = presentingViewController as? RegisterViewController {
             presenter.registerAvatarImageView.image = images [avatarClicked]
             presenter.avatarChosen = avatarClicked + 1
-                  
-           }
-               dismiss(animated: true, completion: nil)
-           }
+        }
+        dismiss(animated: true, completion: nil)
+    }
 }

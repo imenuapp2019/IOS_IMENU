@@ -10,10 +10,8 @@ import UIKit
 import SkyFloatingLabelTextField
 import Alamofire
 
-class RegisterViewController: UIViewController {
-    
-    
-    //IB outlets
+class RegisterViewController: BaseViewController {
+
     var validNewUser:User?
     var emailValidation:Bool = false
     var avatarChosen:Int = 1
@@ -26,12 +24,11 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var avatarSelectionView: UIView!
-    
     @IBOutlet weak var vrfPasswordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var confirmBtn: UIButton!
     
     @IBAction func confirmBtnAction(_ sender: Any) {
-        formValidation()
+        self.formValidation()
     }
     
     @IBAction func backToLoginBtn(_ sender: Any) {
@@ -40,30 +37,28 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldsConfig() //Confifure all the textfields.
-        imageViewConfig() //Make the imageview circular
+        textFieldsConfig()
+        imageViewConfig()
         confirmButtonConfig()
         imageViewTableBackground.image = #imageLiteral(resourceName: "Background")
-        
         let tap = hideKeyboard()
         view.addGestureRecognizer(tap)
         moveScreenWhenUseKeyboard()
-        
-        //Make the roundedFrameView's border circular
         roundedFrameView.layer.cornerRadius = 15
+        self.shadowView(View: roundedFrameView)
     }
     
     
     private func imageViewConfig () {
-        
-        registerAvatarImageView.layer.borderWidth = 1
+        registerAvatarImageView.layer.borderWidth = 2.5
         registerAvatarImageView.layer.masksToBounds = false
-        registerAvatarImageView.layer.borderColor = UIColor.black.cgColor
+        registerAvatarImageView.layer.borderColor = UIColor.lightGray.cgColor
         registerAvatarImageView.layer.cornerRadius = registerAvatarImageView.frame.height/2
         registerAvatarImageView.clipsToBounds = true
     }
     
     private func formValidation () {
+        
         let name = nameTextField.text!
         let lastname = lastNameTextField.text!
         let email = emailTextField.text!
@@ -75,52 +70,49 @@ class RegisterViewController: UIViewController {
         var passwordIsNotEmpty:Bool = false
         var vrfPasswordIsNotEmpty:Bool = false
         
-        
         if name.isEmpty {
-            nameTextField.errorMessage = "Campo obligatorio"
+            nameTextField.errorMessage = Literals.obligatoryField
         }
         else {
-            nameTextField.errorMessage = ""
+            nameTextField.errorMessage = Literals.empty
             nameIsNotEmpty = true
         }
         
         if lastname.isEmpty {
-            lastNameTextField.errorMessage = "Campo obligatorio"
+            lastNameTextField.errorMessage = Literals.obligatoryField
         }
         else {
-            lastNameTextField.errorMessage = ""
+            lastNameTextField.errorMessage = Literals.empty
             lastNameIsNotEmpty = true
         }
         
         if email.isEmpty {
-            emailTextField.errorMessage = "Campo obligatorio"
+            emailTextField.errorMessage = Literals.obligatoryField
         }
         else {
             emailIsNotEmpty = true
             if emailIsNotEmpty && emailValidation
                 
             {
-                emailTextField.errorMessage = ""
+                emailTextField.errorMessage = Literals.empty
             }
         }
         
         if password.isEmpty {
-            passwordTextField.errorMessage = "Campo obligatorio"
+            passwordTextField.errorMessage = Literals.obligatoryField
         }
         else {
-            passwordTextField.errorMessage = ""
+            passwordTextField.errorMessage = Literals.empty
             passwordIsNotEmpty = true
         }
         
         if vrfPassword.isEmpty {
-            vrfPasswordTextField.errorMessage = "Repita su contraseña "
+            vrfPasswordTextField.errorMessage = Literals.obligatoryField
         }
         else {
-            vrfPasswordTextField.errorMessage = ""
+            vrfPasswordTextField.errorMessage = Literals.empty
             vrfPasswordIsNotEmpty = true
         }
-        
-        
         
         if nameIsNotEmpty && lastNameIsNotEmpty && emailIsNotEmpty && passwordIsNotEmpty && vrfPasswordIsNotEmpty  {
             
@@ -128,10 +120,9 @@ class RegisterViewController: UIViewController {
                 if (vrfPassword.count >= 8){
                     if password != vrfPassword
                     {
-                        passwordTextField.errorMessage = "Contraseñas no coincidente"
-                        vrfPasswordTextField.errorMessage = "Contraseñas no coincidente"
+                        passwordTextField.errorMessage = Literals.passwordNotMaching
+                        vrfPasswordTextField.errorMessage = Literals.passwordNotMaching
                     }
-                        
                     else{
                         validNewUser = User (name: name, lastName: lastname, email: email, password: password, avatarID: avatarChosen)
                         passwordTextField.errorMessage = ""
@@ -144,20 +135,19 @@ class RegisterViewController: UIViewController {
                         })
                     }
                 }
-                    
+                
                 else
                 {
-                    vrfPasswordTextField.errorMessage = "Mínimo ocho caracteres"
+                    vrfPasswordTextField.errorMessage = Literals.minimumCharacters
                 }
             }
                 
             else
             {
-                passwordTextField.errorMessage = "Mínimo ocho caracteres"
+                passwordTextField.errorMessage = Literals.minimumCharacters
             }
         }
     }
-    
     
     private func textFieldBasicConfiguration (textfield:SkyFloatingLabelTextField?, name:String)->SkyFloatingLabelTextField?{
         
@@ -182,13 +172,12 @@ class RegisterViewController: UIViewController {
         emailTextField = textFieldBasicConfiguration(textfield: emailTextField, name: Literals.placedeHolderRegisterEmail)
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
-        
         passwordTextField = textFieldBasicConfiguration(textfield: passwordTextField, name: Literals.placedeHolderRegisterPassword)
         passwordTextField.isSecureTextEntry = true
         
-        
         vrfPasswordTextField = textFieldBasicConfiguration(textfield: vrfPasswordTextField, name: Literals.placedeHolderRegisterVrfPassword)
         vrfPasswordTextField.isSecureTextEntry = true
+        
     }
     
     private func confirmButtonConfig (){
@@ -197,19 +186,17 @@ class RegisterViewController: UIViewController {
         confirmBtn.tintColor = Color.whiteColor
         confirmBtn.backgroundColor = Color.greenBtnColor
         confirmBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        
     }
-    
-    
-    
-    
+
     func validateEmail(YourEMailAddress: String) -> Bool {
+        
         let REGEX: String
         REGEX = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         return NSPredicate(format: "SELF MATCHES %@", REGEX).evaluate(with: YourEMailAddress)
+        
     }
     
-    
-    //email texfield's validation (editing listener).
     @objc func textFieldDidChange(_ emailTextField: UITextField) {
         
         if let floatingLabelTextField = emailTextField as? SkyFloatingLabelTextField {
@@ -219,47 +206,17 @@ class RegisterViewController: UIViewController {
                 floatingLabelTextField.errorMessage = ""
             }
             else {
-                // The error message will only disappear when we reset it to nil or empty string
-                
-                floatingLabelTextField.errorMessage = "Invalid email"
-                
+                floatingLabelTextField.errorMessage = Literals.emailWrong
             }
         }
+        
+    }
+    
+    func shadowView(View view:UIView){
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        view.layer.shadowRadius = 2.0
+        view.layer.shadowOpacity = 1
+        view.layer.masksToBounds = false
     }
 }
-
-
-//Extensions
-
-extension RegisterViewController {
-    
-    func moveScreenWhenUseKeyboard(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    func hideKeyboard()->UITapGestureRecognizer{
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        return tap
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
-    }
-}
-
-
-

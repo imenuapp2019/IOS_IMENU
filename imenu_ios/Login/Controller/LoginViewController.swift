@@ -9,15 +9,12 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class LoginViewController: UIViewController {
-    
-    @IBOutlet weak var imageLogo: UIImageView!
-    @IBOutlet weak var imageBackground: UIImageView!
+class LoginViewController: BaseViewController {
     
     @IBOutlet weak var labelUserName: SkyFloatingLabelTextFieldWithIcon!
-    
     @IBOutlet weak var labelUserPassword: SkyFloatingLabelTextFieldWithIcon!
-    
+    @IBOutlet weak var imageLogo: UIImageView!
+    @IBOutlet weak var imageBackground: UIImageView!
     @IBOutlet weak var btninvited:UIButton!
     @IBOutlet weak var btnRegistry:UIButton!
     @IBOutlet weak var btnRecovery:UIButton!
@@ -33,21 +30,17 @@ class LoginViewController: UIViewController {
             if labelUserName.text == Literals.empty {
                 labelUserName.errorMessage = Literals.emptyEmailLabel
                 labelUserPassword.errorMessage = Literals.empty
-            }
-            else if labelUserPassword.text == Literals.empty {
+            }else if labelUserPassword.text == Literals.empty {
                 labelUserPassword.errorMessage = Literals.emptyPassLabel
                 labelUserName.errorMessage = Literals.empty
-                
             }else if labelUserPassword.text!.count <= 7 {
                 labelUserPassword.errorMessage = Literals.labelPassworLogin8caracterer
                 labelUserName.errorMessage = Literals.empty
-            }
-            else {
+            }else {
                 labelUserName.errorMessage = Literals.empty
                 labelUserPassword.errorMessage = Literals.empty
                 let user = User(email: labelUserName.text, password: labelUserPassword.text);
-                //AQUI PETICION
-                self.apiRequest(User:user)
+                self.apiRequestLogin(User:user)
             }
         }
     }
@@ -60,7 +53,6 @@ class LoginViewController: UIViewController {
         
     }
     
-    
     @IBAction func btnRecoveryClicked(_ sender: Any) {
         
     }
@@ -72,7 +64,6 @@ class LoginViewController: UIViewController {
             labelUserPassword.isSecureTextEntry = true
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,7 +92,6 @@ class LoginViewController: UIViewController {
             .underlineStyle: NSUnderlineStyle.single.rawValue]
         let attributeString = NSMutableAttributedString(string: Literals.btnRecoveryTitle,
                                                         attributes: btnAttributes)
-        
         eyeSecurity.isHidden = true
         eyeSecurity.backgroundColor = .clear
         btninvited.setTitle(Literals.btnInvitedTitle, for: .normal)
@@ -123,7 +113,7 @@ class LoginViewController: UIViewController {
         view.sendSubviewToBack(imageBackground)
     }
     
-    func apiRequest(User user:User){
+    func apiRequestLogin(User user:User){
         let apiManager = APIManager()
         apiManager.postLogin(user: user, completion: { result
             in
@@ -131,7 +121,17 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "segueHome", sender: nil)
             }else{
                 let popUp = PopUp()
-                let alert = popUp.initializade(Title: Literals.titlePopUpLoginRequestWrong, Message: Literals.msjPopUpLoginRequestWrong)
+                let errorLogin = result
+                let messageError:String?
+                if errorLogin == 404 {
+                    messageError = Literals.emailWrong
+                }
+                else if errorLogin == 403 {
+                    messageError = Literals.paswordWrong
+                }else{
+                    messageError = Literals.errorConect
+                }
+                let alert = popUp.initializade(Title: Literals.titlePopUpLoginRequestWrong, Message: messageError ?? "Sin conexion")
                 let btnOkAction = popUp.okAction(TitleButton: Literals.titleBotonPopUps)
                 alert.addAction(btnOkAction)
                 self.present(alert, animated: true)
@@ -151,7 +151,6 @@ extension LoginViewController:UITextFieldDelegate{
         }
     }
     
-    
     @objc func textFieldDidChangeEmail(_ textfield: UITextField) {
         let email = "@"
         let point = "."
@@ -169,36 +168,3 @@ extension LoginViewController:UITextFieldDelegate{
         }
     }
 }
-
-extension LoginViewController {
-    
-    func moveScreenWhenUseKeyboard(){
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    func hideKeyboard()->UITapGestureRecognizer{
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        return tap
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
-        }
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
-        }
-    }
-}
-
-

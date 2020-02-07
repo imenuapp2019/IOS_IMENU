@@ -28,6 +28,8 @@
 		9B6F523623C7730700943C71 /* ImenuIosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6F523523C7730700943C71 /* ImenuIosUITests.swift */; };
 		9B85C03C23DF58C10093DDAC /* MenuCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B85C03A23DF58C10093DDAC /* MenuCardViewController.swift */; };
 		9B85C03D23DF58C10093DDAC /* MenuCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B85C03B23DF58C10093DDAC /* MenuCardViewController.xib */; };
+		9B94B5D423EC8BF100D6CE54 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B94B5D323EC8BF100D6CE54 /* Url.swift */; };
+		9B94B5D623EC95D300D6CE54 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B94B5D523EC95D300D6CE54 /* BaseViewController.swift */; };
 		9B9A82E423E20CF000A50749 /* DishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82E223E20CF000A50749 /* DishViewController.swift */; };
 		9B9A82E523E20CF000A50749 /* DishCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82E323E20CF000A50749 /* DishCollectionViewCell.swift */; };
 		9B9A82E723E20CF900A50749 /* Dish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9A82E623E20CF900A50749 /* Dish.storyboard */; };
@@ -119,6 +121,8 @@
 		9B6F523723C7730700943C71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B85C03A23DF58C10093DDAC /* MenuCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCardViewController.swift; sourceTree = "<group>"; };
 		9B85C03B23DF58C10093DDAC /* MenuCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCardViewController.xib; sourceTree = "<group>"; };
+		9B94B5D323EC8BF100D6CE54 /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
+		9B94B5D523EC95D300D6CE54 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9B9A82E223E20CF000A50749 /* DishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishViewController.swift; sourceTree = "<group>"; };
 		9B9A82E323E20CF000A50749 /* DishCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B9A82E623E20CF900A50749 /* Dish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dish.storyboard; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 				9BB3928423C9219200AA7AAC /* RoundButton.swift */,
 				9BE474AD23E3A291004E1EAF /* ImageDownloader.swift */,
 				9BE474B323E3BD55004E1EAF /* NavigationViewController.swift */,
+				9B94B5D323EC8BF100D6CE54 /* Url.swift */,
+				9B94B5D523EC95D300D6CE54 /* BaseViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -297,13 +303,13 @@
 		9B6F521223C772FF00943C71 /* imenu_ios */ = {
 			isa = PBXGroup;
 			children = (
-				9B9A82DF23E20C9400A50749 /* Dish */,
 				9B0B193223D0AFD6002C9CCC /* APIManager */,
 				9B214E4423C783B300969784 /* Login */,
 				9B4FD55623CCDECD00158709 /* Recover */,
 				A0C9CEE423C792E600E77B86 /* Register */,
 				9BAD3D9923D8A43B004908DA /* Home */,
 				9BAD3D9823D8A430004908DA /* Menu */,
+				9B9A82DF23E20C9400A50749 /* Dish */,
 				9BAD3DA723D8A5D7004908DA /* DetailDish */,
 				9B0B193923D0CDDB002C9CCC /* Model */,
 				9B214E5823C7B0D600969784 /* Utils */,
@@ -733,6 +739,7 @@
 				9B214E4D23C795F500969784 /* LoginViewController.swift in Sources */,
 				9BAD3DAD23D8A614004908DA /* DetailDishViewController.swift in Sources */,
 				9BE474AE23E3A291004E1EAF /* ImageDownloader.swift in Sources */,
+				9B94B5D423EC8BF100D6CE54 /* Url.swift in Sources */,
 				A0CC912323D65B6600877543 /* AvatarViewController.swift in Sources */,
 				9B214E5A23C7B11300969784 /* Literals.swift in Sources */,
 				9BB3928523C9219200AA7AAC /* RoundButton.swift in Sources */,
@@ -757,6 +764,7 @@
 				9B9A82E923E20D0D00A50749 /* FetchData.swift in Sources */,
 				A0CC912523D663A600877543 /* AvatarCollectionViewCell.swift in Sources */,
 				A0C25FE423E348320099F1E5 /* MenuCollectionViewCell.swift in Sources */,
+				9B94B5D623EC95D300D6CE54 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -932,8 +940,8 @@
 			baseConfigurationReference = 3FF8D8B755A3EBA7853E90AD /* Pods-imenu_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D7ERVUZL2M;
 				INFOPLIST_FILE = imenu_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -943,7 +951,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "imenu-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Imenu_dev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -955,7 +963,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 254DWXJ94U;
+				DEVELOPMENT_TEAM = D7ERVUZL2M;
 				INFOPLIST_FILE = imenu_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
