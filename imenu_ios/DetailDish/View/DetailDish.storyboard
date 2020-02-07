@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,18 +26,49 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lV2-IV-7Ut">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="233.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HD_Pizza" translatesAutoresizingMaskIntoConstraints="NO" id="dmU-nw-2Xl">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F31-j2-qGe">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="233.5"/>
-                                            </imageView>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L65-XP-hsm">
+                                                    <size key="itemSize" width="375" height="235"/>
+                                                    <size key="estimatedItemSize" width="375" height="235"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellDish" id="HUr-N5-Cbg" customClass="DishesSliderCollectionViewCell" customModule="imenu_ios" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="-1" width="375" height="235"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DQT-47-6xP" customClass="DishesSliderCollectionViewCell" customModule="imenu_ios" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="235"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P5p-8K-vkC">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="235"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="P5p-8K-vkC" secondAttribute="trailing" id="1Qb-Xa-F2A"/>
+                                                                <constraint firstAttribute="bottom" secondItem="P5p-8K-vkC" secondAttribute="bottom" id="XW7-C1-Sar"/>
+                                                                <constraint firstItem="P5p-8K-vkC" firstAttribute="leading" secondItem="DQT-47-6xP" secondAttribute="leading" id="Zz1-6o-3d9"/>
+                                                                <constraint firstItem="P5p-8K-vkC" firstAttribute="top" secondItem="DQT-47-6xP" secondAttribute="top" id="fqu-LO-pMo"/>
+                                                            </constraints>
+                                                        </collectionViewCellContentView>
+                                                        <size key="customSize" width="375" height="235"/>
+                                                        <connections>
+                                                            <outlet property="dishesImageView" destination="P5p-8K-vkC" id="pCL-YO-3GZ"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="dmU-nw-2Xl" firstAttribute="centerX" secondItem="lV2-IV-7Ut" secondAttribute="centerX" id="2Nh-ih-n42"/>
-                                            <constraint firstAttribute="trailing" secondItem="dmU-nw-2Xl" secondAttribute="trailing" id="Air-h5-dvs"/>
-                                            <constraint firstItem="dmU-nw-2Xl" firstAttribute="leading" secondItem="lV2-IV-7Ut" secondAttribute="leading" id="OBI-ma-nZW"/>
-                                            <constraint firstAttribute="bottom" secondItem="dmU-nw-2Xl" secondAttribute="bottom" id="lQv-rW-MpK"/>
-                                            <constraint firstItem="dmU-nw-2Xl" firstAttribute="top" secondItem="lV2-IV-7Ut" secondAttribute="top" id="vxx-jv-dRz"/>
-                                            <constraint firstItem="dmU-nw-2Xl" firstAttribute="centerY" secondItem="lV2-IV-7Ut" secondAttribute="centerY" id="ysd-P8-hpp"/>
+                                            <constraint firstItem="F31-j2-qGe" firstAttribute="top" secondItem="lV2-IV-7Ut" secondAttribute="top" id="BaU-uF-IcM"/>
+                                            <constraint firstAttribute="trailing" secondItem="F31-j2-qGe" secondAttribute="trailing" id="CBD-1h-pyR"/>
+                                            <constraint firstItem="F31-j2-qGe" firstAttribute="leading" secondItem="lV2-IV-7Ut" secondAttribute="leading" id="NYD-53-vE3"/>
+                                            <constraint firstAttribute="bottom" secondItem="F31-j2-qGe" secondAttribute="bottom" id="q55-Y5-CUs"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyZ-gW-RYm">
@@ -317,6 +349,7 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="cmY-1Z-yIV" id="hmq-89-SSr"/>
+                        <outlet property="collectionView" destination="F31-j2-qGe" id="e6d-o4-LAp"/>
                         <outlet property="dishPriceLabel" destination="U8u-Vw-JbN" id="TMd-OG-Huh"/>
                         <outlet property="innerCard" destination="rOd-yv-fiM" id="Duk-TB-PDW"/>
                         <outlet property="likebtnView" destination="Q98-xT-9rd" id="AHS-nP-XHX"/>
@@ -324,11 +357,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b60-L5-vTS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="132.68365817091455"/>
+            <point key="canvasLocation" x="213.59999999999999" y="-71.514242878560722"/>
         </scene>
     </scenes>
     <resources>
-        <image name="HD_Pizza" width="450" height="300"/>
         <image name="ImagenFondo" width="375" height="812"/>
         <image name="Tabla" width="300" height="334"/>
         <image name="heart-black-shape-symbol" width="24" height="24"/>
