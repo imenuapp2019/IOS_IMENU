@@ -27,7 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13.0, *) {
             return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
         } else {
-            return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)        }
+            
+            return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        }
         
     }
 

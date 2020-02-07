@@ -45,4 +45,12 @@ open class Literals {
     static var messageRecover = "Listo 🥳 te enviamos un correo a:"
     static var recoverTextEmpty = "parece que no has escrito tu email"
     static var labelPassworLogin8caracterer = "Debe tener mas de 8 caracteres"
+    static var emailWrong = "Email invalido"
+    static var paswordWrong = "Password invalido"
+    static var errorConect = "Error de conexion"
+    static var emailHaventBBDD = "Email no valido"
+    static var passwordNotMaching = "Contraseñas no coincidente"
+    static var minimumCharacters = "Mínimo ocho caracteres"
+    static var repeatPassword = "Repite su contraseña"
+    static var obligatoryField = "Campo obligatorio"
 }

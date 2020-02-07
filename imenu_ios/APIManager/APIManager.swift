@@ -10,28 +10,20 @@ import UIKit
 import Alamofire
 
 class APIManager {
-    let registerPostUrl = URL(string:"http://localhost:8888/back_imenu/public/api/register")
-    let LoginPostUrl = URL(string: "http://localhost:8888/back_imenu/public/api/loginApi")
-    let RecoverPostUrl = URL(string: "http://localhost:8888/back_imenu/public/api/password/email")
-    let restaurantURL = URL(string: "http://localhost:8888/back_imenu/public/api/homeRestaurante")
     
     func postLogin(user:User,completion: @escaping (Int?) -> Void){
-
+        
         let parameters = [
             "email": user.email,
             "password": user.password
         ]
         
-        Alamofire.request(LoginPostUrl ?? "Login Vacio", method:.post, parameters:parameters as Parameters ,encoding: JSONEncoding.default).responseJSON { response in
+        Alamofire.request(Url.LoginPostUrl ?? "Login Vacio", method:.post, parameters:parameters as Parameters ,encoding: JSONEncoding.default).responseJSON { response in
             switch (response.result) {
             case .success:
-                do{
                     let decoder = JSONDecoder()
                     let user = try! decoder.decode(User.self, from: response.data!)
                     completion(user.serverRequest)
-                }catch{
-                    print(error.localizedDescription)
-                }
             case .failure(_):
                 let code = 600
                 completion(code)
@@ -49,7 +41,7 @@ class APIManager {
             "avatar_id":user.avatarID!
         ]
         
-        Alamofire.request(registerPostUrl ?? "Registro Vacio" , method: .post, parameters: parameters, encoding: JSONEncoding.default)
+        Alamofire.request(Url.registerPostUrl ?? "Registro Vacio" , method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in
                 switch response.result {
                 case .success:
@@ -64,40 +56,36 @@ class APIManager {
     
     public func getAllRestaurants(completion: @escaping ([Restaurant]) -> Void){
         
-       
-        Alamofire.request(restaurantURL!,method: .get).responseJSON {
+        Alamofire.request(Url.restaurantURL ?? "",method: .get).responseJSON {
             (response) in
             switch (response.result){
             case .success:
-                do{
                     let decoder = JSONDecoder()
                     let restaurants = try! decoder.decode(Restaurant.self, from: response.data!)
                     completion([restaurants])
-                }catch{
-                    print("Error en la conexion")
-                }
             case .failure(_):
-                print("ERROR!!")
                 break
             }
         }
     }
     
-    public func postRecover (email: String,completion: @escaping (Bool?) -> Void){
-        
+    public func postRecover (email: String,completion: @escaping (Int?) -> Void){
         
         let parameters:[String : Any] = [
             "email" :email,
         ]
         
-        Alamofire.request(RecoverPostUrl ?? "Recover Vacio" , method: .post, parameters: parameters, encoding: JSONEncoding.default)
-            .responseJSON { response in
+        Alamofire.request(Url.RecoverPostUrl ?? "Recover Vacio" , method: .post, parameters: parameters, encoding: JSONEncoding.default).validate()
+            .responseJSON() { response in
+                print(response)
                 switch response.result {
                 case .success:
-                    completion(true)
+                    let resultParse = String.init(data: response.data!, encoding: String.Encoding.utf8)
+                    let codeServer = Int.init(resultParse ?? "")
+                    completion(codeServer)
                     break
                 case .failure(_):
-                    completion(false)
+                    completion(600)
                     break
                 }
         }

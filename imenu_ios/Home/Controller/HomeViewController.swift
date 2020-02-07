@@ -8,7 +8,7 @@
 import UIKit
 
 
-class HomeViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
+class HomeViewController: BaseViewController, UICollectionViewDataSource,UICollectionViewDelegate {
     /**
      
      */
@@ -170,7 +170,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource,UICollect
         }else{
             UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
                 view.alpha = 0.0
-                
             })
         }
         

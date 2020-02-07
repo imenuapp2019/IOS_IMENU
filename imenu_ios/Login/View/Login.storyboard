@@ -38,7 +38,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnRecoveryClicked:" destination="ZUe-dw-3od" eventType="touchUpInside" id="v9H-V2-CEk"/>
-                                    <segue destination="BIh-Io-K9P" kind="show" id="3KH-lh-NGN"/>
+                                    <segue destination="BIh-Io-K9P" kind="presentation" modalTransitionStyle="crossDissolve" id="3KH-lh-NGN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uF0-05-LGe" customClass="RoundButton" customModule="imenu_ios" customModuleProvider="target">
@@ -71,14 +71,14 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="btnRegistryClicked:" destination="ZUe-dw-3od" eventType="touchUpInside" id="xcN-2s-BoI"/>
-                                    <segue destination="IjB-ax-bhg" kind="show" id="uf7-N1-XR2"/>
+                                    <segue destination="IjB-ax-bhg" kind="presentation" modalTransitionStyle="crossDissolve" id="uf7-N1-XR2"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="AX9-If-rlV">
-                                <rect key="frame" x="70" y="355" width="235" height="103"/>
+                                <rect key="frame" x="70" y="344.5" width="235" height="113.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ase-nh-8z2" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="39.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -110,7 +110,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Afe-3J-RSJ" customClass="SkyFloatingLabelTextFieldWithIcon" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="0.0" y="69" width="235" height="34"/>
+                                        <rect key="frame" x="0.0" y="74.5" width="235" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
@@ -190,7 +190,7 @@
                         <outlet property="imageLogo" destination="ZXS-qg-a1O" id="TTb-7t-gAk"/>
                         <outlet property="labelUserName" destination="Ase-nh-8z2" id="45v-dl-biL"/>
                         <outlet property="labelUserPassword" destination="Afe-3J-RSJ" id="MvX-EP-dR7"/>
-                        <segue destination="v7q-io-hQM" kind="show" identifier="segueHome" id="tCR-0o-f5U"/>
+                        <segue destination="v7q-io-hQM" kind="presentation" identifier="segueHome" modalTransitionStyle="crossDissolve" id="tCR-0o-f5U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AkJ-1s-eEQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
