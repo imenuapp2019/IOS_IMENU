@@ -41,9 +41,6 @@ class RegisterViewController: BaseViewController {
         imageViewConfig()
         confirmButtonConfig()
         imageViewTableBackground.image = #imageLiteral(resourceName: "Background")
-        let tap = hideKeyboard()
-        view.addGestureRecognizer(tap)
-        moveScreenWhenUseKeyboard()
         roundedFrameView.layer.cornerRadius = 15
         self.shadowView(View: roundedFrameView)
     }
