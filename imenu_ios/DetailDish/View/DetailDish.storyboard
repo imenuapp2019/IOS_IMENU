@@ -26,10 +26,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lV2-IV-7Ut">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="233.5"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F31-j2-qGe">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F31-j2-qGe">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="233.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L65-XP-hsm">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="1" id="L65-XP-hsm">
                                                     <size key="itemSize" width="375" height="235"/>
                                                     <size key="estimatedItemSize" width="375" height="235"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -44,20 +44,35 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="235"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P5p-8K-vkC">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jh1-dM-CxN">
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="235"/>
-                                                                </imageView>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HD_tarta" translatesAutoresizingMaskIntoConstraints="NO" id="Es6-XK-IgC">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="235"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="Es6-XK-IgC" secondAttribute="height" multiplier="75:47" id="aqD-wM-KQq"/>
+                                                                                <constraint firstAttribute="height" constant="235" id="lwp-5W-Hav"/>
+                                                                                <constraint firstAttribute="width" constant="375" id="x2t-8f-XHL"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="Es6-XK-IgC" firstAttribute="centerY" secondItem="Jh1-dM-CxN" secondAttribute="centerY" id="YCi-b7-hhP"/>
+                                                                        <constraint firstItem="Es6-XK-IgC" firstAttribute="centerX" secondItem="Jh1-dM-CxN" secondAttribute="centerX" id="gSq-sf-9hm"/>
+                                                                    </constraints>
+                                                                </view>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="P5p-8K-vkC" secondAttribute="trailing" id="1Qb-Xa-F2A"/>
-                                                                <constraint firstAttribute="bottom" secondItem="P5p-8K-vkC" secondAttribute="bottom" id="XW7-C1-Sar"/>
-                                                                <constraint firstItem="P5p-8K-vkC" firstAttribute="leading" secondItem="DQT-47-6xP" secondAttribute="leading" id="Zz1-6o-3d9"/>
-                                                                <constraint firstItem="P5p-8K-vkC" firstAttribute="top" secondItem="DQT-47-6xP" secondAttribute="top" id="fqu-LO-pMo"/>
+                                                                <constraint firstItem="Jh1-dM-CxN" firstAttribute="leading" secondItem="DQT-47-6xP" secondAttribute="leading" id="BkR-h9-yLe"/>
+                                                                <constraint firstItem="Jh1-dM-CxN" firstAttribute="top" secondItem="DQT-47-6xP" secondAttribute="top" id="M83-SA-F3c"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Jh1-dM-CxN" secondAttribute="trailing" id="crY-C6-hnA"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Jh1-dM-CxN" secondAttribute="bottom" id="yjY-lg-pm6"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="375" height="235"/>
                                                         <connections>
-                                                            <outlet property="dishesImageView" destination="P5p-8K-vkC" id="pCL-YO-3GZ"/>
+                                                            <outlet property="dishesImageView" destination="Es6-XK-IgC" id="6fk-hs-IIQ"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -361,6 +376,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="HD_tarta" width="225" height="225"/>
         <image name="ImagenFondo" width="375" height="812"/>
         <image name="Tabla" width="300" height="334"/>
         <image name="heart-black-shape-symbol" width="24" height="24"/>

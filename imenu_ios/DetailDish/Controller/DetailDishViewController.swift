@@ -11,7 +11,7 @@ import UIKit
 class DetailDishViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICollectionViewDataSource, UICollectionViewDelegate {
    
     @IBOutlet weak var collectionView: UICollectionView!
-    var images:[UIImage] = [#imageLiteral(resourceName: "Capa 6"),#imageLiteral(resourceName: "Capa 5"),#imageLiteral(resourceName: "Capa 4"),#imageLiteral(resourceName: "Capa 3"),#imageLiteral(resourceName: "Capa 2"),#imageLiteral(resourceName: "Capa 7")]
+    var images:[UIImage] = [#imageLiteral(resourceName: "HD_tarta"),#imageLiteral(resourceName: "HDpollo"),#imageLiteral(resourceName: "HD_Pizza"),#imageLiteral(resourceName: "HDpollo"),#imageLiteral(resourceName: "HD_Pizza"),#imageLiteral(resourceName: "HD_tarta")]
     @IBOutlet weak var likebtnView: UIView!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var dishPriceLabel: UILabel!
@@ -32,7 +32,7 @@ class DetailDishViewController: UIViewController, UICollectionViewDelegateFlowLa
        likebtnView.layer.cornerRadius = likebtnView.frame.height/2
     }
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-                 4
+                 6
              }
              
        public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
