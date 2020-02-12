@@ -77,9 +77,16 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lyG-sC-nRN">
+                                                <rect key="frame" x="168" y="196.5" width="39" height="37"/>
+                                                <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="currentPageIndicatorTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="lyG-sC-nRN" firstAttribute="centerX" secondItem="F31-j2-qGe" secondAttribute="centerX" id="3ls-wh-Cfg"/>
+                                            <constraint firstItem="lyG-sC-nRN" firstAttribute="bottom" secondItem="F31-j2-qGe" secondAttribute="bottom" id="AcK-Yg-Ddy"/>
                                             <constraint firstItem="F31-j2-qGe" firstAttribute="top" secondItem="lV2-IV-7Ut" secondAttribute="top" id="BaU-uF-IcM"/>
                                             <constraint firstAttribute="trailing" secondItem="F31-j2-qGe" secondAttribute="trailing" id="CBD-1h-pyR"/>
                                             <constraint firstItem="F31-j2-qGe" firstAttribute="leading" secondItem="lV2-IV-7Ut" secondAttribute="leading" id="NYD-53-vE3"/>
@@ -368,6 +375,7 @@
                         <outlet property="dishPriceLabel" destination="U8u-Vw-JbN" id="TMd-OG-Huh"/>
                         <outlet property="innerCard" destination="rOd-yv-fiM" id="Duk-TB-PDW"/>
                         <outlet property="likebtnView" destination="Q98-xT-9rd" id="AHS-nP-XHX"/>
+                        <outlet property="pageControl" destination="lyG-sC-nRN" id="BRY-1h-LzX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b60-L5-vTS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

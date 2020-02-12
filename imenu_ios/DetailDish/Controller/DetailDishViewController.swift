@@ -16,7 +16,9 @@ class DetailDishViewController: UIViewController, UICollectionViewDelegateFlowLa
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var dishPriceLabel: UILabel!
     @IBOutlet weak var innerCard: UIView!
-    
+    @IBOutlet weak var pageControl: UIPageControl!
+    var currentIndex = 0
+    var timer:Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,21 @@ class DetailDishViewController: UIViewController, UICollectionViewDelegateFlowLa
         innerCard.layer.cornerRadius = 15
         innerCard.layer.masksToBounds = true
        likebtnView.layer.cornerRadius = likebtnView.frame.height/2
+        pageControl.numberOfPages = images.count
+        startTimer()
+       
+        
     }
+    
+    func startTimer () {
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerAction) , userInfo: nil, repeats: true)
+    }
+    
+    @objc func timerAction () {
+        let desiredScrollPosition = (currentIndex < images.count - 1) ? currentIndex + 1 : 0
+        collectionView.scrollToItem(at: IndexPath(item: desiredScrollPosition, section: 0), at: .centeredHorizontally, animated: true)
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
                  6
              }
@@ -42,5 +58,8 @@ class DetailDishViewController: UIViewController, UICollectionViewDelegateFlowLa
               return cell
              }
           
-
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        currentIndex = Int(scrollView.contentOffset.x / collectionView.frame.size.width)
+        pageControl.currentPage = currentIndex
+    }
 }
