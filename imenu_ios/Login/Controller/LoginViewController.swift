@@ -67,9 +67,6 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap = hideKeyboard()
-        view.addGestureRecognizer(tap)
-        moveScreenWhenUseKeyboard()
         labelUserPassword.delegate = self
         setupBtn()
         setupImage()
