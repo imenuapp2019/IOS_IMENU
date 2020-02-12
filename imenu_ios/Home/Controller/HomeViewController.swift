@@ -15,6 +15,19 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
        
     }
     
+    
+    @IBAction func searchClicker(_ sender: Any) {
+    }
+    
+    @IBOutlet var filterView: UIView!
+    @IBOutlet weak var oneChecker: UIView!
+    
+    @IBOutlet weak var twoChecker: UIView!
+    @IBOutlet weak var threeChecker: UIView!
+    
+    
+    
+    @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var AlertView: UIView!

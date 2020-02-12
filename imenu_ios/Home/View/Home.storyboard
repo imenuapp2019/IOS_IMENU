@@ -405,8 +405,13 @@
                         <outlet property="AlertView" destination="KMi-HX-B6e" id="Ckh-MG-wob"/>
                         <outlet property="LabelAlertView" destination="JjI-dw-zhJ" id="O4C-r0-Pxc"/>
                         <outlet property="filterButton" destination="l8D-f8-Nww" id="c96-zq-n9g"/>
+                        <outlet property="filterView" destination="W4I-UK-Bq4" id="tD0-9a-4pP"/>
                         <outlet property="gridRestaurant" destination="bWn-7d-OQU" id="7pF-pr-28b"/>
+                        <outlet property="oneChecker" destination="jog-Js-O1x" id="MXD-HB-cPx"/>
                         <outlet property="searchButton" destination="Lfv-hK-t57" id="TcP-1m-YEw"/>
+                        <outlet property="threeChecker" destination="b56-UT-xJN" id="m19-vb-Uef"/>
+                        <outlet property="twoChecker" destination="eDG-ld-FvG" id="9DN-4H-K1S"/>
+                        <outlet property="visualEffectView" destination="HtF-Ps-wqz" id="LbL-O9-AMH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwg-xz-3IQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -462,7 +467,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ui3-zJ-mfw">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ui3-zJ-mfw">
                             <rect key="frame" x="58" y="351" width="223" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -548,9 +553,12 @@
                                     <real key="value" value="7"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="searchClicker:" destination="6fI-L8-10Y" eventType="touchUpInside" id="JZQ-jD-d2S"/>
+                            </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.53328466415405273" green="0.53336447477340698" blue="0.53326719999313354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <viewLayoutGuide key="safeArea" id="jkF-vc-xMi"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
