@@ -38,6 +38,7 @@ class ProfileViewController: UIViewController {
         
         
         deleteView.layer.cornerRadius = deleteView.frame.height/2
+       likeView.layer.cornerRadius = likeView.frame.height/2
         thisImage.layer.borderWidth = 1
         thisImage.layer.masksToBounds = false
         thisImage.layer.borderColor = UIColor.black.cgColor
