@@ -13,7 +13,9 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let tap = hideKeyboard()
+        view.addGestureRecognizer(tap)
+         moveScreenWhenUseKeyboard()
     }
     
 }

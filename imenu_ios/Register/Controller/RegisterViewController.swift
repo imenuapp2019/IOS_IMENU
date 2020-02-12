@@ -42,9 +42,6 @@ class RegisterViewController: BaseViewController {
         imageViewConfig()
         confirmButtonConfig()
         imageViewTableBackground.image = #imageLiteral(resourceName: "Background")
-        let tap = hideKeyboard()
-        view.addGestureRecognizer(tap)
-        moveScreenWhenUseKeyboard()
         roundedFrameView.layer.cornerRadius = 15
         self.shadowView(View: roundedFrameView)
     }
@@ -129,7 +126,6 @@ class RegisterViewController: BaseViewController {
                         passwordTextField.errorMessage = ""
                         let apiManger = APIManager ()
                         apiManger.postRegister(user: validNewUser!, completion: {result in
-                            print(result!)
                             guard let validRegister = result, validRegister == true else {
                                 return}
                             self.performSegue(withIdentifier: "segueHomeScreen", sender: nil)

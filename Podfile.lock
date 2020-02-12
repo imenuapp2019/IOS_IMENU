@@ -2,14 +2,20 @@ PODS:
   - Alamofire (4.9.1)
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
+  - BEMCheckBox (1.4.1)
+  - DynamicBlurView (4.0.0)
   - McPicker (2.0.1)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
   - SkyFloatingLabelTextField (3.8.0)
   - SwiftLint (0.38.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8)
   - AlamofireImage (~> 3.5)
+  - BEMCheckBox
   - McPicker (~> 2.0.0)
+  - PopupDialog (~> 1.1)
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftLint
 
@@ -17,17 +23,23 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - BEMCheckBox
+    - DynamicBlurView
     - McPicker
+    - PopupDialog
     - SkyFloatingLabelTextField
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
+  DynamicBlurView: ccf9acd2b20c883cc2c72e3524a04d8d3ee20533
   McPicker: a0a6b8ece8f1642e05401a29867463aba501188b
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
 
-PODFILE CHECKSUM: 12fe7252d0572c2b5c9a0e0fe600394ad770d2a6
+PODFILE CHECKSUM: fe5098e133b296dada46caf4f52eb0d28bd5d640
 
 COCOAPODS: 1.8.4
