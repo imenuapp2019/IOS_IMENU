@@ -77,7 +77,6 @@ class APIManager {
         
         Alamofire.request(Url.RecoverPostUrl ?? "Recover Vacio" , method: .post, parameters: parameters, encoding: JSONEncoding.default).validate()
             .responseJSON() { response in
-                print(response)
                 switch response.result {
                 case .success:
                     let resultParse = String.init(data: response.data!, encoding: String.Encoding.utf8)

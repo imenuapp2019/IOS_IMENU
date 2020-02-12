@@ -125,7 +125,6 @@ class RegisterViewController: BaseViewController {
                         passwordTextField.errorMessage = ""
                         let apiManger = APIManager ()
                         apiManger.postRegister(user: validNewUser!, completion: {result in
-                            print(result!)
                             guard let validRegister = result, validRegister == true else {
                                 return}
                             self.performSegue(withIdentifier: "segueHomeScreen", sender: nil)
