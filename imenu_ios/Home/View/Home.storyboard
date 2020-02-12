@@ -359,28 +359,6 @@
                                     <constraint firstAttribute="height" constant="40" id="h8H-I8-gJe"/>
                                 </constraints>
                             </view>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" id="HtF-Ps-wqz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="87F-tk-McQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sN2-sw-dfH">
-                                            <rect key="frame" x="0.0" y="-1" width="134" height="538"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="kd7-cf-4k9">
-                                                <rect key="frame" x="0.0" y="0.0" width="134" height="538"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            </view>
-                                            <vibrancyEffect>
-                                                <blurEffect style="regular"/>
-                                            </vibrancyEffect>
-                                        </visualEffectView>
-                                    </subviews>
-                                </view>
-                                <blurEffect style="regular"/>
-                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -417,7 +395,6 @@
                         <outlet property="searchButton" destination="Lfv-hK-t57" id="TcP-1m-YEw"/>
                         <outlet property="threeChecker" destination="b56-UT-xJN" id="m19-vb-Uef"/>
                         <outlet property="twoChecker" destination="eDG-ld-FvG" id="9DN-4H-K1S"/>
-                        <outlet property="visualEffectView" destination="HtF-Ps-wqz" id="LbL-O9-AMH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwg-xz-3IQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
