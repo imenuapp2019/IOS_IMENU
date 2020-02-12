@@ -27,7 +27,6 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
     
     
     
-    @IBOutlet weak var visualEffectView: UIVisualEffectView!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var AlertView: UIView!
