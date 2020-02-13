@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		31E56898EE0ADFC90CA230C6 /* Pods_imenu_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0930CB59322BE8640C5767 /* Pods_imenu_iosTests.framework */; };
-		5C02DC7723E088C50006A9EF /* FilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02DC7623E088C50006A9EF /* FilViewController.swift */; };
 		5C4AFB7923E1FCAC00D2EADF /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AFB7823E1FCAC00D2EADF /* PopUp.swift */; };
 		5CED261F23D9F642009B8E09 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CED261E23D9F642009B8E09 /* Restaurant.swift */; };
 		6787A17E6DD436B7361BF7C1 /* Pods_imenu_ios_imenu_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60315DF23628922134D9BC4D /* Pods_imenu_ios_imenu_iosUITests.framework */; };
@@ -30,6 +29,7 @@
 		9B85C03D23DF58C10093DDAC /* MenuCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B85C03B23DF58C10093DDAC /* MenuCardViewController.xib */; };
 		9B94B5D423EC8BF100D6CE54 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B94B5D323EC8BF100D6CE54 /* Url.swift */; };
 		9B94B5D623EC95D300D6CE54 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B94B5D523EC95D300D6CE54 /* BaseViewController.swift */; };
+		9B94B5E223EDBC3100D6CE54 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B94B5E123EDBC3100D6CE54 /* FilterViewController.swift */; };
 		9B9A82E423E20CF000A50749 /* DishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82E223E20CF000A50749 /* DishViewController.swift */; };
 		9B9A82E523E20CF000A50749 /* DishCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A82E323E20CF000A50749 /* DishCollectionViewCell.swift */; };
 		9B9A82E723E20CF900A50749 /* Dish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9A82E623E20CF900A50749 /* Dish.storyboard */; };
@@ -96,7 +96,6 @@
 /* Begin PBXFileReference section */
 		082D9F10D3123919B8CF00F5 /* Pods-imenu_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imenu_iosTests.release.xcconfig"; path = "Target Support Files/Pods-imenu_iosTests/Pods-imenu_iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		3FF8D8B755A3EBA7853E90AD /* Pods-imenu_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imenu_ios.debug.xcconfig"; path = "Target Support Files/Pods-imenu_ios/Pods-imenu_ios.debug.xcconfig"; sourceTree = "<group>"; };
-		5C02DC7623E088C50006A9EF /* FilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilViewController.swift; sourceTree = "<group>"; };
 		5C4AFB7823E1FCAC00D2EADF /* PopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 		5CED261E23D9F642009B8E09 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		60315DF23628922134D9BC4D /* Pods_imenu_ios_imenu_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imenu_ios_imenu_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +127,7 @@
 		9B85C03B23DF58C10093DDAC /* MenuCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCardViewController.xib; sourceTree = "<group>"; };
 		9B94B5D323EC8BF100D6CE54 /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
 		9B94B5D523EC95D300D6CE54 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9B94B5E123EDBC3100D6CE54 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		9B9A82E223E20CF000A50749 /* DishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishViewController.swift; sourceTree = "<group>"; };
 		9B9A82E323E20CF000A50749 /* DishCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B9A82E623E20CF900A50749 /* Dish.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dish.storyboard; sourceTree = "<group>"; };
@@ -430,7 +430,7 @@
 			children = (
 				9B9A82EA23E2162C00A50749 /* RestaurantCollectionView.swift */,
 				9BAD3DA023D8A499004908DA /* HomeViewController.swift */,
-				5C02DC7623E088C50006A9EF /* FilViewController.swift */,
+				9B94B5E123EDBC3100D6CE54 /* FilterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -817,6 +817,7 @@
 				9BE474B423E3BD55004E1EAF /* NavigationViewController.swift in Sources */,
 				5CED261F23D9F642009B8E09 /* Restaurant.swift in Sources */,
 				9BAD3DA623D8A4D7004908DA /* MenuViewController.swift in Sources */,
+				9B94B5E223EDBC3100D6CE54 /* FilterViewController.swift in Sources */,
 				9B6F521423C7730000943C71 /* AppDelegate.swift in Sources */,
 				A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */,
 				9B6F521623C7730000943C71 /* SceneDelegate.swift in Sources */,

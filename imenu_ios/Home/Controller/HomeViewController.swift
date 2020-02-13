@@ -6,22 +6,31 @@
 //
 
 import UIKit
-
+import PopupDialog
 
 class HomeViewController: BaseViewController, UICollectionViewDataSource,UICollectionViewDelegate {
-    /**
-     
-     */
-    @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var filterButton: UIButton!
     
 
+    @IBAction func filterClicked(_ sender: Any) {
+       
+    }
+    
+    
+    @IBAction func searchClicker(_ sender: Any) {
+    }
+    
+    @IBOutlet var filterView: UIView!
+    @IBOutlet weak var oneChecker: UIView!
+    
+    @IBOutlet weak var twoChecker: UIView!
+    @IBOutlet weak var threeChecker: UIView!
+    
+    
+    
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var AlertView: UIView!
     @IBOutlet weak var LabelAlertView: UILabel!
-    
-    /**
-     Collection View Cell side, properties and declarations.
-     **/
     @IBOutlet weak var gridRestaurant: UICollectionView!
     
     var listRestaurants : [RestaurantElement] = [] {
@@ -43,29 +52,21 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
         child.widthAnchor.constraint(equalToConstant: 128).isActive = true
         
         child.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        /**
-         Alert View Properties
-         */
+        
         LabelAlertView.text = Literals.labelAlertView
         AlertView.layer.cornerRadius = 20
         AlertView.alpha = 0.0
         
-        /**
-         Collection View Restuarnts and Properties
-         */
-        //        self.listRestaurants = dataHardcoded()
-        
         self.datafromServer()
         
-        self.gridRestaurant.dataSource = self
         self.gridRestaurant.delegate = self
+        self.gridRestaurant.dataSource = self
         
         setHeader()
         self.addNavBarImage()
-        
     }
     
-   
+    
     override func viewDidAppear(_ animated: Bool) {
         self.gridRestaurant.setNeedsDisplay()
         self.gridRestaurant.reloadData()
@@ -85,17 +86,18 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
     }
     
     func datafromServer(){
+        print("Llamo")
         let apirest = APIManager()
         apirest.getAllRestaurants(completion: { result
             in
             let resultsRestaurants = result.first
+            print(resultsRestaurants)
             self.createListRestaurant(List: resultsRestaurants)
         })
     }
     
     func createListRestaurant(List list:Restaurant?){
         guard let listRestaurants = list else { return }
-        print("Restaurantes totales\(listRestaurants.count)")
         let newRestaurant = listRestaurants.filter( {
             result in
             if result.imageURL == nil {
@@ -104,7 +106,6 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
                 return true
             }
         })
-        print("Restaurantes filtrados:\(newRestaurant.count)")
         self.listRestaurants = newRestaurant
     }
     
@@ -130,8 +131,6 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let imageDownloader = ImageDownloader()
         let restaurant = listRestaurants[indexPath.row]
-        print(restaurant.imageURL!)
-        // print("imagen",restaurant.image!);
         let identifier = "Restaurant"
         let cell = self.gridRestaurant.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)as! RestaurantCollectionView
         imageDownloader.downloader(URLString: restaurant.imageURL!, completion: { (image:UIImage?) in
@@ -140,9 +139,12 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
         cell.nameRestaurant.text = restaurant.name
         cell.typeRestaurant.text = restaurant.type
         
+        
         return cell
         
     }
+    
+    
     /**
      Event direction of scrolling
      */
@@ -176,22 +178,22 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
     }
     
     func setHeader() {
-        filterButton.setBackgroundImage(UIImage(named: "iconFilter"), for: .normal)
+    filterButton.setBackgroundImage(UIImage(named: "iconFilter"), for: .normal)
         searchButton.setBackgroundImage(UIImage(named: "iconoLupa"), for: .normal)
         filterButton.setTitle("", for: .normal)
         searchButton.setTitle("", for: .normal)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
+     
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           guard let item = ( sender as? RestaurantCollectionView) else { return }
-           guard let indexPath = self.gridRestaurant.indexPath(for: item) else { return }
-           let restaurant = listRestaurants[indexPath.row]
-           let detailRestaurant = segue.destination as? MenuViewController
-            detailRestaurant?.restaurant = restaurant
+        guard let item = ( sender as? RestaurantCollectionView) else { return }
+        guard let indexPath = self.gridRestaurant.indexPath(for: item) else { return }
+        let restaurant = listRestaurants[indexPath.row]
+        let detailRestaurant = segue.destination as? MenuViewController
+        detailRestaurant?.restaurant = restaurant
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -200,9 +202,9 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
             cell.alpha = 1
         })
     }
-    
-    
 }
+
+
 
 
 

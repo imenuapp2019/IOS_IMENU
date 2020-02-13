@@ -11,7 +11,9 @@ target 'imenu_ios' do
     pod 'SkyFloatingLabelTextField', '~> 3.0'
     pod 'McPicker', '~> 2.0.0'
     pod 'AlamofireImage', '~> 3.5'
-
+    pod 'PopupDialog', '~> 1.1'
+    pod 'BEMCheckBox'
+    
   target 'imenu_iosTests' do
     inherit! :search_paths
     # Pods for testing

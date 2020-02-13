@@ -32,9 +32,6 @@ class RecoverViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap = hideKeyboard()
-        view.addGestureRecognizer(tap)
-        moveScreenWhenUseKeyboard()
         setupBtn()
         setupImage()
         setupLabelAndInput()
