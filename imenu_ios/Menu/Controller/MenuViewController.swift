@@ -14,6 +14,7 @@ class MenuViewController: UIViewController{
         case expanded
     }
     
+    @IBOutlet weak var restaurantBodyView: UIView!
     
     @IBOutlet weak var pictureRestaurant: UIImageView!
     
@@ -44,8 +45,9 @@ class MenuViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCard()
-        self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
         setUpDetailRestaurant()
+         restaurantBodyView.layer.cornerRadius = 15
         
     }
     
