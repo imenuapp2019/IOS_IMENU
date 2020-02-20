@@ -49,16 +49,20 @@ class DishViewController: UIViewController,UICollectionViewDelegate, UICollectio
             let data = fetchData.fetchDishes()
             cell.DishImageView.image = data [indexPath.row].image
             cell.dishNameLabel.text = data [indexPath.row].name
-        
+            cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DoWhenACellIsClicked(_:))))
         
           
                return cell
        }
     
+    @objc func DoWhenACellIsClicked(_ sender: UITapGestureRecognizer) {
+    performSegue(withIdentifier: "segueDetailDish", sender: nil)
+    }
+    
     
     //Situación inicial de la vista
     private func viewElementsConfig () {
-        totalDishesLabel.text = "\("-") \((String)(fetchData.fetchDishes().count) )"
+        totalDishesLabel.text = "\("/") \((String)(fetchData.fetchDishes().count) )"
         resetCollectionViewButton.isEnabled = false
     
     }
