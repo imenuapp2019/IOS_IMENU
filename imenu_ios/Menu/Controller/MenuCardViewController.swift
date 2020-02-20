@@ -39,8 +39,14 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
         collectionView.backgroundColor = .clear
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "section", for: indexPath) as! MenuCollectionViewCell
+        
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DoWhenACellIsClicked(_:))))
 
         return  cell as UICollectionViewCell
+    }
+    
+    @objc func DoWhenACellIsClicked(_ sender: UITapGestureRecognizer) {
+   performSegue(withIdentifier: "segueDish", sender: nil)
     }
     
     

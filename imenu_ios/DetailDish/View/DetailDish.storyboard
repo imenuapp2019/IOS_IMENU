@@ -55,9 +55,14 @@
                                                                                 <constraint firstAttribute="width" constant="375" id="x2t-8f-XHL"/>
                                                                             </constraints>
                                                                         </imageView>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="S1Y-3t-A1X">
+                                                                            <rect key="frame" x="8" y="8" width="43" height="43"/>
+                                                                        </imageView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <constraints>
+                                                                        <constraint firstItem="S1Y-3t-A1X" firstAttribute="top" secondItem="Jh1-dM-CxN" secondAttribute="top" constant="5" id="BZC-8S-08t"/>
+                                                                        <constraint firstItem="S1Y-3t-A1X" firstAttribute="leading" secondItem="Jh1-dM-CxN" secondAttribute="leading" constant="5" id="NT1-Zr-XvP"/>
                                                                         <constraint firstItem="Es6-XK-IgC" firstAttribute="centerY" secondItem="Jh1-dM-CxN" secondAttribute="centerY" id="YCi-b7-hhP"/>
                                                                         <constraint firstItem="Es6-XK-IgC" firstAttribute="centerX" secondItem="Jh1-dM-CxN" secondAttribute="centerX" id="gSq-sf-9hm"/>
                                                                     </constraints>
@@ -438,5 +443,6 @@
         <image name="ImagenFondo" width="375" height="812"/>
         <image name="Tabla" width="300" height="334"/>
         <image name="corazon_gris" width="376" height="364"/>
+        <image name="iconBackArrow" width="32" height="32"/>
     </resources>
 </document>
