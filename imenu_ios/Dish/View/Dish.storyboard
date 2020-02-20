@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="goe-Ky-EUy">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -187,7 +188,7 @@
                                                     <action selector="resetCollectionViewButtonAction:" destination="goe-Ky-EUy" eventType="touchUpInside" id="4oU-OL-1hB"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="- 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlB-n5-fdG">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlB-n5-fdG">
                                                 <rect key="frame" x="336" y="24" width="31" height="42"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -233,11 +234,22 @@
                         <outlet property="currentDishShownLabel" destination="2kR-Ni-gz6" id="9j0-1C-UUQ"/>
                         <outlet property="resetCollectionViewButton" destination="Ppc-hW-2bb" id="bEK-1R-8kx"/>
                         <outlet property="totalDishesLabel" destination="AlB-n5-fdG" id="3GR-9O-Mm9"/>
+                        <segue destination="mMP-l1-ZUK" kind="modal" identifier="segueDetailDish" modalTransitionStyle="crossDissolve" id="wJU-HN-2T9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D50-3i-H0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-370.39999999999998" y="102.99850074962519"/>
+            <point key="canvasLocation" x="-326" y="161"/>
+        </scene>
+        <!--DetailDish-->
+        <scene sceneID="D97-1u-dVo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailDish" id="mMP-l1-ZUK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="TR8-t6-hXb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNE-gL-f9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="456" y="-52"/>
         </scene>
     </scenes>
     <resources>
