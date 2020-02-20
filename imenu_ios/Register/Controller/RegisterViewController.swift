@@ -83,6 +83,7 @@ class RegisterViewController: BaseViewController {
             lastNameTextField.errorMessage = Literals.empty
             lastNameIsNotEmpty = true
         }
+      
         
         if email.isEmpty {
             emailTextField.errorMessage = Literals.obligatoryField
