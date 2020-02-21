@@ -63,35 +63,18 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
         self.gridRestaurant.dataSource = self
         
         setHeader()
-        self.addNavBarImage()
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         self.gridRestaurant.setNeedsDisplay()
         self.gridRestaurant.reloadData()
     }
     
-    func addNavBarImage() {
-        let navController = navigationController!
-        let image = UIImage(named: "LOGOIMENUDishView") //Your logo url here
-        let imageView = UIImageView(image: image)
-        let bannerWidth = navController.navigationBar.frame.size.width
-        let bannerHeight = navController.navigationBar.frame.size.height
-        let bannerX = bannerWidth / 2 - (image?.size.width)! / 2
-        let bannerY = bannerHeight / 2 - (image?.size.height)! / 2
-        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
-        imageView.contentMode = .scaleAspectFit
-        navigationItem.titleView = imageView
-    }
-    
     func datafromServer(){
-        print("Llamo")
         let apirest = APIManager()
         apirest.getAllRestaurants(completion: { result
             in
             let resultsRestaurants = result.first
-            print(resultsRestaurants)
             self.createListRestaurant(List: resultsRestaurants)
         })
     }
