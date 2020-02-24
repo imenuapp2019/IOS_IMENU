@@ -9,11 +9,13 @@
 import UIKit
 
 class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
-    
-    let ARImagesArray = [#imageLiteral(resourceName: "HD_Pizza"),#imageLiteral(resourceName: "HDpollo"),#imageLiteral(resourceName: "HD_tarta"),#imageLiteral(resourceName: "HDpollo"),#imageLiteral(resourceName: "HD_Pizza")]
+    var currentIndex = 0
+    let ARImagesArray = [#imageLiteral(resourceName: "HD_Pizza"),#imageLiteral(resourceName: "HDpollo"),#imageLiteral(resourceName: "HD_tarta")]
     @IBAction func dishClicked(_ sender: Any) {
         
     }
+    
+    @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var handleArea: UIView!
@@ -23,7 +25,8 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        pageControl.numberOfPages = ARImagesArray.count
+        self.view.layer.cornerRadius = 30
         menuSectionsCollectionView.delegate = self
         menuSectionsCollectionView.dataSource = self
         ARCollectionView.delegate = self
@@ -74,7 +77,18 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
     }
     
     
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == menuSectionsCollectionView {
+            
+        }
+        else{
+           
+            currentIndex = Int(scrollView.contentOffset.x / ARCollectionView.frame.size.width)
+                   pageControl.currentPage = currentIndex
+            
+        }
+       
+    }
     
     
     

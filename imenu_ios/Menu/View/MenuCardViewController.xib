@@ -14,6 +14,7 @@
                 <outlet property="arrowImageView" destination="0A1-dq-j6z" id="fsb-Ob-hAK"/>
                 <outlet property="handleArea" destination="usV-nV-m7x" id="SlV-04-j64"/>
                 <outlet property="menuSectionsCollectionView" destination="aID-BM-P7v" id="KcO-Nx-4yb"/>
+                <outlet property="pageControl" destination="PLF-j3-PJ3" id="Vqo-MP-TIQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -83,12 +84,17 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                         </collectionView>
+                                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="PLF-j3-PJ3">
+                                            <rect key="frame" x="187.5" y="173" width="39" height="37"/>
+                                        </pageControl>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="N8C-B9-u8v" secondAttribute="bottom" id="MrW-JM-K1a"/>
+                                        <constraint firstItem="PLF-j3-PJ3" firstAttribute="centerX" secondItem="OYi-9k-xOL" secondAttribute="centerX" id="SJy-7G-n8p"/>
                                         <constraint firstItem="N8C-B9-u8v" firstAttribute="leading" secondItem="OYi-9k-xOL" secondAttribute="leading" id="WRz-aE-s6D"/>
                                         <constraint firstAttribute="trailing" secondItem="N8C-B9-u8v" secondAttribute="trailing" id="ePE-Rx-JC9"/>
+                                        <constraint firstAttribute="bottom" secondItem="PLF-j3-PJ3" secondAttribute="bottom" id="gGr-IV-qjf"/>
                                         <constraint firstItem="N8C-B9-u8v" firstAttribute="top" secondItem="OYi-9k-xOL" secondAttribute="top" id="xTR-QI-g6z"/>
                                     </constraints>
                                 </view>

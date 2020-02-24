@@ -44,6 +44,7 @@ class MenuViewController: UIViewController{
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupCard()
 self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
         setUpDetailRestaurant()
@@ -72,7 +73,7 @@ self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotatio
     
     endCardHeight = self.view.frame.height * 0.9
     startCardHeight = self.view.frame.height * 0.2
-        
+   
         
 
         menuCardViewController = MenuCardViewController(nibName:"MenuCardViewController", bundle:nil)
@@ -151,7 +152,7 @@ self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotatio
                      self.menuCardViewController.view.layer.cornerRadius = 30
                      
                  case .collapsed:
-                    self.menuCardViewController.view.layer.cornerRadius = 0
+                    self.menuCardViewController.view.layer.cornerRadius = 30
                  }
              }
              
