@@ -9,11 +9,10 @@ target 'imenu_ios' do
     pod 'Alamofire', '~> 4.8'
     pod 'SwiftLint'
     pod 'SkyFloatingLabelTextField', '~> 3.0'
-    pod 'McPicker', '~> 2.0.0'
     pod 'AlamofireImage', '~> 3.5'
     pod 'PopupDialog', '~> 1.1'
     pod 'BEMCheckBox'
-    pod 'TabBarController'
+    pod 'RHSideButtons'
     
   target 'imenu_iosTests' do
     inherit! :search_paths

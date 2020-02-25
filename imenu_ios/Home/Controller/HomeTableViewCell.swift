@@ -9,16 +9,38 @@
 import UIKit
 
 class HomeTableViewCell: UITableViewCell {
-
+    
+    // MARK: - Properties
+    
+    @IBOutlet weak var restaurantImage: UIImageView!
+    @IBOutlet weak var viewOpacity: UIView!
+    @IBOutlet weak var nameRestaurant: UILabel!
+    @IBOutlet weak var typeRestaurant: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.alpha = 0
+       
+        self.shadowView()
     }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
-
+    
+    func circleImage(){
+        restaurantImage.layer.cornerRadius = restaurantImage.frame.size.width/20
+        viewOpacity.layer.cornerRadius = 12
+    }
+    
+    func shadowView(){
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 1
+        self.layer.masksToBounds = false
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+    }
 }

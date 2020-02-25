@@ -14,7 +14,6 @@ class MenuViewController: UIViewController{
         case expanded
     }
     
-    
     @IBOutlet weak var pictureRestaurant: UIImageView!
     
     @IBOutlet weak var nameDetailRestaurant: UILabel!
