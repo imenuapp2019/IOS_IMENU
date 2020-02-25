@@ -11,6 +11,7 @@ import UIKit
 class MenuCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var menuSectionLabel: UILabel!
     
+    @IBOutlet weak var menuSectionImageView: UIImageView!
     
 //    override func awakeFromNib() {
 //              

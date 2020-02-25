@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ARCell" id="Ff6-Fk-Ozb" customClass="ARCollectionViewCell" customModule="imenu_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="210"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XFA-9a-l2S" customClass="ARCollectionViewCell" customModule="imenu_ios" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="210"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaR-fj-f6E" customClass="ARCollectionViewCell" customModule="imenu_ios" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="376" height="210"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HD_Pizza" translatesAutoresizingMaskIntoConstraints="NO" id="Ek0-CG-YLf">
+                                <rect key="frame" x="0.0" y="0.0" width="376" height="210"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ek0-CG-YLf" firstAttribute="leading" secondItem="oaR-fj-f6E" secondAttribute="leading" id="d3I-VR-Kf8"/>
+                            <constraint firstItem="Ek0-CG-YLf" firstAttribute="top" secondItem="oaR-fj-f6E" secondAttribute="top" id="muo-hD-Rkl"/>
+                            <constraint firstAttribute="bottom" secondItem="Ek0-CG-YLf" secondAttribute="bottom" id="rj9-nS-aLR"/>
+                            <constraint firstAttribute="trailing" secondItem="Ek0-CG-YLf" secondAttribute="trailing" id="vlH-ov-Js5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oaR-fj-f6E" firstAttribute="leading" secondItem="XFA-9a-l2S" secondAttribute="leading" id="Jfi-wV-Gov"/>
+                    <constraint firstAttribute="trailing" secondItem="oaR-fj-f6E" secondAttribute="trailing" id="OdN-xt-dr9"/>
+                    <constraint firstAttribute="bottom" secondItem="oaR-fj-f6E" secondAttribute="bottom" id="o26-X1-Fv8"/>
+                    <constraint firstItem="oaR-fj-f6E" firstAttribute="top" secondItem="XFA-9a-l2S" secondAttribute="top" id="rbb-b4-9r2"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="232" height="196"/>
+            <connections>
+                <outlet property="arDishesImageView" destination="Ek0-CG-YLf" id="Yix-MC-P5s"/>
+            </connections>
+            <point key="canvasLocation" x="-128" y="14"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="HD_Pizza" width="450" height="300"/>
+    </resources>
+</document>

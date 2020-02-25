@@ -54,7 +54,7 @@ class DetailDishViewController: UIViewController, UICollectionViewDelegateFlowLa
     }
     
     func startTimer () {
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerAction) , userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 7.0, target: self, selector: #selector(timerAction) , userInfo: nil, repeats: true)
     }
     
     @objc func timerAction () {

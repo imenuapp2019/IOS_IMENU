@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,26 +11,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="section" id="LJk-st-zdo" customClass="MenuCollectionViewCell" customModule="imenu_ios" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <rect key="frame" x="0.0" y="0.0" width="185" height="111"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2X5-Qx-bfZ">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <rect key="frame" x="0.0" y="0.0" width="185" height="111"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JON-lc-7wl">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="185" height="111"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main course" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9A-vy-jK3">
-                                <rect key="frame" x="74" y="132.5" width="152" height="35"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="spG-Y2-8oQ">
+                                <rect key="frame" x="0.0" y="0.0" width="185" height="111"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dEO-nM-Sue" userLabel="Gray">
+                                <rect key="frame" x="0.0" y="0.0" width="185" height="111"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main course" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9A-vy-jK3">
+                                <rect key="frame" x="5" y="38" width="175" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="i9A-vy-jK3" firstAttribute="centerX" secondItem="JON-lc-7wl" secondAttribute="centerX" id="WrD-Vl-Z7G"/>
-                            <constraint firstItem="i9A-vy-jK3" firstAttribute="centerY" secondItem="JON-lc-7wl" secondAttribute="centerY" id="Z5q-eR-Gqe"/>
+                            <constraint firstItem="i9A-vy-jK3" firstAttribute="centerY" secondItem="JON-lc-7wl" secondAttribute="centerY" id="0W8-L3-EWT"/>
+                            <constraint firstAttribute="bottom" secondItem="spG-Y2-8oQ" secondAttribute="bottom" id="1hZ-bD-tL9"/>
+                            <constraint firstAttribute="trailing" secondItem="dEO-nM-Sue" secondAttribute="trailing" id="2JL-mq-PfM"/>
+                            <constraint firstItem="dEO-nM-Sue" firstAttribute="top" secondItem="JON-lc-7wl" secondAttribute="top" id="8Hv-bL-DGf"/>
+                            <constraint firstItem="dEO-nM-Sue" firstAttribute="leading" secondItem="JON-lc-7wl" secondAttribute="leading" id="TrC-bX-LyQ"/>
+                            <constraint firstAttribute="bottom" secondItem="dEO-nM-Sue" secondAttribute="bottom" id="gNI-DJ-jMV"/>
+                            <constraint firstAttribute="trailing" secondItem="i9A-vy-jK3" secondAttribute="trailing" constant="5" id="iGt-kE-e9Z"/>
+                            <constraint firstItem="spG-Y2-8oQ" firstAttribute="top" secondItem="JON-lc-7wl" secondAttribute="top" id="m0X-ql-Z4v"/>
+                            <constraint firstAttribute="trailing" secondItem="spG-Y2-8oQ" secondAttribute="trailing" id="oCC-f3-WBB"/>
+                            <constraint firstItem="i9A-vy-jK3" firstAttribute="leading" secondItem="JON-lc-7wl" secondAttribute="leading" constant="5" id="sk1-rv-qtb"/>
+                            <constraint firstItem="spG-Y2-8oQ" firstAttribute="leading" secondItem="JON-lc-7wl" secondAttribute="leading" id="wC2-OT-l0x"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -41,6 +58,7 @@
                 </constraints>
             </collectionViewCellContentView>
             <connections>
+                <outlet property="menuSectionImageView" destination="spG-Y2-8oQ" id="Z1I-en-1Tx"/>
                 <outlet property="menuSectionLabel" destination="i9A-vy-jK3" id="Dns-0g-FgF"/>
             </connections>
             <point key="canvasLocation" x="132.80000000000001" y="-260.86956521739131"/>

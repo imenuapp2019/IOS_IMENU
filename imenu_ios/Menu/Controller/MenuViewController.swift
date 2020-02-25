@@ -14,6 +14,7 @@ class MenuViewController: UIViewController{
         case expanded
     }
     
+    @IBOutlet weak var restaurantBodyView: UIView!
     
     @IBOutlet weak var pictureRestaurant: UIImageView!
     
@@ -43,9 +44,11 @@ class MenuViewController: UIViewController{
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupCard()
-        self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
         setUpDetailRestaurant()
+         restaurantBodyView.layer.cornerRadius = 15
         
     }
     
@@ -70,7 +73,7 @@ class MenuViewController: UIViewController{
     
     endCardHeight = self.view.frame.height * 0.9
     startCardHeight = self.view.frame.height * 0.2
-        
+   
         
 
         menuCardViewController = MenuCardViewController(nibName:"MenuCardViewController", bundle:nil)
@@ -149,7 +152,7 @@ class MenuViewController: UIViewController{
                      self.menuCardViewController.view.layer.cornerRadius = 30
                      
                  case .collapsed:
-                    self.menuCardViewController.view.layer.cornerRadius = 0
+                    self.menuCardViewController.view.layer.cornerRadius = 30
                  }
              }
              
