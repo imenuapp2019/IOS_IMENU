@@ -11,7 +11,7 @@
         <!--Menu View Controller-->
         <scene sceneID="DFM-LT-npB">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="rUc-zv-a77" customClass="MenuViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Menu" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rUc-zv-a77" customClass="MenuViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pxS-HW-8yg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -258,6 +258,7 @@ que Fridays</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hUx-qA-Nc2"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rAH-Nx-w3q"/>
                     <connections>
                         <outlet property="nameDetailRestaurant" destination="g2F-Vc-Meh" id="tPW-wH-20J"/>
                         <outlet property="nameTypeRestaurant" destination="Yyj-mM-MoV" id="ISm-PM-ge1"/>

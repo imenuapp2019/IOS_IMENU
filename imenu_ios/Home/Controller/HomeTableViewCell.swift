@@ -1,23 +1,38 @@
 //
-//  RestaurantCollectionView.swift
+//  HomeTableViewCell.swift
 //  imenu_ios
 //
-//  Created by Loren on 23/01/2020.
+//  Created by Miguel Jaimes on 24/02/2020.
 //  Copyright © 2020 Miguel Jaimes. All rights reserved.
 //
 
 import UIKit
-class RestaurantCollectionView: UICollectionViewCell {
+
+class HomeTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var imageRestaurant: UIImageView!
-    @IBOutlet weak var typeRestaurant: UILabel!
+    // MARK: - Properties
+    
+    @IBOutlet weak var restaurantImage: UIImageView!
+    @IBOutlet weak var viewOpacity: UIView!
     @IBOutlet weak var nameRestaurant: UILabel!
-    @IBOutlet weak var CardBackground: UIView!
+    @IBOutlet weak var typeRestaurant: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.layer.cornerRadius = 7
+        self.alpha = 0
+       
         self.shadowView()
+    }
+    
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+    }
+    
+    func circleImage(){
+        restaurantImage.layer.cornerRadius = restaurantImage.frame.size.width/20
+        viewOpacity.layer.cornerRadius = 12
     }
     
     func shadowView(){

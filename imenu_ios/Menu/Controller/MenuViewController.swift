@@ -35,9 +35,7 @@ class MenuViewController: UIViewController{
     
     var endCardHeight:CGFloat = 0
     var startCardHeight:CGFloat = 0
-    
     var cardVisible = false
-
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
     

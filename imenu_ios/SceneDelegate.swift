@@ -25,6 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             // Fallback on earlier versions
         }
+        
+        
         let registerStoryboard = UIStoryboard(name: "Register", bundle: nil).instantiateViewController(withIdentifier:"Register")
          
         window?.rootViewController = registerStoryboard
