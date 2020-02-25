@@ -53,7 +53,7 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
         let desiredScrollPosition = (currentIndex < ARImagesArray.count - 1) ? currentIndex + 1 : 0
         ARCollectionView.scrollToItem(at: IndexPath(item: desiredScrollPosition, section: 0), at: .centeredHorizontally, animated: true)
         
-    
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
