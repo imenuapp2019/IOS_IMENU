@@ -69,7 +69,7 @@ self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotatio
 
    func setupCard() {
     
-    endCardHeight = self.view.frame.height * 0.9
+    endCardHeight = self.view.frame.height * 0.89
     startCardHeight = self.view.frame.height * 0.2
    
         

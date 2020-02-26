@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImagenFondo" translatesAutoresizingMaskIntoConstraints="NO" id="tEU-0Z-GYl" userLabel="MainViewBackground">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundFull" translatesAutoresizingMaskIntoConstraints="NO" id="tEU-0Z-GYl" userLabel="MainViewBackground">
+                                <rect key="frame" x="0.0" y="-28" width="375" height="695"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NOh-9k-n2i" userLabel="MainStakView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -224,7 +224,7 @@
                             <constraint firstItem="NOh-9k-n2i" firstAttribute="leading" secondItem="iLi-C5-UBu" secondAttribute="leading" id="LIK-5F-dIC"/>
                             <constraint firstItem="iLi-C5-UBu" firstAttribute="bottom" secondItem="NOh-9k-n2i" secondAttribute="bottom" id="YNF-AV-3I9"/>
                             <constraint firstItem="NOh-9k-n2i" firstAttribute="top" secondItem="iLi-C5-UBu" secondAttribute="top" id="u0s-uX-JXQ"/>
-                            <constraint firstItem="tEU-0Z-GYl" firstAttribute="top" secondItem="Xu9-Rj-118" secondAttribute="top" id="zva-j2-SkK"/>
+                            <constraint firstItem="tEU-0Z-GYl" firstAttribute="top" secondItem="Xu9-Rj-118" secondAttribute="top" constant="-28" id="zva-j2-SkK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iLi-C5-UBu"/>
                     </view>
@@ -239,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D50-3i-H0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-326" y="161"/>
+            <point key="canvasLocation" x="-327.19999999999999" y="160.56971514242881"/>
         </scene>
         <!--DetailDish-->
         <scene sceneID="D97-1u-dVo">
@@ -253,8 +253,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BackgroundFull" width="543" height="815"/>
         <image name="HDpollo" width="602" height="592"/>
-        <image name="ImagenFondo" width="375" height="812"/>
         <image name="LOGOIMENUDishView" width="375" height="100"/>
     </resources>
 </document>
