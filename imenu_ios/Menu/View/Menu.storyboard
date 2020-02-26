@@ -221,9 +221,6 @@ que Fridays</string>
                                                         <state key="normal" title="Dish">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
-                                                        <connections>
-                                                            <segue destination="h61-dK-G7s" kind="show" id="4SF-3v-c0X"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -263,6 +260,7 @@ que Fridays</string>
                         <outlet property="nameTypeRestaurant" destination="Yyj-mM-MoV" id="ISm-PM-ge1"/>
                         <outlet property="pictureRestaurant" destination="DGp-Z0-5Q5" id="tge-Lz-ZQB"/>
                         <outlet property="restaurantBodyView" destination="sGj-Hl-cjn" id="Szq-xA-rd9"/>
+                        <segue destination="h61-dK-G7s" kind="presentation" identifier="dishy" id="yla-EI-ISP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eI-9Q-ojM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -277,14 +275,14 @@ que Fridays</string>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRA-Ce-xde" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859" y="135"/>
+            <point key="canvasLocation" x="748" y="132"/>
         </scene>
     </scenes>
     <resources>
         <image name="FotoRestauranteDos" width="334" height="202"/>
         <image name="facebook_this" width="288" height="280"/>
         <image name="insta_this" width="68" height="72"/>
-        <image name="location_this" width="412" height="631"/>
+        <image name="location_this" width="412" height="672"/>
         <image name="mobile_this" width="221" height="188"/>
         <image name="twitter_this" width="119" height="127"/>
     </resources>

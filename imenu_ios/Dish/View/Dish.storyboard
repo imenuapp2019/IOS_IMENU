@@ -12,7 +12,7 @@
         <!--Dish View Controller-->
         <scene sceneID="qcO-9k-6Ew">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="goe-Ky-EUy" customClass="DishViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dish" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="goe-Ky-EUy" customClass="DishViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xu9-Rj-118" userLabel="DishMainView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

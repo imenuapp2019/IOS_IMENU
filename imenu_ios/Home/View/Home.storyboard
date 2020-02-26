@@ -9,6 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Dish-->
+        <scene sceneID="Ehb-v8-9dx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dish" id="1eL-NI-Ewx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ak0-vg-sDQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-339" y="455"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="8cB-cY-5cb">
             <objects>
@@ -240,6 +248,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5C-el-729" userLabel="GpsButton">
                                                         <rect key="frame" x="22" y="0.0" width="47" height="36"/>
                                                         <state key="normal" image="UbicacionBarraInferior"/>
+                                                        <connections>
+                                                            <segue destination="1eL-NI-Ewx" kind="presentation" identifier="dish" modalPresentationStyle="fullScreen" id="qo6-gc-pLC"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

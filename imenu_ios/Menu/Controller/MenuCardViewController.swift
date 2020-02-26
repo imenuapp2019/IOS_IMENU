@@ -76,7 +76,8 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
             assignImageToSection(index: indexPath.row, image: cell.menuSectionImageView, name: cell.menuSectionLabel)
             
             
-//                   cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DoWhenACellIsClicked(_:))))
+                   cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DoWhenACellIsClicked(_:))))
+            
                    return  cell as UICollectionViewCell
             
         }
@@ -117,7 +118,16 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
     }
     
     @objc func DoWhenACellIsClicked(_ sender: UITapGestureRecognizer) {
-   performSegue(withIdentifier: "segueDish", sender: nil)
+   
+//        let dishviewcontroller = DishViewController ()
+//
+//        let storyboard = UIStoryboard(name: "Dish", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "dish") as UIViewController
+//          dishviewcontroller.name_xl = "Edu"
+//
+//        self.present(vc, animated: true, completion: nil)
+       
+
     }
     
     

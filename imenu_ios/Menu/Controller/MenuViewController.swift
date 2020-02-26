@@ -67,8 +67,6 @@ self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotatio
     }
     
     
-
-
    func setupCard() {
     
     endCardHeight = self.view.frame.height * 0.9
@@ -86,6 +84,7 @@ self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotatio
     
     menuCardViewController.handleArea.addGestureRecognizer(tapGestureRecognizer)
     menuCardViewController.handleArea.addGestureRecognizer(panGestureRecognizer)
+    
     }
     
     @objc
