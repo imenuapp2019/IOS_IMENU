@@ -9,8 +9,7 @@
 import UIKit
 
 class DishViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
-            
-    var name_xl = ""
+    var menuSection:Int = 0
     let fetchData:FetchData = FetchData ()
     
                             // Outlets
@@ -36,8 +35,9 @@ class DishViewController: UIViewController,UICollectionViewDelegate, UICollectio
     }
   
     
-    override func viewWillAppear(_ animated: Bool) {
-        print (name_xl)
+  
+    override func viewDidAppear(_ animated: Bool) {
+        print (menuSection)
     }
     // Número de celdas mostradas
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

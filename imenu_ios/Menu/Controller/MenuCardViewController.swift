@@ -134,26 +134,14 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
     
     @objc func DoWhenACellIsClicked(_ sender: UITapGestureRecognizer) {
    
-//        let dishviewcontroller = DishViewController ()
-//
-//        let storyboard = UIStoryboard(name: "Dish", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "dish") as UIViewController
-//          dishviewcontroller.name_xl = "Edu"
-//
-//        self.present(vc, animated: true, completion: nil)
         let location = sender.location(in: self.menuSectionsCollectionView)
               let indexPath = self.menuSectionsCollectionView.indexPathForItem(at: location)
              let cellClickedIndex = indexPath!.row
         menuViewController?.clickedOnSectionBool = true
-       // menuViewController?.dismissElPutoViewController()
-        print ("tu puta madre")
-       
-        //dismiss(animated: true, completion: nil)
-       
-        
-
-      // cellWasClickDelegate.passInfoToDish(numer: 0)
-       // dismiss(animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Dish", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "dish") as! DishViewController
+        controller.menuSection = cellClickedIndex
+        self.present(controller, animated: true, completion: nil)
     
         
     }

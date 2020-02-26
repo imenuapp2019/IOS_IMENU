@@ -8,7 +8,7 @@
 
 import Foundation
 class FetchData{
-    func fetchDishes () -> [Dish] {
+    func fetchDishes (menuSection:) -> [Dish] {
         let dish1 = Dish(name: "Pollo al horno", description: "Pollo hecho al horno", menuBelonged: 1, image: #imageLiteral(resourceName: "HDpollo"), price: 10)
         
         let dish2 = Dish(name: "Pizza barbacoa", description: "Pizza con ternera y salsa barbacoa", menuBelonged: 2, image: #imageLiteral(resourceName: "HD_Pizza"), price: 40)
