@@ -425,6 +425,7 @@
                         <outlet property="collectionView" destination="F31-j2-qGe" id="e6d-o4-LAp"/>
                         <outlet property="detailBtnView" destination="e3C-1F-JRq" id="IYP-4e-Mgv"/>
                         <outlet property="detailTextView" destination="xJX-Pa-3Z0" id="nCf-sK-qJB"/>
+                        <outlet property="dishName" destination="Dvg-ew-Mem" id="D4Y-lK-kvD"/>
                         <outlet property="dishPriceLabel" destination="U8u-Vw-JbN" id="TMd-OG-Huh"/>
                         <outlet property="heartImageView" destination="tGV-fh-ONo" id="P5h-Er-3cX"/>
                         <outlet property="innerCard" destination="rOd-yv-fiM" id="Duk-TB-PDW"/>

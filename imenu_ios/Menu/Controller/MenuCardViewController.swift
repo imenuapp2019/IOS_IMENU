@@ -57,10 +57,6 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //print(indexPath.row)
-    }
-    
     
     func startTimer () {
         timer = Timer.scheduledTimer(timeInterval: 7.0, target: self, selector: #selector(timerAction) , userInfo: nil, repeats: true)

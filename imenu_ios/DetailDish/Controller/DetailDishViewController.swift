@@ -10,7 +10,9 @@ import UIKit
 
 class DetailDishViewController: UIViewController, UICollectionViewDelegateFlowLayout,UICollectionViewDataSource, UICollectionViewDelegate {
     
- 
+    var dishNameProperty = ""
+    var dishPriceProperty = 0
+    var dishDescriptionProperty = ""
 
     @IBAction func detailBtnAction(_ sender: Any) {
         showDeatailView ()
@@ -20,9 +22,14 @@ class DetailDishViewController: UIViewController, UICollectionViewDelegateFlowLa
     @IBAction func alertBtnAction(_ sender: Any) {
       ShowAlergView()
     }
+    
+    @IBOutlet weak var dishName: UILabel!
+    @IBOutlet weak var dishPriceLabel: UILabel!
+    @IBOutlet weak var detailTextView: UITextView!
+    
 
     @IBOutlet weak var alergView: UIView!
-    @IBOutlet weak var detailTextView: UITextView!
+  
     
     @IBOutlet weak var alerBtnView: UIView!
     @IBOutlet weak var detailBtnView: UIView!
@@ -33,7 +40,7 @@ class DetailDishViewController: UIViewController, UICollectionViewDelegateFlowLa
     var liked:Bool = false
     @IBOutlet weak var likebtnView: UIView!
     @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var dishPriceLabel: UILabel!
+    
     @IBOutlet weak var innerCard: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var heartImageView: UIImageView!
@@ -45,6 +52,9 @@ class DetailDishViewController: UIViewController, UICollectionViewDelegateFlowLa
     var timer:Timer?
     
     override func viewDidLoad() {
+        dishPriceLabel.text = String(dishPriceProperty)
+        dishName.text = dishNameProperty
+        detailTextView.text = dishDescriptionProperty
         super.viewDidLoad()
             self.title = "Detalle"
         collectionView.dataSource = self

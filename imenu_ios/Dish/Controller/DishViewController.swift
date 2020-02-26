@@ -11,6 +11,8 @@ import UIKit
 class DishViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
     var menuSection:Int = 0
     let fetchData:FetchData = FetchData ()
+    var globaldata:Array <Dish>!
+    var cellClicked = 0
     
                             // Outlets
     @IBOutlet weak var DishescollectionView: UICollectionView!
@@ -27,7 +29,7 @@ class DishViewController: UIViewController,UICollectionViewDelegate, UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        globaldata = fetchData.fetchDishes(sectionIndex: menuSection)
         DishescollectionView.delegate = self
         DishescollectionView.dataSource = self
         resetButtonConfig()
@@ -37,11 +39,14 @@ class DishViewController: UIViewController,UICollectionViewDelegate, UICollectio
     
   
     override func viewDidAppear(_ animated: Bool) {
-        print (menuSection)
+        print(menuSection)
+        //fetchData.setSection(section: menuSection)
+
+       
     }
     // Número de celdas mostradas
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fetchData.fetchDishes().count
+    return fetchData.fetchDishes(sectionIndex: menuSection  ).count
        }
        
        
@@ -50,8 +55,7 @@ class DishViewController: UIViewController,UICollectionViewDelegate, UICollectio
            
            collectionView.backgroundColor = .clear
                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DishCollectionViewCell
-       
-            let data = fetchData.fetchDishes()
+            let data = fetchData.fetchDishes(sectionIndex: menuSection)
             cell.DishImageView.image = data [indexPath.row].image
             cell.dishNameLabel.text = data [indexPath.row].name
             cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DoWhenACellIsClicked(_:))))
@@ -61,13 +65,37 @@ class DishViewController: UIViewController,UICollectionViewDelegate, UICollectio
        }
     
     @objc func DoWhenACellIsClicked(_ sender: UITapGestureRecognizer) {
-    performSegue(withIdentifier: "segueDetailDish", sender: nil)
+       let location = sender.location(in: self.DishescollectionView)
+       let indexPath = self.DishescollectionView.indexPathForItem(at: location)
+        print(indexPath?.row)
+        
+       cellClicked = indexPath!.row
+   print(cellClicked)
+        
+        
+        performSegue(withIdentifier: "segueDetailDish", sender: nil)
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                         
+              if segue.identifier == "segueDetailDish"
+              {
+                  
+                  
+                  let destinationVC = segue.destination as! DetailDishViewController
+                let data = globaldata
+                destinationVC.dishNameProperty = (data?[cellClicked].name)!
+                destinationVC.dishPriceProperty = ((data?[cellClicked].price)!)
+                destinationVC.dishDescriptionProperty = (data?[cellClicked].description)!
+                
+    }}
+   
     
     
     //Situación inicial de la vista
     private func viewElementsConfig () {
-        totalDishesLabel.text = "\("/") \((String)(fetchData.fetchDishes().count) )"
+        totalDishesLabel.text = "\("/") \((String)(fetchData.fetchDishes(sectionIndex: menuSection).count) )"
         resetCollectionViewButton.isEnabled = false
     
     }
