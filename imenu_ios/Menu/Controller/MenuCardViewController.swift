@@ -8,11 +8,22 @@
 
 import UIKit
 
+//protocol CellClickedDelegate {
+//    func passInfoToDish (numer:Int)
+//
+//}
+
 class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
+  
+    
+    @IBOutlet var MainCard: UIView!
+  //  var  cellWasClickDelegate: CellClickedDelegate!
+    
     var currentIndex = 0
     let ARImagesArray = [#imageLiteral(resourceName: "HD_Pizza"),#imageLiteral(resourceName: "HDpollo"),#imageLiteral(resourceName: "HD_tarta")]
     let arrayOfMenuSectionsImages = [#imageLiteral(resourceName: "especiales_this"),#imageLiteral(resourceName: "segundos_this"),#imageLiteral(resourceName: "entrantes_this"),#imageLiteral(resourceName: "postres_this"),#imageLiteral(resourceName: "bebida_this"),#imageLiteral(resourceName: "primer_this")]
     var timer:Timer?
+    var menuViewController:MenuViewController?
     @IBAction func dishClicked(_ sender: Any) {
         
     }
@@ -21,12 +32,14 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
     
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var handleArea: UIView!
-    @IBOutlet weak var menuSectionsCollectionView: UICollectionView!
+   
     
     @IBOutlet weak var ARCollectionView: UICollectionView!
+     @IBOutlet weak var menuSectionsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        menuViewController = MenuViewController ()
         startTimer()
         pageControl.numberOfPages = ARImagesArray.count
         self.view.layer.cornerRadius = 30
@@ -42,6 +55,10 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
         
         ARCollectionView.register(ARNib, forCellWithReuseIdentifier: "ARCell")
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //print(indexPath.row)
     }
     
     
@@ -124,8 +141,21 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
 //          dishviewcontroller.name_xl = "Edu"
 //
 //        self.present(vc, animated: true, completion: nil)
+        let location = sender.location(in: self.menuSectionsCollectionView)
+              let indexPath = self.menuSectionsCollectionView.indexPathForItem(at: location)
+             let cellClickedIndex = indexPath!.row
+        menuViewController?.clickedOnSectionBool = true
+       // menuViewController?.dismissElPutoViewController()
+        print ("tu puta madre")
        
+        //dismiss(animated: true, completion: nil)
+       
+        
 
+      // cellWasClickDelegate.passInfoToDish(numer: 0)
+       // dismiss(animated: true, completion: nil)
+    
+        
     }
     
     

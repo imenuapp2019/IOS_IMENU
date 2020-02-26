@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuCardViewController" customModule="imenu_ios" customModuleProvider="target">
             <connections>
                 <outlet property="ARCollectionView" destination="N8C-B9-u8v" id="h1c-45-9LE"/>
+                <outlet property="MainCard" destination="i5M-Pr-FkT" id="JwO-tt-YVi"/>
                 <outlet property="arrowImageView" destination="0A1-dq-j6z" id="fsb-Ob-hAK"/>
                 <outlet property="handleArea" destination="usV-nV-m7x" id="SlV-04-j64"/>
                 <outlet property="menuSectionsCollectionView" destination="aID-BM-P7v" id="KcO-Nx-4yb"/>
@@ -19,7 +20,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="MenuCardViewController" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -164,6 +165,7 @@
                 </stackView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <accessibility key="accessibilityConfiguration" identifier="MenuCardViewController"/>
             <constraints>
                 <constraint firstItem="a02-4n-6tE" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="CEB-zo-Wdb"/>
                 <constraint firstItem="a02-4n-6tE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="NqB-hh-YS1"/>
