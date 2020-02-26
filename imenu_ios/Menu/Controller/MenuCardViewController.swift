@@ -11,7 +11,7 @@ import UIKit
 class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
     var currentIndex = 0
     let ARImagesArray = [#imageLiteral(resourceName: "HD_Pizza"),#imageLiteral(resourceName: "HDpollo"),#imageLiteral(resourceName: "HD_tarta")]
-    let arrayOfMenuSectionsImages = [#imageLiteral(resourceName: "especiales_this"),#imageLiteral(resourceName: "segundos_this"),#imageLiteral(resourceName: "bebida_this"),#imageLiteral(resourceName: "postres_this"),#imageLiteral(resourceName: "entrantes_this"),#imageLiteral(resourceName: "primer_this")]
+    let arrayOfMenuSectionsImages = [#imageLiteral(resourceName: "especiales_this"),#imageLiteral(resourceName: "segundos_this"),#imageLiteral(resourceName: "entrantes_this"),#imageLiteral(resourceName: "postres_this"),#imageLiteral(resourceName: "bebida_this"),#imageLiteral(resourceName: "primer_this")]
     var timer:Timer?
     @IBAction func dishClicked(_ sender: Any) {
         
@@ -87,8 +87,6 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
             
             return cell as UICollectionViewCell
         }
-        
-       
     }
     
     private func assignImageToSection (index:Int, image:UIImageView, name:UILabel) {

@@ -35,9 +35,7 @@ class MenuViewController: UIViewController{
     
     var endCardHeight:CGFloat = 0
     var startCardHeight:CGFloat = 0
-    
     var cardVisible = false
-
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
     
@@ -69,7 +67,7 @@ self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotatio
     
    func setupCard() {
     
-    endCardHeight = self.view.frame.height * 0.9
+    endCardHeight = self.view.frame.height * 0.89
     startCardHeight = self.view.frame.height * 0.2
    
         

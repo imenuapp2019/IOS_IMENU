@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImagenFondo" translatesAutoresizingMaskIntoConstraints="NO" id="Sra-bG-Opi">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundFull" translatesAutoresizingMaskIntoConstraints="NO" id="Sra-bG-Opi">
                                 <rect key="frame" x="-14" y="0.0" width="440" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlatoUno" translatesAutoresizingMaskIntoConstraints="NO" id="Ejt-ue-oVp">
@@ -97,7 +97,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ImagenFondo" width="375" height="812"/>
+        <image name="BackgroundFull" width="543" height="815"/>
         <image name="LogoImenu" width="325" height="325"/>
         <image name="PlatoCinco" width="172" height="171"/>
         <image name="PlatoCuatro" width="161" height="164"/>

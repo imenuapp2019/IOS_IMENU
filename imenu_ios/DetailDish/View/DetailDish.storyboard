@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ImagenFondo" translatesAutoresizingMaskIntoConstraints="NO" id="xh2-u7-9d2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundFull" translatesAutoresizingMaskIntoConstraints="NO" id="xh2-u7-9d2">
+                                <rect key="frame" x="0.0" y="-41" width="375" height="708"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vud-lv-HLU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -412,7 +412,7 @@
                             <constraint firstItem="j4v-o7-cbI" firstAttribute="bottom" secondItem="Vud-lv-HLU" secondAttribute="bottom" id="9SR-Ds-ScX"/>
                             <constraint firstItem="Vud-lv-HLU" firstAttribute="leading" secondItem="j4v-o7-cbI" secondAttribute="leading" id="D5r-ts-vRQ"/>
                             <constraint firstItem="j4v-o7-cbI" firstAttribute="trailing" secondItem="xh2-u7-9d2" secondAttribute="trailing" id="UsU-hG-6hk"/>
-                            <constraint firstItem="xh2-u7-9d2" firstAttribute="top" secondItem="j4v-o7-cbI" secondAttribute="top" id="fvh-2H-ibz"/>
+                            <constraint firstItem="xh2-u7-9d2" firstAttribute="top" secondItem="j4v-o7-cbI" secondAttribute="top" constant="-41" id="fvh-2H-ibz"/>
                             <constraint firstItem="xh2-u7-9d2" firstAttribute="leading" secondItem="j4v-o7-cbI" secondAttribute="leading" id="tLc-8v-vat"/>
                             <constraint firstItem="j4v-o7-cbI" firstAttribute="trailing" secondItem="Vud-lv-HLU" secondAttribute="trailing" id="xEa-6b-dks"/>
                         </constraints>
@@ -439,8 +439,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BackgroundFull" width="543" height="815"/>
         <image name="HD_tarta" width="225" height="225"/>
-        <image name="ImagenFondo" width="375" height="812"/>
         <image name="Tabla" width="300" height="334"/>
         <image name="corazon_gris" width="376" height="364"/>
         <image name="iconBackArrow" width="32" height="32"/>

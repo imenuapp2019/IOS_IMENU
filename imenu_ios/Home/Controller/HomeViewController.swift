@@ -1,97 +1,68 @@
 //
 //  HomeViewController.swift
-//  
+//  imenu_ios
 //
-//  Created by Miguel Jaimes on 22/01/2020.
+//  Created by Miguel Jaimes on 24/02/2020.
+//  Copyright © 2020 Miguel Jaimes. All rights reserved.
 //
 
 import UIKit
-import PopupDialog
 
-class HomeViewController: BaseViewController, UICollectionViewDataSource,UICollectionViewDelegate {
+class HomeViewController: UIViewController {
     
-
-    @IBAction func filterClicked(_ sender: Any) {
-       
-    }
+    // MARK: - Properties
     
+    // MARK: - SearchBar
+    var searchBarWithDelegate: DAOSearchBar!
+    let innerSpacing: CGFloat = 100.0
+    let marginX: CGFloat = 50.0
+    let marginY: CGFloat = 25
+    let searchBarHeight: CGFloat = 30.0
+    let searchBarOriginalWidth: CGFloat = 44.0
+    var searchBarWidth: CGFloat = 310.0
+    var searchBarDestinationFrame = CGRect.zero
     
-    @IBAction func searchClicker(_ sender: Any) {
-    }
+    @IBOutlet weak var homeTableView: UITableView!
     
-    @IBOutlet var filterView: UIView!
-    @IBOutlet weak var oneChecker: UIView!
+    @IBOutlet weak var alertView: UIView!
+    @IBOutlet weak var labelAlertView: UILabel!
     
-    @IBOutlet weak var twoChecker: UIView!
-    @IBOutlet weak var threeChecker: UIView!
-    
-    
-    
-    @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var filterButton: UIButton!
-    @IBOutlet weak var AlertView: UIView!
-    @IBOutlet weak var LabelAlertView: UILabel!
-    @IBOutlet weak var gridRestaurant: UICollectionView!
+    var lastVelocityYSign = 0
     
     var listRestaurants : [RestaurantElement] = [] {
         didSet {
-            self.gridRestaurant.reloadData()
+            self.homeTableView.reloadData()
         }
     }
     
+    
+    @IBAction func btnFilterClicked(_ sender: Any) {
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let child = UIView()
-        
-        child.translatesAutoresizingMaskIntoConstraints = false
-        child.backgroundColor = .red
-        view.addSubview(child)
-        child.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = false
-        child.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        child.widthAnchor.constraint(equalToConstant: 128).isActive = true
-        
-        child.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        
-        LabelAlertView.text = Literals.labelAlertView
-        AlertView.layer.cornerRadius = 20
-        AlertView.alpha = 0.0
-        
-        self.datafromServer()
-        
-        self.gridRestaurant.delegate = self
-        self.gridRestaurant.dataSource = self
-        
-        setHeader()
-        self.addNavBarImage()
+        self.homeTableView.reloadData()
+        delegates()
+        setupSearchBars()
+        setupInitValues()
+        setUpView()
+        datafromServer()
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.gridRestaurant.setNeedsDisplay()
-        self.gridRestaurant.reloadData()
-    }
-    
-    func addNavBarImage() {
-        let navController = navigationController!
-        let image = UIImage(named: "LOGOIMENUDishView") //Your logo url here
-        let imageView = UIImageView(image: image)
-        let bannerWidth = navController.navigationBar.frame.size.width
-        let bannerHeight = navController.navigationBar.frame.size.height
-        let bannerX = bannerWidth / 2 - (image?.size.width)! / 2
-        let bannerY = bannerHeight / 2 - (image?.size.height)! / 2
-        imageView.frame = CGRect(x: bannerX, y: bannerY, width: bannerWidth, height: bannerHeight)
-        imageView.contentMode = .scaleAspectFit
-        navigationItem.titleView = imageView
+    func setUpView(){
+        homeTableView.backgroundColor = .clear
+        labelAlertView.text = Literals.labelAlertView
+        alertView.layer.cornerRadius = 15
+        alertView.alpha = 0.0
     }
     
     func datafromServer(){
-        print("Llamo")
         let apirest = APIManager()
         apirest.getAllRestaurants(completion: { result
             in
             let resultsRestaurants = result.first
-            print(resultsRestaurants)
             self.createListRestaurant(List: resultsRestaurants)
         })
     }
@@ -109,48 +80,52 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
         self.listRestaurants = newRestaurant
     }
     
-    func dataHardcoded()->[RestaurantElement]{
-        var listRestaurants :[RestaurantElement]=[]
-        listRestaurants.append(RestaurantElement(name: "Restaurante Zalacaín", type: "Alta Cocina", urlImage: "fotoRestaurante1", latitude: 1.90, longitude: 2.20))
-        listRestaurants.append(RestaurantElement(name: "Restaurante Vertical", type: "Cocina de Vanguardia", urlImage: "FotoRestauranteDos", latitude: 2.60, longitude: 5.00))
-        listRestaurants.append(RestaurantElement(name: "Restaurante Horizontal", type: "Cocina Española", urlImage: "FotoRestauranteDos", latitude: 2.800, longitude: 5.00))
-        
-        return listRestaurants
+    func delegates(){
+        self.homeTableView.delegate = self
+        self.homeTableView.dataSource = self
     }
     
-    /**Collection view functions*/
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listRestaurants.count
+    func setupSearchBars(){
+        let searchBarWithDelegate = DAOSearchBar.init(frame: CGRect(x: marginX, y: marginY, width: searchBarOriginalWidth, height: searchBarHeight))
+        var frame = searchBarWithDelegate.frame
+        frame.size.width = searchBarWidth
+        self.searchBarDestinationFrame = frame
+        searchBarWithDelegate.delegate = self
+        self.view.addSubview(searchBarWithDelegate)
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+    func setupInitValues () {
+        searchBarWidth = self.view.bounds.width - (2 * marginX)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+}
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let section = listRestaurants.count
+        return section
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let imageDownloader = ImageDownloader()
         let restaurant = listRestaurants[indexPath.row]
-        let identifier = "Restaurant"
-        let cell = self.gridRestaurant.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)as! RestaurantCollectionView
+        let identifier = "HomeRestaurant"
+        let cell = self.homeTableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)as! HomeTableViewCell
         imageDownloader.downloader(URLString: restaurant.imageURL!, completion: { (image:UIImage?) in
-            cell.imageRestaurant.image = image
+            cell.restaurantImage.image = image
         })
         cell.nameRestaurant.text = restaurant.name
         cell.typeRestaurant.text = restaurant.type
-        
-        
+        cell.backgroundColor = .clear
         return cell
-        
     }
     
-    
-    /**
-     Event direction of scrolling
-     */
-    var lastVelocityYSign = 0
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
         let currentVelocityY =  scrollView.panGestureRecognizer.velocity(in: scrollView.superview).y
         let currentVelocityYSign = Int(currentVelocityY).signum()
         if currentVelocityYSign != lastVelocityYSign &&
@@ -158,9 +133,9 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
             lastVelocityYSign = currentVelocityYSign
         }
         if lastVelocityYSign < 0 {
-            setView(view: AlertView, hidden: false)
+            self.setView(view: alertView, hidden: false)
         } else if lastVelocityYSign > 0 {
-            setView(view: AlertView, hidden: true)
+            self.setView(view: alertView, hidden: true)
         }
     }
     
@@ -174,37 +149,54 @@ class HomeViewController: BaseViewController, UICollectionViewDataSource,UIColle
                 view.alpha = 0.0
             })
         }
-        
     }
     
-    func setHeader() {
-    filterButton.setBackgroundImage(UIImage(named: "iconFilter"), for: .normal)
-        searchButton.setBackgroundImage(UIImage(named: "iconoLupa"), for: .normal)
-        filterButton.setTitle("", for: .normal)
-        searchButton.setTitle("", for: .normal)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 100
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-     
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let item = ( sender as? RestaurantCollectionView) else { return }
-        guard let indexPath = self.gridRestaurant.indexPath(for: item) else { return }
-        let restaurant = listRestaurants[indexPath.row]
-        let detailRestaurant = segue.destination as? MenuViewController
-        detailRestaurant?.restaurant = restaurant
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.alpha = 0
-        UIView.animate(withDuration: 0.8, animations: {
+        UIView.animate(withDuration: 0.8,delay: 0.5,options: .curveEaseOut, animations: {
             cell.alpha = 1
         })
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let item = ( sender as? HomeTableViewCell) else { return }
+        guard let indexPath = self.homeTableView.indexPath(for: item) else { return }
+        let restaurant = listRestaurants[indexPath.row]
+        let NavigationController = segue.destination as! UINavigationController
+        let detailRestaurant = NavigationController.topViewController as? MenuViewController
+        detailRestaurant?.restaurant = restaurant
+    }
+    
 }
 
-
-
+extension HomeViewController: DAOSearchBarDelegate {
+    // MARK: SearchBar Delegate
+    func destinationFrameForSearchBar(_ searchBar: DAOSearchBar) -> CGRect {
+        return self.searchBarDestinationFrame
+    }
+    
+    func searchBar(_ searchBar: DAOSearchBar, willStartTransitioningToState destinationState: DAOSearchBarState) {
+        // Do whatever you deem necessary.
+    }
+    
+    func searchBar(_ searchBar: DAOSearchBar, didEndTransitioningFromState previousState: DAOSearchBarState) {
+        // Do whatever you deem necessary.
+    }
+    
+    func searchBarDidTapReturn(_ searchBar: DAOSearchBar) {
+        // Do whatever you deem necessary.
+        // Access the text from the search bar like searchBar.searchField.text
+    }
+    
+    func searchBarTextDidChange(_ searchBar: DAOSearchBar) {
+        // Do whatever you deem necessary.
+        // Access the text from the search bar like searchBar.searchField.text
+    }
+}
 
 

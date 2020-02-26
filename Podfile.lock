@@ -4,9 +4,9 @@ PODS:
     - Alamofire (~> 4.9)
   - BEMCheckBox (1.4.1)
   - DynamicBlurView (4.0.0)
-  - McPicker (2.0.1)
   - PopupDialog (1.1.1):
     - DynamicBlurView (~> 4.0)
+  - RHSideButtons (1.1.0)
   - SkyFloatingLabelTextField (3.8.0)
   - SwiftLint (0.39.1)
 
@@ -14,8 +14,8 @@ DEPENDENCIES:
   - Alamofire (~> 4.8)
   - AlamofireImage (~> 3.5)
   - BEMCheckBox
-  - McPicker (~> 2.0.0)
   - PopupDialog (~> 1.1)
+  - RHSideButtons
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftLint
 
@@ -25,8 +25,8 @@ SPEC REPOS:
     - AlamofireImage
     - BEMCheckBox
     - DynamicBlurView
-    - McPicker
     - PopupDialog
+    - RHSideButtons
     - SkyFloatingLabelTextField
     - SwiftLint
 
@@ -35,11 +35,11 @@ SPEC CHECKSUMS:
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   DynamicBlurView: ccf9acd2b20c883cc2c72e3524a04d8d3ee20533
-  McPicker: a0a6b8ece8f1642e05401a29867463aba501188b
   PopupDialog: 720c92befd8bc23c13442254945213db5612f149
+  RHSideButtons: 9de185791d8119bd1160f6dcb88e47b9ad93d192
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: fe5098e133b296dada46caf4f52eb0d28bd5d640
+PODFILE CHECKSUM: 6284491874d8b7b1cdc6f90604b7f5523bed8cf3
 
 COCOAPODS: 1.8.4
