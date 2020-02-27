@@ -318,8 +318,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         guard let item = ( sender as? HomeTableViewCell) else { return }
         guard let indexPath = self.homeTableView.indexPath(for: item) else { return }
         let restaurant = listRestaurants[indexPath.row]
-        let NavigationController = segue.destination as! UINavigationController
-        let detailRestaurant = NavigationController.topViewController as? MenuViewController
+        let detailRestaurant = segue.destination as? MenuViewController
         detailRestaurant?.restaurant = restaurant
     }
     
