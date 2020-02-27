@@ -86,9 +86,9 @@
                                                                             <constraint firstAttribute="height" constant="35" id="073-JD-RoV"/>
                                                                             <constraint firstAttribute="width" constant="35" id="CAQ-ia-Xdw"/>
                                                                         </constraints>
-                                                                        <state key="normal" image="delete"/>
+                                                                        <state key="normal" image="doorExit"/>
                                                                         <connections>
-                                                                            <segue destination="t3n-T7-uco" kind="show" id="jLb-g0-VMe"/>
+                                                                            <segue destination="t3n-T7-uco" kind="presentation" modalTransitionStyle="crossDissolve" id="jLb-g0-VMe"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -484,7 +484,7 @@
         <image name="Background" width="528" height="528"/>
         <image name="Capa 4" width="121" height="120"/>
         <image name="LogoImenu" width="325" height="325"/>
-        <image name="delete" width="16" height="16"/>
+        <image name="doorExit" width="64" height="64"/>
         <image name="favorite-heart-button" width="19" height="19"/>
     </resources>
 </document>
