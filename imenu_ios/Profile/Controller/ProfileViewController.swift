@@ -47,8 +47,8 @@ class ProfileViewController: UIViewController {
         
         }
     func saveBtnConf () {
-               saveBtn.tintColor = Color.whiteColor
-               saveBtn.backgroundColor = Color.greenBtnColor
+               saveBtn.tintColor = MyColor.whiteColor
+               saveBtn.backgroundColor = MyColor.greenBtnColor
                saveBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
     }
     

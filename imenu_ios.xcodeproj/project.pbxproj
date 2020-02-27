@@ -61,7 +61,7 @@
 		A0C25FE223E345DA0099F1E5 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C25FE123E345DA0099F1E5 /* CollectionViewCell.xib */; };
 		A0C25FE423E348320099F1E5 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C25FE323E348320099F1E5 /* MenuCollectionViewCell.swift */; };
 		A0C9CEEA23C7939200E77B86 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */; };
-		A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CF2923C8EE9600E77B86 /* Color.swift */; };
+		A0C9CF2A23C8EE9600E77B86 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9CF2923C8EE9600E77B86 /* MyColor.swift */; };
 		A0CC912323D65B6600877543 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC912223D65B6600877543 /* AvatarViewController.swift */; };
 		A0CC912523D663A600877543 /* AvatarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC912423D663A600877543 /* AvatarCollectionViewCell.swift */; };
 		F10447FC1BF1D25636C2B8FD /* Pods_imenu_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80A94295DE0CEC502372C074 /* Pods_imenu_ios.framework */; };
@@ -165,7 +165,7 @@
 		A0C25FE123E345DA0099F1E5 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		A0C25FE323E348320099F1E5 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0C9CEE923C7939200E77B86 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		A0C9CF2923C8EE9600E77B86 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A0C9CF2923C8EE9600E77B86 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 		A0CC912223D65B6600877543 /* AvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
 		A0CC912423D663A600877543 /* AvatarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7F59B88508993883BBEAC16 /* Pods-imenu_ios-imenu_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imenu_ios-imenu_iosUITests.release.xcconfig"; path = "Target Support Files/Pods-imenu_ios-imenu_iosUITests/Pods-imenu_ios-imenu_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 				9BE6D6C024043CF800F13AEF /* DAOSearchBar */,
 				5C4AFB7823E1FCAC00D2EADF /* PopUp.swift */,
 				9B214E5923C7B11300969784 /* Literals.swift */,
-				A0C9CF2923C8EE9600E77B86 /* Color.swift */,
+				A0C9CF2923C8EE9600E77B86 /* MyColor.swift */,
 				9BB3928423C9219200AA7AAC /* RoundButton.swift */,
 				9BE474AD23E3A291004E1EAF /* ImageDownloader.swift */,
 				9BE474B323E3BD55004E1EAF /* NavigationViewController.swift */,
@@ -855,7 +855,7 @@
 				9B6F521623C7730000943C71 /* SceneDelegate.swift in Sources */,
 				A05A2C3423EC6D6800D31E4F /* FavoriteViewController.swift in Sources */,
 				A085C1BC23E9D9B3004AD80F /* ProfileViewController.swift in Sources */,
-				A0C9CF2A23C8EE9600E77B86 /* Color.swift in Sources */,
+				A0C9CF2A23C8EE9600E77B86 /* MyColor.swift in Sources */,
 				9B85C03C23DF58C10093DDAC /* MenuCardViewController.swift in Sources */,
 				9B9A82E423E20CF000A50749 /* DishViewController.swift in Sources */,
 				A05A2C3623EDB16300D31E4F /* DishesSliderCollectionViewCell.swift in Sources */,

@@ -40,14 +40,14 @@ class RecoverViewController: BaseViewController {
     func setupBtn(){
         btnRecover.setTitle(Literals.btnRecover, for: .normal)
         btnRecover.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        btnRecover.backgroundColor = Color.greenBtnColor
+        btnRecover.backgroundColor = MyColor.greenBtnColor
     }
     
     func setupLabelAndInput(){
         labelTextRecoverEmail.text = Literals.labelRecoverText
         inputlabelEmail.title = Literals.labelRecoverTittle
         inputlabelEmail.placeholder = Literals.labelRecoverPlaceHolder
-        inputlabelEmail.errorColor = Color.redColor
+        inputlabelEmail.errorColor = MyColor.redColor
         inputlabelEmail.addTarget(self, action: #selector(textFieldDidChangeEmail(_:)), for: .editingChanged)
     }
     

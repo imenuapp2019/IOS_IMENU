@@ -77,15 +77,14 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drs-ar-Za3">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="drs-ar-Za3">
                                                 <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="BXV-2I-C1P"/>
                                                     <constraint firstAttribute="width" constant="38" id="PZZ-oE-b8y"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="10"/>
-                                                <state key="normal" title="Volver">
-                                                    <color key="titleShadowColor" red="0.34509803919999998" green="0.59215686270000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" image="iconBackArrow">
+                                                    <attributedString key="attributedTitle"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="backBtn:" destination="HTX-zC-XD8" eventType="touchUpInside" id="c3P-bh-5ej"/>
@@ -454,5 +453,6 @@
         <image name="BackgroundFull" width="543" height="815"/>
         <image name="Tabla" width="300" height="334"/>
         <image name="corazon_gris" width="376" height="364"/>
+        <image name="iconBackArrow" width="32" height="32"/>
     </resources>
 </document>

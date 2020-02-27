@@ -35,29 +35,15 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGr-mj-HJ5" userLabel="Logo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHz-U4-Mbg">
-                                                                        <rect key="frame" x="0.0" y="33" width="38" height="38"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="38" id="5Ig-0k-KKb"/>
-                                                                            <constraint firstAttribute="height" constant="38" id="jLi-qy-8t8"/>
-                                                                        </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                                        <state key="normal" title="Volver"/>
-                                                                        <connections>
-                                                                            <action selector="backBtn:" destination="goe-Ky-EUy" eventType="touchUpInside" id="yB2-ht-vty"/>
-                                                                        </connections>
-                                                                    </button>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGOIMENUDishView" translatesAutoresizingMaskIntoConstraints="NO" id="2E9-ue-D73">
-                                                                        <rect key="frame" x="0.0" y="2" width="375" height="102"/>
+                                                                        <rect key="frame" x="0.0" y="33" width="375" height="102"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstItem="2E9-ue-D73" firstAttribute="leading" secondItem="iGr-mj-HJ5" secondAttribute="leading" id="0cr-3Z-CzB"/>
                                                                     <constraint firstAttribute="trailing" secondItem="2E9-ue-D73" secondAttribute="trailing" id="8JU-Fk-kom"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="2E9-ue-D73" secondAttribute="bottom" id="JUc-QE-O1P"/>
-                                                                    <constraint firstItem="XHz-U4-Mbg" firstAttribute="centerY" secondItem="iGr-mj-HJ5" secondAttribute="centerY" id="fOO-Ze-McD"/>
-                                                                    <constraint firstItem="2E9-ue-D73" firstAttribute="top" secondItem="iGr-mj-HJ5" secondAttribute="top" constant="2" id="idW-Qc-6vT"/>
-                                                                    <constraint firstItem="XHz-U4-Mbg" firstAttribute="leading" secondItem="iGr-mj-HJ5" secondAttribute="leading" id="n45-ey-mlO"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="2E9-ue-D73" secondAttribute="bottom" constant="-31" id="JUc-QE-O1P"/>
+                                                                    <constraint firstItem="2E9-ue-D73" firstAttribute="top" secondItem="iGr-mj-HJ5" secondAttribute="top" constant="33" id="idW-Qc-6vT"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Z4-Dv-dC4" userLabel="Sección del menú">
@@ -228,14 +214,34 @@
                                     <constraint firstItem="324-Gl-UXB" firstAttribute="height" secondItem="NOh-9k-n2i" secondAttribute="height" multiplier="0.6" id="eov-1p-OmV"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8St-5V-yNC">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XHz-U4-Mbg">
+                                        <rect key="frame" x="9" y="9" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="iconBackArrow">
+                                            <attributedString key="attributedTitle"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtn:" destination="goe-Ky-EUy" eventType="touchUpInside" id="yB2-ht-vty"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iLi-C5-UBu" firstAttribute="trailing" secondItem="NOh-9k-n2i" secondAttribute="trailing" id="0lX-WU-Lsb"/>
                             <constraint firstAttribute="bottom" secondItem="tEU-0Z-GYl" secondAttribute="bottom" id="3bS-U6-9Yb"/>
+                            <constraint firstItem="8St-5V-yNC" firstAttribute="top" secondItem="NOh-9k-n2i" secondAttribute="top" id="BgJ-gw-q0a"/>
                             <constraint firstItem="tEU-0Z-GYl" firstAttribute="trailing" secondItem="iLi-C5-UBu" secondAttribute="trailing" id="E7f-dm-9J1"/>
                             <constraint firstItem="tEU-0Z-GYl" firstAttribute="leading" secondItem="iLi-C5-UBu" secondAttribute="leading" id="I9U-JU-zhy"/>
+                            <constraint firstItem="iLi-C5-UBu" firstAttribute="trailing" secondItem="8St-5V-yNC" secondAttribute="trailing" constant="325" id="KVP-Cd-2im"/>
                             <constraint firstItem="NOh-9k-n2i" firstAttribute="leading" secondItem="iLi-C5-UBu" secondAttribute="leading" id="LIK-5F-dIC"/>
+                            <constraint firstItem="iLi-C5-UBu" firstAttribute="bottom" secondItem="8St-5V-yNC" secondAttribute="bottom" constant="617" id="T47-Wk-Efn"/>
+                            <constraint firstItem="8St-5V-yNC" firstAttribute="leading" secondItem="NOh-9k-n2i" secondAttribute="leading" id="VQz-va-jeP"/>
                             <constraint firstItem="iLi-C5-UBu" firstAttribute="bottom" secondItem="NOh-9k-n2i" secondAttribute="bottom" id="YNF-AV-3I9"/>
                             <constraint firstItem="NOh-9k-n2i" firstAttribute="top" secondItem="iLi-C5-UBu" secondAttribute="top" id="u0s-uX-JXQ"/>
                             <constraint firstItem="tEU-0Z-GYl" firstAttribute="top" secondItem="Xu9-Rj-118" secondAttribute="top" constant="-28" id="zva-j2-SkK"/>
@@ -279,5 +285,6 @@
         <image name="BackgroundFull" width="543" height="815"/>
         <image name="HDpollo" width="602" height="592"/>
         <image name="LOGOIMENUDishView" width="375" height="100"/>
+        <image name="iconBackArrow" width="32" height="32"/>
     </resources>
 </document>
