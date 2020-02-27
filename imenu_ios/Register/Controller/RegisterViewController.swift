@@ -150,9 +150,9 @@ class RegisterViewController: BaseViewController {
     private func textFieldBasicConfiguration (textfield:SkyFloatingLabelTextField?, name:String)->SkyFloatingLabelTextField?{
         
         let textfield:SkyFloatingLabelTextField? = textfield
-        textfield!.tintColor = Color.greenBtnColor
-        textfield!.lineColor = Color.greenBtnColor
-        textfield!.selectedLineColor = Color.greenBtnColor
+        textfield!.tintColor = MyColor.greenBtnColor
+        textfield!.lineColor = MyColor.greenBtnColor
+        textfield!.selectedLineColor = MyColor.greenBtnColor
         textfield!.lineHeight = 2.0
         textfield!.selectedLineHeight = 3.0
         textfield!.placeholder = name
@@ -181,8 +181,8 @@ class RegisterViewController: BaseViewController {
     private func confirmButtonConfig (){
         
         confirmBtn.setTitle(Literals.ConfirmRegisterBtn, for: .normal)
-        confirmBtn.tintColor = Color.whiteColor
-        confirmBtn.backgroundColor = Color.greenBtnColor
+        confirmBtn.tintColor = MyColor.whiteColor
+        confirmBtn.backgroundColor = MyColor.greenBtnColor
         confirmBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         
     }

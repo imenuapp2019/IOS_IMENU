@@ -9,7 +9,6 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +16,6 @@ class BaseViewController: UIViewController {
         view.addGestureRecognizer(tap)
          moveScreenWhenUseKeyboard()
     }
-    
 }
 
 extension BaseViewController {

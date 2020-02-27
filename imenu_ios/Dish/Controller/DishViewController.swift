@@ -112,7 +112,7 @@ class DishViewController: UIViewController,UICollectionViewDelegate, UICollectio
     private func resetButtonConfig (){
       
         resetCollectionViewButton.setTitle(Literals.backBtn, for: .normal)
-        resetCollectionViewButton.tintColor = Color.whiteColor
+        resetCollectionViewButton.tintColor = MyColor.whiteColor
         resetCollectionViewButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
     }
     

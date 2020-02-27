@@ -16,6 +16,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h2E-6C-ePd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="rUc-zv-a77" kind="relationship" relationship="rootViewController" id="S8V-HD-wGz"/>
@@ -303,7 +304,11 @@ que Fridays</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hUx-qA-Nc2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rAH-Nx-w3q"/>
+                    <navigationItem key="navigationItem" id="rAH-Nx-w3q">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.left" catalog="system" id="NBp-NI-r7C">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameDetailRestaurant" destination="g2F-Vc-Meh" id="tPW-wH-20J"/>
                         <outlet property="nameTypeRestaurant" destination="Yyj-mM-MoV" id="ISm-PM-ge1"/>
@@ -338,6 +343,7 @@ que Fridays</string>
     </scenes>
     <resources>
         <image name="FotoRestauranteDos" width="334" height="202"/>
+        <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="facebook_this" width="288" height="280"/>
         <image name="icnMapsII" width="128" height="128"/>
         <image name="insta_this" width="68" height="72"/>

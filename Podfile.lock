@@ -4,18 +4,26 @@ PODS:
     - Alamofire (~> 4.9)
   - BEMCheckBox (1.4.1)
   - DynamicBlurView (4.0.0)
+  - FanMenu (0.7.4):
+    - Macaw
+  - fluid-slider (1.1.0):
+    - pop
+  - Macaw (0.9.5):
+    - SWXMLHash
+  - pop (1.0.12)
   - PopupDialog (1.1.1):
     - DynamicBlurView (~> 4.0)
-  - RHSideButtons (1.1.0)
   - SkyFloatingLabelTextField (3.8.0)
   - SwiftLint (0.39.1)
+  - SWXMLHash (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8)
   - AlamofireImage (~> 3.5)
   - BEMCheckBox
+  - FanMenu
+  - fluid-slider
   - PopupDialog (~> 1.1)
-  - RHSideButtons
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftLint
 
@@ -25,21 +33,29 @@ SPEC REPOS:
     - AlamofireImage
     - BEMCheckBox
     - DynamicBlurView
+    - FanMenu
+    - fluid-slider
+    - Macaw
+    - pop
     - PopupDialog
-    - RHSideButtons
     - SkyFloatingLabelTextField
     - SwiftLint
+    - SWXMLHash
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   DynamicBlurView: ccf9acd2b20c883cc2c72e3524a04d8d3ee20533
+  FanMenu: 773836538a63cddcbf0c5bf320727bb47669f7fd
+  fluid-slider: 68037ac7247f16a89f3e24ff5d0167c8eea6f50b
+  Macaw: 10bf9e327cb75f24e3225d5229a80ed544df85f0
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   PopupDialog: 720c92befd8bc23c13442254945213db5612f149
-  RHSideButtons: 9de185791d8119bd1160f6dcb88e47b9ad93d192
   SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
   SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
+  SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
 
-PODFILE CHECKSUM: 6284491874d8b7b1cdc6f90604b7f5523bed8cf3
+PODFILE CHECKSUM: c767da2d98c64e226a0e3bcd863d74e4cb2b3e5a
 
 COCOAPODS: 1.8.4

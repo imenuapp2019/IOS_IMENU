@@ -12,7 +12,8 @@ target 'imenu_ios' do
     pod 'AlamofireImage', '~> 3.5'
     pod 'PopupDialog', '~> 1.1'
     pod 'BEMCheckBox'
-    pod 'RHSideButtons'
+    pod 'FanMenu'
+    pod 'fluid-slider'
     
   target 'imenu_iosTests' do
     inherit! :search_paths

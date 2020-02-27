@@ -28,7 +28,7 @@ class AvatarViewController: UIViewController,UICollectionViewDelegate, UICollect
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        avatarViewLabel.backgroundColor = Color.greenBtnColor
+        avatarViewLabel.backgroundColor = MyColor.greenBtnColor
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

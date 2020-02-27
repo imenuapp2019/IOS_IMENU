@@ -80,7 +80,7 @@ class LoginViewController: BaseViewController {
         labelUserPassword.title = Literals.labelPasswordTitle
         labelUserPassword.isSecureTextEntry = true
         labelUserPassword.addTarget(self, action: #selector(eyeSecutrityHidde(_:)), for: .editingChanged)
-        labelUserName.errorColor = Color.redColor
+        labelUserName.errorColor = MyColor.redColor
         labelUserName.addTarget(self, action: #selector(textFieldDidChangeEmail(_:)), for: .editingChanged)
     }
     
@@ -97,9 +97,9 @@ class LoginViewController: BaseViewController {
         
         btninvited.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         btnContinue.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        btnContinue.backgroundColor = Color.greenBtnColor
-        btnRecovery.tintColor = Color.grayBtnColor
-        btnRegistry.tintColor = Color.grayBtnColor
+        btnContinue.backgroundColor = MyColor.greenBtnColor
+        btnRecovery.tintColor = MyColor.grayBtnColor
+        btnRegistry.tintColor = MyColor.grayBtnColor
         
         btnRecovery.setAttributedTitle(attributeString, for: .normal)
     }
