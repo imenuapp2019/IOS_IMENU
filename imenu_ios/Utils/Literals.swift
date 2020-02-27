@@ -41,7 +41,7 @@ open class Literals {
     static var labelFilterDistance = "Distancia"
     static var btnFilter = "Buscar"
     static var labelAlertView = "Restaurantes Cerca de Ti"
-    static var backBtn = "Reiniciar"
+    static var backBtn = "Volver al principio"
     static var messageRecover = "Listo 🥳 te enviamos un correo a:"
     static var recoverTextEmpty = "parece que no has escrito tu email"
     static var labelPassworLogin8caracterer = "Debe tener mas de 8 caracteres"

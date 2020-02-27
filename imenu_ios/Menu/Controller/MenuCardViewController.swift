@@ -8,11 +8,23 @@
 
 import UIKit
 
+//protocol CellClickedDelegate {
+//    func passInfoToDish (numer:Int)
+//
+//}
+
 class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
+  
+    
+    @IBOutlet var MainCard: UIView!
+    @IBOutlet weak var ARBtn: UIButton!
+    //  var  cellWasClickDelegate: CellClickedDelegate!
+    
     var currentIndex = 0
     let ARImagesArray = [#imageLiteral(resourceName: "HD_Pizza"),#imageLiteral(resourceName: "HDpollo"),#imageLiteral(resourceName: "HD_tarta")]
     let arrayOfMenuSectionsImages = [#imageLiteral(resourceName: "especiales_this"),#imageLiteral(resourceName: "segundos_this"),#imageLiteral(resourceName: "entrantes_this"),#imageLiteral(resourceName: "postres_this"),#imageLiteral(resourceName: "bebida_this"),#imageLiteral(resourceName: "primer_this")]
     var timer:Timer?
+    var menuViewController:MenuViewController?
     @IBAction func dishClicked(_ sender: Any) {
         
     }
@@ -21,12 +33,15 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
     
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var handleArea: UIView!
-    @IBOutlet weak var menuSectionsCollectionView: UICollectionView!
+   
     
     @IBOutlet weak var ARCollectionView: UICollectionView!
+     @IBOutlet weak var menuSectionsCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuViewController = MenuViewController ()
         startTimer()
         pageControl.numberOfPages = ARImagesArray.count
         self.view.layer.cornerRadius = 30
@@ -42,6 +57,9 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
         
         ARCollectionView.register(ARNib, forCellWithReuseIdentifier: "ARCell")
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        view.bringSubviewToFront(ARBtn)
     }
     
     
@@ -76,7 +94,8 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
             assignImageToSection(index: indexPath.row, image: cell.menuSectionImageView, name: cell.menuSectionLabel)
             
             
-//                   cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DoWhenACellIsClicked(_:))))
+                   cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DoWhenACellIsClicked(_:))))
+            
                    return  cell as UICollectionViewCell
             
         }
@@ -115,7 +134,17 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
     }
     
     @objc func DoWhenACellIsClicked(_ sender: UITapGestureRecognizer) {
-   performSegue(withIdentifier: "segueDish", sender: nil)
+   
+        let location = sender.location(in: self.menuSectionsCollectionView)
+              let indexPath = self.menuSectionsCollectionView.indexPathForItem(at: location)
+             let cellClickedIndex = indexPath!.row
+        menuViewController?.clickedOnSectionBool = true
+        let storyboard = UIStoryboard(name: "Dish", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "dish") as! DishViewController
+        controller.menuSection = cellClickedIndex
+        self.present(controller, animated: true, completion: nil)
+    
+        
     }
     
     

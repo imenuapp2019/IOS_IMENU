@@ -12,7 +12,7 @@
         <!--Dish View Controller-->
         <scene sceneID="qcO-9k-6Ew">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="goe-Ky-EUy" customClass="DishViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dish" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="goe-Ky-EUy" customClass="DishViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xu9-Rj-118" userLabel="DishMainView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,6 +35,18 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGr-mj-HJ5" userLabel="Logo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="104"/>
                                                                 <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHz-U4-Mbg">
+                                                                        <rect key="frame" x="0.0" y="33" width="38" height="38"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="38" id="5Ig-0k-KKb"/>
+                                                                            <constraint firstAttribute="height" constant="38" id="jLi-qy-8t8"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <state key="normal" title="Volver"/>
+                                                                        <connections>
+                                                                            <action selector="backBtn:" destination="goe-Ky-EUy" eventType="touchUpInside" id="yB2-ht-vty"/>
+                                                                        </connections>
+                                                                    </button>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGOIMENUDishView" translatesAutoresizingMaskIntoConstraints="NO" id="2E9-ue-D73">
                                                                         <rect key="frame" x="0.0" y="2" width="375" height="102"/>
                                                                     </imageView>
@@ -43,7 +55,9 @@
                                                                     <constraint firstItem="2E9-ue-D73" firstAttribute="leading" secondItem="iGr-mj-HJ5" secondAttribute="leading" id="0cr-3Z-CzB"/>
                                                                     <constraint firstAttribute="trailing" secondItem="2E9-ue-D73" secondAttribute="trailing" id="8JU-Fk-kom"/>
                                                                     <constraint firstAttribute="bottom" secondItem="2E9-ue-D73" secondAttribute="bottom" id="JUc-QE-O1P"/>
+                                                                    <constraint firstItem="XHz-U4-Mbg" firstAttribute="centerY" secondItem="iGr-mj-HJ5" secondAttribute="centerY" id="fOO-Ze-McD"/>
                                                                     <constraint firstItem="2E9-ue-D73" firstAttribute="top" secondItem="iGr-mj-HJ5" secondAttribute="top" constant="2" id="idW-Qc-6vT"/>
+                                                                    <constraint firstItem="XHz-U4-Mbg" firstAttribute="leading" secondItem="iGr-mj-HJ5" secondAttribute="leading" id="n45-ey-mlO"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Z4-Dv-dC4" userLabel="Sección del menú">
@@ -235,11 +249,20 @@
                         <outlet property="resetCollectionViewButton" destination="Ppc-hW-2bb" id="bEK-1R-8kx"/>
                         <outlet property="totalDishesLabel" destination="AlB-n5-fdG" id="3GR-9O-Mm9"/>
                         <segue destination="mMP-l1-ZUK" kind="modal" identifier="segueDetailDish" modalTransitionStyle="crossDissolve" id="wJU-HN-2T9"/>
+                        <segue destination="1in-tU-69Q" kind="modal" identifier="fromDishToMenu" modalTransitionStyle="crossDissolve" id="cOK-bg-dhZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D50-3i-H0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-327.19999999999999" y="160.56971514242881"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="ehj-op-nJ5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" id="1in-tU-69Q" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJP-Qq-Aty" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="316" y="441"/>
         </scene>
         <!--DetailDish-->
         <scene sceneID="D97-1u-dVo">

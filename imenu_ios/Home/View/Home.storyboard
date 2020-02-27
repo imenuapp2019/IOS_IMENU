@@ -8,6 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Dish-->
+        <scene sceneID="Ehb-v8-9dx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dish" id="1eL-NI-Ewx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ak0-vg-sDQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-339" y="455"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="HcQ-Wt-lzK">
             <objects>
@@ -100,7 +108,7 @@
                                             <outlet property="restaurantImage" destination="G3C-zY-7z6" id="k7A-Pe-SSi"/>
                                             <outlet property="typeRestaurant" destination="WYu-lQ-TO9" id="CBj-16-LtT"/>
                                             <outlet property="viewOpacity" destination="k3n-b6-4rp" id="5LE-o5-LbK"/>
-                                            <segue destination="mQX-2R-3a6" kind="show" id="hab-my-f36"/>
+                                            <segue destination="mQX-2R-3a6" kind="modal" modalTransitionStyle="crossDissolve" id="hab-my-f36"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

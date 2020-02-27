@@ -14,6 +14,9 @@ class MenuViewController: UIViewController{
         case expanded
     }
     
+    @IBAction func backBtn(_ sender: Any) {
+        performSegue(withIdentifier: "toHome", sender: nil)
+    }
     @IBOutlet weak var restaurantBodyView: UIView!
     
     @IBOutlet weak var pictureRestaurant: UIImageView!
@@ -22,6 +25,7 @@ class MenuViewController: UIViewController{
     
     @IBOutlet weak var nameTypeRestaurant: UILabel!
     
+    var clickedOnSectionBool = false
     var restaurant:RestaurantElement? = nil
     let imageDownloader = ImageDownloader()
     
@@ -47,12 +51,22 @@ class MenuViewController: UIViewController{
 self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
         setUpDetailRestaurant()
          restaurantBodyView.layer.cornerRadius = 15
-        
+        pruebaDelegate()
     }
     
     override func viewDidAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func pruebaDelegate () {
+//        let myView = Bundle.main.loadNibNamed("MenuCardViewController", owner: nil, options: nil)?.first as! MenuCardViewController
+      
+//        let cardViewController = MenuCardViewController ()
+//        let myview:UIView = cardViewController.MainCard
+        
+        //myView.cellWasClickDelegate = self
+
     }
     
     func setUpDetailRestaurant(){
@@ -65,8 +79,6 @@ self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotatio
     }
     
     
-
-
    func setupCard() {
     
     endCardHeight = self.view.frame.height * 0.89
@@ -84,6 +96,7 @@ self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotatio
     
     menuCardViewController.handleArea.addGestureRecognizer(tapGestureRecognizer)
     menuCardViewController.handleArea.addGestureRecognizer(panGestureRecognizer)
+    
     }
     
     @objc
@@ -185,5 +198,19 @@ self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotatio
          }
      }
     
+    
+    func dismissElPutoViewController () {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
+
+//extension MenuViewController: CellClickedDelegate {
+//    func passInfoToDish(numer: Int) {
+//        print (numer)
+//    }
+//    
+//    
+//}
