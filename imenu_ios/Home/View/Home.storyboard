@@ -8,13 +8,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Dish-->
+        <!--Profile-->
         <scene sceneID="Ehb-v8-9dx">
             <objects>
-                <viewControllerPlaceholder storyboardName="Dish" id="1eL-NI-Ewx" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Profile" id="1eL-NI-Ewx" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ewq-Af-PXZ"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ak0-vg-sDQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-339" y="455"/>
+            <point key="canvasLocation" x="6" y="130"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="HcQ-Wt-lzK">
@@ -202,6 +204,7 @@
                         <outlet property="sliderPorPersona" destination="fbW-JH-5gg" id="YpS-Ma-31y"/>
                         <outlet property="widthConstraintBoxDistance" destination="pzq-OU-VkU" id="0Ty-Su-ssS"/>
                         <outlet property="widthConstraintBoxPrice" destination="dmV-00-1bh" id="Rl8-pj-Oej"/>
+                        <segue destination="1eL-NI-Ewx" kind="show" identifier="seguePerfil" id="lWC-zS-zeu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5pc-3z-RgC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

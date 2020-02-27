@@ -68,7 +68,7 @@
                                                         <rect key="frame" x="94" y="0.0" width="187.5" height="66.5"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoImenu" translatesAutoresizingMaskIntoConstraints="NO" id="Kwv-1x-EmY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="66.5"/>
+                                                                <rect key="frame" x="0.0" y="28" width="187.5" height="66.5"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                         </subviews>
@@ -80,7 +80,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxB-wj-eyo" userLabel="deleteView">
                                                                 <rect key="frame" x="29" y="16" width="35" height="35"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOd-LR-qjz">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vOd-LR-qjz">
                                                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="35" id="073-JD-RoV"/>
@@ -124,8 +124,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBq-ss-kfh">
                                         <rect key="frame" x="0.0" y="66.5" width="375" height="200.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlatoDos" translatesAutoresizingMaskIntoConstraints="NO" id="vUc-d6-J3x">
-                                                <rect key="frame" x="103" y="16" width="169" height="169"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Capa 4" translatesAutoresizingMaskIntoConstraints="NO" id="vUc-d6-J3x">
+                                                <rect key="frame" x="127" y="40.5" width="121" height="120"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3C-Lo-UBT">
                                                 <rect key="frame" x="110" y="23" width="155" height="155"/>
@@ -482,8 +482,8 @@
     </scenes>
     <resources>
         <image name="Background" width="528" height="528"/>
+        <image name="Capa 4" width="121" height="120"/>
         <image name="LogoImenu" width="325" height="325"/>
-        <image name="PlatoDos" width="169" height="169"/>
         <image name="delete" width="16" height="16"/>
         <image name="favorite-heart-button" width="19" height="19"/>
     </resources>

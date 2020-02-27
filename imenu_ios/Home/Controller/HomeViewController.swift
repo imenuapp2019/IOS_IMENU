@@ -26,9 +26,9 @@ class HomeViewController: UIViewController {
     var searchBarWidth: CGFloat = 310.0
     var searchBarDestinationFrame = CGRect.zero
     
-   
+    
     @IBOutlet weak var chBoxDistance: BEMCheckBox!
-   
+    
     @IBOutlet weak var widthConstraintBoxDistance: NSLayoutConstraint!
     @IBOutlet weak var heightConstraintBoxDistance: NSLayoutConstraint!
     @IBOutlet weak var widthConstraintBoxPrice: NSLayoutConstraint!
@@ -98,9 +98,9 @@ class HomeViewController: UIViewController {
         widthConstraintBoxDistance.constant = 0
         
         self.sliderPorPersona.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
-                   self.sliderPorPersona.isHidden = true
-                   heightConstraintBoxPrice.constant = 0
-                   widthConstraintBoxPrice.constant = 0
+        self.sliderPorPersona.isHidden = true
+        heightConstraintBoxPrice.constant = 0
+        widthConstraintBoxPrice.constant = 0
         
         self.pickerTypeFood.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
         self.pickerTypeFood.isHidden = true
@@ -200,6 +200,15 @@ class HomeViewController: UIViewController {
         }
         
         fanMenu.onItemWillClick = { button in
+            switch button.id {
+            case "USER":
+                self.performSegue(withIdentifier: "seguePerfil", sender: nil)
+            case "MAP":
+                self.performSegue(withIdentifier: "", sender: nil)
+            case "QR":
+                print("")
+            default: break
+            }
             print("ItemWillClick: \(button.id)")
         }
         
@@ -351,7 +360,7 @@ extension HomeViewController: DAOSearchBarDelegate {
 
 extension HomeViewController: UIPickerViewDelegate,UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-            return 1
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
