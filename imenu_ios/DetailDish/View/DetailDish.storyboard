@@ -47,7 +47,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jh1-dM-CxN">
                                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="235"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HD_tarta" translatesAutoresizingMaskIntoConstraints="NO" id="Es6-XK-IgC">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Es6-XK-IgC">
                                                                             <rect key="frame" x="0.0" y="0.0" width="375" height="235"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="Es6-XK-IgC" secondAttribute="height" multiplier="75:47" id="aqD-wM-KQq"/>
@@ -55,14 +55,9 @@
                                                                                 <constraint firstAttribute="width" constant="375" id="x2t-8f-XHL"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBackArrow" translatesAutoresizingMaskIntoConstraints="NO" id="S1Y-3t-A1X">
-                                                                            <rect key="frame" x="8" y="8" width="43" height="43"/>
-                                                                        </imageView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <constraints>
-                                                                        <constraint firstItem="S1Y-3t-A1X" firstAttribute="top" secondItem="Jh1-dM-CxN" secondAttribute="top" constant="5" id="BZC-8S-08t"/>
-                                                                        <constraint firstItem="S1Y-3t-A1X" firstAttribute="leading" secondItem="Jh1-dM-CxN" secondAttribute="leading" constant="5" id="NT1-Zr-XvP"/>
                                                                         <constraint firstItem="Es6-XK-IgC" firstAttribute="centerY" secondItem="Jh1-dM-CxN" secondAttribute="centerY" id="YCi-b7-hhP"/>
                                                                         <constraint firstItem="Es6-XK-IgC" firstAttribute="centerX" secondItem="Jh1-dM-CxN" secondAttribute="centerX" id="gSq-sf-9hm"/>
                                                                     </constraints>
@@ -82,6 +77,17 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drs-ar-Za3">
+                                                <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="BXV-2I-C1P"/>
+                                                    <constraint firstAttribute="width" constant="38" id="PZZ-oE-b8y"/>
+                                                </constraints>
+                                                <state key="normal" image="flechaBack_this"/>
+                                                <connections>
+                                                    <action selector="backBtn:" destination="HTX-zC-XD8" eventType="touchUpInside" id="c3P-bh-5ej"/>
+                                                </connections>
+                                            </button>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lyG-sC-nRN">
                                                 <rect key="frame" x="168" y="196.5" width="39" height="37"/>
                                                 <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,6 +102,8 @@
                                             <constraint firstAttribute="trailing" secondItem="F31-j2-qGe" secondAttribute="trailing" id="CBD-1h-pyR"/>
                                             <constraint firstItem="F31-j2-qGe" firstAttribute="leading" secondItem="lV2-IV-7Ut" secondAttribute="leading" id="NYD-53-vE3"/>
                                             <constraint firstAttribute="bottom" secondItem="F31-j2-qGe" secondAttribute="bottom" id="q55-Y5-CUs"/>
+                                            <constraint firstItem="drs-ar-Za3" firstAttribute="leading" secondItem="lV2-IV-7Ut" secondAttribute="leading" id="sJb-1n-X9X"/>
+                                            <constraint firstItem="drs-ar-Za3" firstAttribute="top" secondItem="lV2-IV-7Ut" secondAttribute="top" id="xNW-ff-mxi"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lyZ-gW-RYm">
@@ -441,9 +449,8 @@
     </scenes>
     <resources>
         <image name="BackgroundFull" width="543" height="815"/>
-        <image name="HD_tarta" width="225" height="225"/>
         <image name="Tabla" width="300" height="334"/>
         <image name="corazon_gris" width="376" height="364"/>
-        <image name="iconBackArrow" width="32" height="32"/>
+        <image name="flechaBack_this" width="188" height="192"/>
     </resources>
 </document>

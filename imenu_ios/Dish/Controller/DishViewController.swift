@@ -15,6 +15,9 @@ class DishViewController: UIViewController,UICollectionViewDelegate, UICollectio
     var cellClicked = 0
     
                             // Outlets
+    @IBAction func backBtn(_ sender: Any) {
+        performSegue(withIdentifier: "fromDishToMenu", sender: nil)
+    }
     @IBOutlet weak var DishescollectionView: UICollectionView!
     @IBOutlet weak var resetCollectionViewButton: RoundButton!
     @IBOutlet weak var btnView: UIView!

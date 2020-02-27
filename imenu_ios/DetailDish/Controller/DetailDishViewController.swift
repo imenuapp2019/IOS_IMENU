@@ -19,6 +19,9 @@ class DetailDishViewController: UIViewController, UICollectionViewDelegateFlowLa
 
     }
     
+    @IBAction func backBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func alertBtnAction(_ sender: Any) {
       ShowAlergView()
     }
