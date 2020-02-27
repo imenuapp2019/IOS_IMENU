@@ -27,6 +27,15 @@ class HomeViewController: UIViewController {
     var searchBarDestinationFrame = CGRect.zero
     
    
+    @IBOutlet weak var chBoxDistance: BEMCheckBox!
+   
+    @IBOutlet weak var widthConstraintBoxDistance: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraintBoxDistance: NSLayoutConstraint!
+    @IBOutlet weak var widthConstraintBoxPrice: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraintBoxPrice: NSLayoutConstraint!
+    @IBOutlet weak var chBoxPrice: BEMCheckBox!
+    @IBOutlet weak var heightConstraintPicker: NSLayoutConstraint!
+    @IBOutlet weak var chBoxTypeRestaurant: BEMCheckBox!
     @IBOutlet weak var pickerTypeFood: UIPickerView!
     @IBOutlet weak var sliderDistancia: Slider!
     @IBOutlet weak var sliderPorPersona: Slider!
@@ -65,6 +74,7 @@ class HomeViewController: UIViewController {
         setUpView()
         setUpViewMenu()
         setUpSlider()
+        setUpCheckBox()
         datafromServer()
     }
     
@@ -79,6 +89,22 @@ class HomeViewController: UIViewController {
         alertView.layer.cornerRadius = 15
         alertView.alpha = 0.0
         filter.layer.cornerRadius = 7
+    }
+    
+    func setUpCheckBox(){
+        self.sliderDistancia.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
+        self.sliderDistancia.isHidden = true
+        heightConstraintBoxDistance.constant = 0
+        widthConstraintBoxDistance.constant = 0
+        
+        self.sliderPorPersona.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
+                   self.sliderPorPersona.isHidden = true
+                   heightConstraintBoxPrice.constant = 0
+                   widthConstraintBoxPrice.constant = 0
+        
+        self.pickerTypeFood.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
+        self.pickerTypeFood.isHidden = true
+        heightConstraintPicker.constant = 0
     }
     
     func setUpFilterViewON(){
@@ -207,6 +233,9 @@ class HomeViewController: UIViewController {
         self.homeTableView.dataSource = self
         self.pickerTypeFood.delegate = self
         self.pickerTypeFood.dataSource = self
+        self.chBoxTypeRestaurant.delegate = self
+        self.chBoxPrice.delegate = self
+        self.chBoxDistance.delegate = self
     }
     
     func setupSearchBars(){
@@ -338,6 +367,41 @@ extension HomeViewController: UIPickerViewDelegate,UIPickerViewDataSource{
 
 extension HomeViewController:BEMCheckBoxDelegate{
     func didTap(_ checkBox: BEMCheckBox) {
+        if chBoxTypeRestaurant.on != true{
+            self.pickerTypeFood.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
+            self.pickerTypeFood.isHidden = true
+            heightConstraintPicker.constant = 0
+        }else{
+            self.pickerTypeFood.frame = CGRect(x: 20,y: 94,width: 266,height: 117)
+            self.pickerTypeFood.isHidden = false
+            heightConstraintPicker.constant = 117
+        }
+        if chBoxPrice.on != true{
+            self.sliderPorPersona.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
+            self.sliderPorPersona.isHidden = true
+            heightConstraintBoxPrice.constant = 0
+            widthConstraintBoxPrice.constant = 0
+        }else{
+            self.sliderPorPersona.frame = CGRect(x: 26,y: 311,width: 255,height: 25)
+            self.sliderPorPersona.isHidden = false
+            heightConstraintBoxPrice.constant = 25
+            widthConstraintBoxPrice.constant = 255
+            
+        }
+        if chBoxDistance.on != true{
+            self.sliderDistancia.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
+            self.sliderDistancia.isHidden = true
+            heightConstraintBoxDistance.constant = 0
+            widthConstraintBoxDistance.constant = 0
+        }else{
+            self.sliderDistancia.frame = CGRect(x: 26,y: 421,width: 250,height: 25)
+            self.sliderDistancia.isHidden = false
+            heightConstraintBoxDistance.constant = 25
+            widthConstraintBoxDistance.constant = 250
+            
+        }
+        
+        
         
     }
 }
