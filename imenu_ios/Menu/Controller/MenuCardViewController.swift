@@ -17,7 +17,8 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
   
     
     @IBOutlet var MainCard: UIView!
-  //  var  cellWasClickDelegate: CellClickedDelegate!
+    @IBOutlet weak var ARBtn: UIButton!
+    //  var  cellWasClickDelegate: CellClickedDelegate!
     
     var currentIndex = 0
     let ARImagesArray = [#imageLiteral(resourceName: "HD_Pizza"),#imageLiteral(resourceName: "HDpollo"),#imageLiteral(resourceName: "HD_tarta")]
@@ -39,6 +40,7 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         menuViewController = MenuViewController ()
         startTimer()
         pageControl.numberOfPages = ARImagesArray.count
@@ -55,6 +57,9 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
         
         ARCollectionView.register(ARNib, forCellWithReuseIdentifier: "ARCell")
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        view.bringSubviewToFront(ARBtn)
     }
     
     

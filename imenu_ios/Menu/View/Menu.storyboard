@@ -137,53 +137,51 @@ que Fridays</string>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XeS-hA-hge">
                                                                 <rect key="frame" x="0.0" y="0.0" width="46.5" height="44"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="insta_this" translatesAutoresizingMaskIntoConstraints="NO" id="bwF-cB-Gbo">
-                                                                        <rect key="frame" x="1" y="-0.5" width="45" height="45"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="45" id="Bg0-tS-tRg"/>
-                                                                            <constraint firstAttribute="width" constant="45" id="uxQ-yk-Loi"/>
-                                                                        </constraints>
-                                                                    </imageView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dF-6Y-kSV">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="46.5" height="44"/>
+                                                                        <state key="normal" title="Button" image="insta_this"/>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="bwF-cB-Gbo" firstAttribute="centerX" secondItem="XeS-hA-hge" secondAttribute="centerX" id="FWh-ZJ-e7a"/>
-                                                                    <constraint firstItem="bwF-cB-Gbo" firstAttribute="centerY" secondItem="XeS-hA-hge" secondAttribute="centerY" id="quN-VF-io0"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="7dF-6Y-kSV" secondAttribute="bottom" id="2cg-3t-k87"/>
+                                                                    <constraint firstItem="7dF-6Y-kSV" firstAttribute="top" secondItem="XeS-hA-hge" secondAttribute="top" id="H6b-Yk-a8R"/>
+                                                                    <constraint firstItem="7dF-6Y-kSV" firstAttribute="leading" secondItem="XeS-hA-hge" secondAttribute="leading" id="U1e-FV-hH7"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="7dF-6Y-kSV" secondAttribute="trailing" id="lHl-mH-UFt"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfk-40-q3A">
                                                                 <rect key="frame" x="46.5" y="0.0" width="46.5" height="44"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter_this" translatesAutoresizingMaskIntoConstraints="NO" id="qTx-gE-DAY">
-                                                                        <rect key="frame" x="1" y="-0.5" width="45" height="45"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="45" id="FuM-ig-wWX"/>
-                                                                            <constraint firstAttribute="width" constant="45" id="d5h-ir-dlx"/>
-                                                                        </constraints>
-                                                                    </imageView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4V-4N-qTv">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="46.5" height="44"/>
+                                                                        <state key="normal" title="Button" image="twitter_this"/>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="qTx-gE-DAY" firstAttribute="centerX" secondItem="yfk-40-q3A" secondAttribute="centerX" id="chU-hS-k6V"/>
-                                                                    <constraint firstItem="qTx-gE-DAY" firstAttribute="centerY" secondItem="yfk-40-q3A" secondAttribute="centerY" id="ipR-7X-AbG"/>
+                                                                    <constraint firstItem="L4V-4N-qTv" firstAttribute="top" secondItem="yfk-40-q3A" secondAttribute="top" id="CZ1-Do-BCY"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="L4V-4N-qTv" secondAttribute="trailing" id="DUm-32-7ue"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="L4V-4N-qTv" secondAttribute="bottom" id="UYx-Tu-AgR"/>
+                                                                    <constraint firstItem="L4V-4N-qTv" firstAttribute="leading" secondItem="yfk-40-q3A" secondAttribute="leading" id="uMf-C3-4qa"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWH-pN-1Bm">
                                                                 <rect key="frame" x="93" y="0.0" width="46.5" height="44"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook_this" translatesAutoresizingMaskIntoConstraints="NO" id="Shc-N1-Lxm">
-                                                                        <rect key="frame" x="5" y="2" width="37" height="40"/>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJz-zM-Bpq">
+                                                                        <rect key="frame" x="4.5" y="3" width="38" height="38"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="37" id="9if-Go-c9v"/>
-                                                                            <constraint firstAttribute="height" constant="40" id="wX3-hy-DzQ"/>
+                                                                            <constraint firstAttribute="width" constant="38" id="8pt-om-Qmi"/>
+                                                                            <constraint firstAttribute="height" constant="38" id="uOC-cm-jOW"/>
                                                                         </constraints>
-                                                                    </imageView>
+                                                                        <state key="normal" title="Button" image="facebook_this"/>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="46.5" id="4CM-yF-Y7d"/>
-                                                                    <constraint firstItem="Shc-N1-Lxm" firstAttribute="centerX" secondItem="KWH-pN-1Bm" secondAttribute="centerX" id="GhG-6Q-KVl"/>
-                                                                    <constraint firstItem="Shc-N1-Lxm" firstAttribute="centerY" secondItem="KWH-pN-1Bm" secondAttribute="centerY" id="xXk-ah-jQ4"/>
+                                                                    <constraint firstItem="eJz-zM-Bpq" firstAttribute="centerY" secondItem="KWH-pN-1Bm" secondAttribute="centerY" id="KSC-Qo-P8z"/>
+                                                                    <constraint firstItem="eJz-zM-Bpq" firstAttribute="centerX" secondItem="KWH-pN-1Bm" secondAttribute="centerX" id="LR2-r5-EcX"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R61-yU-6jV">
@@ -201,36 +199,38 @@ que Fridays</string>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zSN-Cx-8xB">
                                                                 <rect key="frame" x="279" y="0.0" width="46.5" height="44"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mobile_this" translatesAutoresizingMaskIntoConstraints="NO" id="u5r-5u-lma">
-                                                                        <rect key="frame" x="1" y="-0.5" width="45" height="45"/>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibo-eJ-yfs">
+                                                                        <rect key="frame" x="4.5" y="5.5" width="38" height="33"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="45" id="BLZ-ny-0Kj"/>
-                                                                            <constraint firstAttribute="width" constant="45" id="xsj-py-XrQ"/>
+                                                                            <constraint firstAttribute="width" constant="38" id="OOq-RM-LdJ"/>
+                                                                            <constraint firstAttribute="height" constant="33" id="tD0-Ep-08X"/>
                                                                         </constraints>
-                                                                    </imageView>
+                                                                        <state key="normal" title="Button" image="mobile_this"/>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="u5r-5u-lma" firstAttribute="centerY" secondItem="zSN-Cx-8xB" secondAttribute="centerY" id="PXJ-Yr-CLk"/>
-                                                                    <constraint firstItem="u5r-5u-lma" firstAttribute="centerX" secondItem="zSN-Cx-8xB" secondAttribute="centerX" id="ljb-m4-Lx3"/>
+                                                                    <constraint firstItem="ibo-eJ-yfs" firstAttribute="centerX" secondItem="zSN-Cx-8xB" secondAttribute="centerX" id="WS5-E0-8kb"/>
                                                                     <constraint firstAttribute="width" constant="46.5" id="nud-ft-ys1"/>
+                                                                    <constraint firstItem="ibo-eJ-yfs" firstAttribute="centerY" secondItem="zSN-Cx-8xB" secondAttribute="centerY" id="vfN-cj-JCZ"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCD-mK-kpf">
                                                                 <rect key="frame" x="325.5" y="0.0" width="46.5" height="44"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnMapsII" translatesAutoresizingMaskIntoConstraints="NO" id="ZWv-dz-yg1">
-                                                                        <rect key="frame" x="6" y="-0.5" width="35" height="45"/>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0P-KW-bzX">
+                                                                        <rect key="frame" x="7" y="5.5" width="33" height="33"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="45" id="Pz3-3h-tQX"/>
-                                                                            <constraint firstAttribute="width" constant="35" id="Vnj-d8-NnA"/>
+                                                                            <constraint firstAttribute="height" constant="33" id="4dm-HI-41P"/>
+                                                                            <constraint firstAttribute="width" constant="33" id="Efl-94-kZU"/>
                                                                         </constraints>
-                                                                    </imageView>
+                                                                        <state key="normal" title="Button" image="icnMapsII"/>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="ZWv-dz-yg1" firstAttribute="centerY" secondItem="LCD-mK-kpf" secondAttribute="centerY" id="Rwa-lH-tXX"/>
-                                                                    <constraint firstItem="ZWv-dz-yg1" firstAttribute="centerX" secondItem="LCD-mK-kpf" secondAttribute="centerX" id="vy9-GT-VZh"/>
+                                                                    <constraint firstItem="g0P-KW-bzX" firstAttribute="centerY" secondItem="LCD-mK-kpf" secondAttribute="centerY" id="knV-8k-k5b"/>
+                                                                    <constraint firstItem="g0P-KW-bzX" firstAttribute="centerX" secondItem="LCD-mK-kpf" secondAttribute="centerX" id="xuh-6y-GwF"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
