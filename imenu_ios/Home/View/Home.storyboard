@@ -108,7 +108,7 @@
                                             <outlet property="restaurantImage" destination="G3C-zY-7z6" id="k7A-Pe-SSi"/>
                                             <outlet property="typeRestaurant" destination="WYu-lQ-TO9" id="CBj-16-LtT"/>
                                             <outlet property="viewOpacity" destination="k3n-b6-4rp" id="5LE-o5-LbK"/>
-                                            <segue destination="mQX-2R-3a6" kind="show" id="hab-my-f36"/>
+                                            <segue destination="mQX-2R-3a6" kind="modal" modalTransitionStyle="crossDissolve" id="hab-my-f36"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

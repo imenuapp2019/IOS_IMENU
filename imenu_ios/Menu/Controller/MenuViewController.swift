@@ -14,6 +14,9 @@ class MenuViewController: UIViewController{
         case expanded
     }
     
+    @IBAction func backBtn(_ sender: Any) {
+        performSegue(withIdentifier: "toHome", sender: nil)
+    }
     @IBOutlet weak var restaurantBodyView: UIView!
     
     @IBOutlet weak var pictureRestaurant: UIImageView!

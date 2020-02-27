@@ -41,7 +41,8 @@
                                                                             <constraint firstAttribute="width" constant="38" id="5Ig-0k-KKb"/>
                                                                             <constraint firstAttribute="height" constant="38" id="jLi-qy-8t8"/>
                                                                         </constraints>
-                                                                        <state key="normal" image="flechaBack_this"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <state key="normal" title="Volver"/>
                                                                         <connections>
                                                                             <action selector="backBtn:" destination="goe-Ky-EUy" eventType="touchUpInside" id="yB2-ht-vty"/>
                                                                         </connections>
@@ -248,7 +249,7 @@
                         <outlet property="resetCollectionViewButton" destination="Ppc-hW-2bb" id="bEK-1R-8kx"/>
                         <outlet property="totalDishesLabel" destination="AlB-n5-fdG" id="3GR-9O-Mm9"/>
                         <segue destination="mMP-l1-ZUK" kind="modal" identifier="segueDetailDish" modalTransitionStyle="crossDissolve" id="wJU-HN-2T9"/>
-                        <segue destination="1in-tU-69Q" kind="modal" identifier="fromDishToMenu" id="cOK-bg-dhZ"/>
+                        <segue destination="1in-tU-69Q" kind="modal" identifier="fromDishToMenu" modalTransitionStyle="crossDissolve" id="cOK-bg-dhZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D50-3i-H0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -278,6 +279,5 @@
         <image name="BackgroundFull" width="543" height="815"/>
         <image name="HDpollo" width="602" height="592"/>
         <image name="LOGOIMENUDishView" width="375" height="100"/>
-        <image name="flechaBack_this" width="188" height="192"/>
     </resources>
 </document>
