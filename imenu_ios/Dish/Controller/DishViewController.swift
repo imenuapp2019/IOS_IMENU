@@ -70,12 +70,9 @@ class DishViewController: UIViewController,UICollectionViewDelegate, UICollectio
     @objc func DoWhenACellIsClicked(_ sender: UITapGestureRecognizer) {
        let location = sender.location(in: self.DishescollectionView)
        let indexPath = self.DishescollectionView.indexPathForItem(at: location)
-        print(indexPath?.row)
-        
-       cellClicked = indexPath!.row
-   print(cellClicked)
         
         
+        cellClicked = indexPath!.row
         performSegue(withIdentifier: "segueDetailDish", sender: nil)
         
     }
