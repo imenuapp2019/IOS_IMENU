@@ -188,24 +188,34 @@
                                                     <action selector="resetCollectionViewButtonAction:" destination="goe-Ky-EUy" eventType="touchUpInside" id="4oU-OL-1hB"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlB-n5-fdG">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlB-n5-fdG">
                                                 <rect key="frame" x="336" y="24" width="31" height="42"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="31" id="XvX-46-MOI"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kR-Ni-gz6">
-                                                <rect key="frame" x="308" y="24" width="27" height="42"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kR-Ni-gz6">
+                                                <rect key="frame" x="313" y="25" width="27" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="27" id="cl5-ub-d0y"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="AlB-n5-fdG" firstAttribute="baseline" secondItem="2kR-Ni-gz6" secondAttribute="baseline" constant="-1" id="BRj-xQ-yiL"/>
+                                            <constraint firstItem="AlB-n5-fdG" firstAttribute="top" secondItem="POX-Bc-yXE" secondAttribute="top" constant="24" id="Bjp-h8-ec0"/>
+                                            <constraint firstItem="AlB-n5-fdG" firstAttribute="leading" secondItem="2kR-Ni-gz6" secondAttribute="trailing" constant="-4" id="QJJ-dm-1Ua"/>
+                                            <constraint firstItem="AlB-n5-fdG" firstAttribute="firstBaseline" secondItem="2kR-Ni-gz6" secondAttribute="firstBaseline" constant="-1" id="chY-Vn-Klk"/>
                                             <constraint firstItem="Ppc-hW-2bb" firstAttribute="centerY" secondItem="POX-Bc-yXE" secondAttribute="centerY" id="g2C-Wa-wEU"/>
                                             <constraint firstItem="Ppc-hW-2bb" firstAttribute="centerX" secondItem="POX-Bc-yXE" secondAttribute="centerX" id="y5g-UU-Zp7"/>
+                                            <constraint firstAttribute="bottom" secondItem="AlB-n5-fdG" secondAttribute="bottom" constant="0.5" id="yK5-Dh-kRN"/>
+                                            <constraint firstItem="AlB-n5-fdG" firstAttribute="trailing" secondItem="POX-Bc-yXE" secondAttribute="trailingMargin" id="ybv-mG-9bT"/>
                                         </constraints>
                                     </view>
                                 </subviews>
