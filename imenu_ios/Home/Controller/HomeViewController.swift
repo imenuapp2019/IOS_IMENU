@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var widthConstraintBoxPrice: NSLayoutConstraint!
     @IBOutlet weak var heightConstraintBoxPrice: NSLayoutConstraint!
     
-//    MARK: - 
+//    MARK: - CheckBox
     @IBOutlet weak var chBoxDistance: BEMCheckBox!
     @IBOutlet weak var chBoxPrice: BEMCheckBox!
     @IBOutlet weak var chBoxTypeRestaurant: BEMCheckBox!
