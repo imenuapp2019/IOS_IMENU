@@ -18,6 +18,14 @@
             </objects>
             <point key="canvasLocation" x="6" y="130"/>
         </scene>
+        <!--Map-->
+        <scene sceneID="Wi3-ld-Zjm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Map" id="ese-QW-yeV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="urS-YX-J9A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-232" y="252"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="HcQ-Wt-lzK">
             <objects>
@@ -205,6 +213,7 @@
                         <outlet property="widthConstraintBoxDistance" destination="pzq-OU-VkU" id="0Ty-Su-ssS"/>
                         <outlet property="widthConstraintBoxPrice" destination="dmV-00-1bh" id="Rl8-pj-Oej"/>
                         <segue destination="1eL-NI-Ewx" kind="show" identifier="seguePerfil" id="lWC-zS-zeu"/>
+                        <segue destination="ese-QW-yeV" kind="presentation" identifier="ToMapFromHome" id="8aN-Qe-pRF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5pc-3z-RgC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

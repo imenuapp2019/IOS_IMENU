@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k5S-EP-RSw">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="bCL-wG-vv5">
+            <objects>
+                <viewController id="k5S-EP-RSw" customClass="MapViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G5e-qF-fbe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bnu-bh-TcK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xsX-c9-aRm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOt-Nv-zWi">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtG-rK-5cN">
+                                        <rect key="frame" x="0.0" y="133.5" width="375" height="367"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xv-fo-LNw">
+                                        <rect key="frame" x="0.0" y="500.5" width="375" height="166.5"/>
+                                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7Xv-fo-LNw" firstAttribute="height" secondItem="xsX-c9-aRm" secondAttribute="height" multiplier="0.25" id="5OO-EM-HWR"/>
+                                    <constraint firstItem="gOt-Nv-zWi" firstAttribute="height" secondItem="xsX-c9-aRm" secondAttribute="height" multiplier="0.2" id="aBE-eC-Ebf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="bnu-bh-TcK" secondAttribute="bottom" id="FgY-l4-5LP"/>
+                            <constraint firstItem="bnu-bh-TcK" firstAttribute="leading" secondItem="znq-eb-1gj" secondAttribute="leading" id="JRy-JU-daX"/>
+                            <constraint firstItem="znq-eb-1gj" firstAttribute="trailing" secondItem="bnu-bh-TcK" secondAttribute="trailing" id="LBw-7i-5nC"/>
+                            <constraint firstItem="bnu-bh-TcK" firstAttribute="top" secondItem="G5e-qF-fbe" secondAttribute="top" id="QHL-u1-bld"/>
+                            <constraint firstItem="xsX-c9-aRm" firstAttribute="top" secondItem="znq-eb-1gj" secondAttribute="top" id="gkr-hg-Hrm"/>
+                            <constraint firstItem="xsX-c9-aRm" firstAttribute="leading" secondItem="znq-eb-1gj" secondAttribute="leading" id="mfU-e1-f8T"/>
+                            <constraint firstItem="znq-eb-1gj" firstAttribute="bottom" secondItem="xsX-c9-aRm" secondAttribute="bottom" id="x4f-jV-Wqx"/>
+                            <constraint firstItem="znq-eb-1gj" firstAttribute="trailing" secondItem="xsX-c9-aRm" secondAttribute="trailing" id="zea-sy-DAp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="znq-eb-1gj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rpl-OY-XUm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="30" y="154"/>
+        </scene>
+    </scenes>
+</document>

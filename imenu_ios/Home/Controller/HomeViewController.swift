@@ -211,7 +211,8 @@ class HomeViewController: UIViewController {
             case "USER":
                 self.performSegue(withIdentifier: "seguePerfil", sender: nil)
             case "MAP":
-                print("")
+                 self.performSegue(withIdentifier: "ToMapFromHome", sender: nil)
+               
             case "QR":
                 print("")
             default: break
