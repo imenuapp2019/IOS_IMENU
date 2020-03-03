@@ -26,24 +26,29 @@ class HomeViewController: UIViewController {
     var searchBarWidth: CGFloat = 310.0
     var searchBarDestinationFrame = CGRect.zero
     
-   
-    @IBOutlet weak var chBoxDistance: BEMCheckBox!
-   
+//  MARK: - Constraints
+    @IBOutlet weak var heightConstraintPicker: NSLayoutConstraint!
     @IBOutlet weak var widthConstraintBoxDistance: NSLayoutConstraint!
     @IBOutlet weak var heightConstraintBoxDistance: NSLayoutConstraint!
     @IBOutlet weak var widthConstraintBoxPrice: NSLayoutConstraint!
     @IBOutlet weak var heightConstraintBoxPrice: NSLayoutConstraint!
+    
+//    MARK: - 
+    @IBOutlet weak var chBoxDistance: BEMCheckBox!
     @IBOutlet weak var chBoxPrice: BEMCheckBox!
-    @IBOutlet weak var heightConstraintPicker: NSLayoutConstraint!
     @IBOutlet weak var chBoxTypeRestaurant: BEMCheckBox!
+    
     @IBOutlet weak var pickerTypeFood: UIPickerView!
+    
     @IBOutlet weak var sliderDistancia: Slider!
     @IBOutlet weak var sliderPorPersona: Slider!
+    
     @IBOutlet weak var homeTableView: UITableView!
-    @IBOutlet weak var alertView: UIView!
-    @IBOutlet weak var labelAlertView: UILabel!
     @IBOutlet var effectBlurView: UIView!
     @IBOutlet var filter: UIView!
+    @IBOutlet weak var alertView: UIView!
+    @IBOutlet weak var labelAlertView: UILabel!
+
     @IBOutlet weak var fanMenu: FanMenu!
     
     var effect:UIVisualEffect!
@@ -98,9 +103,9 @@ class HomeViewController: UIViewController {
         widthConstraintBoxDistance.constant = 0
         
         self.sliderPorPersona.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
-                   self.sliderPorPersona.isHidden = true
-                   heightConstraintBoxPrice.constant = 0
-                   widthConstraintBoxPrice.constant = 0
+        self.sliderPorPersona.isHidden = true
+        heightConstraintBoxPrice.constant = 0
+        widthConstraintBoxPrice.constant = 0
         
         self.pickerTypeFood.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
         self.pickerTypeFood.isHidden = true
@@ -352,7 +357,7 @@ extension HomeViewController: DAOSearchBarDelegate {
 
 extension HomeViewController: UIPickerViewDelegate,UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-            return 1
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -398,11 +403,7 @@ extension HomeViewController:BEMCheckBoxDelegate{
             self.sliderDistancia.isHidden = false
             heightConstraintBoxDistance.constant = 25
             widthConstraintBoxDistance.constant = 250
-            
         }
-        
-        
-        
     }
 }
 
