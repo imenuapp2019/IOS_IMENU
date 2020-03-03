@@ -29,7 +29,6 @@ class RestaurantElement: Codable {
             self.imageURL = urlImage
             self.coordinates.append(latitude)
             self.coordinates.append(longitude)
-        
     }
 }
 

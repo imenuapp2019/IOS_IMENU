@@ -26,24 +26,31 @@ class HomeViewController: UIViewController {
     var searchBarWidth: CGFloat = 310.0
     var searchBarDestinationFrame = CGRect.zero
     
+
     
-    @IBOutlet weak var chBoxDistance: BEMCheckBox!
-    
+//  MARK: - Constraints
+    @IBOutlet weak var heightConstraintPicker: NSLayoutConstraint!
     @IBOutlet weak var widthConstraintBoxDistance: NSLayoutConstraint!
     @IBOutlet weak var heightConstraintBoxDistance: NSLayoutConstraint!
     @IBOutlet weak var widthConstraintBoxPrice: NSLayoutConstraint!
     @IBOutlet weak var heightConstraintBoxPrice: NSLayoutConstraint!
+    
+//    MARK: - 
+    @IBOutlet weak var chBoxDistance: BEMCheckBox!
     @IBOutlet weak var chBoxPrice: BEMCheckBox!
-    @IBOutlet weak var heightConstraintPicker: NSLayoutConstraint!
     @IBOutlet weak var chBoxTypeRestaurant: BEMCheckBox!
+    
     @IBOutlet weak var pickerTypeFood: UIPickerView!
+    
     @IBOutlet weak var sliderDistancia: Slider!
     @IBOutlet weak var sliderPorPersona: Slider!
+    
     @IBOutlet weak var homeTableView: UITableView!
-    @IBOutlet weak var alertView: UIView!
-    @IBOutlet weak var labelAlertView: UILabel!
     @IBOutlet var effectBlurView: UIView!
     @IBOutlet var filter: UIView!
+    @IBOutlet weak var alertView: UIView!
+    @IBOutlet weak var labelAlertView: UILabel!
+
     @IBOutlet weak var fanMenu: FanMenu!
     
     var effect:UIVisualEffect!
@@ -406,11 +413,7 @@ extension HomeViewController:BEMCheckBoxDelegate{
             self.sliderDistancia.isHidden = false
             heightConstraintBoxDistance.constant = 25
             widthConstraintBoxDistance.constant = 250
-            
         }
-        
-        
-        
     }
 }
 
