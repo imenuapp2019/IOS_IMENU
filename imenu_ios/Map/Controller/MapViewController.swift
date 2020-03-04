@@ -11,31 +11,39 @@ import MapKit
 import CoreLocation
 class MapViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBAction func centerBtn(_ sender: Any) {
-         centerViewOnUserLocation()
-    }
+ 
     let locationManager = CLLocationManager ()
+    let latitudinalMeters:Double = 10000
+    let longitudinalMeters:Double = 10000
     var collectionViewFlowLayout:UICollectionViewFlowLayout!
+    
     @IBOutlet weak var restaurantsCollectionView: UICollectionView!
     @IBOutlet weak var roundedImageview: UIImageView!
-    
     @IBOutlet weak var mapView: MKMapView!
+    
+    @IBAction func centerBtn(_ sender: Any) {
+          centerViewOnUserLocation()
+     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocationServices()
+        configureCollectionView()
         roundedImageview.layer.cornerRadius = roundedImageview.frame.height/2
-        restaurantsCollectionView.delegate = self
-        restaurantsCollectionView.dataSource = self
-        collectionViewFlowLayout = UICollectionViewFlowLayout ()
-         collectionViewFlowLayout.itemSize = CGSize(width: 157, height: 146)
-        collectionViewFlowLayout.scrollDirection = .horizontal
-        restaurantsCollectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
-       
     }
     
                         //CollectionView
     
-  
+  func configureCollectionView () {
+        restaurantsCollectionView.delegate = self
+        restaurantsCollectionView.dataSource = self
+        collectionViewFlowLayout = UICollectionViewFlowLayout ()
+        collectionViewFlowLayout.itemSize = CGSize(width: 157, height: 146)
+        collectionViewFlowLayout.scrollDirection = .horizontal
+        restaurantsCollectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         10
     }
@@ -55,11 +63,9 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
           
         if let location = locationManager.location?.coordinate {
             
-            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: 10000, longitudinalMeters: 10000)
+            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: latitudinalMeters, longitudinalMeters: longitudinalMeters)
             mapView.setRegion(region, animated: true)
         }
-        
-          
       }
     
     func checkLocationServices () {
@@ -86,7 +92,6 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
             mapView.showsUserLocation = true
              centerViewOnUserLocation()
             locationManager.startUpdatingLocation()
-           
             break
         case .denied:
              break
@@ -128,7 +133,7 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {return}
         let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region =  MKCoordinateRegion.init(center: center , latitudinalMeters: 10000, longitudinalMeters: 10000)
+        let region =  MKCoordinateRegion.init(center: center , latitudinalMeters: latitudinalMeters, longitudinalMeters: longitudinalMeters)
         mapView.setRegion(region, animated: true)
         
     }
