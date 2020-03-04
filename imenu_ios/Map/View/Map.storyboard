@@ -44,27 +44,27 @@
                                             <constraint firstAttribute="width" secondItem="pem-mV-3DC" secondAttribute="height" multiplier="138:49" id="qeb-3K-Xzv"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pVN-72-cN7">
-                                            <size key="itemSize" width="105" height="82"/>
+                                            <size key="itemSize" width="157" height="146"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RestaurantsInMapViewCell" id="oFu-iG-3Dq" customClass="MapCollectionViewCell" customModule="imenu_ios" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="32.666666666666664" width="105" height="82"/>
+                                                <rect key="frame" x="0.0" y="0.66666666666666663" width="157" height="146"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="FVa-n0-iQI" customClass="MapCollectionViewCell" customModule="imenu_ios">
-                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="82"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="157" height="146"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WWo-NZ-Z8x">
-                                                            <rect key="frame" x="0.0" y="0.0" width="105" height="82"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="157" height="146"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1f-M8-Yeb">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="65.666666666666671"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="157" height="116.66666666666667"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FotoRestauranteDos" translatesAutoresizingMaskIntoConstraints="NO" id="YNE-Pb-USg">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="105" height="65.666666666666671"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="157" height="116.66666666666667"/>
                                                                         </imageView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -76,15 +76,18 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6xg-1g-ZCb">
-                                                                    <rect key="frame" x="0.0" y="65.666666666666671" width="105" height="16.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="116.66666666666667" width="157" height="29.333333333333329"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhy-OI-ii4">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="105" height="16.333333333333332"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="157" height="29.333333333333332"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                                            <state key="normal" title="Restaurante"/>
+                                                                            <state key="normal" title="Restaurante">
+                                                                                <color key="titleColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </state>
                                                                         </button>
                                                                     </subviews>
-                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottom" secondItem="nhy-OI-ii4" secondAttribute="bottom" id="7q6-NC-dYO"/>
                                                                         <constraint firstAttribute="trailing" secondItem="nhy-OI-ii4" secondAttribute="trailing" id="OdO-XU-lwK"/>
@@ -106,7 +109,7 @@
                                                         <constraint firstItem="WWo-NZ-Z8x" firstAttribute="top" secondItem="FVa-n0-iQI" secondAttribute="top" id="vHx-7Z-42g"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
-                                                <size key="customSize" width="105" height="82"/>
+                                                <size key="customSize" width="157" height="146"/>
                                                 <connections>
                                                     <outlet property="ContentView" destination="FVa-n0-iQI" id="UIJ-OL-9GJ"/>
                                                 </connections>
