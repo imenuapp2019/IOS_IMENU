@@ -19,14 +19,12 @@
             <point key="canvasLocation" x="6" y="130"/>
         </scene>
         <!--Map-->
-        <scene sceneID="Wi3-ld-Zjm">
+        <scene sceneID="H6f-uo-vCF">
             <objects>
-                <viewControllerPlaceholder storyboardName="Map" id="ese-QW-yeV" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="mvd-Oe-QxQ"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="urS-YX-J9A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Map" id="enT-jB-bqY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uew-eo-plK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-232" y="252"/>
+            <point key="canvasLocation" x="265" y="370"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="HcQ-Wt-lzK">
@@ -215,7 +213,7 @@
                         <outlet property="widthConstraintBoxDistance" destination="pzq-OU-VkU" id="0Ty-Su-ssS"/>
                         <outlet property="widthConstraintBoxPrice" destination="dmV-00-1bh" id="Rl8-pj-Oej"/>
                         <segue destination="1eL-NI-Ewx" kind="show" identifier="seguePerfil" id="lWC-zS-zeu"/>
-                        <segue destination="ese-QW-yeV" kind="presentation" identifier="ToMapFromHome" modalPresentationStyle="fullScreen" id="8aN-Qe-pRF"/>
+                        <segue destination="enT-jB-bqY" kind="showDetail" identifier="homeToMap" id="vec-bx-7sT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5pc-3z-RgC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
