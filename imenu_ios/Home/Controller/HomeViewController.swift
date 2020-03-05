@@ -214,7 +214,7 @@ class HomeViewController: UIViewController {
             }else{
                 UIView.animate(withDuration: 0.2, animations: {
                    self.blurEffectMenuFloating.alpha = 0
-                     self.searchBarWithDelegate.alpha = 0
+                     self.searchBarWithDelegate.alpha = 1
                 })
             }
         }
@@ -225,7 +225,6 @@ class HomeViewController: UIViewController {
                 self.performSegue(withIdentifier: "seguePerfil", sender: nil)
             case "MAP":
                  self.performSegue(withIdentifier: "ToMapFromHome", sender: nil)
-               
             case "QR":
                 print("")
             default: break
