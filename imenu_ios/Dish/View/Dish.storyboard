@@ -12,7 +12,7 @@
         <!--Dish View Controller-->
         <scene sceneID="qcO-9k-6Ew">
             <objects>
-                <viewController storyboardIdentifier="dish" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="goe-Ky-EUy" customClass="DishViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dish" useStoryboardIdentifierAsRestorationIdentifier="YES" id="goe-Ky-EUy" customClass="DishViewController" customModule="imenu_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xu9-Rj-118" userLabel="DishMainView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,7 +264,7 @@
                         <outlet property="currentDishShownLabel" destination="2kR-Ni-gz6" id="9j0-1C-UUQ"/>
                         <outlet property="resetCollectionViewButton" destination="Ppc-hW-2bb" id="bEK-1R-8kx"/>
                         <outlet property="totalDishesLabel" destination="AlB-n5-fdG" id="3GR-9O-Mm9"/>
-                        <segue destination="mMP-l1-ZUK" kind="modal" identifier="segueDetailDish" modalTransitionStyle="crossDissolve" id="wJU-HN-2T9"/>
+                        <segue destination="mMP-l1-ZUK" kind="presentation" identifier="segueDetailDish" modalPresentationStyle="automatic" id="wJU-HN-2T9"/>
                         <segue destination="1in-tU-69Q" kind="modal" identifier="fromDishToMenu" modalTransitionStyle="crossDissolve" id="cOK-bg-dhZ"/>
                     </connections>
                 </viewController>
