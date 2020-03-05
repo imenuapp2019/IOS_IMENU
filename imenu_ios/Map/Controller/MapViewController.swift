@@ -116,14 +116,7 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
         let cell = restaurantsCollectionView.cellForItem(at: index!) as! MapCollectionViewCell
         
         centerViewToRestaurantClicked(latitude: cell.latitud!, longitude: cell.longitud!)
-        
-        let point2 = CLLocationCoordinate2D( latitude: cell.latitud!,  longitude: cell.longitud!
-                      )
-                             let anotation = MKPointAnnotation()
-                             anotation.coordinate = point2
-        anotation.title = cell.restaurantName.titleLabel?.text
-                             mapView.addAnnotation(anotation)
-        
+    
        
        }
     
