@@ -295,7 +295,7 @@ que comer fuera</string>
                         <outlet property="nameTypeRestaurant" destination="Yyj-mM-MoV" id="ISm-PM-ge1"/>
                         <outlet property="pictureRestaurant" destination="DGp-Z0-5Q5" id="tge-Lz-ZQB"/>
                         <outlet property="restaurantBodyView" destination="sGj-Hl-cjn" id="Szq-xA-rd9"/>
-                        <segue destination="h61-dK-G7s" kind="modal" identifier="dishy" modalTransitionStyle="crossDissolve" id="yla-EI-ISP"/>
+                        <segue destination="h61-dK-G7s" kind="presentation" identifier="dishy" id="yla-EI-ISP"/>
                         <segue destination="0Zm-Ks-S5p" kind="presentation" identifier="toHome" modalTransitionStyle="crossDissolve" id="JUO-rO-HTB"/>
                     </connections>
                 </viewController>

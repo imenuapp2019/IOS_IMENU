@@ -59,7 +59,8 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        view.bringSubviewToFront(ARBtn)
+       // view.frame.origin.y = view.frame.height - view.frame.height * 0.13
+        
     }
     
     

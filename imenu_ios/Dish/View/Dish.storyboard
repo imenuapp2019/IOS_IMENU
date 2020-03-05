@@ -264,7 +264,7 @@
                         <outlet property="currentDishShownLabel" destination="2kR-Ni-gz6" id="9j0-1C-UUQ"/>
                         <outlet property="resetCollectionViewButton" destination="Ppc-hW-2bb" id="bEK-1R-8kx"/>
                         <outlet property="totalDishesLabel" destination="AlB-n5-fdG" id="3GR-9O-Mm9"/>
-                        <segue destination="mMP-l1-ZUK" kind="modal" identifier="segueDetailDish" modalTransitionStyle="crossDissolve" id="wJU-HN-2T9"/>
+                        <segue destination="mMP-l1-ZUK" kind="presentation" identifier="segueDetailDish" id="wJU-HN-2T9"/>
                         <segue destination="1in-tU-69Q" kind="modal" identifier="fromDishToMenu" modalTransitionStyle="crossDissolve" id="cOK-bg-dhZ"/>
                     </connections>
                 </viewController>
