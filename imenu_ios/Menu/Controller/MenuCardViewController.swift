@@ -140,11 +140,12 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
               let indexPath = self.menuSectionsCollectionView.indexPathForItem(at: location)
              let cellClickedIndex = indexPath!.row
         menuViewController?.clickedOnSectionBool = true
+       
         let storyboard = UIStoryboard(name: "Dish", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "dish") as! DishViewController
         controller.menuSection = cellClickedIndex
         self.present(controller, animated: true, completion: nil)
-    
+      
         
     }
     
