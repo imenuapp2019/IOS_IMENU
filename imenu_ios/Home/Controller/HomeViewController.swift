@@ -206,15 +206,15 @@ class HomeViewController: UIViewController {
         
         fanMenu.onItemDidClick = { button in
             if self.fanMenu.isOpen {
-                 UIView.animate(withDuration: 0.1, animations: {
-                    self.blurEffectMenuFloating.alpha = 1
+                 UIView.animate(withDuration: 0.2, animations: {
+                    self.blurEffectMenuFloating.alpha = 0.5
                     self.searchBarWithDelegate.alpha = 0
                  })
                 
             }else{
-                UIView.animate(withDuration: 0.1, animations: {
+                UIView.animate(withDuration: 0.2, animations: {
                    self.blurEffectMenuFloating.alpha = 0
-                     self.searchBarWithDelegate.alpha = 1
+                     self.searchBarWithDelegate.alpha = 0
                 })
             }
         }
