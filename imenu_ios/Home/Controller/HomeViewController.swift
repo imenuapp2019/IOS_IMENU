@@ -20,37 +20,38 @@ class HomeViewController: UIViewController {
     var searchBarWithDelegate: DAOSearchBar!
     let innerSpacing: CGFloat = 100.0
     let marginX: CGFloat = 50.0
-    let marginY: CGFloat = 25
+    let marginY: CGFloat = 15
     let searchBarHeight: CGFloat = 30.0
     let searchBarOriginalWidth: CGFloat = 44.0
     var searchBarWidth: CGFloat = 310.0
     var searchBarDestinationFrame = CGRect.zero
     
-
-    
-//  MARK: - Constraints
+    //  MARK: - Constraints
     @IBOutlet weak var heightConstraintPicker: NSLayoutConstraint!
     @IBOutlet weak var widthConstraintBoxDistance: NSLayoutConstraint!
     @IBOutlet weak var heightConstraintBoxDistance: NSLayoutConstraint!
     @IBOutlet weak var widthConstraintBoxPrice: NSLayoutConstraint!
     @IBOutlet weak var heightConstraintBoxPrice: NSLayoutConstraint!
     
-//    MARK: - 
+    //    MARK: - CheckBox
     @IBOutlet weak var chBoxDistance: BEMCheckBox!
     @IBOutlet weak var chBoxPrice: BEMCheckBox!
     @IBOutlet weak var chBoxTypeRestaurant: BEMCheckBox!
     
-    @IBOutlet weak var pickerTypeFood: UIPickerView!
     
+    @IBOutlet weak var blurEffectMenuFloating: UIVisualEffectView!
+    
+    @IBOutlet weak var pickerTypeFood: UIPickerView!
+    //    MARK: - Slider
     @IBOutlet weak var sliderDistancia: Slider!
     @IBOutlet weak var sliderPorPersona: Slider!
-    
+    //    MARK: - View
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet var effectBlurView: UIView!
     @IBOutlet var filter: UIView!
     @IBOutlet weak var alertView: UIView!
     @IBOutlet weak var labelAlertView: UILabel!
-
+    
     @IBOutlet weak var fanMenu: FanMenu!
     
     var effect:UIVisualEffect!
@@ -71,7 +72,7 @@ class HomeViewController: UIViewController {
         setUpFilterViewON()
     }
     
-    
+    //    MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         self.homeTableView.reloadData()
@@ -96,6 +97,7 @@ class HomeViewController: UIViewController {
         alertView.layer.cornerRadius = 15
         alertView.alpha = 0.0
         filter.layer.cornerRadius = 7
+        blurEffectMenuFloating.alpha = 0
     }
     
     func setUpCheckBox(){
@@ -203,7 +205,18 @@ class HomeViewController: UIViewController {
         fanMenu.interval = (Double.pi, 2 * Double.pi)
         
         fanMenu.onItemDidClick = { button in
-            print("ItemDidClick: \(button.id)")
+            if self.fanMenu.isOpen {
+                 UIView.animate(withDuration: 0.2, animations: {
+                    self.blurEffectMenuFloating.alpha = 0.5
+                    self.searchBarWithDelegate.alpha = 0
+                 })
+                
+            }else{
+                UIView.animate(withDuration: 0.2, animations: {
+                   self.blurEffectMenuFloating.alpha = 0
+                     self.searchBarWithDelegate.alpha = 0
+                })
+            }
         }
         
         fanMenu.onItemWillClick = { button in
@@ -217,7 +230,7 @@ class HomeViewController: UIViewController {
                 print("")
             default: break
             }
-            print("ItemWillClick: \(button.id)")
+            
         }
         
         fanMenu.backgroundColor = .clear
@@ -256,7 +269,7 @@ class HomeViewController: UIViewController {
     }
     
     func setupSearchBars(){
-        let searchBarWithDelegate = DAOSearchBar.init(frame: CGRect(x: marginX, y: marginY, width: searchBarOriginalWidth, height: searchBarHeight))
+        searchBarWithDelegate = DAOSearchBar.init(frame: CGRect(x: marginX, y: marginY, width: searchBarOriginalWidth, height: searchBarHeight))
         var frame = searchBarWithDelegate.frame
         frame.size.width = searchBarWidth
         self.searchBarDestinationFrame = frame

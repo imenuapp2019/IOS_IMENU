@@ -166,6 +166,27 @@
                                     <constraint firstAttribute="height" constant="31" id="zaG-Dm-9IQ"/>
                                 </constraints>
                             </view>
+                            <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aa-be-nB2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8yj-f8-mEe">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXz-UI-tll">
+                                            <rect key="frame" x="0.0" y="0.0" width="135" height="539"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="fr4-Ph-BgQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="539"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="regular"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVP-df-ZyF" customClass="FanMenu" customModule="FanMenu">
                                 <rect key="frame" x="0.0" y="487" width="375" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -173,9 +194,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6aa-be-nB2" firstAttribute="trailing" secondItem="zcZ-PI-WDf" secondAttribute="trailing" id="2uj-Zd-knb"/>
                             <constraint firstItem="G6X-et-HkB" firstAttribute="leading" secondItem="O8A-6j-mbc" secondAttribute="leading" id="89n-8H-Ug1"/>
+                            <constraint firstItem="WVP-df-ZyF" firstAttribute="top" secondItem="6aa-be-nB2" secondAttribute="bottom" constant="-180" id="AS3-8g-Ah7"/>
                             <constraint firstItem="KMi-HX-B6e" firstAttribute="top" secondItem="G6X-et-HkB" secondAttribute="bottom" constant="21" id="Br9-uI-okP"/>
+                            <constraint firstItem="6aa-be-nB2" firstAttribute="leading" secondItem="zcZ-PI-WDf" secondAttribute="leading" id="Flc-XK-PSz"/>
                             <constraint firstItem="WVP-df-ZyF" firstAttribute="top" secondItem="UKk-jy-ne4" secondAttribute="top" constant="487" id="JsD-3B-Lf5"/>
+                            <constraint firstItem="zcZ-PI-WDf" firstAttribute="trailing" secondItem="6aa-be-nB2" secondAttribute="trailing" id="LYy-Jt-SND"/>
                             <constraint firstAttribute="bottomMargin" secondItem="WVP-df-ZyF" secondAttribute="bottom" constant="-70" id="Qkn-Qw-1ka"/>
                             <constraint firstItem="WVP-df-ZyF" firstAttribute="leading" secondItem="O8A-6j-mbc" secondAttribute="leading" id="T6K-UB-3i5"/>
                             <constraint firstItem="9sO-VK-Lc9" firstAttribute="top" secondItem="G6X-et-HkB" secondAttribute="bottom" constant="-159" id="aqA-vB-bMp"/>
@@ -186,11 +211,15 @@
                             <constraint firstItem="zcZ-PI-WDf" firstAttribute="bottom" secondItem="O8A-6j-mbc" secondAttribute="bottom" id="fLd-TS-Olb"/>
                             <constraint firstItem="zcZ-PI-WDf" firstAttribute="trailing" secondItem="9sO-VK-Lc9" secondAttribute="trailing" constant="-19" id="hzw-hz-C42"/>
                             <constraint firstItem="zcZ-PI-WDf" firstAttribute="bottom" secondItem="9sO-VK-Lc9" secondAttribute="bottom" constant="-28" id="jWV-KX-oaJ"/>
+                            <constraint firstItem="6aa-be-nB2" firstAttribute="top" secondItem="zcZ-PI-WDf" secondAttribute="top" id="kTu-zd-84n"/>
                             <constraint firstItem="9sO-VK-Lc9" firstAttribute="leading" secondItem="zcZ-PI-WDf" secondAttribute="leading" constant="-17" id="mbX-Aj-z9b"/>
                             <constraint firstItem="zcZ-PI-WDf" firstAttribute="bottom" secondItem="KMi-HX-B6e" secondAttribute="bottom" constant="556" id="nfI-Hq-c4N"/>
                             <constraint firstItem="KMi-HX-B6e" firstAttribute="leading" secondItem="zcZ-PI-WDf" secondAttribute="leading" constant="81" id="o4w-j9-9wk"/>
+                            <constraint firstItem="6aa-be-nB2" firstAttribute="bottom" secondItem="zcZ-PI-WDf" secondAttribute="bottom" id="qJ0-jY-5PX"/>
                             <constraint firstItem="G6X-et-HkB" firstAttribute="trailing" secondItem="O8A-6j-mbc" secondAttribute="trailing" id="vHo-oZ-SUP"/>
                             <constraint firstItem="O8A-6j-mbc" firstAttribute="top" secondItem="zcZ-PI-WDf" secondAttribute="top" constant="50" id="yYS-av-kfl"/>
+                            <constraint firstItem="6aa-be-nB2" firstAttribute="top" secondItem="KMi-HX-B6e" secondAttribute="bottom" constant="-111" id="zJk-KV-yVi"/>
+                            <constraint firstItem="6aa-be-nB2" firstAttribute="leading" secondItem="zcZ-PI-WDf" secondAttribute="leading" id="zKe-o2-YKv"/>
                             <constraint firstItem="G6X-et-HkB" firstAttribute="top" secondItem="zcZ-PI-WDf" secondAttribute="top" id="zWj-LJ-bfb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zcZ-PI-WDf"/>
@@ -198,6 +227,7 @@
                     <navigationItem key="navigationItem" id="fma-PH-oL4"/>
                     <connections>
                         <outlet property="alertView" destination="KMi-HX-B6e" id="62y-O5-jxm"/>
+                        <outlet property="blurEffectMenuFloating" destination="6aa-be-nB2" id="Tba-q8-O6j"/>
                         <outlet property="chBoxDistance" destination="b56-UT-xJN" id="Nvh-fa-NbM"/>
                         <outlet property="chBoxPrice" destination="eDG-ld-FvG" id="fzm-Og-DFS"/>
                         <outlet property="chBoxTypeRestaurant" destination="jog-Js-O1x" id="d0Z-D5-Bvn"/>
