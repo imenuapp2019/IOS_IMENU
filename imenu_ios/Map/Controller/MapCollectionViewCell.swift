@@ -10,7 +10,15 @@ import UIKit
 
 class MapCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ContentView: MapCollectionViewCell!
+   
+    @IBOutlet weak var nameBtn: UIButton!
     
+    @IBOutlet weak var restaurantName: UIButton!
+    @IBOutlet weak var restaurantImage: UIImageView!
+    
+   
+    var longitud:Double?
+    var latitud:Double?
     
     
 }

@@ -35,7 +35,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xv-fo-LNw">
-                                <rect key="frame" x="0.0" y="589" width="414" height="147"/>
+                                <rect key="frame" x="0.0" y="564" width="414" height="147"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pem-mV-3DC">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
@@ -89,10 +89,10 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="nhy-OI-ii4" secondAttribute="bottom" id="7q6-NC-dYO"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="nhy-OI-ii4" secondAttribute="trailing" id="OdO-XU-lwK"/>
-                                                                        <constraint firstItem="nhy-OI-ii4" firstAttribute="top" secondItem="6xg-1g-ZCb" secondAttribute="top" id="bdf-Ay-3ic"/>
-                                                                        <constraint firstItem="nhy-OI-ii4" firstAttribute="leading" secondItem="6xg-1g-ZCb" secondAttribute="leading" id="haM-Te-CWI"/>
+                                                                        <constraint firstItem="nhy-OI-ii4" firstAttribute="leading" secondItem="6xg-1g-ZCb" secondAttribute="leading" id="Ec9-aI-caz"/>
+                                                                        <constraint firstItem="nhy-OI-ii4" firstAttribute="top" secondItem="6xg-1g-ZCb" secondAttribute="top" id="d85-XG-jq1"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="nhy-OI-ii4" secondAttribute="bottom" id="oyG-uk-rEg"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="nhy-OI-ii4" secondAttribute="trailing" id="tVI-eR-nNu"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -112,6 +112,9 @@
                                                 <size key="customSize" width="157" height="146"/>
                                                 <connections>
                                                     <outlet property="ContentView" destination="FVa-n0-iQI" id="UIJ-OL-9GJ"/>
+                                                    <outlet property="nameBtn" destination="nhy-OI-ii4" id="Aji-nS-Ids"/>
+                                                    <outlet property="restaurantImage" destination="YNE-Pb-USg" id="vAp-OX-kyW"/>
+                                                    <outlet property="restaurantName" destination="nhy-OI-ii4" id="xA9-JJ-6c7"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -126,10 +129,10 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icnCirculo" translatesAutoresizingMaskIntoConstraints="NO" id="Hmo-Zg-aqF">
-                                <rect key="frame" x="336" y="523" width="58" height="58"/>
+                                <rect key="frame" x="336" y="498" width="58" height="58"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGO-d7-Fy9">
-                                <rect key="frame" x="349" y="533" width="33" height="33"/>
+                                <rect key="frame" x="349" y="508" width="33" height="33"/>
                                 <state key="normal" image="target"/>
                                 <connections>
                                     <action selector="centerBtn:" destination="k5S-EP-RSw" eventType="touchUpInside" id="Ier-Z4-dl4"/>
@@ -139,7 +142,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="wRp-JJ-MeY" firstAttribute="top" secondItem="znq-eb-1gj" secondAttribute="top" id="1KO-g6-5Ro"/>
-                            <constraint firstItem="7Xv-fo-LNw" firstAttribute="bottom" secondItem="znq-eb-1gj" secondAttribute="bottom" id="6FB-0j-p9k"/>
+                            <constraint firstItem="7Xv-fo-LNw" firstAttribute="bottom" secondItem="znq-eb-1gj" secondAttribute="bottom" constant="-25" id="6FB-0j-p9k"/>
                             <constraint firstItem="7Xv-fo-LNw" firstAttribute="trailing" secondItem="znq-eb-1gj" secondAttribute="trailing" id="6mT-v6-Mx7"/>
                             <constraint firstAttribute="bottom" secondItem="bnu-bh-TcK" secondAttribute="bottom" id="FgY-l4-5LP"/>
                             <constraint firstItem="bnu-bh-TcK" firstAttribute="leading" secondItem="znq-eb-1gj" secondAttribute="leading" id="JRy-JU-daX"/>

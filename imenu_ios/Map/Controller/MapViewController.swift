@@ -10,8 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 class MapViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
-    
- 
+
     let locationManager = CLLocationManager ()
     let latitudinalMeters:Double = 10000
     let longitudinalMeters:Double = 10000
@@ -31,7 +30,47 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
         checkLocationServices()
         configureCollectionView()
         roundedImageview.layer.cornerRadius = roundedImageview.frame.height/2
+        datafromServer()
+
+         self.restaurantsCollectionView.reloadData()
     }
+    
+    
+    var listRestaurants : [RestaurantElement] = [] {
+           didSet {
+               self.restaurantsCollectionView.reloadData()
+           }
+       }
+    
+                    //Network
+    
+    
+    func datafromServer(){
+           let apirest = APIManager()
+           apirest.getAllRestaurants(completion: { result
+               in
+               let resultsRestaurants = result.first
+               self.createListRestaurant(List: resultsRestaurants)
+           })
+       }
+       
+       func createListRestaurant(List list:Restaurant?){
+           guard let listRestaurants = list else { return }
+           let newRestaurant = listRestaurants.filter( {
+               result in
+               if result.imageURL == nil {
+                   return false
+               }else{
+                   return true
+               }
+           })
+           self.listRestaurants = newRestaurant
+       }
+    
+    
+    
+    
+    
     
                         //CollectionView
     
@@ -45,19 +84,61 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        listRestaurants.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       
-         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RestaurantsInMapViewCell", for: indexPath) as! MapCollectionViewCell
-        cell.contentView.layer.cornerRadius = 10
-          cell.clipsToBounds = true
+        
+        let imageDownloader = ImageDownloader()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RestaurantsInMapViewCell", for: indexPath) as! MapCollectionViewCell
+        
+    
+        let restaurant = listRestaurants[indexPath.row]
+        imageDownloader.downloader(URLString: restaurant.imageURL!, completion: { (image:UIImage?) in
+                   cell.restaurantImage.image = image
+               })
+        cell.restaurantName.setTitle(restaurant.name, for: .normal)
+        cell.latitud = restaurant.latitude
+        cell.longitud = restaurant.longitude
+        
+        cell.contentView.layer.cornerRadius = 15
+        cell.clipsToBounds = true
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DoWhenACellIsClicked(_:))))
+        
         return cell
     }
     
+    @objc func DoWhenACellIsClicked(_ sender: UITapGestureRecognizer) {
+        
+        let point:CGPoint = sender.location(in: restaurantsCollectionView)
+        let index = restaurantsCollectionView.indexPathForItem(at:point)
+        
+        let cell = restaurantsCollectionView.cellForItem(at: index!) as! MapCollectionViewCell
+        
+        centerViewToRestaurantClicked(latitude: cell.latitud!, longitude: cell.longitud!)
+        
+        let point2 = CLLocationCoordinate2D( latitude: cell.latitud!,  longitude: cell.longitud!
+                      )
+                             let anotation = MKPointAnnotation()
+                             anotation.coordinate = point2
+        anotation.title = cell.restaurantName.titleLabel?.text
+                             mapView.addAnnotation(anotation)
+        
+       
+       }
+    
+    
     
                     //Map / Location
+    
+    func centerViewToRestaurantClicked (latitude:Double, longitude:Double) {
+    
+         let point = CLLocationCoordinate2D( latitude: latitude,  longitude: longitude)
+                   
+                   let region = MKCoordinateRegion.init(center: point, latitudinalMeters: latitudinalMeters, longitudinalMeters: longitudinalMeters)
+                   mapView.setRegion(region, animated: true)
+    }
+    
     
     func centerViewOnUserLocation () {
           
@@ -115,7 +196,6 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
 //           for items in data {
 //               let point = CLLocationCoordinate2D( latitude: items.latitud!,  longitude: items.longitud!
 //               )
-//               print(point)
 //               let anotation = MKPointAnnotation()
 //               anotation.coordinate = point
 //               anotation.title = items.name
