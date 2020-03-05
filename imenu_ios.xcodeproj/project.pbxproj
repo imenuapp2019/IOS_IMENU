@@ -17,7 +17,7 @@
 		9B214E5423C7A2A400969784 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B214E5323C7A2A400969784 /* Login.storyboard */; };
 		9B214E5723C7AA2C00969784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B214E5523C7AA2C00969784 /* Main.storyboard */; };
 		9B214E5A23C7B11300969784 /* Literals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B214E5923C7B11300969784 /* Literals.swift */; };
-		9B3498DE241189F100BDA3A5 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3498DD241189F100BDA3A5 /* Filter.swift */; };
+		9B3498E024118ACF00BDA3A5 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3498DF24118ACF00BDA3A5 /* Filter.swift */; };
 		9B4FD55E23CCDF7900158709 /* RecoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4FD55D23CCDF7900158709 /* RecoverViewController.swift */; };
 		9B617BEF23DA11BB0017F9A3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B617BEE23DA11BB0017F9A3 /* User.swift */; };
 		9B61B6452404251C00EB1465 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B61B6442404251C00EB1465 /* HomeViewController.swift */; };
@@ -118,7 +118,7 @@
 		9B214E5323C7A2A400969784 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		9B214E5623C7AA2C00969784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B214E5923C7B11300969784 /* Literals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Literals.swift; sourceTree = "<group>"; };
-		9B3498DD241189F100BDA3A5 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = ../../../Filter.swift; sourceTree = "<group>"; };
+		9B3498DF24118ACF00BDA3A5 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		9B4FD55D23CCDF7900158709 /* RecoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverViewController.swift; sourceTree = "<group>"; };
 		9B617BEE23DA11BB0017F9A3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9B61B6442404251C00EB1465 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -233,11 +233,11 @@
 		9B0B193923D0CDDB002C9CCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B3498DF24118ACF00BDA3A5 /* Filter.swift */,
 				9B9A82E823E20D0D00A50749 /* FetchData.swift */,
 				5CED261E23D9F642009B8E09 /* Restaurant.swift */,
 				A088402C23D7695400DCAB70 /* Dish.swift */,
 				9B617BEE23DA11BB0017F9A3 /* User.swift */,
-				9B3498DD241189F100BDA3A5 /* Filter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -880,11 +880,11 @@
 				9BB3928523C9219200AA7AAC /* RoundButton.swift in Sources */,
 				9B0B193423D0B19A002C9CCC /* APIManager.swift in Sources */,
 				5C4AFB7923E1FCAC00D2EADF /* PopUp.swift in Sources */,
-				9B3498DE241189F100BDA3A5 /* Filter.swift in Sources */,
 				9B9A82E523E20CF000A50749 /* DishCollectionViewCell.swift in Sources */,
 				9BE6D6C524043CF800F13AEF /* DAOBundle.swift in Sources */,
 				9B4FD55E23CCDF7900158709 /* RecoverViewController.swift in Sources */,
 				9BE474B423E3BD55004E1EAF /* NavigationViewController.swift in Sources */,
+				9B3498E024118ACF00BDA3A5 /* Filter.swift in Sources */,
 				5CED261F23D9F642009B8E09 /* Restaurant.swift in Sources */,
 				9BAD3DA623D8A4D7004908DA /* MenuViewController.swift in Sources */,
 				9B94B5E223EDBC3100D6CE54 /* FilterViewController.swift in Sources */,
