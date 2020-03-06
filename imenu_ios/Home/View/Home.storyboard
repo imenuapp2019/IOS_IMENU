@@ -149,21 +149,19 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KMi-HX-B6e" userLabel="AlertView">
-                                <rect key="frame" x="81" y="80" width="215" height="31"/>
+                                <rect key="frame" x="103" y="57" width="169" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjI-dw-zhJ">
-                                        <rect key="frame" x="86" y="5.5" width="43" height="20.5"/>
+                                        <rect key="frame" x="63" y="2" width="43" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.57614511986301364" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.25564265251159668" green="0.48060333728790283" blue="0.1875377893447876" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="JjI-dw-zhJ" firstAttribute="centerY" secondItem="KMi-HX-B6e" secondAttribute="centerY" id="7Ze-SP-2ad"/>
-                                    <constraint firstAttribute="width" constant="215" id="VCH-yG-Kh5"/>
-                                    <constraint firstItem="JjI-dw-zhJ" firstAttribute="centerX" secondItem="KMi-HX-B6e" secondAttribute="centerX" id="b5s-rZ-DAg"/>
-                                    <constraint firstAttribute="height" constant="31" id="zaG-Dm-9IQ"/>
+                                    <constraint firstItem="JjI-dw-zhJ" firstAttribute="centerY" secondItem="KMi-HX-B6e" secondAttribute="centerY" id="EoN-kJ-6Tv"/>
+                                    <constraint firstItem="JjI-dw-zhJ" firstAttribute="centerX" secondItem="KMi-HX-B6e" secondAttribute="centerX" id="deL-2v-I7h"/>
                                 </constraints>
                             </view>
                             <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aa-be-nB2">
@@ -185,7 +183,7 @@
                                         </visualEffectView>
                                     </subviews>
                                 </view>
-                                <blurEffect style="dark"/>
+                                <blurEffect style="systemMaterialDark"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVP-df-ZyF" customClass="FanMenu" customModule="FanMenu">
                                 <rect key="frame" x="0.0" y="487" width="375" height="250"/>
@@ -197,15 +195,15 @@
                             <constraint firstItem="6aa-be-nB2" firstAttribute="trailing" secondItem="zcZ-PI-WDf" secondAttribute="trailing" id="2uj-Zd-knb"/>
                             <constraint firstItem="G6X-et-HkB" firstAttribute="leading" secondItem="O8A-6j-mbc" secondAttribute="leading" id="89n-8H-Ug1"/>
                             <constraint firstItem="WVP-df-ZyF" firstAttribute="top" secondItem="6aa-be-nB2" secondAttribute="bottom" constant="-180" id="AS3-8g-Ah7"/>
-                            <constraint firstItem="KMi-HX-B6e" firstAttribute="top" secondItem="G6X-et-HkB" secondAttribute="bottom" constant="21" id="Br9-uI-okP"/>
                             <constraint firstItem="6aa-be-nB2" firstAttribute="leading" secondItem="zcZ-PI-WDf" secondAttribute="leading" id="Flc-XK-PSz"/>
+                            <constraint firstAttribute="bottom" secondItem="KMi-HX-B6e" secondAttribute="bottom" constant="586" id="G3e-O3-aly"/>
                             <constraint firstItem="WVP-df-ZyF" firstAttribute="top" secondItem="UKk-jy-ne4" secondAttribute="top" constant="487" id="JsD-3B-Lf5"/>
                             <constraint firstItem="zcZ-PI-WDf" firstAttribute="trailing" secondItem="6aa-be-nB2" secondAttribute="trailing" id="LYy-Jt-SND"/>
                             <constraint firstAttribute="bottomMargin" secondItem="WVP-df-ZyF" secondAttribute="bottom" constant="-70" id="Qkn-Qw-1ka"/>
                             <constraint firstItem="WVP-df-ZyF" firstAttribute="leading" secondItem="O8A-6j-mbc" secondAttribute="leading" id="T6K-UB-3i5"/>
                             <constraint firstItem="9sO-VK-Lc9" firstAttribute="top" secondItem="G6X-et-HkB" secondAttribute="bottom" constant="-159" id="aqA-vB-bMp"/>
                             <constraint firstItem="zcZ-PI-WDf" firstAttribute="trailing" secondItem="O8A-6j-mbc" secondAttribute="trailing" id="dtq-in-g6n"/>
-                            <constraint firstItem="KMi-HX-B6e" firstAttribute="centerX" secondItem="9sO-VK-Lc9" secondAttribute="centerX" id="eS1-yd-s0x"/>
+                            <constraint firstItem="KMi-HX-B6e" firstAttribute="leading" secondItem="zcZ-PI-WDf" secondAttribute="leading" constant="103" id="eJP-8R-yiZ"/>
                             <constraint firstItem="O8A-6j-mbc" firstAttribute="leading" secondItem="zcZ-PI-WDf" secondAttribute="leading" id="enq-cR-vEh"/>
                             <constraint firstItem="WVP-df-ZyF" firstAttribute="trailing" secondItem="O8A-6j-mbc" secondAttribute="trailing" id="f0H-K8-3Jn"/>
                             <constraint firstItem="zcZ-PI-WDf" firstAttribute="bottom" secondItem="O8A-6j-mbc" secondAttribute="bottom" id="fLd-TS-Olb"/>
@@ -213,12 +211,11 @@
                             <constraint firstItem="zcZ-PI-WDf" firstAttribute="bottom" secondItem="9sO-VK-Lc9" secondAttribute="bottom" constant="-28" id="jWV-KX-oaJ"/>
                             <constraint firstItem="6aa-be-nB2" firstAttribute="top" secondItem="zcZ-PI-WDf" secondAttribute="top" id="kTu-zd-84n"/>
                             <constraint firstItem="9sO-VK-Lc9" firstAttribute="leading" secondItem="zcZ-PI-WDf" secondAttribute="leading" constant="-17" id="mbX-Aj-z9b"/>
-                            <constraint firstItem="zcZ-PI-WDf" firstAttribute="bottom" secondItem="KMi-HX-B6e" secondAttribute="bottom" constant="556" id="nfI-Hq-c4N"/>
-                            <constraint firstItem="KMi-HX-B6e" firstAttribute="leading" secondItem="zcZ-PI-WDf" secondAttribute="leading" constant="81" id="o4w-j9-9wk"/>
                             <constraint firstItem="6aa-be-nB2" firstAttribute="bottom" secondItem="zcZ-PI-WDf" secondAttribute="bottom" id="qJ0-jY-5PX"/>
+                            <constraint firstItem="KMi-HX-B6e" firstAttribute="centerX" secondItem="G6X-et-HkB" secondAttribute="centerX" id="tZn-Zp-JXr"/>
                             <constraint firstItem="G6X-et-HkB" firstAttribute="trailing" secondItem="O8A-6j-mbc" secondAttribute="trailing" id="vHo-oZ-SUP"/>
+                            <constraint firstItem="KMi-HX-B6e" firstAttribute="top" secondItem="zcZ-PI-WDf" secondAttribute="top" constant="57" id="xHk-Kf-xKR"/>
                             <constraint firstItem="O8A-6j-mbc" firstAttribute="top" secondItem="zcZ-PI-WDf" secondAttribute="top" constant="50" id="yYS-av-kfl"/>
-                            <constraint firstItem="6aa-be-nB2" firstAttribute="top" secondItem="KMi-HX-B6e" secondAttribute="bottom" constant="-111" id="zJk-KV-yVi"/>
                             <constraint firstItem="6aa-be-nB2" firstAttribute="leading" secondItem="zcZ-PI-WDf" secondAttribute="leading" id="zKe-o2-YKv"/>
                             <constraint firstItem="G6X-et-HkB" firstAttribute="top" secondItem="zcZ-PI-WDf" secondAttribute="top" id="zWj-LJ-bfb"/>
                         </constraints>
@@ -259,15 +256,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="795"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fji-Fj-syj">
+                                    <visualEffectView opaque="NO" alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fji-Fj-syj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="795"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rEv-FW-l7y">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="795"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
-                                        <vibrancyEffect>
-                                            <blurEffect style="regular"/>
-                                        </vibrancyEffect>
+                                        <blurEffect style="dark"/>
                                     </visualEffectView>
                                 </subviews>
                                 <constraints>

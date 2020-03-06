@@ -67,6 +67,7 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        callActivateMoveKeyboard(MoveKeyboard: true)
         labelUserPassword.delegate = self
         setupBtn()
         setupImage()
