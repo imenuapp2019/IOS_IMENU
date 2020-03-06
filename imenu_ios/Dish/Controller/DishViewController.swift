@@ -13,10 +13,11 @@ class DishViewController: UIViewController,UICollectionViewDelegate, UICollectio
     let fetchData:FetchData = FetchData ()
     var globaldata:Array <Dish>!
     var cellClicked = 0
-    
+     var menuViewController = MenuViewController ()
                             // Outlets
     @IBAction func backBtn(_ sender: Any) {
-        performSegue(withIdentifier: "fromDishToMenu", sender: nil)
+        //performSegue(withIdentifier: "fromDishToMenu", sender: nil)
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
     @IBOutlet weak var DishescollectionView: UICollectionView!
     @IBOutlet weak var resetCollectionViewButton: RoundButton!

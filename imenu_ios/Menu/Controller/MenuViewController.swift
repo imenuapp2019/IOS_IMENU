@@ -197,13 +197,6 @@ self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotatio
              animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
          }
      }
-    
-    
-    func dismissElPutoViewController () {
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
 }
 
 

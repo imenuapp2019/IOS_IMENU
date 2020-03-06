@@ -59,7 +59,8 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        view.bringSubviewToFront(ARBtn)
+       // view.frame.origin.y = view.frame.height - view.frame.height * 0.13
+        
     }
     
     
@@ -139,11 +140,12 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
               let indexPath = self.menuSectionsCollectionView.indexPathForItem(at: location)
              let cellClickedIndex = indexPath!.row
         menuViewController?.clickedOnSectionBool = true
+       
         let storyboard = UIStoryboard(name: "Dish", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "dish") as! DishViewController
         controller.menuSection = cellClickedIndex
         self.present(controller, animated: true, completion: nil)
-    
+      
         
     }
     
