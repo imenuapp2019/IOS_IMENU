@@ -12,8 +12,8 @@ import CoreLocation
 class MapViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
 
     let locationManager = CLLocationManager ()
-    let latitudinalMeters:Double = 10000
-    let longitudinalMeters:Double = 10000
+    let latitudinalMeters:Double = 1000
+    let longitudinalMeters:Double = 1000
     var collectionViewFlowLayout:UICollectionViewFlowLayout!
     
     @IBOutlet weak var restaurantsCollectionView: UICollectionView!
