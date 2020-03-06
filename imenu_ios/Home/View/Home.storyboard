@@ -175,7 +175,7 @@
                                         </visualEffectView>
                                     </subviews>
                                 </view>
-                                <blurEffect style="regular"/>
+                                <blurEffect style="dark"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVP-df-ZyF" customClass="FanMenu" customModule="FanMenu">
                                 <rect key="frame" x="0.0" y="487" width="375" height="250"/>
