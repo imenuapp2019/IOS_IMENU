@@ -20,6 +20,7 @@ class HomeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.alpha = 0
+        self.backgroundColor = .clear
         self.shadowView()
     }
     
