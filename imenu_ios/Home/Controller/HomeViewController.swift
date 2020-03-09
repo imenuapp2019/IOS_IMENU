@@ -122,14 +122,28 @@ class HomeViewController: BaseViewController {
     }
     
     func actionFilter(){
-        if (chBoxTypeRestaurant.on && chBoxPrice.on && chBoxDistance.on){
-            print("Los tres encendidos")
-        }
-        else if(chBoxTypeRestaurant.on && chBoxPrice.on){
-            print("Los dos primeros encendidos")
-        }
-        else if(chBoxPrice.on && chBoxDistance.on){
-            print("Los dos ultimos encendidos")
+        let filterViewController = FilterViewController()
+        let allOn = filterViewController.AllOn(First: chBoxTypeRestaurant.on, Second: chBoxPrice.on, Third: chBoxDistance.on)
+        let twoOn = filterViewController.TwoOn(First: chBoxTypeRestaurant.on, Second: chBoxPrice.on, Third: chBoxDistance.on)
+        let thirdOn = filterViewController.oneOn(First: chBoxTypeRestaurant.on, Second: chBoxPrice.on, Third: chBoxDistance.on)
+        let fourOn = filterViewController.none(First: chBoxTypeRestaurant.on, Second: chBoxPrice.on, Third: chBoxDistance.on)
+        calculateOptionFilter(one: allOn,two: twoOn,three: thirdOn,four: fourOn)
+    }
+    
+    func calculateOptionFilter(one:Bool,two:Bool,three:Bool,four:Bool){
+        if one{
+            listRestaurants = listRestaurants.filter({
+                result in
+                if result.type == selectionTypeFood{ return true}
+                else{return false}
+            })
+            print(listRestaurants)
+        }else if two{
+            
+        }else if three{
+            
+        }else if four{
+            
         }
     }
     
