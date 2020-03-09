@@ -11,8 +11,9 @@ import FanMenu
 import Macaw
 import fluid_slider
 import BEMCheckBox
+import PopupDialog
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     
     // MARK: - Properties
     
@@ -57,11 +58,14 @@ class HomeViewController: UIViewController {
     var effect:UIVisualEffect!
     var lastVelocityYSign = 0
     
-    var listRestaurants : [RestaurantElement] = [] {
+    var listRestaurants : [RestaurantElement] = []
+    {
         didSet {
             self.homeTableView.reloadData()
         }
     }
+    
+    var backUpRestaurant: [RestaurantElement] = []
     
     var typeFoods: [String] = [String]()
     
@@ -180,15 +184,15 @@ class HomeViewController: UIViewController {
     
     func setUpViewMenu(){
         let items = [
-            ("QR", 0x9F85FF),
-            ("USER", 0x85B1FF),
+            ("QR", 0xFF703B),
+            ("USER", 0xFF703B),
             ("MAP", 0xFF703B),
         ]
         
         fanMenu.button = FanMenuButton(
             id: "main",
             image: UIImage(named: "menu_plus"),
-            color: Color(val: 0x7C93FE)
+            color: Color(val: 0x008000)
         )
         
         fanMenu.items = items.map { button in
@@ -208,7 +212,7 @@ class HomeViewController: UIViewController {
             if self.fanMenu.isOpen {
                  UIView.animate(withDuration: 0.2, animations: {
                     self.blurEffectMenuFloating.alpha = 0.5
-                    self.searchBarWithDelegate.alpha = 0
+                    self.searchBarWithDelegate.alpha = 0.5
                  })
                 
             }else{
@@ -322,7 +326,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func setView(view: UIView, hidden: Bool) {
         if(hidden == false){
             UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
-                view.alpha = 1.0
+                view.alpha = 0.5
             })
         }else{
             UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {
@@ -343,6 +347,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         })
     }
     
+    func alphaTableView(Alpha alphaNum:Float){
+        homeTableView.alpha = CGFloat(alphaNum)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let item = ( sender as? HomeTableViewCell) else { return }
         guard let indexPath = self.homeTableView.indexPath(for: item) else { return }
@@ -360,7 +369,7 @@ extension HomeViewController: DAOSearchBarDelegate {
     }
     
     func searchBar(_ searchBar: DAOSearchBar, willStartTransitioningToState destinationState: DAOSearchBarState) {
-        // Do whatever you deem necessary.
+    
     }
     
     func searchBar(_ searchBar: DAOSearchBar, didEndTransitioningFromState previousState: DAOSearchBarState) {
@@ -368,14 +377,45 @@ extension HomeViewController: DAOSearchBarDelegate {
     }
     
     func searchBarDidTapReturn(_ searchBar: DAOSearchBar) {
-        // Do whatever you deem necessary.
-        // Access the text from the search bar like searchBar.searchField.text
+        guard let textSearch:String = searchBar.searchField.text else { return }
+        if !textSearch.isEmpty{
+        listRestaurants = listRestaurants.filter({
+            result in
+            if result.name == textSearch {
+               return true
+            }else{
+               return false
+            }
+        })
+            if !listRestaurants.isEmpty{
+                alphaTableView(Alpha: 1)
+            }else{
+                alphaTableView(Alpha: 0)
+                setUpPopUp(Title: Literals.missingRestaurantTitle, Message: Literals.missingRestaurantMessage, Image: "404", TitleButtonOK: Literals.titleBotonPopUps)
+            }
+        }
+        else {
+            datafromServer()
+            alphaTableView(Alpha: 1)
+        }
+        dismissKeyboard()
     }
     
     func searchBarTextDidChange(_ searchBar: DAOSearchBar) {
-        // Do whatever you deem necessary.
-        // Access the text from the search bar like searchBar.searchField.text
+        alphaTableView(Alpha: 0)
+        datafromServer()
     }
+    
+    func setUpPopUp(Title title:String,Message message:String,Image image:String,TitleButtonOK titleButtonOk:String){
+        let popUp = PopUpPresentation(Title: title, Message: message)
+        let imagePopUp = UIImage(named: image)
+        let popup = PopupDialog(title: popUp.title, message: popUp.message, image: imagePopUp)
+        let buttonOk = DefaultButton(title: titleButtonOk) {
+        }
+        popup.addButtons([buttonOk])
+        self.present(popup, animated: true, completion: nil)
+    }
+    
 }
 
 extension HomeViewController: UIPickerViewDelegate,UIPickerViewDataSource{

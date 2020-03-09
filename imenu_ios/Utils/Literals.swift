@@ -40,7 +40,7 @@ open class Literals {
     static var labelFilterPrice = "Precio"
     static var labelFilterDistance = "Distancia"
     static var btnFilter = "Buscar"
-    static var labelAlertView = "Restaurantes Cerca de Ti"
+    static var labelAlertView = "Cerca de Ti"
     static var backBtn = "Volver al principio"
     static var messageRecover = "Listo 🥳 te enviamos un correo a:"
     static var recoverTextEmpty = "parece que no has escrito tu email"
@@ -53,4 +53,6 @@ open class Literals {
     static var minimumCharacters = "Mínimo ocho caracteres"
     static var repeatPassword = "Repite su contraseña"
     static var obligatoryField = "Campo obligatorio"
+    static var missingRestaurantTitle = "Restaurante no encontrado"
+    static var missingRestaurantMessage = "Verifique si escribio bien el restaurante"
 }

@@ -14,13 +14,16 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         let tap = hideKeyboard()
         view.addGestureRecognizer(tap)
-         moveScreenWhenUseKeyboard()
+    }
+    
+    func callActivateMoveKeyboard(MoveKeyboard moveKeyboard:Bool){
+        if moveKeyboard{ moveScreenWhenUseKeyboard()}
     }
 }
 
 extension BaseViewController {
     
-    func moveScreenWhenUseKeyboard(){
+    private func moveScreenWhenUseKeyboard(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
