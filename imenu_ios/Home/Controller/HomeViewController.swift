@@ -122,8 +122,15 @@ class HomeViewController: BaseViewController {
     }
     
     func actionFilter(){
-        
-        
+        if (chBoxTypeRestaurant.on && chBoxPrice.on && chBoxDistance.on){
+            print("Los tres encendidos")
+        }
+        else if(chBoxTypeRestaurant.on && chBoxPrice.on){
+            print("Los dos primeros encendidos")
+        }
+        else if(chBoxPrice.on && chBoxDistance.on){
+            print("Los dos ultimos encendidos")
+        }
     }
     
     func setUpCheckBox(){
@@ -466,35 +473,37 @@ extension HomeViewController: UIPickerViewDelegate,UIPickerViewDataSource{
 extension HomeViewController:BEMCheckBoxDelegate{
     func didTap(_ checkBox: BEMCheckBox) {
         if chBoxTypeRestaurant.on != true{
-            self.initFilter(ValueBox: 1)
+            self.initAndEndFilter(ValueBox: 4)
             self.pickerTypeFood.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
             self.pickerTypeFood.isHidden = true
             heightConstraintPicker.constant = 0
         }else{
+            self.initAndEndFilter(ValueBox: 1)
             self.pickerTypeFood.frame = CGRect(x: 20,y: 94,width: 266,height: 117)
             self.pickerTypeFood.isHidden = false
             heightConstraintPicker.constant = 117
         }
         if chBoxPrice.on != true{
-            self.initFilter(ValueBox: 2)
+            self.initAndEndFilter(ValueBox: 5)
             self.sliderPorPersona.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
             self.sliderPorPersona.isHidden = true
             heightConstraintBoxPrice.constant = 0
             widthConstraintBoxPrice.constant = 0
         }else{
+            self.initAndEndFilter(ValueBox: 2)
             self.sliderPorPersona.frame = CGRect(x: 26,y: 311,width: 255,height: 25)
             self.sliderPorPersona.isHidden = false
             heightConstraintBoxPrice.constant = 25
             widthConstraintBoxPrice.constant = 255
-            
         }
         if chBoxDistance.on != true{
-            self.initFilter(ValueBox: 3)
+            self.initAndEndFilter(ValueBox: 6)
             self.sliderDistancia.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
             self.sliderDistancia.isHidden = true
             heightConstraintBoxDistance.constant = 0
             widthConstraintBoxDistance.constant = 0
         }else{
+            self.initAndEndFilter(ValueBox: 3)
             self.sliderDistancia.frame = CGRect(x: 26,y: 421,width: 250,height: 25)
             self.sliderDistancia.isHidden = false
             heightConstraintBoxDistance.constant = 25
@@ -502,19 +511,29 @@ extension HomeViewController:BEMCheckBoxDelegate{
         }
     }
     
-    func initFilter(ValueBox value:Int){
+    func initAndEndFilter(ValueBox value:Int){
         switch value {
         case 1:
-            self.selectionTypeFood = typeFoods[0]
+            selectionTypeFood = typeFoods[0]
             break
         case 2:
             self.numberAveragePorPersona = 50
             break
         case 3:
-            self.numberAverageDistancia = 60
+            self.numberAverageDistancia = 6
+            break
+        case 4:
+            selectionTypeFood = Literals.empty
+            break
+        case 5:
+            self.numberAveragePorPersona = 0
+            break
+        case 6:
+            self.numberAverageDistancia = 0
             break
         default:return
         }
     }
+    
 }
 
