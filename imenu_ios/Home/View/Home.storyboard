@@ -343,6 +343,9 @@
                                 <constraint firstAttribute="width" constant="250" id="dmV-00-1bh"/>
                                 <constraint firstAttribute="height" constant="25" id="kbh-RA-uV7"/>
                             </constraints>
+                            <connections>
+                                <action selector="sliderPorPersonaClicked:" destination="GVa-nv-j4D" eventType="valueChanged" id="Gnt-pJ-wHn"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRq-Oc-Ar1" customClass="Slider" customModule="fluid_slider">
                             <rect key="frame" x="26" y="421" width="250" height="25"/>
@@ -351,6 +354,9 @@
                                 <constraint firstAttribute="height" constant="25" id="FmF-ip-gVU"/>
                                 <constraint firstAttribute="width" constant="250" id="pzq-OU-VkU"/>
                             </constraints>
+                            <connections>
+                                <action selector="sliderDistanciaClicked:" destination="GVa-nv-j4D" eventType="valueChanged" id="08T-QL-swS"/>
+                            </connections>
                         </view>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O31-si-7VP">
                             <rect key="frame" x="20" y="94" width="266" height="117"/>

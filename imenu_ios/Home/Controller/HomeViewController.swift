@@ -46,6 +46,17 @@ class HomeViewController: BaseViewController {
     //    MARK: - Slider
     @IBOutlet weak var sliderDistancia: Slider!
     @IBOutlet weak var sliderPorPersona: Slider!
+    
+    
+    @IBAction func sliderPorPersonaClicked(_ sender: Slider) {
+        numberAveragePorPersona = Float(round(sender.fraction * 100))
+        
+    }
+    @IBAction func sliderDistanciaClicked(_ sender: Slider) {
+        numberAverageDistancia = (Float(round(sender.fraction * 12)) )
+        
+    }
+    
     //    MARK: - View
     @IBOutlet weak var homeTableView: UITableView!
     @IBOutlet var effectBlurView: UIView!
@@ -57,6 +68,10 @@ class HomeViewController: BaseViewController {
     
     var effect:UIVisualEffect!
     var lastVelocityYSign = 0
+    var searchFilter: SearchFilter? = nil
+    var selectionTypeFood:String? = nil
+    var numberAveragePorPersona: Float? = nil
+    var numberAverageDistancia: Float? = nil
     
     var listRestaurants : [RestaurantElement] = []
     {
@@ -71,7 +86,9 @@ class HomeViewController: BaseViewController {
     
     @IBAction func dismissFilterClicked(_ sender: Any) {
         setUpFilterViewOFF()
+        actionFilter()
     }
+    
     @IBAction func btnFilterClicked(_ sender: Any) {
         setUpFilterViewON()
     }
@@ -102,6 +119,11 @@ class HomeViewController: BaseViewController {
         alertView.alpha = 0.0
         filter.layer.cornerRadius = 7
         blurEffectMenuFloating.alpha = 0
+    }
+    
+    func actionFilter(){
+        
+        
     }
     
     func setUpCheckBox(){
@@ -210,15 +232,15 @@ class HomeViewController: BaseViewController {
         
         fanMenu.onItemDidClick = { button in
             if self.fanMenu.isOpen {
-                 UIView.animate(withDuration: 0.2, animations: {
+                UIView.animate(withDuration: 0.2, animations: {
                     self.blurEffectMenuFloating.alpha = 0.5
                     self.searchBarWithDelegate.alpha = 0.5
-                 })
+                })
                 
             }else{
                 UIView.animate(withDuration: 0.2, animations: {
-                   self.blurEffectMenuFloating.alpha = 0
-                     self.searchBarWithDelegate.alpha = 1
+                    self.blurEffectMenuFloating.alpha = 0
+                    self.searchBarWithDelegate.alpha = 1
                 })
             }
         }
@@ -228,7 +250,7 @@ class HomeViewController: BaseViewController {
             case "USER":
                 self.performSegue(withIdentifier: "seguePerfil", sender: nil)
             case "MAP":
-                 self.performSegue(withIdentifier: "ToMapFromHome", sender: nil)
+                self.performSegue(withIdentifier: "ToMapFromHome", sender: nil)
             case "QR":
                 print("")
             default: break
@@ -282,6 +304,10 @@ class HomeViewController: BaseViewController {
     
     func setupInitValues () {
         searchBarWidth = self.view.bounds.width - (2 * marginX)
+    }
+    
+    func pickerSelected(Number selection:Int)->String{
+        return typeFoods[selection]
     }
 }
 
@@ -369,7 +395,7 @@ extension HomeViewController: DAOSearchBarDelegate {
     }
     
     func searchBar(_ searchBar: DAOSearchBar, willStartTransitioningToState destinationState: DAOSearchBarState) {
-    
+        
     }
     
     func searchBar(_ searchBar: DAOSearchBar, didEndTransitioningFromState previousState: DAOSearchBarState) {
@@ -379,14 +405,14 @@ extension HomeViewController: DAOSearchBarDelegate {
     func searchBarDidTapReturn(_ searchBar: DAOSearchBar) {
         guard let textSearch:String = searchBar.searchField.text else { return }
         if !textSearch.isEmpty{
-        listRestaurants = listRestaurants.filter({
-            result in
-            if result.name == textSearch {
-               return true
-            }else{
-               return false
-            }
-        })
+            listRestaurants = listRestaurants.filter({
+                result in
+                if result.name == textSearch {
+                    return true
+                }else{
+                    return false
+                }
+            })
             if !listRestaurants.isEmpty{
                 alphaTableView(Alpha: 1)
             }else{
@@ -419,6 +445,10 @@ extension HomeViewController: DAOSearchBarDelegate {
 }
 
 extension HomeViewController: UIPickerViewDelegate,UIPickerViewDataSource{
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int){
+        selectionTypeFood = pickerSelected(Number: row)
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -436,6 +466,7 @@ extension HomeViewController: UIPickerViewDelegate,UIPickerViewDataSource{
 extension HomeViewController:BEMCheckBoxDelegate{
     func didTap(_ checkBox: BEMCheckBox) {
         if chBoxTypeRestaurant.on != true{
+            self.initFilter(ValueBox: 1)
             self.pickerTypeFood.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
             self.pickerTypeFood.isHidden = true
             heightConstraintPicker.constant = 0
@@ -445,6 +476,7 @@ extension HomeViewController:BEMCheckBoxDelegate{
             heightConstraintPicker.constant = 117
         }
         if chBoxPrice.on != true{
+            self.initFilter(ValueBox: 2)
             self.sliderPorPersona.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
             self.sliderPorPersona.isHidden = true
             heightConstraintBoxPrice.constant = 0
@@ -457,6 +489,7 @@ extension HomeViewController:BEMCheckBoxDelegate{
             
         }
         if chBoxDistance.on != true{
+            self.initFilter(ValueBox: 3)
             self.sliderDistancia.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
             self.sliderDistancia.isHidden = true
             heightConstraintBoxDistance.constant = 0
@@ -466,6 +499,21 @@ extension HomeViewController:BEMCheckBoxDelegate{
             self.sliderDistancia.isHidden = false
             heightConstraintBoxDistance.constant = 25
             widthConstraintBoxDistance.constant = 250
+        }
+    }
+    
+    func initFilter(ValueBox value:Int){
+        switch value {
+        case 1:
+            self.selectionTypeFood = typeFoods[0]
+            break
+        case 2:
+            self.numberAveragePorPersona = 50
+            break
+        case 3:
+            self.numberAverageDistancia = 60
+            break
+        default:return
         }
     }
 }
