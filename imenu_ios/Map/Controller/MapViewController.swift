@@ -17,6 +17,7 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
     let longitudinalMeters:Double = 1000
     var previousLocation:CLLocation?
     var collectionViewFlowLayout:UICollectionViewFlowLayout!
+    var directionsArray:[MKDirections] = []
     
     @IBOutlet weak var restaurantsCollectionView: UICollectionView!
     @IBOutlet weak var roundedImageview: UIImageView!
@@ -28,7 +29,9 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        addAnotation()
         checkLocationServices()
         configureCollectionView()
         roundedImageview.layer.cornerRadius = roundedImageview.frame.height/2
@@ -117,7 +120,7 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
         
         let cell = restaurantsCollectionView.cellForItem(at: index!) as! MapCollectionViewCell
         
-        centerViewToRestaurantClicked(latitude: cell.latitud!, longitude: cell.longitud!)
+        centerViewToRestaurantOrAnnotationClicked(latitude: cell.latitud!, longitude: cell.longitud!)
     
        
        }
@@ -126,12 +129,28 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
     
                     //Map / Location
     
-    func centerViewToRestaurantClicked (latitude:Double, longitude:Double) {
-    
-         let point = CLLocationCoordinate2D( latitude: latitude,  longitude: longitude)
+    func centerViewToRestaurantOrAnnotationClicked (latitude:Double, longitude:Double) {
+    //this one
+        let point = CLLocationCoordinate2D( latitude: latitude,  longitude: longitude)
+         //let point = CLLocationCoordinate2D( latitude: 40.438969,  longitude: -3.713025)
                    
                    let region = MKCoordinateRegion.init(center: point, latitudinalMeters: latitudinalMeters, longitudinalMeters: longitudinalMeters)
                    mapView.setRegion(region, animated: true)
+    }
+    
+    func addAnotation () {
+         let point = CLLocationCoordinate2D( latitude:40.438969 ,  longitude: -3.713025)
+            let anotation = MKPointAnnotation()
+           anotation.coordinate = point
+           anotation.title = "Friday"
+        
+        let point2 = CLLocationCoordinate2D( latitude:40.436659 ,  longitude: -3.718054)
+         let anotation2 = MKPointAnnotation()
+        anotation2.coordinate = point2
+        anotation2.title = "Friday"
+        
+           mapView.addAnnotation(anotation)
+         mapView.addAnnotation(anotation2)
     }
     
     
@@ -191,6 +210,55 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
     }
     
     
+    func getDirections () {
+        
+        guard let location = locationManager.location?.coordinate else {
+            
+            return
+        }
+        let request = createDirectionsRequest(from: location)
+        let directions = MKDirections (request: request)
+        resetMapView(withNew: directions)
+        
+        directions.calculate { [unowned self] (response, error) in
+            
+            guard let response = response else {return}
+            
+            for route in response.routes {
+                self.mapView.addOverlay(route.polyline)
+                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                
+            }
+            
+        }
+    }
+    
+    func createDirectionsRequest (from coordinate: CLLocationCoordinate2D) -> MKDirections.Request {
+        
+        let destinationCoordinate           = getCenterLocation(for: mapView).coordinate
+        let startingLocation                =  MKPlacemark(coordinate: coordinate)
+        let destination                     = MKPlacemark(coordinate: destinationCoordinate)
+        
+        let request                         = MKDirections.Request()
+        request.source                      = MKMapItem(placemark: startingLocation)
+        request.destination                 = MKMapItem(placemark: destination)
+        request.transportType               = .walking
+        request.requestsAlternateRoutes     = false
+        
+        
+        return request
+    }
+    
+    func resetMapView (withNew directions:MKDirections) {
+        
+        mapView.removeOverlays(mapView.overlays)
+        directionsArray.append(directions)
+        let _ = directionsArray.map { $0.cancel() }
+       // let _ directionsArray.map {$0.remove}
+
+    }
+    
+    
 //    func addMarkers (data: [ResponseRecyclePoint]) {
 //
 //           for items in data {
@@ -210,6 +278,8 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
         return CLLocation(latitude: latitude, longitude: longitude)
         
     }
+    
+  
 }
 extension MapViewController: CLLocationManagerDelegate {
     
@@ -231,6 +301,11 @@ extension MapViewController: CLLocationManagerDelegate {
 
 extension MapViewController:MKMapViewDelegate {
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+       // centerViewToRestaurantOrAnnotationClicked(latitude: , longitude: <#T##Double#>)
+        getDirections()
+        print ("Hola")
+    }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let center = getCenterLocation(for: mapView)
@@ -263,5 +338,11 @@ extension MapViewController:MKMapViewDelegate {
                 print(streetNumber)
             }
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        renderer.strokeColor = .green
+        return renderer
     }
 }
