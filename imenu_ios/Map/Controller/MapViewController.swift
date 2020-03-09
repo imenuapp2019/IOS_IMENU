@@ -11,10 +11,13 @@ import MapKit
 import CoreLocation
 class MapViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var labelDT: UILabel!
     let locationManager = CLLocationManager ()
-    let latitudinalMeters:Double = 10000
-    let longitudinalMeters:Double = 10000
+    let latitudinalMeters:Double = 1000
+    let longitudinalMeters:Double = 1000
+    var previousLocation:CLLocation?
     var collectionViewFlowLayout:UICollectionViewFlowLayout!
+    var directionsArray:[MKDirections] = []
     
     @IBOutlet weak var restaurantsCollectionView: UICollectionView!
     @IBOutlet weak var roundedImageview: UIImageView!
@@ -26,7 +29,9 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        addAnotation()
         checkLocationServices()
         configureCollectionView()
         roundedImageview.layer.cornerRadius = roundedImageview.frame.height/2
@@ -101,7 +106,7 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
         cell.latitud = restaurant.latitude
         cell.longitud = restaurant.longitude
         
-        cell.contentView.layer.cornerRadius = 15
+        cell.contentView.layer.cornerRadius = 30
         cell.clipsToBounds = true
         cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DoWhenACellIsClicked(_:))))
         
@@ -115,7 +120,7 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
         
         let cell = restaurantsCollectionView.cellForItem(at: index!) as! MapCollectionViewCell
         
-        centerViewToRestaurantClicked(latitude: cell.latitud!, longitude: cell.longitud!)
+        centerViewToRestaurantOrAnnotationClicked(latitude: cell.latitud!, longitude: cell.longitud!)
     
        
        }
@@ -124,12 +129,28 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
     
                     //Map / Location
     
-    func centerViewToRestaurantClicked (latitude:Double, longitude:Double) {
-    
-         let point = CLLocationCoordinate2D( latitude: latitude,  longitude: longitude)
+    func centerViewToRestaurantOrAnnotationClicked (latitude:Double, longitude:Double) {
+    //this one
+        let point = CLLocationCoordinate2D( latitude: latitude,  longitude: longitude)
+         //let point = CLLocationCoordinate2D( latitude: 40.438969,  longitude: -3.713025)
                    
                    let region = MKCoordinateRegion.init(center: point, latitudinalMeters: latitudinalMeters, longitudinalMeters: longitudinalMeters)
                    mapView.setRegion(region, animated: true)
+    }
+    
+    func addAnotation () {
+         let point = CLLocationCoordinate2D( latitude:40.438969 ,  longitude: -3.713025)
+            let anotation = MKPointAnnotation()
+           anotation.coordinate = point
+           anotation.title = "Friday"
+        
+        let point2 = CLLocationCoordinate2D( latitude:40.436659 ,  longitude: -3.718054)
+         let anotation2 = MKPointAnnotation()
+        anotation2.coordinate = point2
+        anotation2.title = "Friday"
+        
+           mapView.addAnnotation(anotation)
+         mapView.addAnnotation(anotation2)
     }
     
     
@@ -156,6 +177,7 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
     
     func setupLocationManager () {
         locationManager.delegate = self
+        mapView.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
@@ -163,10 +185,7 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
     func checkLocationAuthorization () {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
-            mapView.showsUserLocation = true
-             centerViewOnUserLocation()
-            locationManager.startUpdatingLocation()
-            break
+           startTrackingUserLocation()
         case .denied:
              break
         case .notDetermined:
@@ -182,6 +201,62 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
         }
         
     }
+    func startTrackingUserLocation () {
+        mapView.showsUserLocation = true
+        centerViewOnUserLocation()
+        locationManager.startUpdatingLocation()
+        previousLocation = getCenterLocation(for: mapView)
+        
+    }
+    
+    
+    func getDirections () {
+        
+        guard let location = locationManager.location?.coordinate else {
+            
+            return
+        }
+        let request = createDirectionsRequest(from: location)
+        let directions = MKDirections (request: request)
+        resetMapView(withNew: directions)
+        
+        directions.calculate { [unowned self] (response, error) in
+            
+            guard let response = response else {return}
+            
+            for route in response.routes {
+                self.mapView.addOverlay(route.polyline)
+                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+                
+            }
+            
+        }
+    }
+    
+    func createDirectionsRequest (from coordinate: CLLocationCoordinate2D) -> MKDirections.Request {
+        
+        let destinationCoordinate           = getCenterLocation(for: mapView).coordinate
+        let startingLocation                =  MKPlacemark(coordinate: coordinate)
+        let destination                     = MKPlacemark(coordinate: destinationCoordinate)
+        
+        let request                         = MKDirections.Request()
+        request.source                      = MKMapItem(placemark: startingLocation)
+        request.destination                 = MKMapItem(placemark: destination)
+        request.transportType               = .walking
+        request.requestsAlternateRoutes     = false
+        
+        
+        return request
+    }
+    
+    func resetMapView (withNew directions:MKDirections) {
+        
+        mapView.removeOverlays(mapView.overlays)
+        directionsArray.append(directions)
+        let _ = directionsArray.map { $0.cancel() }
+       // let _ directionsArray.map {$0.remove}
+
+    }
     
     
 //    func addMarkers (data: [ResponseRecyclePoint]) {
@@ -196,22 +271,78 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
 //           }
 //
 //       }
+    
+    func getCenterLocation (for mapView:MKMapView) -> CLLocation {
+        let latitude = mapView.centerCoordinate.latitude
+        let longitude = mapView.centerCoordinate.longitude
+        return CLLocation(latitude: latitude, longitude: longitude)
+        
+    }
+    
+  
 }
 extension MapViewController: CLLocationManagerDelegate {
     
     
+    //mientras se mueve el usuario
     
-    
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else {return}
-        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let region =  MKCoordinateRegion.init(center: center , latitudinalMeters: latitudinalMeters, longitudinalMeters: longitudinalMeters)
-        mapView.setRegion(region, animated: true)
-        
-    }
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        guard let location = locations.last else {return}
+//        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+//        let region =  MKCoordinateRegion.init(center: center , latitudinalMeters: latitudinalMeters, longitudinalMeters: longitudinalMeters)
+//        mapView.setRegion(region, animated: true)
+//
+//    }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         checkLocationAuthorization()
+    }
+}
+
+extension MapViewController:MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+       // centerViewToRestaurantOrAnnotationClicked(latitude: , longitude: <#T##Double#>)
+        getDirections()
+        print ("Hola")
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        let center = getCenterLocation(for: mapView)
+        let geoCoder = CLGeocoder ()
+        
+        guard let previousLocation = self.previousLocation else {return}
+       
+        guard center.distance(from: previousLocation) > 50 else {return}
+        self.previousLocation = center
+       
+        geoCoder.reverseGeocodeLocation(center) { [weak self] (placemarks, error) in
+            guard let self = self else {return}
+            
+                if let _ = error {
+                    
+                    return
+                }
+            
+            guard let placemark = placemarks?.first else {
+                
+                return
+            }
+            
+            let streetNumber = placemark.subThoroughfare ?? ""
+            let streetName = placemark.thoroughfare ?? ""
+           
+            DispatchQueue.main.async {
+                print ("Hola")
+                self.labelDT.text = "\(streetNumber) \(streetName)"
+                print(streetNumber)
+            }
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        renderer.strokeColor = .green
+        return renderer
     }
 }

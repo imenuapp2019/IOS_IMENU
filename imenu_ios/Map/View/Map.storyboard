@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bnu-bh-TcK">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bnu-bh-TcK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </mapView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundFull" translatesAutoresizingMaskIntoConstraints="NO" id="RT1-wz-QKo">
@@ -138,12 +138,20 @@
                                     <action selector="centerBtn:" destination="k5S-EP-RSw" eventType="touchUpInside" id="Ier-Z4-dl4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hola" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmq-bm-SGy">
+                                <rect key="frame" x="189.66666666666666" y="358" width="35" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="wRp-JJ-MeY" firstAttribute="top" secondItem="znq-eb-1gj" secondAttribute="top" id="1KO-g6-5Ro"/>
                             <constraint firstItem="7Xv-fo-LNw" firstAttribute="bottom" secondItem="znq-eb-1gj" secondAttribute="bottom" constant="-25" id="6FB-0j-p9k"/>
                             <constraint firstItem="7Xv-fo-LNw" firstAttribute="trailing" secondItem="znq-eb-1gj" secondAttribute="trailing" id="6mT-v6-Mx7"/>
+                            <constraint firstItem="Bmq-bm-SGy" firstAttribute="centerX" secondItem="G5e-qF-fbe" secondAttribute="centerX" id="9XP-Wu-X2i"/>
+                            <constraint firstItem="Bmq-bm-SGy" firstAttribute="centerY" secondItem="G5e-qF-fbe" secondAttribute="centerY" id="AAf-Zi-qd5"/>
                             <constraint firstAttribute="bottom" secondItem="bnu-bh-TcK" secondAttribute="bottom" id="FgY-l4-5LP"/>
                             <constraint firstItem="bnu-bh-TcK" firstAttribute="leading" secondItem="znq-eb-1gj" secondAttribute="leading" id="JRy-JU-daX"/>
                             <constraint firstItem="znq-eb-1gj" firstAttribute="trailing" secondItem="bnu-bh-TcK" secondAttribute="trailing" id="LBw-7i-5nC"/>
@@ -160,6 +168,7 @@
                         <viewLayoutGuide key="safeArea" id="znq-eb-1gj"/>
                     </view>
                     <connections>
+                        <outlet property="labelDT" destination="Bmq-bm-SGy" id="3Zz-Zc-h0E"/>
                         <outlet property="mapView" destination="bnu-bh-TcK" id="8jg-rA-SuY"/>
                         <outlet property="restaurantsCollectionView" destination="pem-mV-3DC" id="OiP-HG-jmn"/>
                         <outlet property="roundedImageview" destination="RT1-wz-QKo" id="ya6-Ne-FWv"/>
