@@ -14,6 +14,7 @@ class MenuViewController: UIViewController{
         case expanded
     }
     
+    //Boton Back
     @IBAction func backBtn(_ sender: Any) {
         performSegue(withIdentifier: "toHome", sender: nil)
     }
