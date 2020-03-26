@@ -134,7 +134,7 @@ class HomeViewController: BaseViewController {
         if one{
             listRestaurants = listRestaurants.filter({
                 result in
-                if result.type == selectionTypeFood{ return true}
+                if result.tipo == selectionTypeFood{ return true}
                 else{return false}
             })
             print(listRestaurants)
@@ -295,7 +295,7 @@ class HomeViewController: BaseViewController {
         guard let listRestaurants = list else { return }
         let newRestaurant = listRestaurants.filter( {
             result in
-            if result.imageURL == nil {
+            if result.imagenes?.count == 0 {
                 return false
             }else{
                 return true
@@ -347,11 +347,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         let restaurant = listRestaurants[indexPath.row]
         let identifier = "HomeRestaurant"
         let cell = self.homeTableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)as! HomeTableViewCell
-        imageDownloader.downloader(URLString: restaurant.imageURL!, completion: { (image:UIImage?) in
+        let imageRestaurant = restaurant.urlImage()
+        imageDownloader.downloader(URLString: imageRestaurant, completion: { (image:UIImage?) in
             cell.restaurantImage.image = image
-        })
-        cell.nameRestaurant.text = restaurant.name
-        cell.typeRestaurant.text = restaurant.type
+            })
+        cell.nameRestaurant.text = restaurant.nombre
+        cell.typeRestaurant.text = restaurant.tipo
         cell.backgroundColor = .clear
         return cell
     }
@@ -428,7 +429,7 @@ extension HomeViewController: DAOSearchBarDelegate {
         if !textSearch.isEmpty{
             listRestaurants = listRestaurants.filter({
                 result in
-                if result.name == textSearch {
+                if result.nombre == textSearch {
                     return true
                 }else{
                     return false

@@ -9,7 +9,7 @@
 import UIKit
 
 class MenuViewController: UIViewController{
-        enum CardState {
+    enum CardState {
         case collapsed
         case expanded
     }
@@ -18,6 +18,8 @@ class MenuViewController: UIViewController{
     @IBAction func backBtn(_ sender: Any) {
         performSegue(withIdentifier: "toHome", sender: nil)
     }
+    @IBOutlet weak var restaurantDescription: UITextView!
+    
     @IBOutlet weak var restaurantBodyView: UIView!
     
     @IBOutlet weak var pictureRestaurant: UIImageView!
@@ -35,75 +37,77 @@ class MenuViewController: UIViewController{
     }
     
     var menuCardViewController:MenuCardViewController!
-    
-   
-    
     var endCardHeight:CGFloat = 0
     var startCardHeight:CGFloat = 0
     var cardVisible = false
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted:CGFloat = 0
     
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setValueCardAnimation()
         setupCard()
-self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+        self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
         setUpDetailRestaurant()
-         restaurantBodyView.layer.cornerRadius = 15
+        restaurantBodyView.layer.cornerRadius = 15
         pruebaDelegate()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-           super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        super.viewWillAppear(animated)
     }
     
     func pruebaDelegate () {
-//        let myView = Bundle.main.loadNibNamed("MenuCardViewController", owner: nil, options: nil)?.first as! MenuCardViewController
-      
-//        let cardViewController = MenuCardViewController ()
-//        let myview:UIView = cardViewController.MainCard
+        //        let myView = Bundle.main.loadNibNamed("MenuCardViewController", owner: nil, options: nil)?.first as! MenuCardViewController
+        
+        //        let cardViewController = MenuCardViewController ()
+        //        let myview:UIView = cardViewController.MainCard
         
         //myView.cellWasClickDelegate = self
-
+        
     }
     
     func setUpDetailRestaurant(){
-        guard let urlImage = restaurant?.imageURL else {return}
-        nameDetailRestaurant.text = restaurant?.name
-        nameTypeRestaurant.text = restaurant?.type
+        let imageRestaurant = restaurant?.urlImage()
+        guard let urlImage = imageRestaurant else {return}
+        nameDetailRestaurant.text = restaurant?.nombre
+        nameTypeRestaurant.text = restaurant?.tipo
+        restaurantDescription.text = restaurant?.descripcion
         imageDownloader.downloader(URLString: urlImage, completion: { (image:UIImage?) in
             self.pictureRestaurant.image = image
         })
     }
     
+    func setValueCardAnimation(){
+        let vc = MenuCardViewController(nibName: "MenuCardViewController", bundle: nil)
+        guard let menu = restaurant?.menu else { return }
+        vc.menuArray = menu
+    }
     
-   func setupCard() {
     
-    endCardHeight = self.view.frame.height * 0.89
-    startCardHeight = self.view.frame.height * 0.2
-   
+    func setupCard() {
         
-
+        endCardHeight = self.view.frame.height * 0.89
+        startCardHeight = self.view.frame.height * 0.2
+        
         menuCardViewController = MenuCardViewController(nibName:"MenuCardViewController", bundle:nil)
         self.view.addSubview(menuCardViewController.view)
         menuCardViewController.view.frame = CGRect(x: 0, y: self.view.frame.height - startCardHeight, width: self.view.bounds.width, height: endCardHeight)
         menuCardViewController.view.clipsToBounds = true
         
-    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleCardTap(recognzier:)))
-    let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleCardPan(recognizer:)))
-    
-    menuCardViewController.handleArea.addGestureRecognizer(tapGestureRecognizer)
-    menuCardViewController.handleArea.addGestureRecognizer(panGestureRecognizer)
-    
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleCardTap(recognzier:)))
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleCardPan(recognizer:)))
+        
+        menuCardViewController.handleArea.addGestureRecognizer(tapGestureRecognizer)
+        menuCardViewController.handleArea.addGestureRecognizer(panGestureRecognizer)
+        
     }
     
     @objc
     func handleCardTap(recognzier:UITapGestureRecognizer) {
         switch recognzier.state {
-            // Animate card when tap finishes
+        // Animate card when tap finishes
         case .ended:
             animateTransitionIfNeeded(state: nextState, duration: 0.9)
         default:
@@ -129,75 +133,75 @@ self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotatio
         }
     }
     
-     func animateTransitionIfNeeded (state:CardState, duration:TimeInterval) {
-         if runningAnimations.isEmpty {
+    func animateTransitionIfNeeded (state:CardState, duration:TimeInterval) {
+        if runningAnimations.isEmpty {
             let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
-                 switch state {
-                 case .expanded:
-                     self.menuCardViewController.view.frame.origin.y = self.view.frame.height - self.endCardHeight
+                switch state {
+                case .expanded:
+                    self.menuCardViewController.view.frame.origin.y = self.view.frame.height - self.endCardHeight
                     
                     // self.menuCardViewController.arrowImageView.isHidden = true
                     
                     
-                     self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(.pi - 3.14159))
-    
-                 case .collapsed:
-                     self.menuCardViewController.view.frame.origin.y = self.view.frame.height - self.startCardHeight
-                     
+                    self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(.pi - 3.14159))
                     
-                     self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
-                 }
-             }
-             
-             frameAnimator.addCompletion { _ in
-                 self.cardVisible = !self.cardVisible
-                 self.runningAnimations.removeAll()
-             }
-             
-             frameAnimator.startAnimation()
-             
-             runningAnimations.append(frameAnimator)
-             
-             let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
-                 switch state {
-                 case .expanded:
-                     self.menuCardViewController.view.layer.cornerRadius = 30
-                     
-                 case .collapsed:
+                case .collapsed:
+                    self.menuCardViewController.view.frame.origin.y = self.view.frame.height - self.startCardHeight
+                    
+                    
+                    self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
+                }
+            }
+            
+            frameAnimator.addCompletion { _ in
+                self.cardVisible = !self.cardVisible
+                self.runningAnimations.removeAll()
+            }
+            
+            frameAnimator.startAnimation()
+            
+            runningAnimations.append(frameAnimator)
+            
+            let cornerRadiusAnimator = UIViewPropertyAnimator(duration: duration, curve: .linear) {
+                switch state {
+                case .expanded:
                     self.menuCardViewController.view.layer.cornerRadius = 30
-                 }
-             }
-             
-             cornerRadiusAnimator.startAnimation()
-             
-             runningAnimations.append(cornerRadiusAnimator)
-             
-         }
-     }
-     
-     func startInteractiveTransition(state:CardState, duration:TimeInterval) {
-         
-         if runningAnimations.isEmpty {
-             animateTransitionIfNeeded(state: state, duration: duration)
-         }
-         
-         for animator in runningAnimations {
-             animator.pauseAnimation()
-             animationProgressWhenInterrupted = animator.fractionComplete
-         }
-     }
-     
-     func updateInteractiveTransition(fractionCompleted:CGFloat) {
-         for animator in runningAnimations {
-             animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
-         }
-     }
-     
-     func continueInteractiveTransition (){
-         for animator in runningAnimations {
-             animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-         }
-     }
+                    
+                case .collapsed:
+                    self.menuCardViewController.view.layer.cornerRadius = 30
+                }
+            }
+            
+            cornerRadiusAnimator.startAnimation()
+            
+            runningAnimations.append(cornerRadiusAnimator)
+            
+        }
+    }
+    
+    func startInteractiveTransition(state:CardState, duration:TimeInterval) {
+        
+        if runningAnimations.isEmpty {
+            animateTransitionIfNeeded(state: state, duration: duration)
+        }
+        
+        for animator in runningAnimations {
+            animator.pauseAnimation()
+            animationProgressWhenInterrupted = animator.fractionComplete
+        }
+    }
+    
+    func updateInteractiveTransition(fractionCompleted:CGFloat) {
+        for animator in runningAnimations {
+            animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
+        }
+    }
+    
+    func continueInteractiveTransition (){
+        for animator in runningAnimations {
+            animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+        }
+    }
 }
 
 

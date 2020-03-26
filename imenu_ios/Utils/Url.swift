@@ -12,5 +12,5 @@ open class Url{
     static var registerPostUrl = URL(string:"http://localhost:8888/back_imenu/public/api/register")
     static var LoginPostUrl = URL(string: "http://localhost:8888/back_imenu/public/api/loginApi")
     static var RecoverPostUrl = URL(string: "http://localhost:8888/back_imenu/public/api/password/email")
-    static var restaurantURL = URL(string: "http://localhost:8888/back_imenu/public/api/homeRestaurante")
+    static var restaurantURL = URL(string: "http://localhost:8888/back_imenu/public/api/res")
 }

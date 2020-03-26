@@ -14,12 +14,13 @@ import UIKit
 //}
 
 class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate {
-  
+   
     
     @IBOutlet var MainCard: UIView!
     @IBOutlet weak var ARBtn: UIButton!
     //  var  cellWasClickDelegate: CellClickedDelegate!
     
+    var menuArray:[Menu] = []
     var currentIndex = 0
     let ARImagesArray = [#imageLiteral(resourceName: "HD_Pizza"),#imageLiteral(resourceName: "HDpollo"),#imageLiteral(resourceName: "HD_tarta")]
     let arrayOfMenuSectionsImages = [#imageLiteral(resourceName: "especiales_this"),#imageLiteral(resourceName: "segundos_this"),#imageLiteral(resourceName: "entrantes_this"),#imageLiteral(resourceName: "postres_this"),#imageLiteral(resourceName: "bebida_this"),#imageLiteral(resourceName: "primer_this")]
@@ -41,6 +42,7 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         
+   
         menuViewController = MenuViewController ()
         startTimer()
         pageControl.numberOfPages = ARImagesArray.count

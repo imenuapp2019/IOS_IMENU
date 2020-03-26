@@ -63,7 +63,8 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
            guard let listRestaurants = list else { return }
            let newRestaurant = listRestaurants.filter( {
                result in
-               if result.imageURL == nil {
+            let url = result.urlImage()
+               if url == nil {
                    return false
                }else{
                    return true
@@ -99,12 +100,13 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
         
     
         let restaurant = listRestaurants[indexPath.row]
-        imageDownloader.downloader(URLString: restaurant.imageURL!, completion: { (image:UIImage?) in
+        let urlRestaurant = restaurant.urlImage()
+        imageDownloader.downloader(URLString: urlRestaurant, completion: { (image:UIImage?) in
                    cell.restaurantImage.image = image
                })
-        cell.restaurantName.setTitle(restaurant.name, for: .normal)
-        cell.latitud = restaurant.latitude
-        cell.longitud = restaurant.longitude
+        cell.restaurantName.setTitle(restaurant.nombre, for: .normal)
+        cell.latitud = restaurant.latitud
+        cell.longitud = restaurant.longitud
         
         cell.contentView.layer.cornerRadius = 30
         cell.clipsToBounds = true
@@ -124,9 +126,6 @@ class MapViewController: UIViewController,UICollectionViewDelegate, UICollection
     
        
        }
-    
-    
-    
                     //Map / Location
     
     func centerViewToRestaurantOrAnnotationClicked (latitude:Double, longitude:Double) {

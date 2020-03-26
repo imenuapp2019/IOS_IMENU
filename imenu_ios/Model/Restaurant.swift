@@ -1,34 +1,39 @@
 import Foundation
 
 // MARK: - RestaurantElement
-class RestaurantElement: Codable {
-      let name, type: String?
-      let imageURL: String?
-      let latitude, longitude: Double?
-      var coordinates: [Double]=[]
-    
-      enum CodingKeys: String, CodingKey {
-          case name, type
-          case imageURL = "image_URL"
-          case latitude, longitude
-      }
+struct RestaurantElement: Codable {
+    let id: Int?
+    let nombre, descripcion, direccion: String?
+    let latitud, longitud: Double?
+    let telefono: Int?
+    let tipo: String?
+    let imagenes: [Imagene]?
+    let rrss: [Rrss]?
+    let menu: [Menu]?
 
-      init(name: String?, type: String?, imageURL: String?, latitude: Double?, longitude: Double?) {
-          self.name = name
-          self.type = type
-          self.imageURL = imageURL
-          self.latitude = latitude
-          self.longitude = longitude
-      }
-    init(name:String,type:String,urlImage:String,latitude:Double,longitude:Double){
-        
-            self.latitude = nil
-            self.longitude = nil
-            self.name = name
-            self.type = type
-            self.imageURL = urlImage
-            self.coordinates.append(latitude)
-            self.coordinates.append(longitude)
+    enum CodingKeys: String, CodingKey {
+        case id, nombre, descripcion, direccion, latitud, longitud, telefono, tipo, imagenes
+        case rrss = "RRSS"
+        case menu = "Menu"
+    }
+
+    init(id: Int?, nombre: String?, descripcion: String?, direccion: String?, latitud: Double?, longitud: Double?, telefono: Int?, tipo: String?, imagenes: [Imagene]?, rrss: [Rrss]?, menu: [Menu]?) {
+        self.id = id
+        self.nombre = nombre
+        self.descripcion = descripcion
+        self.direccion = direccion
+        self.latitud = latitud
+        self.longitud = longitud
+        self.telefono = telefono
+        self.tipo = tipo
+        self.imagenes = imagenes
+        self.rrss = rrss
+        self.menu = menu
+    }
+    
+    func urlImage() -> String {
+        guard let url = imagenes?[0].url else{ return "https://images.pexels.com/photos/326279/pexels-photo-326279.jpeg"}
+        return url
     }
 }
 

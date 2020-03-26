@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rUc-zv-a77">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -295,6 +294,7 @@ que comer fuera</string>
                         <outlet property="nameTypeRestaurant" destination="Yyj-mM-MoV" id="ISm-PM-ge1"/>
                         <outlet property="pictureRestaurant" destination="DGp-Z0-5Q5" id="tge-Lz-ZQB"/>
                         <outlet property="restaurantBodyView" destination="sGj-Hl-cjn" id="Szq-xA-rd9"/>
+                        <outlet property="restaurantDescription" destination="7AB-W7-kTq" id="NWy-Uw-3JN"/>
                         <segue destination="h61-dK-G7s" kind="presentation" identifier="dishy" modalPresentationStyle="formSheet" id="yla-EI-ISP"/>
                         <segue destination="0Zm-Ks-S5p" kind="presentation" identifier="toHome" modalTransitionStyle="crossDissolve" id="JUO-rO-HTB"/>
                     </connections>

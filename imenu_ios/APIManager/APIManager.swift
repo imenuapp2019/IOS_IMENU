@@ -61,7 +61,7 @@ class APIManager {
             switch (response.result){
             case .success:
                     let decoder = JSONDecoder()
-                    let restaurants = try! decoder.decode(Restaurant.self, from: response.data!)
+                    guard let restaurants = try? decoder.decode(Restaurant.self, from: response.data!) else {return}
                     completion([restaurants])
             case .failure(_):
                 break
