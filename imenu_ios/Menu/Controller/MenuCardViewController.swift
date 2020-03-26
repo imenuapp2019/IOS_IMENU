@@ -18,7 +18,6 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
     
     @IBOutlet var MainCard: UIView!
     @IBOutlet weak var ARBtn: UIButton!
-    //  var  cellWasClickDelegate: CellClickedDelegate!
     
     var menuArray:[Menu] = []
     var currentIndex = 0
@@ -41,9 +40,8 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-   
         menuViewController = MenuViewController ()
+        menuViewController?.delegate = self
         startTimer()
         pageControl.numberOfPages = ARImagesArray.count
         self.view.layer.cornerRadius = 30
@@ -79,12 +77,14 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if collectionView == menuSectionsCollectionView {
-           return 6
-        }
-        else {
-            
-            return ARImagesArray.count        }
+        return menuArray.count
+        
+//        if collectionView == menuSectionsCollectionView {
+//           return 6
+//        }
+//        else {
+//
+//            return ARImagesArray.count        }
         
     }
     
@@ -165,4 +165,10 @@ class MenuCardViewController: UIViewController, UICollectionViewDataSource,UICol
        
     }
  
+}
+
+extension MenuCardViewController: MenuViewControllerDelegate{
+    func contentDataMenu(_ data: [Menu]) {
+        menuArray = data
+    }
 }

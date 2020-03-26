@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol MenuViewControllerDelegate: AnyObject {
+    func contentDataMenu(_ data: [Menu])
+}
+
 class MenuViewController: UIViewController{
     enum CardState {
         case collapsed
         case expanded
     }
+    
+    weak var delegate: MenuViewControllerDelegate?
     
     //Boton Back
     @IBAction func backBtn(_ sender: Any) {
@@ -46,26 +52,17 @@ class MenuViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setValueCardAnimation()
+        if let menu = restaurant?.menu {
+            delegate?.contentDataMenu(menu)
+        }
         setupCard()
         self.menuCardViewController.arrowImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
         setUpDetailRestaurant()
         restaurantBodyView.layer.cornerRadius = 15
-        pruebaDelegate()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    }
-    
-    func pruebaDelegate () {
-        //        let myView = Bundle.main.loadNibNamed("MenuCardViewController", owner: nil, options: nil)?.first as! MenuCardViewController
-        
-        //        let cardViewController = MenuCardViewController ()
-        //        let myview:UIView = cardViewController.MainCard
-        
-        //myView.cellWasClickDelegate = self
-        
     }
     
     func setUpDetailRestaurant(){
@@ -79,11 +76,7 @@ class MenuViewController: UIViewController{
         })
     }
     
-    func setValueCardAnimation(){
-        let vc = MenuCardViewController(nibName: "MenuCardViewController", bundle: nil)
-        guard let menu = restaurant?.menu else { return }
-        vc.menuArray = menu
-    }
+    
     
     
     func setupCard() {
